@@ -1,0 +1,29 @@
+version: '2'
+services:
+  httpd:
+    build: ./docker/httpd
+    ports:
+      - 8080:80
+    depends_on:
+      - php
+    volumes_from:
+      - php
+  php:
+    build: ./docker/php
+    expose:
+      - 9000
+    volumes:
+      - .:/var/www/html
+  mysql:
+    build: ./docker/mysql
+    ports:
+      - 3306:3306
+    volumes:
+      - ./docker/data/mysql:/var/lib/mysql
+    environment:
+      MYSQL_DATABASE: app
+      MYSQL_ROOT_PASSWORD: root
+  redis:
+    build: ./docker/redis
+    expose:
+      - 6379
