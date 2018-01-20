@@ -67,6 +67,10 @@ Users can have the ability to collaborate on notes. Instructors may be able to c
 
 # Possible Additions
 
+# Reports
+
+* Possible reports would be tutoring statistics. I know that the university is interested in such stats, but since they use 3 different systems (or did) they are having a hard time with that.
+
 ### Tutor Rating System
 
 * Students can rate tutors, and give feedback to them.
