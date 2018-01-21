@@ -15,3 +15,24 @@ docker/data
 composer.lock
 .phpstorm.meta.php
 _ide_helper.php
+
+# .tmp files
+*.tmp
+
+# LibreOffice lock files
+.~lock.*#
+
+# Word temporary
+~$*.doc*
+
+# Excel temporary
+~$*.xls*
+
+# Excel Backup File
+*.xlk
+
+# PowerPoint temporary
+~$*.ppt*
+
+# Visio autosave temporary files
+*.~vsd*
