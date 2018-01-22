@@ -58,6 +58,13 @@ class UsersTableSeeder extends Seeder
                 'remember_token' => str_random(60),
                 'role_id'        => $role->id,
             ]);
+            User::create([
+                'name'           => 'Mark Allison',
+                'email'          => 'markalli@umflint.edu',
+                'password'       => bcrypt('password'),
+                'remember_token' => str_random(60),
+                'role_id'        => $role->id,
+            ]);
         }
     }
 }
