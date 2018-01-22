@@ -23,6 +23,41 @@ class UsersTableSeeder extends Seeder
                 'remember_token' => str_random(60),
                 'role_id'        => $role->id,
             ]);
+            User::create([
+                'name'           => 'Tyler Elton',
+                'email'          => 'telton@umflint.edu',
+                'password'       => bcrypt('password'),
+                'remember_token' => str_random(60),
+                'role_id'        => $role->id,
+            ]);
+            User::create([
+                'name'           => 'Jason Moehlman',
+                'email'          => 'jmoehlman@umflint.edu',
+                'password'       => bcrypt('password'),
+                'remember_token' => str_random(60),
+                'role_id'        => $role->id,
+            ]);
+            User::create([
+                'name'           => 'Brandon Krug',
+                'email'          => 'brkrug@umflint.edu',
+                'password'       => bcrypt('password'),
+                'remember_token' => str_random(60),
+                'role_id'        => $role->id,
+            ]);
+            User::create([
+                'name'           => 'Zach Nelson',
+                'email'          => 'zacharyn@umflint.edu',
+                'password'       => bcrypt('password'),
+                'remember_token' => str_random(60),
+                'role_id'        => $role->id,
+            ]);
+            User::create([
+                'name'           => 'Gary Landrum',
+                'email'          => 'glandrum@umflint.edu',
+                'password'       => bcrypt('password'),
+                'remember_token' => str_random(60),
+                'role_id'        => $role->id,
+            ]);
         }
     }
 }

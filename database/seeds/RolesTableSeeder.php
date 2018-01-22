@@ -17,11 +17,39 @@ class RolesTableSeeder extends Seeder
                 ])->save();
         }
 
-        $role = Role::firstOrNew(['name' => 'user']);
+        $role = Role::firstOrNew(['name' => 'instructor']);
         if (!$role->exists) {
             $role->fill([
-                    'display_name' => 'Normal User',
+                    'display_name' => 'Instructor for course(s)',
                 ])->save();
         }
+
+        $role = Role::firstOrNew(['name' => 'grader']);
+        if (!$role->exists) {
+            $role->fill([
+                    'display_name' => 'Grader for course(s)',
+                ])->save();
+        }
+
+        $role = Role::firstOrNew(['name' => 'tutor']);
+        if (!$role->exists) {
+            $role->fill([
+                    'display_name' => 'Tutor for course(s)',
+                ])->save();
+        }
+
+        $role = Role::firstOrNew(['name' => 'student']);
+        if (!$role->exists) {
+            $role->fill([
+                    'display_name' => 'Student User',
+                ])->save();
+        }
+
+        // $role = Role::firstOrNew(['name' => 'user']);
+        // if (!$role->exists) {
+        //     $role->fill([
+        //             'display_name' => 'Normal User',
+        //         ])->save();
+        // }
     }
 }
