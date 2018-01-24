@@ -28,4 +28,5 @@ test:
     - php -r "unlink('composer-setup.php');"
     - ./composer.phar install --no-interaction --no-scripts > /dev/null
     - export APP_ENV=testing
+    - php artisan key:generate
     - php vendor/bin/phpunit --colors --debug
