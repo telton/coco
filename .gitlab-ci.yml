@@ -27,7 +27,5 @@ test:
     - php composer-setup.php
     - php -r "unlink('composer-setup.php');"
     - ./composer.phar install --no-interaction --no-scripts > /dev/null
-    - touch .env
-    - php artisan key:generate
     - export APP_ENV=testing
     - php vendor/bin/phpunit --colors --debug
