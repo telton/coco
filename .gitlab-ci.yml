@@ -1,0 +1,31 @@
+image: php:7.1
+
+stages:
+  - test
+
+test:
+  stage: test
+  allow_failure: false
+  tags:
+    - docker
+  script:
+    - apt-get update
+    - echo "Install helpers for Composer"
+    - apt-get install git unzip zlib1g-dev -y
+    - docker-php-ext-install zip
+    - echo "Install PDO"
+    - docker-php-ext-install pdo_mysql
+    - echo "Install mbstring and exif"
+    - docker-php-ext-install mbstring
+    - docker-php-ext-install exif
+    - echo "Install GD"
+    - apt-get install -y libfreetype6-dev libjpeg62-turbo-dev libpng12-dev
+    - docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/
+    - docker-php-ext-install gd
+    - echo "Installing Composer"
+    - php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+    - php composer-setup.php
+    - php -r "unlink('composer-setup.php');"
+    - ./composer.phar install --no-interaction --no-scripts > /dev/null
+    - export APP_ENV=testing
+    - php vendor/bin/phpunit --colors --debug
