@@ -1,23 +1,20 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Dashboard</div>
-
-                <div class="panel-body">
-                    @if (session('status'))
-                        <div class="alert alert-success">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    You are logged in!
+<div class="card" style="margin-top:15px;">
+    <div class="card-header">
+        My Courses
+    </div>
+    <div class="card-body">
+        @if(count($courses) !== 0)
+            @foreach($courses as $course)
+                <div class="box">
+                    {{ $course-> title }}
                 </div>
-            </div>
-        </div>
+            @endforeach
+        @else
+            <p>You aren't registered for any courses!</p>
+        @endif
     </div>
 </div>
 @endsection
