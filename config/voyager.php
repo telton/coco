@@ -13,7 +13,7 @@ return [
     'user' => [
         'add_default_role_on_register' => true,
         'default_role'                 => 'user',
-        'namespace'                    => App\User::class,
+        'namespace'                    => App\Models\User::class,
         'default_avatar'               => 'users/default.png',
     ],
 
@@ -170,7 +170,6 @@ return [
             'TCG\\Voyager\\Widgets\\PostDimmer',
             'TCG\\Voyager\\Widgets\\PageDimmer',
         ],
-
     ],
 
     /*
@@ -218,5 +217,4 @@ return [
          ],
          'zoom' => env('GOOGLE_MAPS_DEFAULT_ZOOM', 11),
      ],
-
 ];
