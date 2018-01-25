@@ -7,8 +7,9 @@ use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use App\Http\Traits\FlashesSession;
+use App\Http\Traits\GivesAuth;
 
 class Controller extends BaseController
 {
-    use AuthorizesRequests, DispatchesJobs, ValidatesRequests, FlashesSession;
+    use AuthorizesRequests, DispatchesJobs, ValidatesRequests, FlashesSession, GivesAuth;
 }
