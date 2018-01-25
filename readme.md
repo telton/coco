@@ -12,5 +12,11 @@ $ composer install
 
 $ npm install
 
+$ cp .env.example .env
+
+$ # change .env according to your db credentials...
+
+$ php artisan key:generate
+
 $ php artisan serve
 ```
