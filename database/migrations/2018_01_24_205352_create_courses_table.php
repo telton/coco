@@ -17,14 +17,14 @@ class CreateCoursesTable extends Migration
             $table->increments('id');
             $table->string('subject', 5);
             $table->integer('course_number');
-            $table->tinyInteger('section');
-            $table->integer('crn');
+            $table->tinyInteger('section')->unsigned();
+            $table->integer('crn')->unsigned();
             $table->string('title', 255);
-            $table->tinyInteger('capacity');
+            $table->tinyInteger('capacity')->unsigned();
             $table->string('campus', 10);
-            $table->tinyInteger('credits');
+            $table->tinyInteger('credits')->unsigned();
             $table->string('semester', 10);
-            $table->integer('year');
+            $table->integer('year')->unsigned();
             $table->timestamps();
         });
 
