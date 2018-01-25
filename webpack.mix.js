@@ -1,5 +1,8 @@
 let mix = require('laravel-mix');
 
+// Shut off system notifications.
+mix.disableNotifications();
+
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
@@ -10,6 +13,6 @@ let mix = require('laravel-mix');
  | file for the application as well as bundling up all the JS files.
  |
  */
-
-mix.js('resources/assets/js/app.js', 'public/js')
-   .sass('resources/assets/sass/app.scss', 'public/css');
+mix.copy('node_modules/font-awesome/fonts', 'public/fonts/');
+mix.sass('resources/assets/sass/app.scss', 'public/css/app.css');
+mix.js('resources/assets/js/bootstrap.js', 'public/js/app.js');
