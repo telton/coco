@@ -13,7 +13,7 @@
                 </div>
             @endforeach
         @else
-            <p>You aren't registered for any courses!</p>
+            <p>You are not registered for any courses!</p>
         @endif
     </div>
 </div>
