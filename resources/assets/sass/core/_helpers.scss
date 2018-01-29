@@ -1,5 +1,5 @@
 .alert {
-    margin-top: 15px;
+    margin: 0.75rem;
 }
 
 .help-block {
@@ -8,6 +8,17 @@
     margin-left: 15px;
 }
 
-.card {
-    margin-top: 15px;
+.fa {
+    margin-right: .75rem;
+}
+
+.main-content {
+    display: flex;
+    flex-flow: nowrap;
+    margin: 0.75rem;
+
+    ul.nav.flex-column {
+        width: 225px;
+        margin: 0 0.75rem 0 0;
+    }
 }
