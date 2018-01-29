@@ -12,4 +12,13 @@ use App\Http\Traits\GivesAuth;
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests, FlashesSession, GivesAuth;
+
+    /**
+     * Controller constructor.
+     *
+     * @author Tyler Elton <telton@umflint.edu>
+     */
+    public function __construct()
+    {
+    }
 }
