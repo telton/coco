@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
 <div class="card" style="margin-top:15px;">
     <div class="card-header">
         My Courses
@@ -17,4 +18,5 @@
         @endif
     </div>
 </div>
+
 @endsection

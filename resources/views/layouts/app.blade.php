@@ -26,7 +26,7 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('home.index') }}">Home</a>
+                        <a class="nav-link" href="{{ route('home.index') }}">My Courses</a>
                     </li>
                 </ul>
             </div>
@@ -52,8 +52,10 @@
             </ul>
         </nav>
         <div class="container">
+
             @include('flash::message')
             @yield('content')
+            
         </div>
     </div>
 
