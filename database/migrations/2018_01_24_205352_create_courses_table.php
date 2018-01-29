@@ -18,6 +18,7 @@ class CreateCoursesTable extends Migration
             $table->string('subject', 5);
             $table->integer('course_number');
             $table->tinyInteger('section')->unsigned();
+            $table->string('slug')->unique();
             $table->integer('crn')->unsigned();
             $table->string('title', 255);
             $table->tinyInteger('capacity')->unsigned();

@@ -50,10 +50,13 @@ class ImportCourses extends Command
                 $campus, $credits, $semester, $year) = $data;
 
             try {
+                $slug = strtolower($subject . $course_number . '-' . $section);
+
                 $course = Course::create([
                     'subject'       => $subject,
                     'course_number' => $course_number,
                     'section'       => $section,
+                    'slug'          => $slug,
                     'crn'           => $crn,
                     'title'         => $title,
                     'capacity'      => $capacity,

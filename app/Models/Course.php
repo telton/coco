@@ -22,6 +22,7 @@ class Course extends Model
         'subject',
         'course_number',
         'section',
+        'slug',
         'crn',
         'title',
         'capacity',
