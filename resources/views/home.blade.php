@@ -10,7 +10,7 @@
         @if(count($courses) !== 0)
             @foreach($courses as $course)
                 <div class="box">
-                    {{ $course-> title }}
+                    <a href="{{ route('courses.show', $course->slug) }}">{{ $course-> title }}</a>
                 </div>
             @endforeach
         @else
