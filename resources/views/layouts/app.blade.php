@@ -51,9 +51,10 @@
                 @endguest
             </ul>
         </nav>
-        <div class="container">
 
-            @include('flash::message')
+        @include('flash::message')
+
+        <div class="main-content">
             @yield('content')
             
         </div>
