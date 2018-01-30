@@ -1,17 +1,17 @@
+import Vue from 'vue';
+import jQuery from 'jquery';
+import Popper from 'popper.js';
+import 'parsleyjs';
 
-window._ = require('lodash');
+// Setup jQuery and Bootstrap.
+window.Popper = Popper;
+window.$ = window.jQuery = jQuery;
+require('bootstrap');
 
 /**
- * We'll load jQuery and the Bootstrap jQuery plugin which provides support
- * for JavaScript based Bootstrap features such as modals and tabs. This
- * code may be modified to fit the specific needs of your application.
+ * Import components.
  */
-
-try {
-    window.$ = window.jQuery = require('jquery');
-
-    require('bootstrap-sass');
-} catch (e) {}
+import App from './app.js';
 
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests
@@ -53,3 +53,9 @@ if (token) {
 //     cluster: 'mt1',
 //     encrypted: true
 // });
+
+/**
+ * Kickstart the app.
+ */
+window.$app = new Vue(app);
+$app.csrfToken = token;

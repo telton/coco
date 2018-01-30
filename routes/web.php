@@ -11,8 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', [
+    'as'   => 'home.index',
+    'uses' => 'HomeController@index',
+]);
+
+// Courses routes.
+Route::group(['namespace' => 'Courses', 'middleware' => 'auth'], function () {
+    Route::resource('courses', 'CoursesController');
 });
 
 Auth::routes();

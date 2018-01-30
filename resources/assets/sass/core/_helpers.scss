@@ -1,0 +1,24 @@
+.alert {
+    margin: 0.75rem;
+}
+
+.help-block {
+    color: $danger;
+    font-size: .75rem;
+    margin-left: 15px;
+}
+
+.fa {
+    margin-right: .75rem;
+}
+
+.main-content {
+    display: flex;
+    flex-flow: nowrap;
+    margin: 0.75rem;
+
+    ul.nav.flex-column {
+        width: 225px;
+        margin: 0 0.75rem 0 0;
+    }
+}
