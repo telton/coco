@@ -4,10 +4,10 @@ namespace App\Http\Menus;
 
 class CourseMenu extends BaseMenu
 {
-    protected function build()
+    protected function build($course = null)
     {
         $this->addClass('nav flex-column')
-            ->link('#', '<span class="nav-item-addon"><i class="fa fa-home"></i></span>Course Home')
-            ->link('#', '<span class="nav-item-addon"><i class="fa fa-archive"></i></span>Assignments');
+            ->linkIf(!is_null($course), route('courses.show', $course->slug), '<span class="nav-item-addon"><i class="fa fa-home"></i></span>Course Home')
+            ->linkIf(!is_null($course), '#', '<span class="nav-item-addon"><i class="fa fa-archive"></i></span>Assignments');
     }
 }

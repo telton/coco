@@ -3,7 +3,7 @@
 @section('content')
 
 @inject('courseMenu', 'App\Http\Menus\CourseMenu')
-{!! $courseMenu->render() !!}
+{!! $courseMenu->render($course) !!}
 
 <div class="card">
     <div class="card-header">
