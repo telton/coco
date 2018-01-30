@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\Courses;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\User;
 
 class Course extends Model
 {
@@ -12,6 +13,25 @@ class Course extends Model
      * @var array
      */
     protected $table = 'courses';
+
+    /**
+     * Validation rules.
+     *
+     * @var array
+     */
+    protected $rules = [
+        'subject'       => 'required',
+        'course_number' => 'required|integer',
+        'section'       => 'required|integer',
+        'slug'          => 'required|unique:courses',
+        'crn'           => 'required|integer|unique:courses',
+        'title'         => 'required',
+        'capacity'      => 'required|integer',
+        'campus'        => 'required|in:Flint,Ann Arbor,Dearborn',
+        'credits'       => 'required|integer',
+        'semester'      => 'required|in:Spring,Summer,Fall,Winter',
+        'year'          => 'required|integer',
+    ];
 
     /**
      * The attributes that are mass assignable.

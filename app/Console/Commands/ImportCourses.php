@@ -4,7 +4,7 @@ namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 use Watson\Validating\ValidationException;
-use App\Models\Course;
+use App\Models\Courses\Course;
 
 class ImportCourses extends Command
 {

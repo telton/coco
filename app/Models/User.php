@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use App\Models\Courses\Course;
 
 class User extends \TCG\Voyager\Models\User
 {
@@ -15,6 +16,17 @@ class User extends \TCG\Voyager\Models\User
      * @var array
      */
     protected $table = 'users';
+
+    /**
+     * Validation rules.
+     *
+     * @var array
+     */
+    protected $rules = [
+        'name'     => 'required|string|max:255',
+        'email'    => 'required|string|email|max:255|unique:users',
+        'password' => 'required|string|min:6|confirmed',
+    ];
 
     /**
      * The attributes that are mass assignable.
