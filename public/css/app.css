@@ -14390,12 +14390,6 @@ body {
   margin-left: 15px;
 }
 
-.card {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-}
-
 .main-nav {
   width: 100%;
   position: relative;
@@ -14503,6 +14497,16 @@ body {
   z-index: -1;
 }
 
+.card {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.card-center {
+  margin: 15px 250px 425px 250px;
+}
+
 .main-chat {
   width: 100%;
   position: relative;
@@ -14552,9 +14556,5 @@ body {
   bottom: 0;
   width: 36px;
   z-index: -1;
-}
-
-.card-login {
-  margin: 15px 250px 425px 250px;
 }
 

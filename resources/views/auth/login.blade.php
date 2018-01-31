@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="card card-login">
+<div class="card card-center">
     <div class="card-header">
         Login
     </div>
