@@ -1,0 +1,44 @@
+.main-chat {
+    width: 100%;
+    position: relative;
+    display: block;
+    z-index: 1;
+    // background-color: rgb(33, 33, 196); // TODO: change color.
+
+    @include media-breakpoint-up(md) {
+        width: 225px;
+    }
+
+    @include media-breakpoint-up(md) {
+        max-height: 100%;
+    }
+
+    .chat-body {
+        @include media-breakpoint-up(md) {
+            display: block;
+        }
+
+        margin: auto;
+    }
+}
+
+.chat-frame {
+    position: relative;
+    height: 100%;
+    z-index: 4;
+    display: flex;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+
+    &:before {
+        content: "";
+        // background-color: rgb(146, 146, 159);
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 36px;
+        z-index: -1;
+    }
+}
