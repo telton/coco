@@ -267,7 +267,7 @@ abstract class BaseMenu
     public function render($data = null)
     {
         $this->build($data);
-        $this->builder->setActiveFromUrl($this->request->getUri());
+        // $this->builder->setActiveFromUrl($this->request->getUri());
 
         return $this->builder->render();
     }

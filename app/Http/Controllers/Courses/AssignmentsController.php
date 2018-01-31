@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Courses;
 
 use App\Models\Courses\Assignment;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Models\Courses\Course;
 
 class AssignmentsController extends Controller
 {
@@ -12,9 +14,13 @@ class AssignmentsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(string $slug)
     {
-        //
+        $course = Course::where('slug', $slug)->first();
+
+        return view('courses.assignments.index', [
+            'course' => $course,
+        ]);
     }
 
     /**

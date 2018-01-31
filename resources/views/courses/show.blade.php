@@ -2,12 +2,11 @@
 
 @section('content')
 
-@inject('courseMenu', 'App\Http\Menus\CourseMenu')
-{!! $courseMenu->render($course) !!}
+@include('includes.nav')
 
 <div class="card">
     <div class="card-header">
-        {{ $course->subject }}{{ $course->course_number }} - {{ sprintf('%02d', $course->section) }}: {{ $course->title }}
+        <strong>Home:</strong> {{ $course->subject }}{{ $course->course_number }} - {{ sprintf('%02d', $course->section) }}: {{ $course->title }}
     </div>
     <div class="card-body">
         <p>Lorem ipsum dolor sit amet, affert docendi nam cu, dicunt volumus at qui. Qui ex eros perfecto, eros erant has te, pri id reque offendit 

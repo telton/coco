@@ -1,0 +1,35 @@
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+    // background-color: $smoke; //TODO: change color.
+}
+
+.main-content {
+    display: flex;
+    flex-wrap: wrap;
+    flex-flow: column;
+
+    @include media-breakpoint-up(md) {
+        flex-flow: nowrap;
+    }
+
+    min-height: 100vh;
+    height: 100%;
+}
+
+.alert {
+    margin: 0.75rem;
+}
+
+.help-block {
+    color: $danger;
+    font-size: .75rem;
+    margin-left: 15px;
+}
+
+.card {
+    flex: 1;
+}

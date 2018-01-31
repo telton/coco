@@ -19,6 +19,11 @@ Route::get('/', [
 // Courses routes.
 Route::group(['namespace' => 'Courses', 'middleware' => 'auth'], function () {
     Route::resource('courses', 'CoursesController');
+
+    Route::get('/courses/{slug}/assignments', [
+        'as'   => 'courses.assignments.index',
+        'uses' => 'AssignmentsController@index',
+    ]);
 });
 
 Auth::routes();

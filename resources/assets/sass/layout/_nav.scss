@@ -1,0 +1,110 @@
+.main-nav {
+    width: 100%;
+    position: relative;
+    display: block;
+    z-index: 1;
+    // background-color: rgb(33, 33, 196); // TODO: change color.
+
+    @include media-breakpoint-up(md) {
+        width: 225px;
+    }
+
+    @include media-breakpoint-up(md) {
+        max-height: 100%;
+    }
+
+    .nav {
+        .nav-item {
+            border-bottom: 1px solid black; // TODO: change color.
+            padding: 0;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+
+            &:first-child {
+                border-top: 1px solid black; // TODO: change color.
+            }
+
+            &:hover,
+            &:active {
+                background-color: rgb(160, 160, 175); // TODO: change color.
+            }
+
+            &.active {
+                background-color: rgb(160, 160, 200); // TODO: change color.
+            }
+        }
+
+        .active {
+            > .nav-link {
+                color: darken($color: rgb(160, 160, 175), $amount: 2); // TODO: change color.
+            }
+
+            > a>span>i.fa {
+                color: darken($color: rgb(160, 160, 175), $amount: 2); // TODO: change color.
+            }
+        }
+
+        .nav-link {
+            padding: 0.6rem 1rem 0.6rem 0;
+            color: black; // TODO: change color.
+            font-weight: bold;
+
+            > .nav-item-addon {
+                color: black; // TODO: change color.
+                width: 36px;
+                display: inline-block;
+                text-align: center;
+                margin-right: 0.75rem;
+            }
+        }
+    }
+
+    .main-nav-toggle {
+        width: 100%;
+        font-weight: bold;
+        @extend .btn;
+        border-radius: 0;
+        text-align: left;
+        padding: .6rem 1rem .6rem 0;
+
+        &:focus {
+            @include box-shadow(none);
+        }
+
+        @include media-breakpoint-up(md) {
+            display: none;
+        }
+
+        .main-nav-toggle-addon {
+            width: 36px;
+            text-align: center;
+            margin-right: .75rem;
+            display: inline-block;
+        }
+    }
+
+    .nav-body {
+        @include media-breakpoint-up(md) {
+            display: block;
+        }
+    }
+}
+
+.nav-frame {
+    position: relative;
+    height: 100%;
+    z-index: 4;
+    box-shadow: inset -1px 0px 0px $raven;
+
+    &:before {
+        content: "";
+        // background-color: rgb(146, 146, 159);
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 36px;
+        z-index: -1;
+    }
+}
