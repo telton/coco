@@ -14410,14 +14410,14 @@ body {
 }
 
 .main-nav .nav .nav-item {
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
   padding: 0;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
 .main-nav .nav .nav-item:first-child {
-  border-top: 1px solid black;
+  border-top: 1px solid rgba(0, 0, 0, 0.125);
 }
 
 .main-nav .nav .nav-item:hover,
@@ -14482,8 +14482,8 @@ body {
   position: relative;
   height: 100%;
   z-index: 4;
-  -webkit-box-shadow: inset -1px 0px 0px #212529;
-          box-shadow: inset -1px 0px 0px #212529;
+  -webkit-box-shadow: inset -1px 0px 0px rgba(0, 0, 0, 0.125);
+          box-shadow: inset -1px 0px 0px rgba(0, 0, 0, 0.125);
 }
 
 .nav-frame:before {
@@ -14543,8 +14543,8 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  border-top: 1px solid black;
-  border-left: 1px solid black;
+  border-top: 1px solid rgba(0, 0, 0, 0.125);
+  border-left: 1px solid rgba(0, 0, 0, 0.125);
 }
 
 .chat-frame:before {
