@@ -7,10 +7,6 @@
 // Color system
 //
 
-// UM brand colors
-$um-blue: #00274c;
-$um-maize: #ffc700;
-
 // stylelint-disable
 $white: #fff !default;
 $gray-100: #f8f9fa !default;
@@ -96,8 +92,6 @@ $dark: $gray-800 !default;
 
 $theme-colors: () !default;
 $theme-colors: map-merge((
-        "brand": $um-blue,
-        "brand-alt": $um-maize,
         "primary": $primary,
         "secondary": $secondary,
         "success": $success,
