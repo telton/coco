@@ -7,6 +7,13 @@
 // Color system
 //
 
+$cap-charcoal: #a8a8a8 !default;
+$cap-darker-charcoal: darken($cap-charcoal, 25) !default;
+$cap-morning-sky: #cae4d8 !default;
+$cap-honey: #dcae1d !default;
+$cap-dark-aqua: #00303f !default;
+$cap-mist: #7a9d96 !default;
+
 // stylelint-disable
 $white: #fff !default;
 $gray-100: #f8f9fa !default;

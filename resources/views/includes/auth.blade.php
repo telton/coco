@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg">
     <a class="navbar-brand" href="{{ route('home.index') }}">
         <!-- Branding Image -->
         {{ config('app.name', 'Laravel') }}

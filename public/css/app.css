@@ -14357,6 +14357,7 @@ html {
 
 body {
   min-height: 100%;
+  background-color: #d6dadd;
 }
 
 .main-content {
@@ -14422,29 +14423,23 @@ body {
 
 .main-nav .nav .nav-item:hover,
 .main-nav .nav .nav-item:active {
-  background-color: #a0a0af;
+  background-color: rgba(0, 27, 53, 0.25);
+  color: #a8d3bf;
 }
 
 .main-nav .nav .nav-item.active {
-  background-color: #a0a0c8;
-}
-
-.main-nav .nav .active > .nav-link {
-  color: #9a9aaa;
-}
-
-.main-nav .nav .active > a > span > i.fa {
-  color: #9a9aaa;
+  background-color: rgba(0, 27, 53, 0.25);
+  color: #a8d3bf;
 }
 
 .main-nav .nav .nav-link {
   padding: 0.6rem 1rem 0.6rem 0;
-  color: black;
+  color: #cae4d8;
   font-weight: bold;
 }
 
 .main-nav .nav .nav-link > .nav-item-addon {
-  color: black;
+  color: #cae4d8;
   width: 36px;
   display: inline-block;
   text-align: center;
@@ -14484,10 +14479,12 @@ body {
   z-index: 4;
   -webkit-box-shadow: inset -1px 0px 0px rgba(0, 0, 0, 0.125);
           box-shadow: inset -1px 0px 0px rgba(0, 0, 0, 0.125);
+  background-color: #757575;
 }
 
 .nav-frame:before {
   content: "";
+  background-color: #00303f;
   display: block;
   position: absolute;
   top: 0;
@@ -14497,10 +14494,61 @@ body {
   z-index: -1;
 }
 
+.navbar {
+  background-color: #00303f;
+}
+
+.navbar > a {
+  color: #cae4d8;
+}
+
+.navbar .collapse > ul > li > a {
+  color: #cae4d8;
+}
+
+.navbar > ul > li > a {
+  color: #cae4d8;
+}
+
+.navbar .dropdown-menu {
+  background-color: #00303f;
+}
+
+.navbar .dropdown-menu > a {
+  color: #cae4d8;
+}
+
+.navbar .dropdown-menu:hover > a {
+  background-color: #00303f;
+  color: #a8d3bf;
+}
+
+.navbar .navbar-brand:hover {
+  color: #a8d3bf;
+}
+
+.navbar .navbar-collapse > ul > li > a:hover {
+  color: #a8d3bf;
+}
+
+.navbar > ul > li > a:hover {
+  color: #a8d3bf;
+}
+
 .card {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+  border: none;
+}
+
+.card .card-header {
+  border-style: none;
+  border-radius: 0;
+}
+
+.card .card-body a {
+  color: #686868;
 }
 
 .card-center {
@@ -14508,6 +14556,8 @@ body {
 }
 
 .main-chat {
+  color: #cae4d8;
+  background-color: #686868;
   width: 100%;
   position: relative;
   display: block;

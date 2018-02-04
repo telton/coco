@@ -3,7 +3,6 @@
     position: relative;
     display: block;
     z-index: 1;
-    // background-color: rgb(33, 33, 196); // TODO: change color.
 
     @include media-breakpoint-up(md) {
         width: 225px;
@@ -26,31 +25,23 @@
 
             &:hover,
             &:active {
-                background-color: rgb(160, 160, 175); // TODO: change color.
+                background-color: rgba(0, 27, 53, 0.25); // TODO: change color.
+                color: darken($cap-morning-sky, 10);
             }
 
             &.active {
-                background-color: rgb(160, 160, 200); // TODO: change color.
-            }
-        }
-
-        .active {
-            > .nav-link {
-                color: darken($color: rgb(160, 160, 175), $amount: 2); // TODO: change color.
-            }
-
-            > a>span>i.fa {
-                color: darken($color: rgb(160, 160, 175), $amount: 2); // TODO: change color.
+                background-color: rgba(0, 27, 53, 0.25); // TODO: change color.
+                color: darken($cap-morning-sky, 10);
             }
         }
 
         .nav-link {
             padding: 0.6rem 1rem 0.6rem 0;
-            color: black; // TODO: change color.
+            color: $cap-morning-sky; // TODO: change color.
             font-weight: bold;
 
             > .nav-item-addon {
-                color: black; // TODO: change color.
+                color: $cap-morning-sky; // TODO: change color.
                 width: 36px;
                 display: inline-block;
                 text-align: center;
@@ -95,10 +86,11 @@
     height: 100%;
     z-index: 4;
     box-shadow: inset -1px 0px 0px rgba(0, 0, 0, 0.125);
+    background-color: lighten($cap-darker-charcoal, 5); //TODO: change color.
 
     &:before {
         content: "";
-        // background-color: rgb(146, 146, 159);
+        background-color: $cap-dark-aqua;
         display: block;
         position: absolute;
         top: 0;
@@ -106,5 +98,64 @@
         bottom: 0;
         width: 36px;
         z-index: -1;
+    }
+}
+
+.navbar {
+    background-color: $cap-dark-aqua;
+
+    > a {
+        color: $cap-morning-sky;
+    }
+
+    .collapse > ul > li > a {
+        color: $cap-morning-sky;
+    }
+
+    > ul > li > a {
+        color: $cap-morning-sky;
+    }
+
+    .dropdown-menu {
+        background-color: $cap-dark-aqua;
+
+        > a {
+            color: $cap-morning-sky;
+        }
+
+        &:hover {
+            > a {
+                background-color: $cap-dark-aqua;
+                color: darken($cap-morning-sky, 10);
+            }
+        }
+    }
+
+    .navbar-brand {
+        &:hover {
+            color: darken($cap-morning-sky, 10);
+        }
+    }
+
+    .navbar-collapse {
+        > ul {
+            > li {
+                > a {
+                    &:hover {
+                        color: darken($cap-morning-sky, 10);
+                    }
+                }
+            }
+        }
+    }
+
+    > ul {
+        > li {
+            > a {
+                &:hover {
+                    color: darken($cap-morning-sky, 10);
+                }
+            }
+        }
     }
 }
