@@ -72,4 +72,15 @@ class Course extends Model
     {
         return $this->belongsToMany(User::class, 'courses_users', 'course_id', 'user_id');
     }
+
+    /**
+     * Courses instructor relationship.
+     *
+     * @author Tyler Elton <telton@umflint.edu>
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function instructor()
+    {
+        return $this->belongsTo(User::class, 'instructor_id', 'id', 'users');
+    }
 }
