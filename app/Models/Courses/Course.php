@@ -70,7 +70,7 @@ class Course extends Model
      */
     public function students()
     {
-        return $this->belongsToMany(User::class, 'courses_users', 'course_id', 'user_id');
+        return $this->belongsToMany(User::class, 'courses_students', 'course_id', 'user_id');
     }
 
     /**
@@ -81,6 +81,6 @@ class Course extends Model
      */
     public function instructor()
     {
-        return $this->belongsTo(User::class, 'instructor_id', 'id', 'users');
+        return $this->belongsTo(User::class, 'instructor_id', 'id', 'courses_instructor');
     }
 }
