@@ -63,12 +63,12 @@ class Course extends Model
     ];
 
     /**
-     * Courses users relationship.
+     * Courses students relationship.
      *
      * @author Tyler Elton <telton@umflint.edu>
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
-    public function users()
+    public function students()
     {
         return $this->belongsToMany(User::class, 'courses_users', 'course_id', 'user_id');
     }
