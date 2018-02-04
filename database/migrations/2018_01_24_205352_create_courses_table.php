@@ -29,7 +29,7 @@ class CreateCoursesTable extends Migration
             $table->timestamps();
         });
 
-        Schema::create('courses_users', function (Blueprint $table) {
+        Schema::create('courses_students', function (Blueprint $table) {
             $table->integer('user_id')->unsigned();
             $table->integer('course_id')->unsigned();
 
