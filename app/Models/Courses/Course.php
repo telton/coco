@@ -83,46 +83,4 @@ class Course extends Model
     {
         return $this->belongsTo(User::class);
     }
-
-    /**
-     * Alias to eloquent one-to-many relation's associate() method.
-     *
-     * @author Tyler Elton <telton@umflint.edu>
-     *
-     * @param mixed $instructor
-     */
-    public function associateInstructor($instructor)
-    {
-        if (is_object($instructor)) {
-            $instructor = $instructor->getKey();
-        }
-
-        if (is_array($instructor)) {
-            $instructor = $instructor['id'];
-        }
-
-        $this->instructor()->associate($instructor);
-        $this->save();
-    }
-
-    /**
-     * Alias to eloquent one-to-many relation's dissociate() method.
-     *
-     * @author Tyler Elton <telton@umflint.edu>
-     *
-     * @param mixed $instructor
-     */
-    public function dissociateInstructor($instructor)
-    {
-        if (is_object($instructor)) {
-            $instructor = $instructor->getKey();
-        }
-
-        if (is_array($instructor)) {
-            $instructor = $instructor['id'];
-        }
-
-        $this->instructor()->dissociate($instructor);
-        $this->save();
-    }
 }
