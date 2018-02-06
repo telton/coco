@@ -96,3 +96,7 @@ Users can have the ability to collaborate on notes. Instructors may be able to c
 * Allow for SMS notifications?
 
 * Expand different notifications to instructors, tutors, and graders.
+
+### Custom Themes
+
+* Allow instructors to choose a style for each course (like how BB does now).

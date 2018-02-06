@@ -1,5 +1,17 @@
 .card {
     flex: 1;
+    border: none;
+    
+    .card-header {
+        border-style: none;
+        border-radius: 0;
+    }
+
+    .card-body {
+        a {
+            color: $cap-darker-charcoal;
+        }
+    }
 }
 
 .card-center {

@@ -26,10 +26,14 @@ class CreateCoursesTable extends Migration
             $table->tinyInteger('credits')->unsigned();
             $table->string('semester', 10);
             $table->integer('year')->unsigned();
+            $table->integer('instructor_id')->unsigned();
             $table->timestamps();
+
+            $table->foreign('instructor_id')->references('id')->on('users')
+                ->onUpdate('cascade')->onDelete('cascade');
         });
 
-        Schema::create('courses_users', function (Blueprint $table) {
+        Schema::create('courses_students', function (Blueprint $table) {
             $table->integer('user_id')->unsigned();
             $table->integer('course_id')->unsigned();
 
@@ -49,6 +53,8 @@ class CreateCoursesTable extends Migration
      */
     public function down()
     {
+        Schema::dropIfExists('courses_instructor');
+        Schema::dropIfExists('coruses_students');
         Schema::dropIfExists('courses');
     }
 }

@@ -63,13 +63,66 @@ class Course extends Model
     ];
 
     /**
-     * Courses users relationship.
+     * Courses students relationship.
      *
      * @author Tyler Elton <telton@umflint.edu>
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
-    public function users()
+    public function students()
     {
-        return $this->belongsToMany(User::class, 'courses_users', 'course_id', 'user_id');
+        return $this->belongsToMany(User::class, 'courses_students', 'course_id', 'user_id');
+    }
+
+    /**
+     * Courses instructor relationship.
+     *
+     * @author Tyler Elton <telton@umflint.edu>
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function instructor()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    /**
+     * Alias to eloquent one-to-many relation's associate() method.
+     *
+     * @author Tyler Elton <telton@umflint.edu>
+     *
+     * @param mixed $instructor
+     */
+    public function associateInstructor($instructor)
+    {
+        if (is_object($instructor)) {
+            $instructor = $instructor->getKey();
+        }
+
+        if (is_array($instructor)) {
+            $instructor = $instructor['id'];
+        }
+
+        $this->instructor()->associate($instructor);
+        $this->save();
+    }
+
+    /**
+     * Alias to eloquent one-to-many relation's dissociate() method.
+     *
+     * @author Tyler Elton <telton@umflint.edu>
+     *
+     * @param mixed $instructor
+     */
+    public function dissociateInstructor($instructor)
+    {
+        if (is_object($instructor)) {
+            $instructor = $instructor->getKey();
+        }
+
+        if (is_array($instructor)) {
+            $instructor = $instructor['id'];
+        }
+
+        $this->instructor()->dissociate($instructor);
+        $this->save();
     }
 }
