@@ -26,7 +26,11 @@ class CreateCoursesTable extends Migration
             $table->tinyInteger('credits')->unsigned();
             $table->string('semester', 10);
             $table->integer('year')->unsigned();
+            $table->integer('instructor_id')->unsigned();
             $table->timestamps();
+
+            $table->foreign('instructor_id')->references('id')->on('users')
+                ->onUpdate('cascade')->onDelete('cascade');
         });
 
         Schema::create('courses_students', function (Blueprint $table) {
