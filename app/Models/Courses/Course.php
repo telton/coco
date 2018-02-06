@@ -83,6 +83,6 @@ class Course extends Model
      */
     public function instructor()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'instructor_id');
     }
 }
