@@ -5,6 +5,7 @@ namespace App\Console\Commands;
 use Illuminate\Console\Command;
 use Watson\Validating\ValidationException;
 use App\Models\Courses\Course;
+use App\Models\User;
 
 class ImportCourses extends Command
 {
@@ -47,10 +48,20 @@ class ImportCourses extends Command
 
         while (($data = fgetcsv($file)) !== false) {
             list($subject, $course_number, $section, $crn, $title, $capacity,
-                $campus, $credits, $semester, $year) = $data;
+                $campus, $credits, $semester, $year, $instructor) = $data;
 
             try {
                 $slug = strtolower($subject . $course_number . '-' . $section);
+
+                // Try to find the instructor.
+                $instructor = User::where('email', "{$instructor}@umflint.edu")->first();
+
+                // If the instructor was not found, alert and continue.
+                if (!$instructor) {
+                    $this->line("CRN: {$crn} Course: {subject} {$course_number} could not be imported because the instructor was not found in the system!");
+                    $this->line("Instructor {$instructor} needs to be created first!");
+                    continue;
+                }
 
                 $course = Course::create([
                     'subject'       => $subject,
@@ -64,6 +75,7 @@ class ImportCourses extends Command
                     'credits'       => $credits,
                     'semester'      => $semester,
                     'year'          => $year,
+                    'instructor_id' => $instructor->id,
                 ]);
             } catch (ValidationException $e) {
                 $this->line("CRN: {$crn} Course: {subject} {$course_number} could not be imported!");

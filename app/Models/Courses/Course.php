@@ -31,6 +31,7 @@ class Course extends Model
         'credits'       => 'required|integer',
         'semester'      => 'required|in:Spring,Summer,Fall,Winter',
         'year'          => 'required|integer',
+        'instructor_id' => 'required',
     ];
 
     /**
@@ -50,6 +51,7 @@ class Course extends Model
         'credits',
         'semester',
         'year',
+        'instructor_id',
     ];
 
     /**
