@@ -14,9 +14,11 @@
                         <td>
                             <a href="{{ route('courses.show', $course->slug) }}">{{ $course->subject }}{{ $course->course_number }} - {{ sprintf('%02d', $course->section) }}: {{ $course->title }}</a>
                         </td>
-                        <td>
-                            <strong>Instructor:</strong> {{ $course->instructor->name }}
-                        </td>
+                        @if (!Auth::user()->hasRole('instructor'))
+                            <td>
+                                <strong>Instructor:</strong> {{ $course->instructor->name }}
+                            </td>
+                        @endif
                     </tr>
                 @endforeach
             @else
