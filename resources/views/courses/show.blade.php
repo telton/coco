@@ -6,6 +6,8 @@
 
 @endsection
 
+@section('content')
+
 <div class="card">
     <div class="card-header">
         <strong>Home:</strong> {{ $course->subject }}{{ $course->course_number }} - {{ sprintf('%02d', $course->section) }}: {{ $course->title }}
