@@ -77,6 +77,17 @@ class User extends \TCG\Voyager\Models\User
     }
 
     /**
+     * Users role relationship.
+     *
+     * @author Tyler Elton <telton@umflint.edu>
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function role()
+    {
+        return $this->belongsTo(Role::class);
+    }
+
+    /**
      * Check to see if a user has a given role.
      *
      * @author Tyler Elton <telton@umflint.edu>
