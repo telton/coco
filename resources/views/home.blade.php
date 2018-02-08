@@ -9,6 +9,7 @@
     <div class="card-body courses-list">
         <table class="table table-striped">
             @if(count($courses) !== 0)
+                <p><strong>Courses for which you are:</strong> {{ ucfirst(Auth::user()->role->name) }}</p>
                 @foreach($courses as $course)
                     <tr>
                         <td>
