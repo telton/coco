@@ -13,7 +13,9 @@
                 @foreach($courses as $course)
                     <tr>
                         <td>
-                            <a href="{{ route('courses.show', $course->slug) }}">{{ $course->subject }}{{ $course->course_number }} - {{ sprintf('%02d', $course->section) }}: {{ $course->title }}</a>
+                            <a href="{{ route('courses.show', $course->slug) }}" class="course-link">
+                                {{ $course->subject }}{{ $course->course_number }} - {{ sprintf('%02d', $course->section) }}: {{ $course->title }}
+                            </a>
                         </td>
                         @if (!Auth::user()->hasRole('instructor'))
                             <td>

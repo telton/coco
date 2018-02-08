@@ -47,11 +47,15 @@ class AssignmentsController extends Controller
     /**
      * Show the form for creating a new resource.
      *
+     * @param string $slug
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($slug)
     {
-        //
+        $course = Course::where('slug', $slug)->first();
+        return view('courses.assignments.create', [
+            'course' => $course,
+        ]);
     }
 
     /**

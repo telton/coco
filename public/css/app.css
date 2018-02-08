@@ -14547,7 +14547,7 @@ body {
   border-radius: 0;
 }
 
-.card .card-body a {
+.card .card-body .course-link {
   color: #686868;
 }
 
