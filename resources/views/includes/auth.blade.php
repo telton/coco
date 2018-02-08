@@ -8,9 +8,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" href="{{ route('home.index') }}">My Courses</a>
-            </li>
+            {!! Breadcrumbs::render() !!}
         </ul>
     </div>
     <ul class="navbar-nav">

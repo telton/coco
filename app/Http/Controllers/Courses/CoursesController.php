@@ -16,6 +16,8 @@ class CoursesController extends Controller
     public function __construct()
     {
         parent::__construct();
+
+        $this->breadcrumb->addCrumb('Courses', route('courses.index'));
     }
 
     /**

@@ -1,8 +1,12 @@
 @extends('layouts.app')
 
-@section('content')
+@section('nav')
+    
+    @include('includes.nav')
 
-@include('includes.nav')
+@endsection
+
+@section('content')
 
 <div class="card">
     <div class="card-header">
@@ -15,6 +19,11 @@
     </div>
 </div>
 
-@include('includes.chat')
+@endsection
+
+
+@section('aside')
+
+    @include('includes.chat')
 
 @endsection

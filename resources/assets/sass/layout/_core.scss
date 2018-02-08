@@ -20,6 +20,12 @@ body {
     height: 100%;
 }
 
+.content-body {
+   display: flex;
+   flex-direction: column;
+   min-width: 75%; 
+}
+
 .alert {
     margin: 0.75rem;
 }

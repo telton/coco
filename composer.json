@@ -10,6 +10,7 @@
     "require": {
         "php": ">=7.0.0",
         "barryvdh/laravel-ide-helper": "2.4.*",
+        "creitive/laravel5-breadcrumbs": "^2.1",
         "fideloper/proxy": "~3.3",
         "laracasts/flash": "^3.0",
         "laravel/framework": "5.5.*",
