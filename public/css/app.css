@@ -14415,7 +14415,7 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  min-width: 75%;
+  width: 90%;
 }
 
 .alert {
