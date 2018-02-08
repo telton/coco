@@ -10,6 +10,27 @@ use App\Models\Courses\Course;
 class AssignmentsController extends Controller
 {
     /**
+     * AssignmentsController constructor.
+     *
+     * @author Tyler Elton <telton@umflint.edu>
+     */
+    public function __construct()
+    {
+        parent::__construct();
+
+        // Make sure only the instructor/admin can access these methods.
+        $this->middleware('courses.instructor', [
+            'only' => [
+                'create',
+                'store',
+                'edit',
+                'update',
+                'delete',
+            ],
+        ]);
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
