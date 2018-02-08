@@ -39,6 +39,7 @@ class AssignmentsController extends Controller
     {
         $course = Course::where('slug', $slug)->first();
 
+        $this->breadcrumb->addCrumb('Courses', route('courses.show', $course->slug));
         $this->breadcrumb->addCrumb('Assignments', route('courses.assignments.index', $course->slug));
         return view('courses.assignments.index', [
             'course' => $course,
@@ -54,6 +55,10 @@ class AssignmentsController extends Controller
     public function create($slug)
     {
         $course = Course::where('slug', $slug)->first();
+
+        $this->breadcrumb->addCrumb('Courses', route('courses.show', $course->slug));
+        $this->breadcrumb->addCrumb('Assignments', route('courses.assignments.index', $course->slug));
+        $this->breadcrumb->addCrumb('Create', route('courses.assignments.create', $course->slug));
         return view('courses.assignments.create', [
             'course' => $course,
         ]);
