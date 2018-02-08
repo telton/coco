@@ -30,6 +30,10 @@ Route::group(['namespace' => 'Courses', 'middleware' => ['auth', 'courses.permis
         'as'   => 'courses.assignments.create',
         'uses' => 'AssignmentsController@create',
     ]);
+    Route::post('/courses/{slug}/assignments/create', [
+        'as'   => 'courses.assignments.store',
+        'uses' => 'AssignmentsController@store',
+    ]);
 });
 
 Auth::routes();

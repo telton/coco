@@ -57,5 +57,5 @@ if (token) {
 /**
  * Kickstart the app.
  */
-window.$app = new Vue(app);
+window.$app = new Vue(App);
 $app.csrfToken = token;
