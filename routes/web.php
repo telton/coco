@@ -26,6 +26,10 @@ Route::group(['namespace' => 'Courses', 'middleware' => ['auth', 'courses.permis
         'as'   => 'courses.assignments.index',
         'uses' => 'AssignmentsController@index',
     ]);
+    Route::get('/courses/{slug}/assignments/create', [
+        'as'   => 'courses.assignments.create',
+        'uses' => 'AssignmentsController@create',
+    ]);
 });
 
 Auth::routes();
