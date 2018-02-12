@@ -16,6 +16,7 @@ class UsersTableSeeder extends Seeder
         if (User::count() == 0) {
             $adminRole = Role::where('name', 'admin')->firstOrFail();
             $instructorRole = Role::where('name', 'instructor')->firstOrFail();
+            $studentRole = Role::where('name', 'student')->firstOrFail();
 
             // Admins.
             User::create([
@@ -102,6 +103,14 @@ class UsersTableSeeder extends Seeder
                 'password'       => bcrypt('password'),
                 'remember_token' => str_random(60),
                 'role_id'        => $instructorRole->id,
+            ]);
+            // Students.
+            User::create([
+                'name'           => 'Test Student',
+                'email'          => 'teststud@umflint.edu',
+                'password'       => bcrypt('student'),
+                'remember_token' => str_random(60),
+                'role_id'        => $studentRole->id,
             ]);
         }
     }
