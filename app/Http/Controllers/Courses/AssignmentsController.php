@@ -77,6 +77,7 @@ class AssignmentsController extends Controller
     {
         $course = Course::where('slug', $slug)->first();
         $assignment = Assignment::create([
+            'course_id'    => $course->id,
             'name'         => $request->input('name'),
             'description'  => (!is_null($request->input('description'))) ? $request->input('description') : '',
             'due_date'     => new Carbon($request->input('due_date')),

@@ -85,4 +85,15 @@ class Course extends Model
     {
         return $this->belongsTo(User::class, 'instructor_id');
     }
+
+    /**
+     * Courses assignment relationship.
+     *
+     * @author Tyler Elton <telton@umflint.edu>
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function assignments()
+    {
+        return $this->hasMany(Assignment::class, 'course_id');
+    }
 }

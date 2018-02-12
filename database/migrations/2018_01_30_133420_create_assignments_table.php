@@ -15,11 +15,14 @@ class CreateAssignmentsTable extends Migration
     {
         Schema::create('assignments', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('course_id')->unsigned();
             $table->string('name')->unique();
             $table->text('description')->nullable();
             $table->dateTime('due_date');
             $table->dateTime('display_date');
             $table->timestamps();
+
+            $table->foreign('course_id')->references('id')->on('courses');
         });
 
         // Table for uploaded assignment documents.

@@ -19,6 +19,7 @@ class Assignment extends Model
      * @var array
      */
     protected $rules = [
+        'course_id'    => 'required|integer',
         'name'         => 'required',
         'due_date'     => 'required|date',
         'display_date' => 'required|date',
@@ -30,6 +31,7 @@ class Assignment extends Model
      * @var array
      */
     protected $fillable = [
+        'course_id',
         'name',
         'description',
         'due_date',
@@ -47,4 +49,15 @@ class Assignment extends Model
         'created_at',
         'updated_at',
     ];
+
+    /**
+     * Assignment course relationship.
+     *
+     * @author Tyler Elton <telton@umflint.edu>
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function course()
+    {
+        return $this->belongsTo(Course::class);
+    }
 }
