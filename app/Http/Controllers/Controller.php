@@ -8,12 +8,18 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use App\Http\Traits\FlashesSession;
 use App\Http\Traits\GivesAuth;
+use App\Http\Traits\Redirects;
 use Illuminate\Container\Container;
 use Creitive\Breadcrumbs\Facades\Breadcrumbs;
 
 class Controller extends BaseController
 {
-    use AuthorizesRequests, DispatchesJobs, ValidatesRequests, FlashesSession, GivesAuth;
+    use AuthorizesRequests,
+        DispatchesJobs,
+        ValidatesRequests,
+        FlashesSession,
+        GivesAuth,
+        Redirects;
 
     /**
      * @type Container
