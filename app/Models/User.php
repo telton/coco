@@ -69,10 +69,10 @@ class User extends \TCG\Voyager\Models\User
      */
     public function courses()
     {
-        if ($this->hasRole('student')) {
-            return $this->belongsToMany(Course::class, 'courses_students', 'user_id', 'course_id');
-        } elseif ($this->hasRole('instructor')) {
+        if ($this->hasRole('instructor')) {
             return $this->hasMany(Course::class, 'instructor_id');
+        } else {
+            return $this->belongsToMany(Course::class, 'courses_students', 'user_id', 'course_id');
         }
     }
 
