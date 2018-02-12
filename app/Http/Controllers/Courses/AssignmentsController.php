@@ -6,6 +6,7 @@ use App\Models\Courses\Assignment;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Courses\Course;
+use Carbon\Carbon;
 
 class AssignmentsController extends Controller
 {
@@ -33,6 +34,7 @@ class AssignmentsController extends Controller
     /**
      * Display a listing of the resource.
      *
+     * @param string $slug
      * @return \Illuminate\Http\Response
      */
     public function index(string $slug)
@@ -52,7 +54,7 @@ class AssignmentsController extends Controller
      * @param string $slug
      * @return \Illuminate\Http\Response
      */
-    public function create($slug)
+    public function create(string $slug)
     {
         $course = Course::where('slug', $slug)->first();
 
@@ -67,23 +69,41 @@ class AssignmentsController extends Controller
     /**
      * Store a newly created resource in storage.
      *
+     * @param string                     $slug
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(string $slug, Request $request)
     {
-        dd($request->input());
+        $course = Course::where('slug', $slug)->first();
+        $assignment = Assignment::create([
+            'name'         => $request->input('name'),
+            'description'  => (!is_null($request->input('description'))) ? $request->input('description') : '',
+            'due_date'     => new Carbon($request->input('due_date')),
+            'display_date' => new Carbon($request->input('display_date')),
+        ]);
+
+        $this->flash()->success("The assignment <strong>{$assignment->name}</strong> has been created!");
+        return $this->redirect()->route('courses.assignments.show', [$slug, $assignment]);
     }
 
     /**
      * Display the specified resource.
      *
+     * @param string                   $slug
      * @param  \App\Models\Assignment  $assignment
      * @return \Illuminate\Http\Response
      */
-    public function show(Assignment $assignment)
+    public function show(string $slug, Assignment $assignment)
     {
-        //
+        $course = Course::where('slug', $slug)->first();
+
+        $this->breadcrumb->addCrumb('Courses', route('courses.show', $course->slug));
+        $this->breadcrumb->addCrumb('Assignments', route('courses.assignments.index', $course->slug));
+        $this->breadcrumb->addCrumb($assignment->name, route('courses.assignments.show', [$course->slug, $assignment]));
+        return view('courses.assignments.show', [
+            'course' => $course,
+        ]);
     }
 
     /**

@@ -29,7 +29,7 @@
                     <div class="form-group{{ $errors->has('description') ? ' has-error' : '' }}">
                         <label for="description" class="control-label"><strong>Description</strong></label>
                         <div id="descriptionEditor"></div>
-                        <input type="hidden" name="description" id="description" value="{{ old('description') }}">
+                        <input type="hidden" name="description" id="description" value="{{ old('description') }}" ref="description">
 
                         @if ($errors->has('description'))
                             <span class="help-block">
@@ -37,20 +37,18 @@
                             </span>
                         @endif
                     </div>
-                    <div class="form-group{{ $errors->has('due_date') ? ' has-error' : '' }}">
-                        <label for="due_date" class="control-label"><strong>Due Date</strong></label>
-                        <input id="due_date" type="text" class="form-control" name="due_date" value="{{ old('due_date') }}" required>
-
+                    <div class="form-group d-lg-inline-block">
+                        <label class="form-control-label"><strong>Due Date</strong></label>
+                        <flat-pickr v-model="inputs.dueDate" :config="dueDateConfig" input-class="d-none" name="due_date" :required="true"></flat-pickr>
                         @if ($errors->has('due_date'))
                             <span class="help-block">
                                 <strong>{{ $errors->first('due_date') }}</strong>
                             </span>
                         @endif
                     </div>
-                    <div class="form-group{{ $errors->has('display_date') ? ' has-error' : '' }}">
-                        <label for="display_date" class="control-label"><strong>Display Date</strong></label>
-                        <input id="display_date" type="text" class="form-control" name="diplay_date" value="{{ old('diplay_date') }}" required>
-
+                    <div class="form-group d-lg-inline-block ml-lg-3">
+                        <label class="form-control-label"><strong>Display Date</strong></label>
+                        <flat-pickr v-model="inputs.displayDate" :config="displayDateConfig" input-class="d-none" name="display_date" :required="true"></flat-pickr>
                         @if ($errors->has('display_date'))
                             <span class="help-block">
                                 <strong>{{ $errors->first('display_date') }}</strong>

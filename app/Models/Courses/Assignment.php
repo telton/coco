@@ -19,8 +19,9 @@ class Assignment extends Model
      * @var array
      */
     protected $rules = [
-        'name'     => 'required',
-        'due_date' => 'required|date',
+        'name'         => 'required',
+        'due_date'     => 'required|date',
+        'display_date' => 'required|date',
     ];
 
     /**
@@ -32,6 +33,7 @@ class Assignment extends Model
         'name',
         'description',
         'due_date',
+        'display_date',
     ];
 
     /**
@@ -40,6 +42,8 @@ class Assignment extends Model
      * @var array
      */
     protected $dates = [
+        'due_date',
+        'display_date',
         'created_at',
         'updated_at',
     ];
