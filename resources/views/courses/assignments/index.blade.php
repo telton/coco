@@ -14,7 +14,7 @@
     </div>
     <div class="card-body">
         @if (Auth::user()->hasRole(['admin', 'instructor']))
-            <a href="{{ route('courses.assignments.create', $course->slug) }}" class="btn btn-primary"><i class="fa fa-plus-circle"></i> Add Assignment</a>
+            <a href="{{ route('courses.assignments.create', $course->slug) }}" class="btn btn-primary"><i class="fa fa-plus-circle"></i> Issue Assignment</a>
         @endif
     </div>
 </div>
