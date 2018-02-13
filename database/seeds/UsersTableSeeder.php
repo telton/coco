@@ -54,14 +54,14 @@ class UsersTableSeeder extends Seeder
                 'remember_token' => str_random(60),
                 'role_id'        => $adminRole->id,
             ]);
+            // Instructors.
             User::create([
                 'name'           => 'Mark Allison',
                 'email'          => 'markalli@umflint.edu',
                 'password'       => bcrypt('password'),
                 'remember_token' => str_random(60),
-                'role_id'        => $adminRole->id,
+                'role_id'        => $instructorRole->id,
             ]);
-            // Instructors.
             User::create([
                 'name'           => 'Murali Mani',
                 'email'          => 'mmani@umflint.edu',
