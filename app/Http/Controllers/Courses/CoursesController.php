@@ -16,8 +16,6 @@ class CoursesController extends Controller
     public function __construct()
     {
         parent::__construct();
-
-        $this->breadcrumb->addCrumb('Courses', route('courses.index'));
     }
 
     /**
@@ -61,6 +59,7 @@ class CoursesController extends Controller
     {
         $course = Course::where('slug', $slug)->first();
 
+        $this->breadcrumb->addCrumb(strtoupper($course->slug), route('courses.show', $course->slug));
         return view('courses.show', [
             'course' => $course,
         ]);
