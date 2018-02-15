@@ -19,7 +19,13 @@
         @include('flash::message')
 
         <div class="main-content">
-            @yield('content')
+            @yield('nav')
+            
+            <div class="content-body">
+                @yield('content')
+            </div>
+            
+            @yield('aside')
         </div>
     </div>
 

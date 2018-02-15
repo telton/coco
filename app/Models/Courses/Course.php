@@ -31,6 +31,7 @@ class Course extends Model
         'credits'       => 'required|integer',
         'semester'      => 'required|in:Spring,Summer,Fall,Winter',
         'year'          => 'required|integer',
+        'instructor_id' => 'required',
     ];
 
     /**
@@ -50,6 +51,7 @@ class Course extends Model
         'credits',
         'semester',
         'year',
+        'instructor_id',
     ];
 
     /**
@@ -81,48 +83,17 @@ class Course extends Model
      */
     public function instructor()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'instructor_id');
     }
 
     /**
-     * Alias to eloquent one-to-many relation's associate() method.
+     * Courses assignment relationship.
      *
      * @author Tyler Elton <telton@umflint.edu>
-     *
-     * @param mixed $instructor
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function associateInstructor($instructor)
+    public function assignments()
     {
-        if (is_object($instructor)) {
-            $instructor = $instructor->getKey();
-        }
-
-        if (is_array($instructor)) {
-            $instructor = $instructor['id'];
-        }
-
-        $this->instructor()->associate($instructor);
-        $this->save();
-    }
-
-    /**
-     * Alias to eloquent one-to-many relation's dissociate() method.
-     *
-     * @author Tyler Elton <telton@umflint.edu>
-     *
-     * @param mixed $instructor
-     */
-    public function dissociateInstructor($instructor)
-    {
-        if (is_object($instructor)) {
-            $instructor = $instructor->getKey();
-        }
-
-        if (is_array($instructor)) {
-            $instructor = $instructor['id'];
-        }
-
-        $this->instructor()->dissociate($instructor);
-        $this->save();
+        return $this->hasMany(Assignment::class, 'course_id');
     }
 }

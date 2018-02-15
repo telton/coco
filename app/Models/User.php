@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Models\Courses\Course;
+use TCG\Voyager\Models\Role;
 
 class User extends \TCG\Voyager\Models\User
 {
@@ -68,6 +69,48 @@ class User extends \TCG\Voyager\Models\User
      */
     public function courses()
     {
-        return $this->belongsToMany(Course::class, 'courses_users', 'user_id', 'course_id');
+        if ($this->hasRole('instructor')) {
+            return $this->hasMany(Course::class, 'instructor_id');
+        } else {
+            return $this->belongsToMany(Course::class, 'courses_students', 'user_id', 'course_id');
+        }
+    }
+
+    /**
+     * Users role relationship.
+     *
+     * @author Tyler Elton <telton@umflint.edu>
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function role()
+    {
+        return $this->belongsTo(Role::class);
+    }
+
+    /**
+     * Check to see if a user has a given role.
+     *
+     * @author Tyler Elton <telton@umflint.edu>
+     * @param string|array $name
+     * @return bool
+     */
+    public function hasRole($name)
+    {
+        // Allow an array of roles to be checked. Saves line space.
+        if (is_array($name)) {
+            foreach ($name as $roleName) {
+                $hasRole = $this->hasRole($roleName);
+
+                // If the user has the role, exit out of the loop and return true.
+                if ($hasRole) {
+                    return true;
+                }
+            }
+
+            // At this point, we've gone through the entire array and haven't found the role. Return false.
+            return false;
+        }
+
+        return $this->attributes['role_id'] === Role::where('name', $name)->first()->id;
     }
 }

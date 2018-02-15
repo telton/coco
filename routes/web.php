@@ -17,12 +17,26 @@ Route::get('/', [
 ]);
 
 // Courses routes.
-Route::group(['namespace' => 'Courses', 'middleware' => 'auth'], function () {
+Route::group(['namespace' => 'Courses', 'middleware' => ['auth', 'courses.permissions']], function () {
+    // Courses.
     Route::resource('courses', 'CoursesController');
 
+    // Assignments.
     Route::get('/courses/{slug}/assignments', [
         'as'   => 'courses.assignments.index',
         'uses' => 'AssignmentsController@index',
+    ]);
+    Route::get('/courses/{slug}/assignments/create', [
+        'as'   => 'courses.assignments.create',
+        'uses' => 'AssignmentsController@create',
+    ]);
+    Route::post('/courses/{slug}/assignments/create', [
+        'as'   => 'courses.assignments.store',
+        'uses' => 'AssignmentsController@store',
+    ]);
+    Route::get('/courses/{slug}/assignments/{assignment}', [
+        'as'   => 'courses.assignments.show',
+        'uses' => 'AssignmentsController@show',
     ]);
 });
 

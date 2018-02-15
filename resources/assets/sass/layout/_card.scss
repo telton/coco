@@ -8,12 +8,19 @@
     }
 
     .card-body {
-        a {
+        .course-link {
             color: $cap-darker-charcoal;
         }
     }
 }
 
 .card-center {
-    margin: 15px 250px 425px 250px;
+    align-self: center;
+    max-height: 650px;
+    width: 800px;
+    margin-top: 15px;
+}
+
+.login-card {
+    max-height: 345px;
 }

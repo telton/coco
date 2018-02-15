@@ -21,6 +21,8 @@
         "parsleyjs": "^2.8.0",
         "popper.js": "^1.12.6",
         "sweetalert2": "^6.11.5",
-        "vue": "^2.5.7"
+        "tui-editor": "^1.0.2",
+        "vue": "^2.5.7",
+        "vue-flatpickr-component": "^3.1.3"
     }
 }
