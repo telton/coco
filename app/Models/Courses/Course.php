@@ -94,6 +94,6 @@ class Course extends Model
      */
     public function assignments()
     {
-        return $this->hasMany(Assignment::class, 'course_id');
+        return $this->hasMany(Assignment::class, 'course_id')->orderBy('due_date', 'asc');
     }
 }
