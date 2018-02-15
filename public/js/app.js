@@ -32591,7 +32591,7 @@ var Editor = __webpack_require__(34);
             handler: function handler(newValue) {
                 if (newValue.dueDate !== '') {
                     this.displayDateConfig = {
-                        minDate: newValue.dueDate,
+                        maxDate: newValue.dueDate,
                         inline: this.dueDateConfig.inline,
                         enableTime: this.dueDateConfig.enableTime
                     };

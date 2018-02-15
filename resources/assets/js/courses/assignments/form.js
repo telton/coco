@@ -43,7 +43,7 @@ export default {
             handler(newValue) {
                 if (newValue.dueDate !== '') {
                     this.displayDateConfig = {
-                        minDate: newValue.dueDate,
+                        maxDate: newValue.dueDate,
                         inline: this.dueDateConfig.inline,
                         enableTime: this.dueDateConfig.enableTime
                     }
