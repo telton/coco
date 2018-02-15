@@ -17093,6 +17093,11 @@ body.swal2-iosfix {
   color: #cae4d8;
 }
 
+.breadcrumb > li:hover a {
+  color: #dcae1d;
+  text-decoration: none;
+}
+
 .breadcrumb > .active {
   color: #dcae1d;
 }

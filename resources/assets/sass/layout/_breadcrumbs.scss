@@ -18,6 +18,13 @@
             padding: 0 5px;
             color: $cap-morning-sky;
         }
+
+        &:hover {
+            a {
+                color: $cap-honey;
+                text-decoration:  none;
+            }
+        }
     }
 
     > .active {
