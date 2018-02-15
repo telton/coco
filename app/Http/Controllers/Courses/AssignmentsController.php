@@ -103,7 +103,8 @@ class AssignmentsController extends Controller
         $this->breadcrumb->addCrumb('Assignments', route('courses.assignments.index', $course->slug));
         $this->breadcrumb->addCrumb($assignment->name, route('courses.assignments.show', [$course->slug, $assignment]));
         return view('courses.assignments.show', [
-            'course' => $course,
+            'course'     => $course,
+            'assignment' => $assignment,
         ]);
     }
 

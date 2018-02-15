@@ -1,4 +1,5 @@
 import CoursesAssignmentsForm from './courses/assignments/form';
+import CoursesAssignmentsShow from './courses/assignments/show';
 
 export default {
     el: '#app',
@@ -9,6 +10,7 @@ export default {
         }
     },
     components: {
-        CoursesAssignmentsForm
+        CoursesAssignmentsForm,
+        CoursesAssignmentsShow
     }
 }
