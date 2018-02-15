@@ -1,11 +1,9 @@
 import Vue from 'vue';
-import jQuery from 'jquery';
 import Popper from 'popper.js';
 import 'parsleyjs';
 
 // Setup jQuery and Bootstrap.
 window.Popper = Popper;
-window.$ = window.jQuery = jQuery;
 require('bootstrap');
 
 /**
