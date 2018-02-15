@@ -17144,7 +17144,7 @@ body {
 }
 
 .alert {
-  margin: 0.75rem;
+  margin: 0;
 }
 
 .help-block {
@@ -17380,5 +17380,9 @@ body {
 
 #assignments-toolbar {
   padding-bottom: 15px;
+}
+
+#assignment-name {
+  text-decoration: none;
 }
 

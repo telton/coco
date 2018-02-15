@@ -34,8 +34,8 @@
                     @foreach($course->assignments as $assignment)
                         <tr>
                             <td>
-                                <a href="{{ route('courses.assignments.show', [$course->slug, $assignment]) }} ">
-                                    {{ $assignment->name }}
+                                <a id="assignment-name" href="{{ route('courses.assignments.show', [$course->slug, $assignment]) }} ">
+                                    <strong>{{ $assignment->name }}</strong>
                                 </a>
                             </td>
                             <td>

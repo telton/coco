@@ -14,7 +14,8 @@
     </div>
     <courses-assignments-show inline-template>
         <div class="card-body">
-            <strong>Due Date:</strong> {{ $assignment->due_date->format('m/d/Y') }} at {{ $assignment->due_date->format('h:i A') }}
+            <p><strong>Due Date:</strong> {{ $assignment->due_date->format('m/d/Y') }} at {{ $assignment->due_date->format('h:i A') }}</p>
+            <p><strong>Description:</strong></p>
             <input type="hidden" ref="description" value="{{ $assignment->description }}">
             <div id="descriptionViewer"></div>
             <div class="btn-toolbar">
