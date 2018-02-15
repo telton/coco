@@ -4,6 +4,8 @@ namespace App\Http\Middleware\Courses;
 
 use Closure;
 use Illuminate\Contracts\Auth\Guard;
+use Illuminate\Http\Request;
+use App\Models\Courses\Course;
 
 class PermissionsCheck
 {
@@ -12,6 +14,8 @@ class PermissionsCheck
      */
     protected $auth;
 
+    protected $request;
+
     /**
      * PermissionsCheck constructor.
      *
@@ -19,9 +23,10 @@ class PermissionsCheck
      *
      * @param Guard $auth
      */
-    public function __construct(Guard $auth)
+    public function __construct(Guard $auth, Request $request)
     {
         $this->auth = $auth;
+        $this->request = $request;
     }
 
     /**
@@ -40,8 +45,41 @@ class PermissionsCheck
             return redirect()->guest('/login');
         }
 
-        // If the user is not an admin, student, instructor, grader, or tutor, don't allow them access.
-        if (!$this->auth->user()->hasRole(['admin', 'student', 'instructor', 'grader', 'tutor'])) {
+        // If the user has the proper role to access..
+        if (!$this->auth->user()->hasRole(['admin', 'instructor', 'student', 'grader', 'tutor'])) {
+            abort(403, 'You do not have access to this resource.');
+        }
+
+        $hasAccess = false;
+
+        // Check admin.
+        if ($this->auth->user()->hasRole('admin')) {
+            $hasAccess = true;
+        }
+
+        // If the user is a student, make sure they are registered for the course.
+        if ($this->auth->user()->hasRole('student')) {
+            $course = Course::where('slug', $this->request->segment(2))->first();
+
+            foreach ($this->auth->user()->courses as $registeredCourse) {
+                if ($registeredCourse->slug === $course->slug) {
+                    $hasAccess = true;
+                }
+            }
+        }
+
+        // If the user is an instructor, make sure they are the instructor for the course.
+        if ($this->auth->user()->hasRole('instructor')) {
+            $course = Course::where('slug', $this->request->segment(2))->first();
+
+            if ($course->instructor_id === $this->auth->user()->id) {
+                $hasAccess = true;
+            }
+        }
+
+        // TODO: Add checks for tutors and graders, after they've been implemented.
+
+        if (!$hasAccess) {
             abort(403, 'You do not have access to this resource.');
         }
 
