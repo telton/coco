@@ -38326,11 +38326,14 @@ var Editor = __webpack_require__(38);
         }
     },
     mounted: function mounted() {
+        var descriptionValue = this.$refs.description.value;
+
         this.editor = new Editor({
             el: document.querySelector('#descriptionEditor'),
             initialEditType: 'wysiwyg',
             previewStyle: 'tab',
-            height: '300px'
+            height: '300px',
+            initialValue: descriptionValue
         });
     },
 

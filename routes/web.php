@@ -42,6 +42,10 @@ Route::group(['namespace' => 'Courses', 'middleware' => ['auth', 'courses.permis
         'as'   => 'courses.assignments.edit',
         'uses' => 'AssignmentsController@edit',
     ]);
+    Route::post('/courses/{slug}/assignments/{assignment}', [
+        'as'   => 'courses.assignments.update',
+        'uses' => 'AssignmentsController@update',
+    ]);
 });
 
 Auth::routes();

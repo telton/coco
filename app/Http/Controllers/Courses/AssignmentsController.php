@@ -111,24 +111,48 @@ class AssignmentsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
+     * @param  string                  $slug
      * @param  \App\Models\Assignment  $assignment
      * @return \Illuminate\Http\Response
      */
     public function edit($slug, Assignment $assignment)
     {
-        //
+        $course = Course::where('slug', $slug)->first();
+
+        $this->breadcrumb->addCrumb(strtoupper($course->slug), route('courses.show', $course->slug));
+        $this->breadcrumb->addCrumb('Assignments', route('courses.assignments.index', $course->slug));
+        $this->breadcrumb->addCrumb($assignment->name, route('courses.assignments.show', [$course->slug, $assignment]));
+        $this->breadcrumb->addCrumb('Edit', route('courses.assignments.edit', [$course->slug, $assignment]));
+        return view('courses.assignments.edit', [
+            'course'     => $course,
+            'assignment' => $assignment,
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Assignment  $assignment
+     * @param  string                    $slug
+     * @param  \App\Models\Assignment    $assignment
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Assignment $assignment)
+    public function update(Request $request, string $slug, Assignment $assignment)
     {
-        //
+        $course = Course::where('slug', $slug)->first();
+
+        $assignment->update([
+            'course_id'    => $course->id,
+            'name'         => $request->input('name'),
+            'description'  => $request->input('description'),
+            'due_date'     => new Carbon($request->input('due_date')),
+            'display_date' => new Carbon($request->input('display_date')),
+        ]);
+
+        $assignment->save();
+
+        $this->flash()->success("The assignment <strong>{$assignment->name}</strong> has been updated!");
+        return $this->redirect()->route('courses.assignments.show', [$slug, $assignment]);
     }
 
     /**

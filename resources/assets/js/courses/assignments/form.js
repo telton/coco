@@ -45,18 +45,21 @@ export default {
                     this.displayDateConfig = {
                         maxDate: newValue.dueDate,
                         inline: this.dueDateConfig.inline,
-                        enableTime: this.dueDateConfig.enableTime
+                        enableTime: this.dueDateConfig.enableTime,
                     }
                 }
             }
         }
     },
     mounted() {
+        let descriptionValue = this.$refs.description.value;
+
         this.editor = new Editor({
             el: document.querySelector('#descriptionEditor'),
             initialEditType: 'wysiwyg',
             previewStyle: 'tab',
             height: '300px',
+            initialValue: descriptionValue
         });
     },
     methods: {
