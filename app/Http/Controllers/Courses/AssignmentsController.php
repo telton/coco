@@ -114,7 +114,7 @@ class AssignmentsController extends Controller
      * @param  \App\Models\Assignment  $assignment
      * @return \Illuminate\Http\Response
      */
-    public function edit(Assignment $assignment)
+    public function edit($slug, Assignment $assignment)
     {
         //
     }

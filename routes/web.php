@@ -38,6 +38,10 @@ Route::group(['namespace' => 'Courses', 'middleware' => ['auth', 'courses.permis
         'as'   => 'courses.assignments.show',
         'uses' => 'AssignmentsController@show',
     ]);
+    Route::get('/courses/{slug}/assignments/{assignment}/edit', [
+        'as'   => 'courses.assignments.edit',
+        'uses' => 'AssignmentsController@edit',
+    ]);
 });
 
 Auth::routes();

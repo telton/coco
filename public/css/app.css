@@ -17378,7 +17378,7 @@ body {
   z-index: -1;
 }
 
-#assignments-toolbar {
+.assignments-toolbar {
   padding-bottom: 15px;
 }
 

@@ -14,6 +14,12 @@
     </div>
     <courses-assignments-show inline-template>
         <div class="card-body">
+            <div class="assignments-toolbar">
+                @if (Auth::user()->hasRole(['admin', 'instructor']))
+                    <a href="{{ route('courses.assignments.edit', [$course->slug, $assignment]) }}" class="btn btn-warning"><i class="fa fa-edit"></i> Edit Assignment</a>
+                @endif
+            </div>
+            
             <p><strong>Due Date:</strong> {{ $assignment->due_date->format('m/d/Y') }} at {{ $assignment->due_date->format('h:i A') }}</p>
             <p><strong>Description:</strong></p>
             <input type="hidden" ref="description" value="{{ $assignment->description }}">
