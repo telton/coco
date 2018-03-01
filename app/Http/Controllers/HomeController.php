@@ -27,6 +27,11 @@ class HomeController extends Controller
     {
         $user = User::where('id', Auth::user()->id)->first();
 
+        // If the user was not found, abort with a status of 404.
+        if (!$user) {
+            abort(404);
+        }
+
         return view('home', [
             'courses' => $user->courses,
         ]);
