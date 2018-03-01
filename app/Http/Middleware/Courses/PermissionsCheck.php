@@ -61,6 +61,11 @@ class PermissionsCheck
         if ($this->auth->user()->hasRole('student')) {
             $course = Course::where('slug', $this->request->segment(2))->first();
 
+            if (!$course) {
+                // If the course was not found, abort with a status of 404.
+                abort(404);
+            }
+
             foreach ($this->auth->user()->courses as $registeredCourse) {
                 if ($registeredCourse->slug === $course->slug) {
                     $hasAccess = true;
@@ -71,6 +76,11 @@ class PermissionsCheck
         // If the user is an instructor, make sure they are the instructor for the course.
         if ($this->auth->user()->hasRole('instructor')) {
             $course = Course::where('slug', $this->request->segment(2))->first();
+
+            if (!$course) {
+                // If the course was not found, abort with a status of 404.
+                abort(404);
+            }
 
             if ($course->instructor_id === $this->auth->user()->id) {
                 $hasAccess = true;
