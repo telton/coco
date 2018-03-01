@@ -27,6 +27,11 @@ class CoursesController extends Controller
     {
         $course = Course::where('slug', $slug)->first();
 
+        // If the course was not found, abort with a status of 404.
+        if (!$course) {
+            abort(404);
+        }
+
         $this->breadcrumb->addCrumb(strtoupper($course->slug), route('courses.show', $course->slug));
         return view('courses.show', [
             'course' => $course,

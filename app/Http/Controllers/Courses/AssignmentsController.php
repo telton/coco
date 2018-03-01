@@ -41,6 +41,11 @@ class AssignmentsController extends Controller
     {
         $course = Course::where('slug', $slug)->first();
 
+        // If the course was not found, abort with a status of 404.
+        if (!$course) {
+            abort(404);
+        }
+
         $this->breadcrumb->addCrumb(strtoupper($course->slug), route('courses.show', $course->slug));
         $this->breadcrumb->addCrumb('Assignments', route('courses.assignments.index', $course->slug));
         return view('courses.assignments.index', [
@@ -57,6 +62,11 @@ class AssignmentsController extends Controller
     public function create(string $slug)
     {
         $course = Course::where('slug', $slug)->first();
+
+        // If the course was not found, abort with a status of 404.
+        if (!$course) {
+            abort(404);
+        }
 
         $this->breadcrumb->addCrumb(strtoupper($course->slug), route('courses.show', $course->slug));
         $this->breadcrumb->addCrumb('Assignments', route('courses.assignments.index', $course->slug));
@@ -76,6 +86,12 @@ class AssignmentsController extends Controller
     public function store(string $slug, Request $request)
     {
         $course = Course::where('slug', $slug)->first();
+
+        // If the course was not found, abort with a status of 404.
+        if (!$course) {
+            abort(404);
+        }
+
         $assignment = Assignment::create([
             'course_id'    => $course->id,
             'name'         => $request->input('name'),
@@ -99,6 +115,11 @@ class AssignmentsController extends Controller
     {
         $course = Course::where('slug', $slug)->first();
 
+        // If the course was not found, abort with a status of 404.
+        if (!$course) {
+            abort(404);
+        }
+
         $this->breadcrumb->addCrumb(strtoupper($course->slug), route('courses.show', $course->slug));
         $this->breadcrumb->addCrumb('Assignments', route('courses.assignments.index', $course->slug));
         $this->breadcrumb->addCrumb($assignment->name, route('courses.assignments.show', [$course->slug, $assignment]));
@@ -118,6 +139,11 @@ class AssignmentsController extends Controller
     public function edit($slug, Assignment $assignment)
     {
         $course = Course::where('slug', $slug)->first();
+
+        // If the course was not found, abort with a status of 404.
+        if (!$course) {
+            abort(404);
+        }
 
         $this->breadcrumb->addCrumb(strtoupper($course->slug), route('courses.show', $course->slug));
         $this->breadcrumb->addCrumb('Assignments', route('courses.assignments.index', $course->slug));
@@ -140,6 +166,11 @@ class AssignmentsController extends Controller
     public function update(Request $request, string $slug, Assignment $assignment)
     {
         $course = Course::where('slug', $slug)->first();
+
+        // If the course was not found, abort with a status of 404.
+        if (!$course) {
+            abort(404);
+        }
 
         $assignment->update([
             'course_id'    => $course->id,
