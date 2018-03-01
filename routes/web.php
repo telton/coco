@@ -16,6 +16,10 @@ Route::get('/', [
     'uses' => 'HomeController@index',
 ]);
 
+// Edge case to redirect to homepage if someone tries to access /courses.
+// Not really needed, but it's a handy addition.
+Route::redirect('/courses', '/');
+
 // Courses routes.
 Route::group(['namespace' => 'Courses', 'middleware' => ['auth', 'courses.permissions']], function () {
     // Courses.
