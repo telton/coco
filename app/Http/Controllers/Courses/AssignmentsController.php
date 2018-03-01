@@ -189,11 +189,28 @@ class AssignmentsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
+     * @param string                   $slug
      * @param  \App\Models\Assignment  $assignment
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Assignment $assignment)
+    public function destroy(string $slug, Assignment $assignment)
     {
-        //
+        $course = Course::where('slug', $slug)->first();
+
+        // If the course was not found, abort with a status of 404.
+        if (!$course) {
+            abort(404);
+        }
+
+        $assignmentName = $assignment->name;
+
+        // Attempt to delete the assignment.
+        if ($assignment->delete()) {
+            $this->flash()->success("The assignment <strong>{$assignmentName}</strong> was successfully deleted!");
+            return $this->redirect()->route('courses.assignments.index', $course->slug);
+        } else {
+            $this->flash()->warning("The assignment <strong>{$assignmentName}</strong> was NOT deleted!");
+            return $this->redirect()->route('courses.assignments.index', $course->slug);
+        }
     }
 }

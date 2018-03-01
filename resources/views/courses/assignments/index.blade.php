@@ -29,6 +29,11 @@
                     <th>
                         Due Date
                     </th>
+                    @if (Auth::user()->hasRole(['admin', 'instructor']))
+                        <th style="width:98px;">
+                            Actions
+                        </th>
+                    @endif
                 </thead>
                 <tbody>
                     @foreach($course->assignments as $assignment)
@@ -41,6 +46,14 @@
                             <td>
                                 {{ $assignment->due_date->format('m/d/Y') }} at {{ $assignment->due_date->format('h:i A') }}
                             </td>
+                            @if (Auth::user()->hasRole(['admin', 'instructor']))
+                                <td>
+                                    <form action="{{ route('courses.assignments.destroy', [$course->slug, $assignment]) }}" method="POST">
+                                        {{ csrf_field() }}
+                                        <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i> Delete</button>
+                                    </form>
+                                </td>
+                            @endif
                         </tr>
                     @endforeach
                 </tbody>

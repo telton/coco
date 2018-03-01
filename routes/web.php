@@ -54,6 +54,10 @@ Route::group(['namespace' => 'Courses', 'middleware' => ['auth', 'courses.permis
         'as'   => 'courses.assignments.update',
         'uses' => 'AssignmentsController@update',
     ]);
+    Route::post('/courses/{slug}/assignments/{assignment}/delete', [
+        'as'   => 'courses.assignments.destroy',
+        'uses' => 'AssignmentsController@destroy',
+    ]);
 });
 
 Auth::routes();

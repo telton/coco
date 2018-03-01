@@ -17380,6 +17380,10 @@ body {
   z-index: -1;
 }
 
+form {
+  display: inline;
+}
+
 .assignments-toolbar {
   padding-bottom: 15px;
 }
