@@ -17257,6 +17257,8 @@ body {
 }
 
 .navbar {
+  padding-top: 0;
+  padding-bottom: 0;
   background-color: #00303f;
 }
 
