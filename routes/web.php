@@ -19,7 +19,11 @@ Route::get('/', [
 // Courses routes.
 Route::group(['namespace' => 'Courses', 'middleware' => ['auth', 'courses.permissions']], function () {
     // Courses.
-    Route::resource('courses', 'CoursesController');
+    Route::resource('courses', 'CoursesController', [
+        'only' => [
+            'show',
+        ],
+    ]);
 
     // Assignments.
     Route::get('/courses/{slug}/assignments', [
