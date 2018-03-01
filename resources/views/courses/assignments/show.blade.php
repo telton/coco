@@ -24,9 +24,12 @@
             <p><strong>Description:</strong></p>
             <input type="hidden" ref="description" value="{{ $assignment->description }}">
             <div id="descriptionViewer"></div>
-            <div class="btn-toolbar">
-                <a href="#" class="btn btn-primary"><i class="fa fa-save"></i> Submit Assignment</a>
-            </div>
+
+            @if (Auth::user()->hasRole('student'))
+                <div class="btn-toolbar">
+                    <a href="#" class="btn btn-primary"><i class="fa fa-save"></i> Submit Assignment</a>
+                </div>
+            @endif
         </div>
     </courses-assignments-show>
 </div>
