@@ -1,9 +1,13 @@
 import Vue from 'vue';
 import Popper from 'popper.js';
+import swal from 'sweetalert2';
+import jQuery from 'jquery';
 import 'parsleyjs';
 
-// Setup jQuery and Bootstrap.
+// Setup Popper, jQuery, sweetalert2, and Bootstrap.
 window.Popper = Popper;
+window.$ = jQuery;
+window.swal = swal;
 require('bootstrap');
 
 /**
