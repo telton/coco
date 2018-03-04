@@ -1,3 +1,4 @@
+import CoursesAssignmentsIndex from './courses/assignments/index';
 import CoursesAssignmentsForm from './courses/assignments/form';
 import CoursesAssignmentsShow from './courses/assignments/show';
 
@@ -10,6 +11,7 @@ export default {
         }
     },
     components: {
+        CoursesAssignmentsIndex,
         CoursesAssignmentsForm,
         CoursesAssignmentsShow
     }

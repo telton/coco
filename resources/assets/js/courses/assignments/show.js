@@ -9,6 +9,7 @@ export default {
     },
     mounted() {
         let descriptionValue = this.$refs.description.value;
+        
         this.viewer = new Viewer({
             el: document.querySelector('#descriptionViewer'),
             height: '500px',

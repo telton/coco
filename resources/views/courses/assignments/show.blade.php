@@ -19,7 +19,7 @@
                     <a href="{{ route('courses.assignments.edit', [$course->slug, $assignment]) }}" class="btn btn-warning"><i class="fa fa-edit"></i> Edit Assignment</a>
                     <form action="{{ route('courses.assignments.destroy', [$course->slug, $assignment]) }}" method="POST">
                         {{ csrf_field() }}
-                        <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i> Delete</button>
+                        <button type="submit" class="btn btn-danger" ref="delete"><i class="fa fa-trash"></i> Delete</button>
                     </form>
                 @endif
             </div>
