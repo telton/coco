@@ -101059,17 +101059,18 @@ module.exports = function(hljs) {
 
 "use strict";
 var Viewer = __webpack_require__(275);
+var Editor = __webpack_require__(39);
 
 /* harmony default export */ __webpack_exports__["a"] = ({
     name: 'courses-assignments-show',
     data: function data() {
         return {
-            viewer: {}
+            viewer: {},
+            editor: {}
         };
     },
     mounted: function mounted() {
         var descriptionValue = this.$refs.description.value;
-
         this.viewer = new Viewer({
             el: document.querySelector('#descriptionViewer'),
             height: '500px',
@@ -101097,6 +101098,25 @@ var Viewer = __webpack_require__(275);
                 }
             }).catch(swal.noop); // Catch the cancel option so we don't get console errors.
         });
+    },
+
+    methods: {
+        onModalOpen: function onModalOpen() {
+            var commentsValue = this.$refs.comments.value;
+            // Check to make sure we've not already created the editor instance.
+            if (!(this.editor instanceof Editor)) {
+                this.editor = new Editor({
+                    el: document.querySelector('#commentsEditor'),
+                    initialEditType: 'wysiwyg',
+                    previewStyle: 'tab',
+                    height: '200px',
+                    initialValue: commentsValue
+                });
+            }
+        },
+        onSubmit: function onSubmit() {
+            this.$refs.description.value = this.editor.getValue();
+        }
     }
 });
 

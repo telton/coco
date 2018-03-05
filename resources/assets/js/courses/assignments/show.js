@@ -1,15 +1,16 @@
 let Viewer = require('tui-editor/dist/tui-editor-Viewer');
+let Editor = require('tui-editor');
 
 export default {
     name: 'courses-assignments-show',
     data() {
         return {
             viewer: {},
+            editor: {},
         }
     },
     mounted() {
         let descriptionValue = this.$refs.description.value;
-        
         this.viewer = new Viewer({
             el: document.querySelector('#descriptionViewer'),
             height: '500px',
@@ -37,5 +38,23 @@ export default {
                 }
             }).catch(swal.noop); // Catch the cancel option so we don't get console errors.
         });
+    },
+    methods: {
+        onModalOpen() {
+            let commentsValue = this.$refs.comments.value;
+            // Check to make sure we've not already created the editor instance.
+            if (!(this.editor instanceof Editor)) {
+                this.editor = new Editor({
+                    el: document.querySelector('#commentsEditor'),
+                    initialEditType: 'wysiwyg',
+                    previewStyle: 'tab',
+                    height: '200px',
+                    initialValue: commentsValue
+                });
+            }
+        },
+        onSubmit() {
+            this.$refs.description.value = this.editor.getValue();
+        }
     }
 }

@@ -17392,3 +17392,7 @@ form {
   text-decoration: none;
 }
 
+input#assignmentFile {
+  cursor: pointer;
+}
+

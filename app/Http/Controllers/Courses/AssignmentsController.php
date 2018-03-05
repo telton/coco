@@ -213,4 +213,24 @@ class AssignmentsController extends Controller
             return $this->redirect()->route('courses.assignments.index', $course->slug);
         }
     }
+
+    /**
+     * Submit an assignment.
+     *
+     * @author Tyler Elton <telton@umflint.edu>
+     * @param string                   $slug
+     * @param  \App\Models\Assignment  $assignment
+     * @return \Illuminate\Http\Response
+     */
+    public function submit(string $slug, Assignment $assignment)
+    {
+        $course = Course::where('slug', $slug)->first();
+
+        // If the course was not found, abort with a status of 404.
+        if (!$course) {
+            abort(404);
+        }
+
+        // TODO: actually handle file uploads...
+    }
 }
