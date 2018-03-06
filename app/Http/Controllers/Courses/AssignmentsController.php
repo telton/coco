@@ -9,6 +9,7 @@ use App\Models\Courses\Course;
 use App\Models\Courses\File;
 use Carbon\Carbon;
 use Illuminate\Contracts\Filesystem\Factory;
+use Illuminate\Support\Facades\Auth;
 
 class AssignmentsController extends Controller
 {
@@ -249,7 +250,7 @@ class AssignmentsController extends Controller
             $path = "{$assignment->id}/";
 
             // Create a safe name for storing on the server.
-            $name = md5($uploads->getClientOriginalName() . '.' . $uploads->getClientOriginalExtension());
+            $name = md5($uploads->getClientOriginalName()) . '.' . $uploads->getClientOriginalExtension();
 
             // Check for collisions.
             if ($this->storage->exists("{$path}{$name}")) {
@@ -262,7 +263,7 @@ class AssignmentsController extends Controller
                 'user_id'       => Auth::user()->id,
                 'name'          => $uploads->getClientOriginalName(),
                 'file'          => $path . $name,
-                'mime'          => $file->getClientMimeType(),
+                'mime'          => $uploads->getClientMimeType(),
                 'type'          => 'submission',
                 'comments'      => $request->input('comments'),
             ]);
@@ -270,5 +271,8 @@ class AssignmentsController extends Controller
             // Save the attachment.
             $this->storage->put($path . $name, file_get_contents($uploads));
         }
+
+        $this->flash()->success('Your submission has been successfully saved!');
+        return $this->redirect()->route('courses.assignments.show', [$slug, $assignment]);
     }
 }
