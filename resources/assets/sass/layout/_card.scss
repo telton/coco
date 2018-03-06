@@ -24,3 +24,33 @@
 .login-card {
     max-height: 345px;
 }
+
+.card-header {
+    &.with-border {
+        border-bottom: 1px solid #f4f4f4;
+        .collapsed-box & {
+            border-bottom: none;
+        }
+    }
+
+    > .fa,
+    .card-title {
+        display: inline-block;
+        font-size: 18px;
+        margin: 0;
+        line-height: 1;
+    }
+
+    > .fa {
+        margin-right: 5px;
+    }
+
+    > .card-tools {
+        position: absolute;
+        right: 22px;
+        top: 20px;
+        [data-toggle="tooltip"] {
+            position: relative;
+        }
+    }
+}

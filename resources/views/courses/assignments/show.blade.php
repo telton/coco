@@ -49,13 +49,45 @@
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <div class="input-group mb-3">
-                                    <div class="custom-file">
-                                        <input type="file" class="custom-file-input" id="assignmentFile">
-                                        <label class="custom-file-label" for="assignmentFile">Choose file</label>
+                                <div ref="dropzone">
+                                    <div class="card-header with-border">
+                                        <h3 class="card-title">
+                                            Attachments
+                                            <strong v-if="dropzone" class="text-warning">Drop attachments here!</strong>
+                                        </h3>
+                                        <div class="card-tools pull-right">
+                                            <button v-on:click.prevent="addUpload()" type="button" class="btn btn-primary"><i class="fa fa-plus"></i></button>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <div v-if="uploads.length == 0" class="alert alert-info" style="margin-bottom: 0;">
+                                            <strong>You don't have any attachments added!</strong> Add an attachment by clicking on the <i class="fa fa-plus"></i> above and to the right or by dragging and dropping them here.
+                                        </div>
+
+                                        <div class="hidden" ref="files"></div>
+                                        <div v-if="uploads.length" class="card card-info">
+                                            <div class="card-header with-border">
+                                                <h3 class="card-title">Attachments to be Uploaded</h3>
+                                            </div>
+                                            <div class="card-body" style="padding-top: 5px;">
+                                                <table class="table table-striped">
+                                                    <tbody>
+                                                        <tr v-for="upload in uploads">
+                                                            <th valign="middle">
+                                                                <div v-for="file in upload.files">
+                                                                    @{{ file.name }}
+                                                                </div>
+                                                            </th>
+                                                            <td class="text-right" valign="middle">
+                                                                <button v-on:click.prevent="removeUpload(upload)" type="button" class="btn btn-sm btn-danger-outline"><i class="fa fa-trash"></i></button>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-
                                 <label for="comments" class="control-label"><strong>Comments</strong></label>
                                 <div id="commentsEditor"></div>
                                 <input type="hidden" name="comments" id="comments" value="{{ old('description') }}" ref="comments">

@@ -26,3 +26,7 @@
 @import "layout/chat";
 @import "layout/form";
 @import "courses/courses";
+
+[v-cloak] {
+    display: none;
+}

@@ -17153,6 +17153,10 @@ body {
   margin-left: 15px;
 }
 
+.hidden {
+  display: none;
+}
+
 .main-nav {
   width: 100%;
   position: relative;
@@ -17327,6 +17331,36 @@ body {
   max-height: 345px;
 }
 
+.card-header.with-border {
+  border-bottom: 1px solid #f4f4f4;
+}
+
+.collapsed-box .card-header.with-border {
+  border-bottom: none;
+}
+
+.card-header > .fa,
+.card-header .card-title {
+  display: inline-block;
+  font-size: 18px;
+  margin: 0;
+  line-height: 1;
+}
+
+.card-header > .fa {
+  margin-right: 5px;
+}
+
+.card-header > .card-tools {
+  position: absolute;
+  right: 22px;
+  top: 20px;
+}
+
+.card-header > .card-tools [data-toggle="tooltip"] {
+  position: relative;
+}
+
 .main-chat {
   color: #cae4d8;
   background-color: #686868;
@@ -17394,5 +17428,9 @@ form {
 
 input#assignmentFile {
   cursor: pointer;
+}
+
+[v-cloak] {
+  display: none;
 }
 
