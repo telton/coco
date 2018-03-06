@@ -39,7 +39,8 @@
 
             <!-- Assignment Submission Modal -->
             <div class="modal fade" id="submitAssignment" tabindex="-1" role="dialog" aria-labelledby="submitAssignmentLabel" aria-hidden="true">
-                <form class="form-horizontal" method="POST" action="{{ route('courses.assignments.submit', [$course->slug, $assignment]) }}">
+                <form class="form-horizontal" method="POST" action="{{ route('courses.assignments.submit', [$course->slug, $assignment]) }}" enctype="multipart/form-data">
+                    {{ csrf_field() }}
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">

@@ -25,16 +25,20 @@ class CreateAssignmentsTable extends Migration
             $table->foreign('course_id')->references('id')->on('courses');
         });
 
-        // Table for uploaded assignment documents.
-        Schema::create('assignments_attachments', function (Blueprint $table) {
+        // Table for uploaded assignment files.
+        Schema::create('assignments_files', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('assignment_id')->unsigned();
+            $table->integer('user_id')->unsigned();
             $table->string('name');
             $table->string('file', 2048);
             $table->string('mime');
+            $table->string('type');
+            $table->text('comments')->nullable();
             $table->timestamps();
 
             $table->foreign('assignment_id')->references('id')->on('assignments');
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

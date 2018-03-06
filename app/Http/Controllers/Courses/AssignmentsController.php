@@ -6,18 +6,30 @@ use App\Models\Courses\Assignment;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Courses\Course;
+use App\Models\Courses\File;
 use Carbon\Carbon;
+use Illuminate\Contracts\Filesystem\Factory;
 
 class AssignmentsController extends Controller
 {
     /**
+     * Filesystem.
+     *
+     * @var \Illuminate\Contracts\Filesystem\Filesystem
+     */
+    protected $storage;
+
+    /**
      * AssignmentsController constructor.
      *
      * @author Tyler Elton <telton@umflint.edu>
+     * @param Factory $storage
      */
-    public function __construct()
+    public function __construct(Factory $storage)
     {
         parent::__construct();
+
+        $this->storage = $storage->disk('assignments');
 
         // Make sure only the instructor/admin can access these methods.
         $this->middleware('courses.instructor', [
@@ -222,7 +234,7 @@ class AssignmentsController extends Controller
      * @param  \App\Models\Assignment  $assignment
      * @return \Illuminate\Http\Response
      */
-    public function submit(string $slug, Assignment $assignment)
+    public function submit(string $slug, Assignment $assignment, Request $request)
     {
         $course = Course::where('slug', $slug)->first();
 
@@ -231,6 +243,32 @@ class AssignmentsController extends Controller
             abort(404);
         }
 
-        // TODO: actually handle file uploads...
+        // Upload each file in the submission.
+        foreach ($request->file('uploads', []) as $uploads) {
+            // Set the path.
+            $path = "{$assignment->id}/";
+
+            // Create a safe name for storing on the server.
+            $name = md5($uploads->getClientOriginalName() . '.' . $uploads->getClientOriginalExtension());
+
+            // Check for collisions.
+            if ($this->storage->exists("{$path}{$name}")) {
+                $name = mt_rand(0, 1000) . '-' . $name;
+            }
+
+            // Create the file.
+            $file = File::create([
+                'assignment_id' => $assignment->id,
+                'user_id'       => Auth::user()->id,
+                'name'          => $uploads->getClientOriginalName(),
+                'file'          => $path . $name,
+                'mime'          => $file->getClientMimeType(),
+                'type'          => 'submission',
+                'comments'      => $request->input('comments'),
+            ]);
+
+            // Save the attachment.
+            $this->storage->put($path . $name, file_get_contents($uploads));
+        }
     }
 }
