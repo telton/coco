@@ -247,7 +247,7 @@ class AssignmentsController extends Controller
         // Upload each file in the submission.
         foreach ($request->file('uploads', []) as $uploads) {
             // Set the path.
-            $path = "{$assignment->id}/";
+            $path = "{$assignment->id}/submissions/";
 
             // Create a safe name for storing on the server.
             $name = md5($uploads->getClientOriginalName()) . '.' . $uploads->getClientOriginalExtension();
