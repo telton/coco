@@ -16,11 +16,11 @@ $ cp .env.example .env                     # change .env according to your db cr
 
 $ php artisan key:generate
 
-$ php artisan serve
-
 $ php artisan migrate:fresh                # Set up db migrations
 
 $ php artisan voyager:install --with-dummy # Install Voyager files & seed users and roles.
 
 $ php artisan import:courses courses.csv   # Import courses
+
+$ php artisan serve
 ```
