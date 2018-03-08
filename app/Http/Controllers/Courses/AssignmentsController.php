@@ -160,7 +160,7 @@ class AssignmentsController extends Controller
             abort(404);
         }
 
-        $attachments = $assignmnet->attachments();
+        $attachments = $assignment->attachments();
 
         $this->breadcrumb->addCrumb(strtoupper($course->slug), route('courses.show', $course->slug));
         $this->breadcrumb->addCrumb('Assignments', route('courses.assignments.index', $course->slug));
