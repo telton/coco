@@ -113,6 +113,33 @@ class AssignmentsController extends Controller
             'display_date' => new Carbon($request->input('display_date')),
         ]);
 
+        // Upload each file in the submission.
+        foreach ($request->file('uploads', []) as $uploads) {
+            // Set the path.
+            $path = "{$assignment->id}/attachments/";
+
+            // Create a safe name for storing on the server.
+            $name = md5($uploads->getClientOriginalName()) . '.' . $uploads->getClientOriginalExtension();
+
+            // Check for collisions.
+            if ($this->storage->exists("{$path}{$name}")) {
+                $name = mt_rand(0, 1000) . '-' . $name;
+            }
+
+            // Create the file.
+            $file = File::create([
+                'assignment_id' => $assignment->id,
+                'user_id'       => Auth::user()->id,
+                'name'          => $uploads->getClientOriginalName(),
+                'file'          => $path . $name,
+                'mime'          => $uploads->getClientMimeType(),
+                'type'          => 'attachment',
+            ]);
+
+            // Save the attachment.
+            $this->storage->put($path . $name, file_get_contents($uploads));
+        }
+
         $this->flash()->success("The assignment <strong>{$assignment->name}</strong> has been created!");
         return $this->redirect()->route('courses.assignments.show', [$slug, $assignment]);
     }
