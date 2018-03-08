@@ -12,7 +12,7 @@ class Assignment extends Model
      * @var array
      */
     protected $table = 'assignments';
-
+    
     /**
      * Validation rules.
      *
@@ -24,7 +24,7 @@ class Assignment extends Model
         'due_date'     => 'required|date',
         'display_date' => 'required|date',
     ];
-
+    
     /**
      * The attributes that are mass assignable.
      *
@@ -37,7 +37,7 @@ class Assignment extends Model
         'due_date',
         'display_date',
     ];
-
+    
     /**
      * Cast these dates as an instance of Carbon
      *
@@ -49,7 +49,7 @@ class Assignment extends Model
         'created_at',
         'updated_at',
     ];
-
+    
     /**
      * Assignment course relationship.
      *
@@ -60,21 +60,23 @@ class Assignment extends Model
     {
         return $this->belongsTo(Course::class);
     }
-
+    
     /**
-     * File attachments.
+     * File attachments
      *
      * @author Tyler Elton <telton@umflint.edu>
+     * @return mixed
      */
     public function attachments()
     {
         return File::where('assignment_id', $this->attributes['id'])->where('type', 'attachment')->get();
     }
-
+    
     /**
      * File submissions.
      *
      * @author Tyler Elton <telton@umflint.edu>
+     * @return mixed
      */
     public function submissions()
     {
