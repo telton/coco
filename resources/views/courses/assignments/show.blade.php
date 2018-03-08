@@ -53,8 +53,8 @@
                                 <div ref="dropzone">
                                     <div class="card-header with-border">
                                         <h3 class="card-title">
-                                            Attachments
-                                            <strong v-if="dropzone" class="text-warning">Drop attachments here!</strong>
+                                            Files
+                                            <strong v-if="dropzone" class="text-warning">Drop submission files here!</strong>
                                         </h3>
                                         <div class="card-tools pull-right">
                                             <button v-on:click.prevent="addUpload()" type="button" class="btn btn-primary"><i class="fa fa-plus"></i></button>
@@ -62,13 +62,13 @@
                                     </div>
                                     <div class="card-body">
                                         <div v-if="uploads.length == 0" class="alert alert-info" style="margin-bottom: 0;">
-                                            <strong>You don't have any attachments added!</strong> Add an attachment by clicking on the <i class="fa fa-plus"></i> above and to the right or by dragging and dropping them here.
+                                            <strong>You don't have any files added!</strong> Add an file by clicking on the <i class="fa fa-plus"></i> above and to the right or by dragging and dropping them here.
                                         </div>
 
                                         <div class="hidden" ref="files"></div>
                                         <div v-if="uploads.length" class="card card-info">
                                             <div class="card-header with-border">
-                                                <h3 class="card-title">Attachments to be Uploaded</h3>
+                                                <h3 class="card-title">Files to be Uploaded</h3>
                                             </div>
                                             <div class="card-body" style="padding-top: 5px;">
                                                 <table class="table table-striped">

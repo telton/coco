@@ -17354,7 +17354,7 @@ body {
 .card-header > .card-tools {
   position: absolute;
   right: 22px;
-  top: 20px;
+  top: 22px;
 }
 
 .card-header > .card-tools [data-toggle="tooltip"] {
