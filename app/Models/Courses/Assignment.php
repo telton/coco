@@ -60,4 +60,24 @@ class Assignment extends Model
     {
         return $this->belongsTo(Course::class);
     }
+
+    /**
+     * File attachments.
+     *
+     * @author Tyler Elton <telton@umflint.edu>
+     */
+    public function attachments()
+    {
+        return File::where('assignment_id', $this->attributes['id'])->where('type', 'attachment')->get();
+    }
+
+    /**
+     * File submissions.
+     *
+     * @author Tyler Elton <telton@umflint.edu>
+     */
+    public function submissions()
+    {
+        return File::where('assignment_id', $this->attributes['id'])->where('type', 'submission')->get();
+    }
 }

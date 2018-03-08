@@ -25,9 +25,39 @@
             </div>
             
             <p><strong>Due Date:</strong> {{ $assignment->due_date->format('m/d/Y') }} at {{ $assignment->due_date->format('h:i A') }}</p>
+            @if (Auth::user()->hasRole(['admin', 'instructor', 'grader', 'tutor']))
+                <p><strong>Display Date:</strong> {{ $assignment->display_date->format('m/d/Y') }} at {{ $assignment->display_date->format('h:i A') }}</p>
+            @endif
             <p><strong>Description:</strong></p>
             <input type="hidden" ref="description" value="{{ $assignment->description }}">
             <div id="descriptionViewer"></div>
+
+            <div class="card card-info">
+                <div class="card-header with-border">
+                    <h3 class="card-title">Attachments</h3>
+                </div>
+                <table class="table table-striped">
+                    <tbody>
+                        @forelse($attachments as $attachment)
+                            <tr>
+                                <td class="attachment-icon">
+                                    <i class="fa {{ $attachment->icon }}"></i>
+                                </td>
+                                <td>
+                                    <a href="{{ route('courses.assignments.attachments.show', [$course->slug, $assignment, $attachment->id]) }}" target="_blank">{{ $attachment->name }}</a>
+                                </td>
+                                <td class="attachment-date">
+                                    {{ $attachment->created_at->format('m/d/Y h:i A') }}
+                                </td>
+                            </tr>
+                        @empty
+                            <tr>
+                                <th>No Attachments</th>
+                            </tr>
+                        @endforelse
+                    </tbody>
+                </table>
+            </div>
 
             @if (Auth::user()->hasRole('student'))
                 <div class="btn-toolbar">

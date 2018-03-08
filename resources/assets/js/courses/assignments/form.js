@@ -12,6 +12,7 @@ export default {
             type: String,
             default: '',
         },
+        attachments: {}
     },
     data() {
         let self = this;
@@ -37,7 +38,6 @@ export default {
                 inline: true,
                 enableTime: true
             },
-            attachments: [],
             uploads: [],
             dropzone: false,
         }

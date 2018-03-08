@@ -62,6 +62,12 @@ Route::group(['namespace' => 'Courses', 'middleware' => ['auth', 'courses.permis
         'as'   => 'courses.assignments.submit',
         'uses' => 'AssignmentsController@submit',
     ]);
+
+    // Attachments.
+    Route::get('/courses/{slug}/assignments/{assignment}/attachments/{attachment}', [
+        'as'   => 'courses.assignments.attachments.show',
+        'uses' => 'FilesController@show',
+    ]);
 });
 
 Auth::routes();

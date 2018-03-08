@@ -139,7 +139,7 @@ class File extends Model
     }
 
     /**
-     * Attachment assignment relationship.
+     * File assignment relationship.
      *
      * @author Tyler Elton <telton@umflint.edu>
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
@@ -150,7 +150,7 @@ class File extends Model
     }
 
     /**
-     * Attachment user relationship.
+     * File user relationship.
      *
      * @author Tyler Elton <telton@umflint.edu>
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

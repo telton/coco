@@ -64758,7 +64758,8 @@ var Editor = __webpack_require__(10);
         displayDate: {
             type: String,
             default: ''
-        }
+        },
+        attachments: {}
     },
     data: function data() {
         var self = this;
@@ -64784,7 +64785,6 @@ var Editor = __webpack_require__(10);
                 inline: true,
                 enableTime: true
             },
-            attachments: [],
             uploads: [],
             dropzone: false
         };

@@ -160,12 +160,15 @@ class AssignmentsController extends Controller
             abort(404);
         }
 
+        $attachments = $assignmnet->attachments();
+
         $this->breadcrumb->addCrumb(strtoupper($course->slug), route('courses.show', $course->slug));
         $this->breadcrumb->addCrumb('Assignments', route('courses.assignments.index', $course->slug));
         $this->breadcrumb->addCrumb($assignment->name, route('courses.assignments.show', [$course->slug, $assignment]));
         return view('courses.assignments.show', [
-            'course'     => $course,
-            'assignment' => $assignment,
+            'course'      => $course,
+            'assignment'  => $assignment,
+            'attachments' => $attachments,
         ]);
     }
 
@@ -185,13 +188,16 @@ class AssignmentsController extends Controller
             abort(404);
         }
 
+        $attachments = $assignment->attachments();
+
         $this->breadcrumb->addCrumb(strtoupper($course->slug), route('courses.show', $course->slug));
         $this->breadcrumb->addCrumb('Assignments', route('courses.assignments.index', $course->slug));
         $this->breadcrumb->addCrumb($assignment->name, route('courses.assignments.show', [$course->slug, $assignment]));
         $this->breadcrumb->addCrumb('Edit', route('courses.assignments.edit', [$course->slug, $assignment]));
         return view('courses.assignments.edit', [
-            'course'     => $course,
-            'assignment' => $assignment,
+            'course'      => $course,
+            'assignment'  => $assignment,
+            'attachments' => $attachments,
         ]);
     }
 
