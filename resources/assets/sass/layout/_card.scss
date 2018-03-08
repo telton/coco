@@ -45,10 +45,18 @@
         margin-right: 5px;
     }
 
-    > .card-tools {
+    > .submit-tools {
         position: absolute;
         right: 22px;
         top: 22px;
+        [data-toggle="tooltip"] {
+            position: relative;
+        }
+    }
+
+    > .attachment-tools {
+        margin-top: -6px;
+        margin-right: -10px;
         [data-toggle="tooltip"] {
             position: relative;
         }

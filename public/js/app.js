@@ -64761,6 +64761,7 @@ var Editor = __webpack_require__(10);
         }
     },
     data: function data() {
+        var self = this;
         var displayDateMin = new Date();
 
         if (this.displayDate !== '') {
@@ -64782,7 +64783,10 @@ var Editor = __webpack_require__(10);
                 minDate: new Date(),
                 inline: true,
                 enableTime: true
-            }
+            },
+            attachments: [],
+            uploads: [],
+            dropzone: false
         };
     },
 
@@ -64809,11 +64813,100 @@ var Editor = __webpack_require__(10);
             height: '300px',
             initialValue: descriptionValue
         });
+
+        // Handle drag and drop.
+        $(this.$refs.dropzone).on('drag dragstart dragend dragover dragenter dragleave drop', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+        }).on('dragover dragenter', function () {
+            self.dropzone = true;
+        }).on('dragleave dragend drop', function () {
+            self.dropzone = false;
+        }).on('drop', function (e) {
+            self.dropUpload(e.originalEvent.dataTransfer.files);
+        });
     },
 
     methods: {
         onSubmit: function onSubmit() {
             this.$refs.description.value = this.editor.getValue();
+        },
+        dropUpload: function dropUpload(files) {
+            var id = this.uploads.length;
+            this.uploads.push({
+                id: id,
+                files: files
+            });
+
+            var input = document.createElement('input');
+            input.setAttribute('id', 'upload-' + id);
+            input.setAttribute('multiple', 'multiple');
+            input.setAttribute('type', 'file');
+            input.setAttribute('name', 'uploads[]');
+            input.files = files;
+            console.log(input);
+            this.$refs.files.append(input);
+        },
+        addUpload: function addUpload() {
+            var self = this,
+                input = document.createElement('input');
+
+            input.setAttribute('multiple', 'multiple');
+            input.setAttribute('type', 'file');
+            input.setAttribute('name', 'uploads[]');
+
+            $(input).click();
+            $(input).change(function () {
+                var id = self.uploads.length;
+                self.uploads.push({
+                    id: id,
+                    files: input.files
+                });
+
+                input.setAttribute('id', 'upload-' + id);
+            });
+
+            this.$refs.files.append(input);
+        },
+        removeUpload: function removeUpload(upload) {
+            var self = this,
+                index = this.uploads.indexOf(upload);
+
+            // SweetAlert2 popup.
+            swal({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, remove it!'
+            }).then(function (result) {
+                // If confirm, remove the uploaded file.
+                if (result) {
+                    self.uploads.splice(index, 1);
+                    self.$refs.files.removeChild(document.getElementById('upload-' + upload.id));
+                }
+            }).catch(swal.noop); // Catch the cancel option so we don't get console errors.
+        },
+        removeAttachment: function removeAttachment(attachment) {
+            var self = this;
+
+            // SweetAlert2 popup.
+            swal({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, remove it!'
+            }).then(function (result) {
+                // If confirm, remove the attachment.
+                if (result) {
+                    self.attachments.splice(self.attachments.indexOf(attachment), 1);
+                }
+            }).catch(swal.noop); // Catch the cancel option so we don't get console errors.
         }
     },
     components: {

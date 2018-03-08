@@ -56,7 +56,7 @@
                                             Files
                                             <strong v-if="dropzone" class="text-warning">Drop submission files here!</strong>
                                         </h3>
-                                        <div class="card-tools pull-right">
+                                        <div class="submit-tools pull-right">
                                             <button v-on:click.prevent="addUpload()" type="button" class="btn btn-primary"><i class="fa fa-plus"></i></button>
                                         </div>
                                     </div>

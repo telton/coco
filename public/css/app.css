@@ -17351,13 +17351,22 @@ body {
   margin-right: 5px;
 }
 
-.card-header > .card-tools {
+.card-header > .submit-tools {
   position: absolute;
   right: 22px;
   top: 22px;
 }
 
-.card-header > .card-tools [data-toggle="tooltip"] {
+.card-header > .submit-tools [data-toggle="tooltip"] {
+  position: relative;
+}
+
+.card-header > .attachment-tools {
+  margin-top: -6px;
+  margin-right: -10px;
+}
+
+.card-header > .attachment-tools [data-toggle="tooltip"] {
   position: relative;
 }
 
