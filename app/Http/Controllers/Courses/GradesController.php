@@ -39,8 +39,47 @@ class GradesController extends Controller
             abort(404);
         }
 
+        $submissions = [];
+        $assignments = [
+            'ungraded'   => [],
+            'unapproved' => [],
+            'completed'  => [],
+        ];
+
+        foreach ($course->assignments as $assignment) {
+            foreach ($assignment->submissions() as $submission) {
+                // If the assignment submission does not have a grade yet,
+                // add it to the ungraded index of the $submissions array.
+                // If the assignment submission has a grade, but is not approved,
+                // add it to the unapproved index of the $submissions array.
+                // Otherwise, that means that there is a grade for that submission and it is approved.
+                // Add that submission to the completed index of the $submissions array.
+                if (!$submission->grade($assignment->id)) {
+                    $submissions['ungraded'][] = $submission;
+
+                    if (!in_array($assignment, $assignments)) {
+                        $assignments['ungraded'][] = $assignment;
+                    }
+                } elseif (!$submission->grade($assignment->id)->approved) {
+                    $submissions['unapproved'][] = $submission;
+
+                    if (!in_array($assignment, $assignments)) {
+                        $assignments['unapproved'][] = $assignment;
+                    }
+                } else {
+                    $submissions['completed'][] = $submission;
+
+                    if (!in_array($assignment, $assignments)) {
+                        $assignments['completed'][] = $assignment;
+                    }
+                }
+            }
+        }
+
         return view('courses.grades.dashboard', [
-            'course' => $course,
+            'course'                => $course,
+            'assignments'           => $assignments,
+            'submissions'           => $submissions,
         ]);
     }
 
