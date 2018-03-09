@@ -57,6 +57,20 @@ class PermissionsCheck
             $hasAccess = true;
         }
 
+        // If the user is an instructor, make sure they are the instructor for the course.
+        if ($this->auth->user()->hasRole('instructor')) {
+            $course = Course::where('slug', $this->request->segment(2))->first();
+
+            if (!$course) {
+                // If the course was not found, abort with a status of 404.
+                abort(404);
+            }
+
+            if ($course->instructor_id === $this->auth->user()->id) {
+                $hasAccess = true;
+            }
+        }
+
         // If the user is a student, make sure they are registered for the course.
         if ($this->auth->user()->hasRole('student')) {
             $course = Course::where('slug', $this->request->segment(2))->first();
@@ -73,8 +87,8 @@ class PermissionsCheck
             }
         }
 
-        // If the user is an instructor, make sure they are the instructor for the course.
-        if ($this->auth->user()->hasRole('instructor')) {
+        // If the user is a grader, make sure they are assigned to grade the course.
+        if ($this->auth->user()->hasRole('grader')) {
             $course = Course::where('slug', $this->request->segment(2))->first();
 
             if (!$course) {
@@ -82,12 +96,14 @@ class PermissionsCheck
                 abort(404);
             }
 
-            if ($course->instructor_id === $this->auth->user()->id) {
-                $hasAccess = true;
+            foreach ($course->graders as $grader) {
+                if ($this->auth->user()->id === $grader->id) {
+                    $hasAccess = true;
+                }
             }
         }
 
-        // TODO: Add checks for tutors and graders, after they've been implemented.
+        // TODO: Add checks for tutors, after they've been implemented.
 
         if (!$hasAccess) {
             abort(403, 'You do not have access to this resource.');
