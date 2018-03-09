@@ -17,6 +17,31 @@ class GradesController extends Controller
     public function __construct()
     {
         parent::__construct();
+        $this->middleware('courses.grades.dashboard')
+            ->only([
+                'dashboard',
+            ]);
+    }
+
+    /**
+     * Grades dashboard for admins/instructors/graders.
+     *
+     * @author Tyler Elton <telton@umflint.edu>
+     * @param string $slug
+     * @returns \Illuminate\Http\Response
+     */
+    public function dashboard(string $slug)
+    {
+        $course = Course::where('slug', $slug)->first();
+
+        // If the course was not found, abort with a status of 404.
+        if (!$course) {
+            abort(404);
+        }
+
+        return view('courses.grades.dashboard', [
+            'course' => $course,
+        ]);
     }
 
     /**
