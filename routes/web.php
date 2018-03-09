@@ -74,6 +74,10 @@ Route::group(['namespace' => 'Courses', 'middleware' => ['auth', 'courses.permis
         'as'   => 'courses.grades.index',
         'uses' => 'GradesController@index',
     ]);
+    Route::get('/courses/{slug}/grades/dashboard', [
+        'as'   => 'courses.grades.dashboard',
+        'uses' => 'GradesController@dashboard',
+    ]);
 });
 
 Auth::routes();
