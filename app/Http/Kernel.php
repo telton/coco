@@ -51,13 +51,14 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $routeMiddleware = [
-        'auth'                   => \Illuminate\Auth\Middleware\Authenticate::class,
-        'auth.basic'             => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
-        'bindings'               => \Illuminate\Routing\Middleware\SubstituteBindings::class,
-        'can'                    => \Illuminate\Auth\Middleware\Authorize::class,
-        'guest'                  => \App\Http\Middleware\RedirectIfAuthenticated::class,
-        'throttle'               => \Illuminate\Routing\Middleware\ThrottleRequests::class,
-        'courses.permissions'    => \App\Http\Middleware\Courses\PermissionsCheck::class,
-        'courses.instructor'     => \App\Http\Middleware\Courses\InstructorCheck::class,
+        'auth'                     => \Illuminate\Auth\Middleware\Authenticate::class,
+        'auth.basic'               => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
+        'bindings'                 => \Illuminate\Routing\Middleware\SubstituteBindings::class,
+        'can'                      => \Illuminate\Auth\Middleware\Authorize::class,
+        'guest'                    => \App\Http\Middleware\RedirectIfAuthenticated::class,
+        'throttle'                 => \Illuminate\Routing\Middleware\ThrottleRequests::class,
+        'courses.permissions'      => \App\Http\Middleware\Courses\PermissionsCheck::class,
+        'courses.instructor'       => \App\Http\Middleware\Courses\InstructorCheck::class,
+        'courses.grades.dashboard' => \App\Http\Middleware\Courses\GradesDashboardCheck::class,
     ];
 }
