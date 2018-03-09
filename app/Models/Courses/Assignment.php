@@ -3,6 +3,7 @@
 namespace App\Models\Courses;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
 
 class Assignment extends Model
 {
@@ -12,7 +13,7 @@ class Assignment extends Model
      * @var array
      */
     protected $table = 'assignments';
-    
+
     /**
      * Validation rules.
      *
@@ -24,7 +25,7 @@ class Assignment extends Model
         'due_date'     => 'required|date',
         'display_date' => 'required|date',
     ];
-    
+
     /**
      * The attributes that are mass assignable.
      *
@@ -37,7 +38,7 @@ class Assignment extends Model
         'due_date',
         'display_date',
     ];
-    
+
     /**
      * Cast these dates as an instance of Carbon
      *
@@ -49,7 +50,7 @@ class Assignment extends Model
         'created_at',
         'updated_at',
     ];
-    
+
     /**
      * Assignment course relationship.
      *
@@ -60,7 +61,7 @@ class Assignment extends Model
     {
         return $this->belongsTo(Course::class);
     }
-    
+
     /**
      * File attachments
      *
@@ -71,7 +72,7 @@ class Assignment extends Model
     {
         return File::where('assignment_id', $this->attributes['id'])->where('type', 'attachment')->get();
     }
-    
+
     /**
      * File submissions.
      *
@@ -81,5 +82,16 @@ class Assignment extends Model
     public function submissions()
     {
         return File::where('assignment_id', $this->attributes['id'])->where('type', 'submission')->get();
+    }
+
+    /**
+     * Get a submission for an assignment.
+     *
+     * @author Tyler Elton <telton@umflint.edu>
+     * @return \App\Models\Courses\File|null
+     */
+    public function submission()
+    {
+        return File::where('assignment_id', $this->attributes['id'])->where('type', 'submission')->where('user_id', Auth::user()->id)->first();
     }
 }
