@@ -3,6 +3,7 @@
 namespace App\Models\Courses;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\User;
 
 class File extends Model
 {
@@ -146,7 +147,7 @@ class File extends Model
      */
     public function assignment()
     {
-        return $this->belongsTo(App\Models\Courses\Assignment::class);
+        return $this->belongsTo(Assignment::class);
     }
 
     /**
@@ -157,6 +158,11 @@ class File extends Model
      */
     public function user()
     {
-        return $this->belongsTo(App\Models\User::class);
+        return $this->belongsTo(User::class);
+    }
+
+    public function grade($assignmentId)
+    {
+        return Grade::where('assignment_id', $assignmentId)->first();
     }
 }

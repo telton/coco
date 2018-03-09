@@ -88,7 +88,7 @@ class Assignment extends Model
      * Get a submission for an assignment.
      *
      * @author Tyler Elton <telton@umflint.edu>
-     * @return \App\Models\Courses\File|null
+     * @return mixed
      */
     public function submission()
     {
