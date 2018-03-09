@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Courses;
 use App\Models\Courses\Grade;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Courses\Course;
 
 class GradesController extends Controller
 {
@@ -21,11 +22,23 @@ class GradesController extends Controller
     /**
      * Display a listing of the resource.
      *
+     * @param string $slug
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(string $slug)
     {
-        //
+        $course = Course::where('slug', $slug)->first();
+
+        // If the course was not found, abort with a status of 404.
+        if (!$course) {
+            abort(404);
+        }
+
+        $this->breadcrumb->addCrumb(strtoupper($course->slug), route('courses.show', $course->slug));
+        $this->breadcrumb->addCrumb('Grades', route('courses.grades.index', $course->slug));
+        return view('courses.grades.index', [
+            'course' => $course,
+        ]);
     }
 
     /**
