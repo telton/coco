@@ -87,6 +87,28 @@ class Course extends Model
     }
 
     /**
+     * Get the graders for a course.
+     *
+     * @author Tyler Elton <telton@umflint.edu>
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function graders()
+    {
+        return $this->belongsToMany(User::class, 'courses_graders', 'course_id', 'grader_id');
+    }
+
+    /**
+     * Get the tutors for a course.
+     *
+     * @author Tyler Elton <telton@umflint.edu>
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function tutors()
+    {
+        return $this->belongsToMany(User::class, 'courses_tutors', 'course_id', 'tutor_id');
+    }
+
+    /**
      * Courses assignment relationship.
      *
      * @author Tyler Elton <telton@umflint.edu>
