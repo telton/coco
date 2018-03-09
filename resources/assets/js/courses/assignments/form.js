@@ -59,7 +59,7 @@ export default {
         let descriptionValue = this.$refs.description.value;
 
         this.editor = new Editor({
-            el: document.querySelector('#descriptionEditor'),
+            el: this.$refs.descriptionEditor,
             initialEditType: 'wysiwyg',
             previewStyle: 'tab',
             height: '300px',

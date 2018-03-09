@@ -32,7 +32,7 @@
                     </div>
                     <div class="form-group{{ $errors->has('description') ? ' has-error' : '' }}">
                         <label for="description" class="control-label"><strong>Description</strong></label>
-                        <div id="descriptionEditor"></div>
+                        <div id="descriptionEditor" ref="descriptionEditor"></div>
                         <input type="hidden" name="description" id="description" value="{{ old('description', $assignment->description) }}" ref="description">
 
                         @if ($errors->has('description'))

@@ -30,7 +30,7 @@
             @endif
             <p><strong>Description:</strong></p>
             <input type="hidden" ref="description" value="{{ $assignment->description }}">
-            <div id="descriptionViewer"></div>
+            <div id="descriptionViewer" ref="descriptionViewer"></div>
 
             <div class="card card-info">
                 <div class="card-header with-border">
@@ -120,7 +120,7 @@
                                     </div>
                                 </div>
                                 <label for="comments" class="control-label"><strong>Comments</strong></label>
-                                <div id="commentsEditor"></div>
+                                <div id="commentsEditor" ref="commentsEditor"></div>
                                 <input type="hidden" name="comments" id="comments" value="{{ old('description') }}" ref="comments">
                             </div>
                             <div class="modal-footer">

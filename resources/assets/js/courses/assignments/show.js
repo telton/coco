@@ -16,7 +16,7 @@ export default {
         let self = this;
         let descriptionValue = this.$refs.description.value;
         this.viewer = new Viewer({
-            el: document.querySelector('#descriptionViewer'),
+            el: this.$refs.descriptionViewer,
             height: '500px',
             initialValue: descriptionValue
         });
@@ -61,7 +61,7 @@ export default {
             // Check to make sure we've not already created the editor instance.
             if (!(this.editor instanceof Editor)) {
                 this.editor = new Editor({
-                    el: document.querySelector('#commentsEditor'),
+                    el: this.$refs.commentsEditor,
                     initialEditType: 'wysiwyg',
                     previewStyle: 'tab',
                     height: '200px',
@@ -70,7 +70,7 @@ export default {
             }
         },
         onSubmit() {
-            this.$refs.description.value = this.editor.getValue();
+            this.$refs.comments.value = this.editor.getValue();
         },
         dropUpload(files) {
             let id = this.uploads.length;

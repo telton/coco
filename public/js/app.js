@@ -64807,7 +64807,7 @@ var Editor = __webpack_require__(10);
         var descriptionValue = this.$refs.description.value;
 
         this.editor = new Editor({
-            el: document.querySelector('#descriptionEditor'),
+            el: this.$refs.descriptionEditor,
             initialEditType: 'wysiwyg',
             previewStyle: 'tab',
             height: '300px',
@@ -101206,7 +101206,7 @@ var Editor = __webpack_require__(10);
         var self = this;
         var descriptionValue = this.$refs.description.value;
         this.viewer = new Viewer({
-            el: document.querySelector('#descriptionViewer'),
+            el: this.$refs.descriptionViewer,
             height: '500px',
             initialValue: descriptionValue
         });
@@ -101252,7 +101252,7 @@ var Editor = __webpack_require__(10);
             // Check to make sure we've not already created the editor instance.
             if (!(this.editor instanceof Editor)) {
                 this.editor = new Editor({
-                    el: document.querySelector('#commentsEditor'),
+                    el: this.$refs.commentsEditor,
                     initialEditType: 'wysiwyg',
                     previewStyle: 'tab',
                     height: '200px',
@@ -101261,7 +101261,7 @@ var Editor = __webpack_require__(10);
             }
         },
         onSubmit: function onSubmit() {
-            this.$refs.description.value = this.editor.getValue();
+            this.$refs.comments.value = this.editor.getValue();
         },
         dropUpload: function dropUpload(files) {
             var id = this.uploads.length;
