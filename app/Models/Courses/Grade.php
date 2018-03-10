@@ -25,7 +25,7 @@ class Grade extends Model
         'grader_id'        => 'required|integer',
         'grade'            => 'required|float',
         'letter_grade'     => 'required|string|max:5',
-        'approved'         => 'required|boolean',
+        'comments'         => 'required|string',
     ];
 
     /**
@@ -39,7 +39,7 @@ class Grade extends Model
         'grader_id',
         'grade',
         'letter_grade',
-        'approved',
+        'comments',
     ];
 
     /**
@@ -50,15 +50,6 @@ class Grade extends Model
     protected $dates = [
         'created_at',
         'updated_at',
-    ];
-
-    /**
-     * The attributes that should be cast to native types.
-     *
-     * @var array
-     */
-    protected $casts = [
-        'approved' => 'boolean',
     ];
 
     /**
