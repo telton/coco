@@ -4,7 +4,7 @@ namespace App\Http\Middleware\Courses;
 
 use Closure;
 
-class GradesDashboardCheck
+class GradesCheck
 {
     /**
      * Handle an incoming request.

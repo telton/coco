@@ -59,6 +59,6 @@ class Kernel extends HttpKernel
         'throttle'                 => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'courses.permissions'      => \App\Http\Middleware\Courses\PermissionsCheck::class,
         'courses.instructor'       => \App\Http\Middleware\Courses\InstructorCheck::class,
-        'courses.grades.dashboard' => \App\Http\Middleware\Courses\GradesDashboardCheck::class,
+        'courses.grades'           => \App\Http\Middleware\Courses\GradesCheck::class,
     ];
 }
