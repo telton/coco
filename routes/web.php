@@ -78,6 +78,10 @@ Route::group(['namespace' => 'Courses', 'middleware' => ['auth', 'courses.permis
         'as'   => 'courses.grades.dashboard',
         'uses' => 'GradesController@dashboard',
     ]);
+    Route::post('/courses/{slug}/grades/{submission}', [
+        'as'   => 'courses.grades.store',
+        'uses' => 'GradesController@store',
+    ]);
 });
 
 Auth::routes();

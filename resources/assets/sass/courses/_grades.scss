@@ -1,0 +1,20 @@
+.grade-input {
+    display: flex;
+    flex-direction: column;
+
+    .input {
+        display: flex;
+        flex-direction: row;
+        padding-bottom: 10px;
+
+        label {
+            flex: 0.5;
+            align-self: center;
+            margin-bottom: 0;
+        }
+
+        .form-control {
+            flex: 1;
+        }
+    }
+}
