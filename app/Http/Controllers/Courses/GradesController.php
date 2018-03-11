@@ -6,6 +6,8 @@ use App\Models\Courses\Grade;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Courses\Course;
+use App\Models\Courses\Assignment;
+use Illuminate\Support\Facades\Auth;
 
 class GradesController extends Controller
 {
@@ -119,12 +121,23 @@ class GradesController extends Controller
     /**
      * Store a newly created resource in storage.
      *
+     * @param string                     $slug
+     * @param Assignment                 $assignment
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(string $slug, Assignment $assignment, Request $request)
     {
-        //
+        dd($request->input());
+
+        // $grade = Grade::create([
+        //     'assignment_id' => $assignment->id,
+        //     'student_id'    => '',
+        //     'grader_id'     => Auth::user()->id,
+        //     'grade'         => $request->input('grade'),
+        //     'letter_grade'  => $request->input('letter_grade'),
+        //     'comments'      => $request->input('comments'),
+        // ]);
     }
 
     /**

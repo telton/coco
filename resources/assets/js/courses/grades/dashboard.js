@@ -1,4 +1,5 @@
 let Editor = require('tui-editor');
+let Viewer = require('tui-editor/dist/tui-editor-Viewer');
 
 export default {
     name: 'courses-grades-dashboard',
@@ -8,36 +9,31 @@ export default {
     data() {
         return {
             editor: {},
+            viewer: {},
         }
     },
     mounted() {
-        let commentsValue = this.$refs.comments.value;
-
-        this.editor = new Editor({
-            el: this.$refs.commentsEditor,
-            initialEditType: 'wysiwyg',
-            previewStyle: 'tab',
-            height: '300px',
-            initialValue: commentsValue
-        });
     },
     methods: {
-        onModalOpen() {
-            let commentsValue = this.$refs.comments.value;
+        onModalOpen(submissionId) {
+            let commentsViewerValue = document.querySelector("#submissionCommentsValue-" + submissionId).value;
+            this.viewer = new Viewer({
+                el: document.querySelector("#submissionCommentsViewer-" + submissionId),
+                height: '500px',
+                initialValue: commentsViewerValue
+            });
             
-            // Check to make sure we've not already created the editor instance.
-            if (!(this.editor instanceof Editor)) {
-                this.editor = new Editor({
-                    el: this.$refs.commentsEditor,
-                    initialEditType: 'wysiwyg',
-                    previewStyle: 'tab',
-                    height: '200px',
-                    initialValue: commentsValue
-                });
-            }
+            let commentsEditorValue = document.querySelector("#gradeComments-" + submissionId).value
+            this.editor = new Editor({
+                el: document.querySelector("#gradeCommentsEditor-" + submissionId),
+                initialEditType: 'wysiwyg',
+                previewStyle: 'tab',
+                height: '200px',
+                initialValue: commentsEditorValue
+            });
         },
-        onSubmit() {
-            this.$refs.comments.value = this.editor.getValue();
+        onSubmit(submissionId) {
+            document.querySelector("#gradeComments-" + submissionId).value = this.editor.getValue();
         },
     }
 }
