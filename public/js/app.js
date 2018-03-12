@@ -105059,20 +105059,26 @@ var Viewer = __webpack_require__(276);
     methods: {
         onModalOpen: function onModalOpen(submissionId) {
             var commentsViewerValue = document.querySelector("#submissionCommentsValue-" + submissionId).value;
-            this.viewer = new Viewer({
-                el: document.querySelector("#submissionCommentsViewer-" + submissionId),
-                height: '500px',
-                initialValue: commentsViewerValue
-            });
+            // Check to make sure we've not already created the viewer instance.
+            if (!(this.viewer instanceof Viewer)) {
+                this.viewer = new Viewer({
+                    el: document.querySelector("#submissionCommentsViewer-" + submissionId),
+                    height: '500px',
+                    initialValue: commentsViewerValue
+                });
+            }
 
             var commentsEditorValue = document.querySelector("#gradeComments-" + submissionId).value;
-            this.editor = new Editor({
-                el: document.querySelector("#gradeCommentsEditor-" + submissionId),
-                initialEditType: 'wysiwyg',
-                previewStyle: 'tab',
-                height: '200px',
-                initialValue: commentsEditorValue
-            });
+            // Check to make sure we've not already created the editor instance.
+            if (!(this.editor instanceof Editor)) {
+                this.editor = new Editor({
+                    el: document.querySelector("#gradeCommentsEditor-" + submissionId),
+                    initialEditType: 'wysiwyg',
+                    previewStyle: 'tab',
+                    height: '200px',
+                    initialValue: commentsEditorValue
+                });
+            }
         },
         onSubmit: function onSubmit(submissionId) {
             document.querySelector("#gradeComments-" + submissionId).value = this.editor.getValue();
