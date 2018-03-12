@@ -17161,6 +17161,14 @@ body {
   padding: 0;
 }
 
+.margin-bottom-10 {
+  margin-bottom: 10px;
+}
+
+.bordered-gray {
+  border: 1px solid #cecece;
+}
+
 .main-nav {
   width: 100%;
   position: relative;
@@ -17451,6 +17459,18 @@ div.alert.alert-info {
 
 input#assignmentFile {
   cursor: pointer;
+}
+
+.submission-details div > p {
+  margin-bottom: 0;
+}
+
+.submission-details .submission-comments {
+  padding-bottom: 20px;
+}
+
+.grade-input {
+  padding: 20px;
 }
 
 .grade-input {

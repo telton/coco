@@ -43,3 +43,11 @@ body {
 .no-padding {
     padding: 0;
 }
+
+.margin-bottom-10 {
+    margin-bottom: 10px;
+}
+
+.bordered-gray {
+    border: 1px solid lighten($cap-charcoal, 15);
+}

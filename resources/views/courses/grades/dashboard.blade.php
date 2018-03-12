@@ -69,22 +69,35 @@
                                                                     </button>
                                                                 </div>
                                                                 <div class="modal-body">
-                                                                    @if (!is_null($submission->file) || !is_null($submission->comments))
-                                                                        <div class="submission">
+                                                                    <div class="submission-details">
+                                                                        <div class="margin-bottom-10">
+                                                                            <p><strong>Student Name: </strong></p>
+                                                                            {{ $submission->user->name }}
+                                                                        </div>
+                                                                        @if (!is_null($submission->file) || !is_null($submission->comments))
                                                                             @if (!is_null($submission->file))
-                                                                                <i class="fa {{ $submission->icon }}"></i>
-                                                                                <a href="{{ route('courses.assignments.attachments.show', [$course->slug, $assignment, $submission->id]) }}" target="_blank">{{ $submission->name }}</a>
-                                                                                {{ $submission->created_at->format('m/d/Y h:i A') }}
+                                                                                <div class="margin-bottom-10">
+                                                                                    <p><strong>File: </strong></p>
+                                                                                    <i class="fa {{ $submission->icon }}"></i>
+                                                                                    <a href="{{ route('courses.assignments.attachments.show', [$course->slug, $assignment, $submission->id]) }}" target="_blank">{{ $submission->name }}</a>
+                                                                                </div>
+                                                                                
+                                                                                <div class="margin-bottom-10">
+                                                                                    <p><strong>Submitted At: </strong></p>
+                                                                                    {{ $submission->created_at->format('m/d/Y') }} at {{ $submission->created_at->format('h:i A') }}
+                                                                                </div>
                                                                             @endif
                                                                             @if (!is_null($submission->comments))
-                                                                                <p><strong>Comments:</strong></p>
-                                                                                <div id="submissionCommentsViewer-{{ $submission->id }}"></div>
-                                                                                <input type="hidden" value="{{ $submission->comments }}" name="submissionCommentsValue" id="submissionCommentsValue-{{ $submission->id }}" ref="submissionCommentsValue-{{ $submission->id }}"> 
+                                                                                <div class="submission-comments">
+                                                                                    <p><strong>Comments:</strong></p>
+                                                                                    <div id="submissionCommentsViewer-{{ $submission->id }}"></div>
+                                                                                    <input type="hidden" value="{{ $submission->comments }}" name="submissionCommentsValue" id="submissionCommentsValue-{{ $submission->id }}" ref="submissionCommentsValue-{{ $submission->id }}"> 
+                                                                                </div>
                                                                             @endif
-                                                                        </div>
-                                                                    @endif
+                                                                        @endif
+                                                                    </div>
 
-                                                                    <div class="grade-input">
+                                                                    <div class="grade-input bordered-gray">
                                                                         <div class="input">
                                                                             <label for="grade" class="control-label"><strong>Grade</strong></label>
                                                                             <input id="grade" type="grade" class="form-control" name="grade" value="{{ old('grade') }}" required>
@@ -106,12 +119,12 @@
                                                                                 </span>
                                                                             @endif
                                                                         </div>
-                                                                    </div>
 
-                                                                    <label for="comments" class="control-label"><strong>Comments</strong></label>
-                                                                    <div id="gradeCommentsEditor-{{ $submission->id }}" ref="gradeCommentsEditor-{{ $submission->id }}"></div>
-                                                                    <input type="hidden" value="{{ old('comments') }}" name="gradeComments" id="gradeComments-{{ $submission->id }}" ref="gradeComments-{{ $submission->id }}">
-                                                                    <input type="hidden" name="submissionId" id="submissionId" value="{{$submission->id}}" ref="id"> 
+                                                                        <label for="comments" class="control-label" style="margin-bottom: 0"><strong>Comments</strong></label>
+                                                                        <div id="gradeCommentsEditor-{{ $submission->id }}" ref="gradeCommentsEditor-{{ $submission->id }}"></div>
+                                                                        <input type="hidden" value="{{ old('comments') }}" name="gradeComments" id="gradeComments-{{ $submission->id }}" ref="gradeComments-{{ $submission->id }}">
+                                                                        <input type="hidden" name="submissionId" id="submissionId" value="{{$submission->id}}" ref="id"> 
+                                                                    </div>
                                                                 </div>
                                                                 <div class="modal-footer">
                                                                     <button type="submit" class="btn btn-primary" v-on:click="onSubmit({{ $submission->id }})"><i class="fa fa-check"></i> Enter Grade</button>

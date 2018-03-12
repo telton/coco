@@ -9,3 +9,17 @@
 input#assignmentFile {
     cursor: pointer;
 }
+
+.submission-details {
+    div > p {
+        margin-bottom: 0;
+    }
+
+    .submission-comments {
+        padding-bottom: 20px;
+    }
+}
+
+.grade-input {
+    padding: 20px;
+}
