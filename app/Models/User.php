@@ -25,6 +25,7 @@ class User extends \TCG\Voyager\Models\User
      */
     protected $rules = [
         'name'     => 'required|string|max:255',
+        'role_id'  => 'integer',
         'email'    => 'required|string|email|max:255|unique:users',
         'password' => 'required|string|min:6|confirmed',
     ];
@@ -36,6 +37,7 @@ class User extends \TCG\Voyager\Models\User
      */
     protected $fillable = [
         'name',
+        'role_id',
         'email',
         'password',
     ];
