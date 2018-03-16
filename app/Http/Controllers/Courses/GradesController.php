@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Courses\Course;
 use App\Models\Courses\Assignment;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Courses\File;
 
 class GradesController extends Controller
 {
@@ -121,16 +122,19 @@ class GradesController extends Controller
      */
     public function store(string $slug, Assignment $assignment, Request $request)
     {
-        dd($request->input());
+        $submission = File::where('id', $request->input('submissionId'))->first();
 
-        // $grade = Grade::create([
-        //     'assignment_id' => $assignment->id,
-        //     'student_id'    => '',
-        //     'grader_id'     => Auth::user()->id,
-        //     'grade'         => $request->input('grade'),
-        //     'letter_grade'  => $request->input('letter_grade'),
-        //     'comments'      => $request->input('comments'),
-        // ]);
+        $grade = Grade::create([
+            'assignment_id' => $assignment->id,
+            'student_id'    => $submission->user->id,
+            'grader_id'     => Auth::user()->id,
+            'grade'         => $request->input('grade'),
+            'letter_grade'  => $request->input('letterGrade'),
+            'comments'      => $request->input('gradeComments'),
+        ]);
+
+        $this->flash()->success("The grade for the assignment <strong>{$assignment->name}</strong> has been recorded for student <strong>{$submission->user->name}</strong>!");
+        return $this->redirect()->route('courses.grades.dashboard', $slug);
     }
 
     /**
