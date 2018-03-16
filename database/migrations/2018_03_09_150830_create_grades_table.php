@@ -18,7 +18,7 @@ class CreateGradesTable extends Migration
             $table->integer('assignment_id')->unsigned();
             $table->integer('student_id')->unsigned();
             $table->integer('grader_id')->unsigned();
-            $table->float('grade');
+            $table->decimal('grade', 6, 5);
             $table->string('letter_grade', 5);
             $table->boolean('approved')->default(0);
             $table->timestamps();
