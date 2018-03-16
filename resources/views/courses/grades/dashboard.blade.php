@@ -216,7 +216,7 @@
                                                     <td>
                                                         {{ $submission->updated_at->format('m/d/Y') }} at {{ $submission->updated_at->format('h:i A') }}
                                                     </td>
-                                                    <td></td>
+                                                    <td>
                                                         <button class="btn btn-primary">Edit Grade</button>
                                                     </td>
                                                 </tr>
