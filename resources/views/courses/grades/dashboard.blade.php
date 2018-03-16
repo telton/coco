@@ -110,7 +110,7 @@
                                                                         <div class="input">
                                                                             <label for="grade" class="control-label"><strong>Computed Grade</strong></label>
                                                                             <input type="hidden" :value="computedGrade" id="grade" name="grade" class="form-control" ref="grade">
-                                                                            <input type="text" :value="percentGrade + '%'" name="percentGrade" class="form-control" ref="percentGrade" readonly>
+                                                                            <span>@{{ percentGrade }}%</span>
 
                                                                             @if ($errors->has('grade'))
                                                                                 <span class="help-block">
@@ -208,7 +208,7 @@
                                                         {{ $submission->grade($assignment->id)->grader->name }}
                                                     </td>
                                                     <td>
-                                                        Grade
+                                                        {{ round($submission->grade($assignment->id)->grade * 100, 2) }}%
                                                     </td>
                                                     <td>
                                                         Letter Grade
