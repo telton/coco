@@ -278,31 +278,44 @@ class AssignmentsController extends Controller
         }
 
         // Upload each file in the submission.
-        foreach ($request->file('uploads', []) as $uploads) {
-            // Set the path.
-            $path = "{$assignment->id}/submissions/";
+        // If no file was uploaded, just create an File and don't upload anything.
+        if (!empty($request->file('uploads', []))) {
+            foreach ($request->file('uploads', []) as $uploads) {
+                // Set the path.
+                $path = "{$assignment->id}/submissions/";
 
-            // Create a safe name for storing on the server.
-            $name = md5($uploads->getClientOriginalName()) . '.' . $uploads->getClientOriginalExtension();
+                // Create a safe name for storing on the server.
+                $name = md5($uploads->getClientOriginalName()) . '.' . $uploads->getClientOriginalExtension();
 
-            // Check for collisions.
-            if ($this->storage->exists("{$path}{$name}")) {
-                $name = mt_rand(0, 1000) . '-' . $name;
+                // Check for collisions.
+                if ($this->storage->exists("{$path}{$name}")) {
+                    $name = mt_rand(0, 1000) . '-' . $name;
+                }
+
+                // Create the file.
+                $file = File::create([
+                    'assignment_id' => $assignment->id,
+                    'user_id'       => Auth::user()->id,
+                    'name'          => $uploads->getClientOriginalName(),
+                    'file'          => $path . $name,
+                    'mime'          => $uploads->getClientMimeType(),
+                    'type'          => 'submission',
+                    'comments'      => $request->input('comments'),
+                ]);
+
+                // Save the attachment.
+                $this->storage->put($path . $name, file_get_contents($uploads));
             }
-
-            // Create the file.
+        } else {
             $file = File::create([
                 'assignment_id' => $assignment->id,
                 'user_id'       => Auth::user()->id,
-                'name'          => $uploads->getClientOriginalName(),
-                'file'          => $path . $name,
-                'mime'          => $uploads->getClientMimeType(),
+                'name'          => 'Submission from student ' . Auth::user()->name,
+                'file'          => null,
+                'mime'          => null,
                 'type'          => 'submission',
                 'comments'      => $request->input('comments'),
             ]);
-
-            // Save the attachment.
-            $this->storage->put($path . $name, file_get_contents($uploads));
         }
 
         $this->flash()->success('Your submission has been successfully saved!');
