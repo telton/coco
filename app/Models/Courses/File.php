@@ -161,6 +161,13 @@ class File extends Model
         return $this->belongsTo(User::class);
     }
 
+    /**
+     * Get the grade associated with the assignment submission.
+     *
+     * @author Tyler Elton <telton@umflint.edu>
+     * @param $assignmentId
+     * @return mixed
+     */
     public function grade($assignmentId)
     {
         return Grade::where('assignment_id', $assignmentId)->first();
