@@ -20,12 +20,13 @@ class Grade extends Model
      * @var array
      */
     protected $rules = [
-        'assignment_id'    => 'required|integer',
-        'student_id'       => 'required|integer',
-        'grader_id'        => 'required|integer',
-        'grade'            => 'required|float',
-        'letter_grade'     => 'required|string|max:5',
-        'comments'         => 'required|string',
+        'assignment_id'     => 'required|integer',
+        'student_id'        => 'required|integer',
+        'grader_id'         => 'required|integer',
+        'points_earned'     => 'required|decimal',
+        'grade'             => 'required|decimal',
+        'letter_grade'      => 'required|string|max:5',
+        'comments'          => 'required|string',
     ];
 
     /**
@@ -37,6 +38,7 @@ class Grade extends Model
         'assignment_id',
         'student_id',
         'grader_id',
+        'points_earned',
         'grade',
         'letter_grade',
         'comments',

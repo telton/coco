@@ -5,7 +5,7 @@
         display: flex;
         padding-bottom: 10px;
 
-        label {
+        > label {
             flex: 1;
             align-self: center;
             margin-bottom: 0;
@@ -18,6 +18,10 @@
         
         .grade-input-area {
             display: flex;
+
+            .total-points {
+                align-self: center;
+            }
         }
     }
 }

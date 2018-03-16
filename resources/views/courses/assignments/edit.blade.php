@@ -41,6 +41,16 @@
                             </span>
                         @endif
                     </div>
+                    <div class="total-points form-group{{ $errors->has('points') ? ' has-error' : '' }}">
+                        <label for="points" class="control-label"><strong>Toal Points</strong></label>
+                        <input id="points" type="text" class="form-control" name="points" value="{{ old('points', $assignment->points) }}" required>
+        
+                        @if ($errors->has('points'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('points') }}</strong>
+                            </span>
+                        @endif
+                    </div>
 
                     {{--  Attachments  --}}
                     <div ref="dropzone">
@@ -54,7 +64,7 @@
                             </div>
                         </div>
                         <div class="card-body">
-                            <div v-if="uploads.length == 0" class="alert alert-info" style="margin-bottom: 0;">
+                            <div v-if="uploads.length == 0" class="alert alert-info">
                                 <strong>You don't have any files added!</strong> Add an file by clicking on the <i class="fa fa-plus"></i> above and to the right or by dragging and dropping them here.
                             </div>
 

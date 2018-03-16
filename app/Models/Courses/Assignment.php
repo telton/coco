@@ -24,6 +24,7 @@ class Assignment extends Model
         'name'         => 'required',
         'due_date'     => 'required|date',
         'display_date' => 'required|date',
+        'points'       => 'required|integer',
     ];
 
     /**
@@ -37,6 +38,7 @@ class Assignment extends Model
         'description',
         'due_date',
         'display_date',
+        'points',
     ];
 
     /**

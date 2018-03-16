@@ -20,6 +20,7 @@ class CreateAssignmentsTable extends Migration
             $table->text('description')->nullable();
             $table->dateTime('due_date');
             $table->dateTime('display_date');
+            $table->integer('points');
             $table->timestamps();
 
             $table->foreign('course_id')->references('id')->on('courses');
@@ -31,8 +32,8 @@ class CreateAssignmentsTable extends Migration
             $table->integer('assignment_id')->unsigned();
             $table->integer('user_id')->unsigned();
             $table->string('name');
-            $table->string('file', 2048);
-            $table->string('mime');
+            $table->string('file', 2048)->nullable();
+            $table->string('mime')->nullable();
             $table->string('type');
             $table->text('comments')->nullable();
             $table->timestamps();

@@ -123,12 +123,21 @@ class GradesController extends Controller
     public function store(string $slug, Assignment $assignment, Request $request)
     {
         $submission = File::where('id', $request->input('submissionId'))->first();
+        $grade = 0.00;
+
+        try {
+            $grade = (float) $request->input('pointsEarned') / (float) $request->input('totalPoints');
+        } catch (\ErrorException $e) {
+            $this->flash()->error("An error occured: {$e->getMessage()}");
+            return $this->redirect()->route('courses.grades.dashboard', $slug);
+        }
 
         $grade = Grade::create([
             'assignment_id' => $assignment->id,
             'student_id'    => $submission->user->id,
             'grader_id'     => Auth::user()->id,
-            'grade'         => $request->input('grade'),
+            'points_earned' => $request->input('pointsEarned'),
+            'grade'         => $grade,
             'letter_grade'  => $request->input('letterGrade'),
             'comments'      => $request->input('gradeComments'),
         ]);

@@ -102,8 +102,8 @@
                                                                             <label for="pointsEarned" class="control-label"><strong>Grade</strong></label>
                                                                             <div class="grade-input-area">
                                                                                 <input id="pointsEarned" type="text" class="form-control" name="pointsEarned" value="{{ old('pointsEarned') }}" v-model="pointsEarned" ref="pointsEarned" placeholder="Earned" required> 
-                                                                                <span class="divider">/</span> 
-                                                                                <input id="totalPoints" type="text" class="form-control" name="totalPoints" value="{{ old('totalPoints') }}" v-model="totalPoints" ref="totalPoints" placeholder="Total" required>
+                                                                                <span class="divider">/</span> <span class="total-points">{{ $assignment->points }}</span>
+                                                                                <input id="totalPoints" type="hidden" name="totalPoints" value="{{ $assignment->points }}" ref="totalPoints">
                                                                             </div>
                                                                         </div>
 

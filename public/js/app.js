@@ -105056,6 +105056,11 @@ var Viewer = __webpack_require__(23);
             grade: 0.00
         };
     },
+    mounted: function mounted() {
+        if (this.$refs.totalPoints) {
+            this.totalPoints = this.$refs.totalPoints.value;
+        }
+    },
 
     computed: {
         computedGrade: function computedGrade() {

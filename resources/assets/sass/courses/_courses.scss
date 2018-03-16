@@ -23,3 +23,18 @@ input#assignmentFile {
 .grade-input {
     padding: 20px;
 }
+
+div.total-points {
+    display: flex;
+    flex-direction: row;
+
+    > label {
+        flex: 1;
+        align-self: center;
+        margin-bottom: 0;
+    }
+
+    > input#points {
+        max-width: 150px;
+    }
+}

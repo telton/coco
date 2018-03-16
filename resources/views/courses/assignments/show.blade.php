@@ -28,6 +28,7 @@
             @if (Auth::user()->hasRole(['admin', 'instructor', 'grader', 'tutor']))
                 <p><strong>Display Date:</strong> {{ $assignment->display_date->format('m/d/Y') }} at {{ $assignment->display_date->format('h:i A') }}</p>
             @endif
+            <p><strong>Total Points: </strong> {{ $assignment->points }}</p>
             <p><strong>Description:</strong></p>
             <input type="hidden" ref="description" value="{{ $assignment->description }}">
             <div id="descriptionViewer" ref="descriptionViewer"></div>
@@ -91,7 +92,7 @@
                                         </div>
                                     </div>
                                     <div class="card-body">
-                                        <div v-if="uploads.length == 0" class="alert alert-info" style="margin-bottom: 0;">
+                                        <div v-if="uploads.length == 0" class="alert alert-info">
                                             <strong>You don't have any files added!</strong> Add an file by clicking on the <i class="fa fa-plus"></i> above and to the right or by dragging and dropping them here.
                                         </div>
 

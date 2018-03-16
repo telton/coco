@@ -111,6 +111,7 @@ class AssignmentsController extends Controller
             'description'  => (!is_null($request->input('description'))) ? $request->input('description') : '',
             'due_date'     => new Carbon($request->input('due_date')),
             'display_date' => new Carbon($request->input('display_date')),
+            'points'       => $request->input('points'),
         ]);
 
         // Upload each file in the submission.
@@ -224,6 +225,7 @@ class AssignmentsController extends Controller
             'description'  => $request->input('description'),
             'due_date'     => new Carbon($request->input('due_date')),
             'display_date' => new Carbon($request->input('display_date')),
+            'points'       => $request->input('points'),
         ]);
 
         $assignment->save();

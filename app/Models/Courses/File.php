@@ -23,8 +23,7 @@ class File extends Model
         'assignment_id' => 'required|integer',
         'user_id'       => 'required|integer',
         'name'          => 'required',
-        'file'          => 'required|unique',
-        'mime'          => 'required',
+        'file'          => 'unique',
         'type'          => 'required|in:attachment,submission',
     ];
 
@@ -95,7 +94,7 @@ class File extends Model
     public function __construct(array $attributes = [])
     {
         parent::__construct($attributes);
-        $this->rules['mime'] = $this->rules['mime'] . '|in:' . implode(',', self::$mimes);
+        $this->rules['mime'] = '|in:' . implode(',', self::$mimes);
     }
 
     /**

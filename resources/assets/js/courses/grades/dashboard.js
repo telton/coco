@@ -12,6 +12,11 @@ export default {
             grade: 0.00,
         }
     },
+    mounted() {
+        if (this.$refs.totalPoints) {
+            this.totalPoints = this.$refs.totalPoints.value;
+        }
+    },
     computed: {
         computedGrade: function () {
             let value = parseFloat(this.pointsEarned) / parseFloat(this.totalPoints);

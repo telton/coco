@@ -17449,13 +17449,9 @@ form {
 }
 
 div.alert.alert-info {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding-bottom: 0;
 }
 
 .assignments-toolbar {
@@ -17482,6 +17478,29 @@ input#assignmentFile {
   padding: 20px;
 }
 
+div.total-points {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+div.total-points > label {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -ms-flex-item-align: center;
+      align-self: center;
+  margin-bottom: 0;
+}
+
+div.total-points > input#points {
+  max-width: 150px;
+}
+
 .grade-input {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -17496,7 +17515,7 @@ input#assignmentFile {
   padding-bottom: 10px;
 }
 
-.grade-input .input label {
+.grade-input .input > label {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
@@ -17516,6 +17535,11 @@ input#assignmentFile {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.grade-input .input .grade-input-area .total-points {
+  -ms-flex-item-align: center;
+      align-self: center;
 }
 
 [v-cloak] {

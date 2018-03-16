@@ -19,7 +19,6 @@ class CreateGradesTable extends Migration
             $table->integer('student_id')->unsigned();
             $table->integer('grader_id')->unsigned();
             $table->decimal('points_earned', 4, 2);
-            $table->decimal('total_points', 4, 2);
             $table->decimal('grade', 6, 5);
             $table->string('letter_grade', 5);
             $table->boolean('approved')->default(0);
