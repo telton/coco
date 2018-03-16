@@ -27,6 +27,9 @@
                 <th>
                     Grade
                 </th>
+                <th>
+                    Letter Grade
+                </th>
             </thead>
             <tbody>
                 @foreach($course->assignments as $assignment)
@@ -45,7 +48,14 @@
                             @endif
                         </td>
                         <td>
-                            My Grade
+                            @if ($assignment->submission() && $assignment->submission()->grade($assignment->id))
+                                {{ round($assignment->submission()->grade($assignment->id)->grade * 100, 2) }}%
+                            @endif
+                        </td>
+                        <td style="text-align: center;">
+                            @if ($assignment->submission() && $assignment->submission()->grade($assignment->id))
+                                {{ $assignment->submission()->grade($assignment->id)->letter_grade }}
+                            @endif
                         </td>
                     </tr>
                 @endforeach
