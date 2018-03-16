@@ -228,7 +228,7 @@
                         </div>
                     @empty
                         <div class="alert alert-info">
-                            <p><strong>There are no assignment submissions that have been graded and approved yet.</strong></p>
+                            <p><strong>There are no assignment submissions that have been graded yet.</strong></p>
                         </div>
                     @endforelse
                 </div>

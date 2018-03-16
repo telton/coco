@@ -45,7 +45,6 @@ class GradesController extends Controller
         $submissions = [];
         $assignments = [
             'ungraded'   => [],
-            'unapproved' => [],
             'completed'  => [],
         ];
 
@@ -62,12 +61,6 @@ class GradesController extends Controller
 
                     if (!in_array($assignment, $assignments)) {
                         $assignments['ungraded'][] = $assignment;
-                    }
-                } elseif (!$submission->grade($assignment->id)->approved) {
-                    $submissions['unapproved'][] = $submission;
-
-                    if (!in_array($assignment, $assignments)) {
-                        $assignments['unapproved'][] = $assignment;
                     }
                 } else {
                     $submissions['completed'][] = $submission;
