@@ -99,9 +99,19 @@
 
                                                                     <div class="grade-input bordered-gray">
                                                                         <div class="input">
-                                                                            <label for="grade" class="control-label"><strong>Grade</strong></label>
-                                                                            <input id="grade" type="grade" class="form-control" name="grade" value="{{ old('grade') }}" required>
-                                                            
+                                                                            <label for="pointsEarned" class="control-label"><strong>Grade</strong></label>
+                                                                            <div class="grade-input-area">
+                                                                                <input id="pointsEarned" type="text" class="form-control" name="pointsEarned" value="{{ old('pointsEarned') }}" v-model="pointsEarned" ref="pointsEarned" placeholder="Earned" required> 
+                                                                                <span class="divider">/</span> 
+                                                                                <input id="totalPoints" type="text" class="form-control" name="totalPoints" value="{{ old('totalPoints') }}" v-model="totalPoints" ref="totalPoints" placeholder="Total" required>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="input">
+                                                                            <label for="grade" class="control-label"><strong>Computed Grade</strong></label>
+                                                                            <input type="hidden" :value="computedGrade" id="grade" name="grade" class="form-control" ref="grade">
+                                                                            <input type="text" :value="percentGrade + '%'" name="percentGrade" class="form-control" ref="percentGrade" readonly>
+
                                                                             @if ($errors->has('grade'))
                                                                                 <span class="help-block">
                                                                                     <strong>{{ $errors->first('grade') }}</strong>
@@ -111,7 +121,7 @@
                                                                         
                                                                         <div class="input">
                                                                             <label for="letterGrade" class="control-label"><strong>Letter Grade</strong></label>
-                                                                            <input id="letterGrade" type="letterGrade" class="form-control" name="letterGrade" value="{{ old('letterGrade') }}" required>
+                                                                            <input id="letterGrade" type="text" class="form-control" name="letterGrade" value="{{ old('letterGrade') }}" placeholder="A+" required>
                                                             
                                                                             @if ($errors->has('letterGrade'))
                                                                                 <span class="help-block">

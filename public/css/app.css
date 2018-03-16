@@ -17169,6 +17169,15 @@ body {
   border: 1px solid #cecece;
 }
 
+.divider {
+  padding-left: 5px;
+  padding-right: 5px;
+  -ms-flex-item-align: center;
+      align-self: center;
+  font-size: x-large;
+  font-weight: bold;
+}
+
 .main-nav {
   width: 100%;
   position: relative;
@@ -17474,9 +17483,6 @@ input#assignmentFile {
 }
 
 .grade-input {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -17487,17 +17493,13 @@ input#assignmentFile {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
   padding-bottom: 10px;
 }
 
 .grade-input .input label {
-  -webkit-box-flex: 0.5;
-      -ms-flex: 0.5;
-          flex: 0.5;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   -ms-flex-item-align: center;
       align-self: center;
   margin-bottom: 0;
@@ -17507,6 +17509,13 @@ input#assignmentFile {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+  max-width: 95px;
+}
+
+.grade-input .input .grade-input-area {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 [v-cloak] {

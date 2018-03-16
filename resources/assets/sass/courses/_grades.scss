@@ -1,20 +1,23 @@
 .grade-input {
-    display: flex;
     flex-direction: column;
 
     .input {
         display: flex;
-        flex-direction: row;
         padding-bottom: 10px;
 
         label {
-            flex: 0.5;
+            flex: 1;
             align-self: center;
             margin-bottom: 0;
         }
 
         .form-control {
             flex: 1;
+            max-width: 95px;
+        }
+        
+        .grade-input-area {
+            display: flex;
         }
     }
 }

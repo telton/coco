@@ -3,16 +3,29 @@ let Viewer = require('tui-editor/dist/tui-editor-Viewer');
 
 export default {
     name: 'courses-grades-dashboard',
-    props: {
-
-    },
     data() {
         return {
             editor: {},
             viewer: {},
+            pointsEarned: 0,
+            totalPoints: 0,
+            grade: 0.00,
         }
     },
-    mounted() {
+    computed: {
+        computedGrade: function () {
+            let value = parseFloat(this.pointsEarned) / parseFloat(this.totalPoints);
+
+            if (isNaN(value) || !isFinite(value)) {
+                value = 0;
+            }
+            
+            this.grade = parseFloat(value).toFixed(4);
+            return this.grade;
+        },
+        percentGrade: function () {
+            return parseFloat(this.grade * 100).toFixed(2);
+        }
     },
     methods: {
         onModalOpen(submissionId) {

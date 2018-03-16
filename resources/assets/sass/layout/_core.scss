@@ -51,3 +51,11 @@ body {
 .bordered-gray {
     border: 1px solid lighten($cap-charcoal, 15);
 }
+
+.divider {
+    padding-left: 5px;
+    padding-right: 5px;
+    align-self: center;
+    font-size: x-large;
+    font-weight: bold;
+}

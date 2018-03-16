@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 28);
+/******/ 	return __webpack_require__(__webpack_require__.s = 29);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -325,7 +325,7 @@ function normalizeReference(str) {
 //
 exports.lib                 = {};
 exports.lib.mdurl           = __webpack_require__(14);
-exports.lib.ucmicro         = __webpack_require__(48);
+exports.lib.ucmicro         = __webpack_require__(49);
 
 exports.assign              = assign;
 exports.isString            = isString;
@@ -352,7 +352,7 @@ exports.normalizeReference  = normalizeReference;
 "use strict";
 
 
-var bind = __webpack_require__(23);
+var bind = __webpack_require__(24);
 var isBuffer = __webpack_require__(280);
 
 /*global toString:true*/
@@ -11065,7 +11065,7 @@ return jQuery;
  */
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(true)
-		module.exports = factory(__webpack_require__(3), __webpack_require__(11), __webpack_require__(41), __webpack_require__(12), __webpack_require__(21), __webpack_require__(22), __webpack_require__(274));
+		module.exports = factory(__webpack_require__(3), __webpack_require__(11), __webpack_require__(42), __webpack_require__(12), __webpack_require__(21), __webpack_require__(22), __webpack_require__(275));
 	else if(typeof define === 'function' && define.amd)
 		define(["jquery", "tui-code-snippet", "codemirror", "markdown-it", "to-mark", "highlight.js", "squire-rte"], factory);
 	else if(typeof exports === 'object')
@@ -36387,10 +36387,10 @@ function getDefaultAdapter() {
   var adapter;
   if (typeof XMLHttpRequest !== 'undefined') {
     // For browsers use XHR adapter
-    adapter = __webpack_require__(24);
+    adapter = __webpack_require__(25);
   } else if (typeof process !== 'undefined') {
     // For node use HTTP adapter
-    adapter = __webpack_require__(24);
+    adapter = __webpack_require__(25);
   }
   return adapter;
 }
@@ -43340,7 +43340,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 
-module.exports = __webpack_require__(42);
+module.exports = __webpack_require__(43);
 
 
 /***/ }),
@@ -43353,7 +43353,7 @@ module.exports = __webpack_require__(42);
 
 
 /*eslint quotes:0*/
-module.exports = __webpack_require__(43);
+module.exports = __webpack_require__(44);
 
 
 /***/ }),
@@ -43364,10 +43364,10 @@ module.exports = __webpack_require__(43);
 
 
 
-module.exports.encode = __webpack_require__(44);
-module.exports.decode = __webpack_require__(45);
-module.exports.format = __webpack_require__(46);
-module.exports.parse  = __webpack_require__(47);
+module.exports.encode = __webpack_require__(45);
+module.exports.decode = __webpack_require__(46);
+module.exports.format = __webpack_require__(47);
+module.exports.parse  = __webpack_require__(48);
 
 
 /***/ }),
@@ -44973,189 +44973,3880 @@ module.exports = toDom;
 /* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var hljs = __webpack_require__(97);
+var hljs = __webpack_require__(98);
 
-hljs.registerLanguage('1c', __webpack_require__(98));
-hljs.registerLanguage('abnf', __webpack_require__(99));
-hljs.registerLanguage('accesslog', __webpack_require__(100));
-hljs.registerLanguage('actionscript', __webpack_require__(101));
-hljs.registerLanguage('ada', __webpack_require__(102));
-hljs.registerLanguage('apache', __webpack_require__(103));
-hljs.registerLanguage('applescript', __webpack_require__(104));
-hljs.registerLanguage('cpp', __webpack_require__(105));
-hljs.registerLanguage('arduino', __webpack_require__(106));
-hljs.registerLanguage('armasm', __webpack_require__(107));
-hljs.registerLanguage('xml', __webpack_require__(108));
-hljs.registerLanguage('asciidoc', __webpack_require__(109));
-hljs.registerLanguage('aspectj', __webpack_require__(110));
-hljs.registerLanguage('autohotkey', __webpack_require__(111));
-hljs.registerLanguage('autoit', __webpack_require__(112));
-hljs.registerLanguage('avrasm', __webpack_require__(113));
-hljs.registerLanguage('awk', __webpack_require__(114));
-hljs.registerLanguage('axapta', __webpack_require__(115));
-hljs.registerLanguage('bash', __webpack_require__(116));
-hljs.registerLanguage('basic', __webpack_require__(117));
-hljs.registerLanguage('bnf', __webpack_require__(118));
-hljs.registerLanguage('brainfuck', __webpack_require__(119));
-hljs.registerLanguage('cal', __webpack_require__(120));
-hljs.registerLanguage('capnproto', __webpack_require__(121));
-hljs.registerLanguage('ceylon', __webpack_require__(122));
-hljs.registerLanguage('clean', __webpack_require__(123));
-hljs.registerLanguage('clojure', __webpack_require__(124));
-hljs.registerLanguage('clojure-repl', __webpack_require__(125));
-hljs.registerLanguage('cmake', __webpack_require__(126));
-hljs.registerLanguage('coffeescript', __webpack_require__(127));
-hljs.registerLanguage('coq', __webpack_require__(128));
-hljs.registerLanguage('cos', __webpack_require__(129));
-hljs.registerLanguage('crmsh', __webpack_require__(130));
-hljs.registerLanguage('crystal', __webpack_require__(131));
-hljs.registerLanguage('cs', __webpack_require__(132));
-hljs.registerLanguage('csp', __webpack_require__(133));
-hljs.registerLanguage('css', __webpack_require__(134));
-hljs.registerLanguage('d', __webpack_require__(135));
-hljs.registerLanguage('markdown', __webpack_require__(136));
-hljs.registerLanguage('dart', __webpack_require__(137));
-hljs.registerLanguage('delphi', __webpack_require__(138));
-hljs.registerLanguage('diff', __webpack_require__(139));
-hljs.registerLanguage('django', __webpack_require__(140));
-hljs.registerLanguage('dns', __webpack_require__(141));
-hljs.registerLanguage('dockerfile', __webpack_require__(142));
-hljs.registerLanguage('dos', __webpack_require__(143));
-hljs.registerLanguage('dsconfig', __webpack_require__(144));
-hljs.registerLanguage('dts', __webpack_require__(145));
-hljs.registerLanguage('dust', __webpack_require__(146));
-hljs.registerLanguage('ebnf', __webpack_require__(147));
-hljs.registerLanguage('elixir', __webpack_require__(148));
-hljs.registerLanguage('elm', __webpack_require__(149));
-hljs.registerLanguage('ruby', __webpack_require__(150));
-hljs.registerLanguage('erb', __webpack_require__(151));
-hljs.registerLanguage('erlang-repl', __webpack_require__(152));
-hljs.registerLanguage('erlang', __webpack_require__(153));
-hljs.registerLanguage('excel', __webpack_require__(154));
-hljs.registerLanguage('fix', __webpack_require__(155));
-hljs.registerLanguage('flix', __webpack_require__(156));
-hljs.registerLanguage('fortran', __webpack_require__(157));
-hljs.registerLanguage('fsharp', __webpack_require__(158));
-hljs.registerLanguage('gams', __webpack_require__(159));
-hljs.registerLanguage('gauss', __webpack_require__(160));
-hljs.registerLanguage('gcode', __webpack_require__(161));
-hljs.registerLanguage('gherkin', __webpack_require__(162));
-hljs.registerLanguage('glsl', __webpack_require__(163));
-hljs.registerLanguage('go', __webpack_require__(164));
-hljs.registerLanguage('golo', __webpack_require__(165));
-hljs.registerLanguage('gradle', __webpack_require__(166));
-hljs.registerLanguage('groovy', __webpack_require__(167));
-hljs.registerLanguage('haml', __webpack_require__(168));
-hljs.registerLanguage('handlebars', __webpack_require__(169));
-hljs.registerLanguage('haskell', __webpack_require__(170));
-hljs.registerLanguage('haxe', __webpack_require__(171));
-hljs.registerLanguage('hsp', __webpack_require__(172));
-hljs.registerLanguage('htmlbars', __webpack_require__(173));
-hljs.registerLanguage('http', __webpack_require__(174));
-hljs.registerLanguage('hy', __webpack_require__(175));
-hljs.registerLanguage('inform7', __webpack_require__(176));
-hljs.registerLanguage('ini', __webpack_require__(177));
-hljs.registerLanguage('irpf90', __webpack_require__(178));
-hljs.registerLanguage('java', __webpack_require__(179));
-hljs.registerLanguage('javascript', __webpack_require__(180));
-hljs.registerLanguage('jboss-cli', __webpack_require__(181));
-hljs.registerLanguage('json', __webpack_require__(182));
-hljs.registerLanguage('julia', __webpack_require__(183));
-hljs.registerLanguage('julia-repl', __webpack_require__(184));
-hljs.registerLanguage('kotlin', __webpack_require__(185));
-hljs.registerLanguage('lasso', __webpack_require__(186));
-hljs.registerLanguage('ldif', __webpack_require__(187));
-hljs.registerLanguage('leaf', __webpack_require__(188));
-hljs.registerLanguage('less', __webpack_require__(189));
-hljs.registerLanguage('lisp', __webpack_require__(190));
-hljs.registerLanguage('livecodeserver', __webpack_require__(191));
-hljs.registerLanguage('livescript', __webpack_require__(192));
-hljs.registerLanguage('llvm', __webpack_require__(193));
-hljs.registerLanguage('lsl', __webpack_require__(194));
-hljs.registerLanguage('lua', __webpack_require__(195));
-hljs.registerLanguage('makefile', __webpack_require__(196));
-hljs.registerLanguage('mathematica', __webpack_require__(197));
-hljs.registerLanguage('matlab', __webpack_require__(198));
-hljs.registerLanguage('maxima', __webpack_require__(199));
-hljs.registerLanguage('mel', __webpack_require__(200));
-hljs.registerLanguage('mercury', __webpack_require__(201));
-hljs.registerLanguage('mipsasm', __webpack_require__(202));
-hljs.registerLanguage('mizar', __webpack_require__(203));
-hljs.registerLanguage('perl', __webpack_require__(204));
-hljs.registerLanguage('mojolicious', __webpack_require__(205));
-hljs.registerLanguage('monkey', __webpack_require__(206));
-hljs.registerLanguage('moonscript', __webpack_require__(207));
-hljs.registerLanguage('n1ql', __webpack_require__(208));
-hljs.registerLanguage('nginx', __webpack_require__(209));
-hljs.registerLanguage('nimrod', __webpack_require__(210));
-hljs.registerLanguage('nix', __webpack_require__(211));
-hljs.registerLanguage('nsis', __webpack_require__(212));
-hljs.registerLanguage('objectivec', __webpack_require__(213));
-hljs.registerLanguage('ocaml', __webpack_require__(214));
-hljs.registerLanguage('openscad', __webpack_require__(215));
-hljs.registerLanguage('oxygene', __webpack_require__(216));
-hljs.registerLanguage('parser3', __webpack_require__(217));
-hljs.registerLanguage('pf', __webpack_require__(218));
-hljs.registerLanguage('php', __webpack_require__(219));
-hljs.registerLanguage('pony', __webpack_require__(220));
-hljs.registerLanguage('powershell', __webpack_require__(221));
-hljs.registerLanguage('processing', __webpack_require__(222));
-hljs.registerLanguage('profile', __webpack_require__(223));
-hljs.registerLanguage('prolog', __webpack_require__(224));
-hljs.registerLanguage('protobuf', __webpack_require__(225));
-hljs.registerLanguage('puppet', __webpack_require__(226));
-hljs.registerLanguage('purebasic', __webpack_require__(227));
-hljs.registerLanguage('python', __webpack_require__(228));
-hljs.registerLanguage('q', __webpack_require__(229));
-hljs.registerLanguage('qml', __webpack_require__(230));
-hljs.registerLanguage('r', __webpack_require__(231));
-hljs.registerLanguage('rib', __webpack_require__(232));
-hljs.registerLanguage('roboconf', __webpack_require__(233));
-hljs.registerLanguage('routeros', __webpack_require__(234));
-hljs.registerLanguage('rsl', __webpack_require__(235));
-hljs.registerLanguage('ruleslanguage', __webpack_require__(236));
-hljs.registerLanguage('rust', __webpack_require__(237));
-hljs.registerLanguage('scala', __webpack_require__(238));
-hljs.registerLanguage('scheme', __webpack_require__(239));
-hljs.registerLanguage('scilab', __webpack_require__(240));
-hljs.registerLanguage('scss', __webpack_require__(241));
-hljs.registerLanguage('shell', __webpack_require__(242));
-hljs.registerLanguage('smali', __webpack_require__(243));
-hljs.registerLanguage('smalltalk', __webpack_require__(244));
-hljs.registerLanguage('sml', __webpack_require__(245));
-hljs.registerLanguage('sqf', __webpack_require__(246));
-hljs.registerLanguage('sql', __webpack_require__(247));
-hljs.registerLanguage('stan', __webpack_require__(248));
-hljs.registerLanguage('stata', __webpack_require__(249));
-hljs.registerLanguage('step21', __webpack_require__(250));
-hljs.registerLanguage('stylus', __webpack_require__(251));
-hljs.registerLanguage('subunit', __webpack_require__(252));
-hljs.registerLanguage('swift', __webpack_require__(253));
-hljs.registerLanguage('taggerscript', __webpack_require__(254));
-hljs.registerLanguage('yaml', __webpack_require__(255));
-hljs.registerLanguage('tap', __webpack_require__(256));
-hljs.registerLanguage('tcl', __webpack_require__(257));
-hljs.registerLanguage('tex', __webpack_require__(258));
-hljs.registerLanguage('thrift', __webpack_require__(259));
-hljs.registerLanguage('tp', __webpack_require__(260));
-hljs.registerLanguage('twig', __webpack_require__(261));
-hljs.registerLanguage('typescript', __webpack_require__(262));
-hljs.registerLanguage('vala', __webpack_require__(263));
-hljs.registerLanguage('vbnet', __webpack_require__(264));
-hljs.registerLanguage('vbscript', __webpack_require__(265));
-hljs.registerLanguage('vbscript-html', __webpack_require__(266));
-hljs.registerLanguage('verilog', __webpack_require__(267));
-hljs.registerLanguage('vhdl', __webpack_require__(268));
-hljs.registerLanguage('vim', __webpack_require__(269));
-hljs.registerLanguage('x86asm', __webpack_require__(270));
-hljs.registerLanguage('xl', __webpack_require__(271));
-hljs.registerLanguage('xquery', __webpack_require__(272));
-hljs.registerLanguage('zephir', __webpack_require__(273));
+hljs.registerLanguage('1c', __webpack_require__(99));
+hljs.registerLanguage('abnf', __webpack_require__(100));
+hljs.registerLanguage('accesslog', __webpack_require__(101));
+hljs.registerLanguage('actionscript', __webpack_require__(102));
+hljs.registerLanguage('ada', __webpack_require__(103));
+hljs.registerLanguage('apache', __webpack_require__(104));
+hljs.registerLanguage('applescript', __webpack_require__(105));
+hljs.registerLanguage('cpp', __webpack_require__(106));
+hljs.registerLanguage('arduino', __webpack_require__(107));
+hljs.registerLanguage('armasm', __webpack_require__(108));
+hljs.registerLanguage('xml', __webpack_require__(109));
+hljs.registerLanguage('asciidoc', __webpack_require__(110));
+hljs.registerLanguage('aspectj', __webpack_require__(111));
+hljs.registerLanguage('autohotkey', __webpack_require__(112));
+hljs.registerLanguage('autoit', __webpack_require__(113));
+hljs.registerLanguage('avrasm', __webpack_require__(114));
+hljs.registerLanguage('awk', __webpack_require__(115));
+hljs.registerLanguage('axapta', __webpack_require__(116));
+hljs.registerLanguage('bash', __webpack_require__(117));
+hljs.registerLanguage('basic', __webpack_require__(118));
+hljs.registerLanguage('bnf', __webpack_require__(119));
+hljs.registerLanguage('brainfuck', __webpack_require__(120));
+hljs.registerLanguage('cal', __webpack_require__(121));
+hljs.registerLanguage('capnproto', __webpack_require__(122));
+hljs.registerLanguage('ceylon', __webpack_require__(123));
+hljs.registerLanguage('clean', __webpack_require__(124));
+hljs.registerLanguage('clojure', __webpack_require__(125));
+hljs.registerLanguage('clojure-repl', __webpack_require__(126));
+hljs.registerLanguage('cmake', __webpack_require__(127));
+hljs.registerLanguage('coffeescript', __webpack_require__(128));
+hljs.registerLanguage('coq', __webpack_require__(129));
+hljs.registerLanguage('cos', __webpack_require__(130));
+hljs.registerLanguage('crmsh', __webpack_require__(131));
+hljs.registerLanguage('crystal', __webpack_require__(132));
+hljs.registerLanguage('cs', __webpack_require__(133));
+hljs.registerLanguage('csp', __webpack_require__(134));
+hljs.registerLanguage('css', __webpack_require__(135));
+hljs.registerLanguage('d', __webpack_require__(136));
+hljs.registerLanguage('markdown', __webpack_require__(137));
+hljs.registerLanguage('dart', __webpack_require__(138));
+hljs.registerLanguage('delphi', __webpack_require__(139));
+hljs.registerLanguage('diff', __webpack_require__(140));
+hljs.registerLanguage('django', __webpack_require__(141));
+hljs.registerLanguage('dns', __webpack_require__(142));
+hljs.registerLanguage('dockerfile', __webpack_require__(143));
+hljs.registerLanguage('dos', __webpack_require__(144));
+hljs.registerLanguage('dsconfig', __webpack_require__(145));
+hljs.registerLanguage('dts', __webpack_require__(146));
+hljs.registerLanguage('dust', __webpack_require__(147));
+hljs.registerLanguage('ebnf', __webpack_require__(148));
+hljs.registerLanguage('elixir', __webpack_require__(149));
+hljs.registerLanguage('elm', __webpack_require__(150));
+hljs.registerLanguage('ruby', __webpack_require__(151));
+hljs.registerLanguage('erb', __webpack_require__(152));
+hljs.registerLanguage('erlang-repl', __webpack_require__(153));
+hljs.registerLanguage('erlang', __webpack_require__(154));
+hljs.registerLanguage('excel', __webpack_require__(155));
+hljs.registerLanguage('fix', __webpack_require__(156));
+hljs.registerLanguage('flix', __webpack_require__(157));
+hljs.registerLanguage('fortran', __webpack_require__(158));
+hljs.registerLanguage('fsharp', __webpack_require__(159));
+hljs.registerLanguage('gams', __webpack_require__(160));
+hljs.registerLanguage('gauss', __webpack_require__(161));
+hljs.registerLanguage('gcode', __webpack_require__(162));
+hljs.registerLanguage('gherkin', __webpack_require__(163));
+hljs.registerLanguage('glsl', __webpack_require__(164));
+hljs.registerLanguage('go', __webpack_require__(165));
+hljs.registerLanguage('golo', __webpack_require__(166));
+hljs.registerLanguage('gradle', __webpack_require__(167));
+hljs.registerLanguage('groovy', __webpack_require__(168));
+hljs.registerLanguage('haml', __webpack_require__(169));
+hljs.registerLanguage('handlebars', __webpack_require__(170));
+hljs.registerLanguage('haskell', __webpack_require__(171));
+hljs.registerLanguage('haxe', __webpack_require__(172));
+hljs.registerLanguage('hsp', __webpack_require__(173));
+hljs.registerLanguage('htmlbars', __webpack_require__(174));
+hljs.registerLanguage('http', __webpack_require__(175));
+hljs.registerLanguage('hy', __webpack_require__(176));
+hljs.registerLanguage('inform7', __webpack_require__(177));
+hljs.registerLanguage('ini', __webpack_require__(178));
+hljs.registerLanguage('irpf90', __webpack_require__(179));
+hljs.registerLanguage('java', __webpack_require__(180));
+hljs.registerLanguage('javascript', __webpack_require__(181));
+hljs.registerLanguage('jboss-cli', __webpack_require__(182));
+hljs.registerLanguage('json', __webpack_require__(183));
+hljs.registerLanguage('julia', __webpack_require__(184));
+hljs.registerLanguage('julia-repl', __webpack_require__(185));
+hljs.registerLanguage('kotlin', __webpack_require__(186));
+hljs.registerLanguage('lasso', __webpack_require__(187));
+hljs.registerLanguage('ldif', __webpack_require__(188));
+hljs.registerLanguage('leaf', __webpack_require__(189));
+hljs.registerLanguage('less', __webpack_require__(190));
+hljs.registerLanguage('lisp', __webpack_require__(191));
+hljs.registerLanguage('livecodeserver', __webpack_require__(192));
+hljs.registerLanguage('livescript', __webpack_require__(193));
+hljs.registerLanguage('llvm', __webpack_require__(194));
+hljs.registerLanguage('lsl', __webpack_require__(195));
+hljs.registerLanguage('lua', __webpack_require__(196));
+hljs.registerLanguage('makefile', __webpack_require__(197));
+hljs.registerLanguage('mathematica', __webpack_require__(198));
+hljs.registerLanguage('matlab', __webpack_require__(199));
+hljs.registerLanguage('maxima', __webpack_require__(200));
+hljs.registerLanguage('mel', __webpack_require__(201));
+hljs.registerLanguage('mercury', __webpack_require__(202));
+hljs.registerLanguage('mipsasm', __webpack_require__(203));
+hljs.registerLanguage('mizar', __webpack_require__(204));
+hljs.registerLanguage('perl', __webpack_require__(205));
+hljs.registerLanguage('mojolicious', __webpack_require__(206));
+hljs.registerLanguage('monkey', __webpack_require__(207));
+hljs.registerLanguage('moonscript', __webpack_require__(208));
+hljs.registerLanguage('n1ql', __webpack_require__(209));
+hljs.registerLanguage('nginx', __webpack_require__(210));
+hljs.registerLanguage('nimrod', __webpack_require__(211));
+hljs.registerLanguage('nix', __webpack_require__(212));
+hljs.registerLanguage('nsis', __webpack_require__(213));
+hljs.registerLanguage('objectivec', __webpack_require__(214));
+hljs.registerLanguage('ocaml', __webpack_require__(215));
+hljs.registerLanguage('openscad', __webpack_require__(216));
+hljs.registerLanguage('oxygene', __webpack_require__(217));
+hljs.registerLanguage('parser3', __webpack_require__(218));
+hljs.registerLanguage('pf', __webpack_require__(219));
+hljs.registerLanguage('php', __webpack_require__(220));
+hljs.registerLanguage('pony', __webpack_require__(221));
+hljs.registerLanguage('powershell', __webpack_require__(222));
+hljs.registerLanguage('processing', __webpack_require__(223));
+hljs.registerLanguage('profile', __webpack_require__(224));
+hljs.registerLanguage('prolog', __webpack_require__(225));
+hljs.registerLanguage('protobuf', __webpack_require__(226));
+hljs.registerLanguage('puppet', __webpack_require__(227));
+hljs.registerLanguage('purebasic', __webpack_require__(228));
+hljs.registerLanguage('python', __webpack_require__(229));
+hljs.registerLanguage('q', __webpack_require__(230));
+hljs.registerLanguage('qml', __webpack_require__(231));
+hljs.registerLanguage('r', __webpack_require__(232));
+hljs.registerLanguage('rib', __webpack_require__(233));
+hljs.registerLanguage('roboconf', __webpack_require__(234));
+hljs.registerLanguage('routeros', __webpack_require__(235));
+hljs.registerLanguage('rsl', __webpack_require__(236));
+hljs.registerLanguage('ruleslanguage', __webpack_require__(237));
+hljs.registerLanguage('rust', __webpack_require__(238));
+hljs.registerLanguage('scala', __webpack_require__(239));
+hljs.registerLanguage('scheme', __webpack_require__(240));
+hljs.registerLanguage('scilab', __webpack_require__(241));
+hljs.registerLanguage('scss', __webpack_require__(242));
+hljs.registerLanguage('shell', __webpack_require__(243));
+hljs.registerLanguage('smali', __webpack_require__(244));
+hljs.registerLanguage('smalltalk', __webpack_require__(245));
+hljs.registerLanguage('sml', __webpack_require__(246));
+hljs.registerLanguage('sqf', __webpack_require__(247));
+hljs.registerLanguage('sql', __webpack_require__(248));
+hljs.registerLanguage('stan', __webpack_require__(249));
+hljs.registerLanguage('stata', __webpack_require__(250));
+hljs.registerLanguage('step21', __webpack_require__(251));
+hljs.registerLanguage('stylus', __webpack_require__(252));
+hljs.registerLanguage('subunit', __webpack_require__(253));
+hljs.registerLanguage('swift', __webpack_require__(254));
+hljs.registerLanguage('taggerscript', __webpack_require__(255));
+hljs.registerLanguage('yaml', __webpack_require__(256));
+hljs.registerLanguage('tap', __webpack_require__(257));
+hljs.registerLanguage('tcl', __webpack_require__(258));
+hljs.registerLanguage('tex', __webpack_require__(259));
+hljs.registerLanguage('thrift', __webpack_require__(260));
+hljs.registerLanguage('tp', __webpack_require__(261));
+hljs.registerLanguage('twig', __webpack_require__(262));
+hljs.registerLanguage('typescript', __webpack_require__(263));
+hljs.registerLanguage('vala', __webpack_require__(264));
+hljs.registerLanguage('vbnet', __webpack_require__(265));
+hljs.registerLanguage('vbscript', __webpack_require__(266));
+hljs.registerLanguage('vbscript-html', __webpack_require__(267));
+hljs.registerLanguage('verilog', __webpack_require__(268));
+hljs.registerLanguage('vhdl', __webpack_require__(269));
+hljs.registerLanguage('vim', __webpack_require__(270));
+hljs.registerLanguage('x86asm', __webpack_require__(271));
+hljs.registerLanguage('xl', __webpack_require__(272));
+hljs.registerLanguage('xquery', __webpack_require__(273));
+hljs.registerLanguage('zephir', __webpack_require__(274));
 
 module.exports = hljs;
 
 /***/ }),
 /* 23 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/*!
+ * tui-editor
+ * @version 1.0.3
+ * @author NHN Ent. FE Development Lab <dl_javascript@nhnent.com> (https://nhnent.github.io/tui.editor/)
+ * @license MIT
+ */
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(true)
+		module.exports = factory(__webpack_require__(3), __webpack_require__(11), __webpack_require__(12), __webpack_require__(21), __webpack_require__(22));
+	else if(typeof define === 'function' && define.amd)
+		define(["jquery", "tui-code-snippet", "markdown-it", "to-mark", "highlight.js"], factory);
+	else if(typeof exports === 'object')
+		exports["Editor"] = factory(require("jquery"), require("tui-code-snippet"), require("markdown-it"), require("to-mark"), require("highlight.js"));
+	else
+		root["tui"] = root["tui"] || {}, root["tui"]["Editor"] = factory(root["$"], (root["tui"] && root["tui"]["util"]), root["markdownit"], root["toMark"], root["hljs"]);
+})(typeof self !== 'undefined' ? self : this, function(__WEBPACK_EXTERNAL_MODULE_0__, __WEBPACK_EXTERNAL_MODULE_1__, __WEBPACK_EXTERNAL_MODULE_19__, __WEBPACK_EXTERNAL_MODULE_20__, __WEBPACK_EXTERNAL_MODULE_28__) {
+return /******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, {
+/******/ 				configurable: false,
+/******/ 				enumerable: true,
+/******/ 				get: getter
+/******/ 			});
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "dist/";
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 125);
+/******/ })
+/************************************************************************/
+/******/ ({
+
+/***/ 0:
+/***/ (function(module, exports) {
+
+module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
+
+/***/ }),
+
+/***/ 1:
+/***/ (function(module, exports) {
+
+module.exports = __WEBPACK_EXTERNAL_MODULE_1__;
+
+/***/ }),
+
+/***/ 10:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); /**
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * @fileoverview Implements preview
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * @author NHN Ent. FE Development Lab <dl_javascript@nhnent.com>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      */
+
+
+var _jquery = __webpack_require__(0);
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+var _lazyRunner = __webpack_require__(16);
+
+var _lazyRunner2 = _interopRequireDefault(_lazyRunner);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+/**
+ * Class Preview
+ **/
+var Preview = function () {
+  /**
+   * Creates an instance of Preview.
+   * @param {jQuery} $el Container element for preview
+   * @param {EventManager} eventManager Event manager instance
+   * @param {Convertor} convertor Convertor instance
+   * @param {boolean} isViewer - whether viewer mode or not
+   * @memberof Preview
+   */
+  function Preview($el, eventManager, convertor, isViewer) {
+    _classCallCheck(this, Preview);
+
+    this.eventManager = eventManager;
+    this.convertor = convertor;
+    this.$el = $el;
+    this.isViewer = !!isViewer;
+
+    this._initContentSection();
+
+    this.lazyRunner = new _lazyRunner2.default();
+
+    this.lazyRunner.registerLazyRunFunction('refresh', this.refresh, 800, this);
+  }
+
+  /**
+   * Initialize content selection
+   * @private
+   */
+
+
+  _createClass(Preview, [{
+    key: '_initContentSection',
+    value: function _initContentSection() {
+      this._$previewContent = (0, _jquery2.default)('<div class="tui-editor-contents" />');
+      this.$el.append(this._$previewContent);
+    }
+
+    /**
+     * Refresh rendering
+     * @memberof Preview
+     * @param {string} markdown Markdown text
+     */
+
+  }, {
+    key: 'refresh',
+    value: function refresh(markdown) {
+      this.render(this.convertor.toHTMLWithCodeHightlight(markdown));
+    }
+
+    /**
+     * get html string
+     * @returns {string} - html preview string
+     * @memberof Preview
+     */
+
+  }, {
+    key: 'getHTML',
+    value: function getHTML() {
+      return this._$previewContent.html();
+    }
+
+    /**
+     * set html string
+     * @param {string} html - html preview string
+     * @memberof Preview
+     */
+
+  }, {
+    key: 'setHTML',
+    value: function setHTML(html) {
+      this._$previewContent.html(html);
+    }
+
+    /**
+     * Render HTML on preview
+     * @memberof Preview
+     * @param {string} html HTML string
+     * @protected
+     */
+
+  }, {
+    key: 'render',
+    value: function render(html) {
+      var _$previewContent = this._$previewContent;
+
+      html = this.eventManager.emit('previewBeforeHook', html) || html;
+
+      _$previewContent.empty();
+      _$previewContent.html(html);
+    }
+
+    /**
+     * Set preview height
+     * @memberof Preview
+     * @param {number} height - Height for preview container
+     */
+
+  }, {
+    key: 'setHeight',
+    value: function setHeight(height) {
+      this.$el.get(0).style.height = height + 'px';
+    }
+
+    /**
+     * set min height
+     * @param {number} minHeight - min height
+     * @memberof Preview
+     */
+
+  }, {
+    key: 'setMinHeight',
+    value: function setMinHeight(minHeight) {
+      this.$el.get(0).style.minHeight = minHeight + 'px';
+    }
+
+    /**
+     * Is Preview visible
+     * @returns {boolean} result
+     */
+
+  }, {
+    key: 'isVisible',
+    value: function isVisible() {
+      return this.$el.css('display') !== 'none';
+    }
+  }]);
+
+  return Preview;
+}();
+
+exports.default = Preview;
+
+/***/ }),
+
+/***/ 11:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _jquery = __webpack_require__(0);
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+var _tuiCodeSnippet = __webpack_require__(1);
+
+var _tuiCodeSnippet2 = _interopRequireDefault(_tuiCodeSnippet);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/**
+ * @fileoverview Implements htmlSanitizer
+ * @author NHN Ent. FE Development Lab <dl_javascript@nhnent.com>
+ */
+var HTML_ATTR_LIST_RX = new RegExp('^(abbr|align|alt|axis|bgcolor|border|cellpadding|cellspacing|class|clear|' + 'color|cols|compact|coords|dir|face|headers|height|hreflang|hspace|' + 'ismap|lang|language|nohref|nowrap|rel|rev|rows|rules|' + 'scope|scrolling|shape|size|span|start|summary|tabindex|target|title|type|' + 'valign|value|vspace|width|checked|mathvariant|encoding|id|name|' + 'background|cite|href|longdesc|src|usemap|xlink:href|data-+|checked|style)', 'g');
+
+var SVG_ATTR_LIST_RX = new RegExp('^(accent-height|accumulate|additive|alphabetic|arabic-form|ascent|' + 'baseProfile|bbox|begin|by|calcMode|cap-height|class|color|color-rendering|content|' + 'cx|cy|d|dx|dy|descent|display|dur|end|fill|fill-rule|font-family|font-size|font-stretch|' + 'font-style|font-variant|font-weight|from|fx|fy|g1|g2|glyph-name|gradientUnits|hanging|' + 'height|horiz-adv-x|horiz-origin-x|ideographic|k|keyPoints|keySplines|keyTimes|lang|' + 'marker-end|marker-mid|marker-start|markerHeight|markerUnits|markerWidth|mathematical|' + 'max|min|offset|opacity|orient|origin|overline-position|overline-thickness|panose-1|' + 'path|pathLength|points|preserveAspectRatio|r|refX|refY|repeatCount|repeatDur|' + 'requiredExtensions|requiredFeatures|restart|rotate|rx|ry|slope|stemh|stemv|stop-color|' + 'stop-opacity|strikethrough-position|strikethrough-thickness|stroke|stroke-dasharray|' + 'stroke-dashoffset|stroke-linecap|stroke-linejoin|stroke-miterlimit|stroke-opacity|' + 'stroke-width|systemLanguage|target|text-anchor|to|transform|type|u1|u2|underline-position|' + 'underline-thickness|unicode|unicode-range|units-per-em|values|version|viewBox|visibility|' + 'width|widths|x|x-height|x1|x2|xlink:actuate|xlink:arcrole|xlink:role|xlink:show|xlink:title|' + 'xlink:type|xml:base|xml:lang|xml:space|xmlns|xmlns:xlink|y|y1|y2|zoomAndPan)', 'g');
+
+/**
+ * htmlSanitizer
+ * @param {string|Node} html html or Node
+ * @param {boolean} [needHtmlText] pass true if need html text
+ * @returns {string|DocumentFragment} result
+ * @ignore
+ */
+function htmlSanitizer(html, needHtmlText) {
+  var $html = (0, _jquery2.default)('<div />');
+
+  html = html.replace(/<!--[\s\S]*?-->/g, '');
+
+  $html.append(html);
+
+  removeUnnecessaryTags($html);
+  leaveOnlyWhitelistAttribute($html);
+
+  return finalizeHtml($html, needHtmlText);
+}
+
+/**
+ * Remove unnecessary tags
+ * @private
+ * @param {jQuery} $html jQuery instance
+ */
+function removeUnnecessaryTags($html) {
+  $html.find('script, iframe, textarea, form, button, select, meta, style, link, title').remove();
+}
+
+/**
+ * Leave only white list attributes
+ * @private
+ * @param {jQuery} $html jQuery instance
+ */
+function leaveOnlyWhitelistAttribute($html) {
+  $html.find('*').each(function (index, node) {
+    var attrs = node.attributes;
+    var blacklist = _tuiCodeSnippet2.default.toArray(attrs).filter(function (attr) {
+      var isHTMLAttr = attr.name.match(HTML_ATTR_LIST_RX);
+      var isSVGAttr = attr.name.match(SVG_ATTR_LIST_RX);
+
+      return !isHTMLAttr && !isSVGAttr;
+    });
+
+    _tuiCodeSnippet2.default.forEachArray(blacklist, function (attr) {
+      // Edge svg attribute name returns uppercase bug. error guard.
+      // https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/5579311/
+      if (attrs.getNamedItem(attr.name)) {
+        attrs.removeNamedItem(attr.name);
+      }
+    });
+  });
+}
+
+/**
+ * Finalize html result
+ * @private
+ * @param {jQuery} $html jQuery instance
+ * @param {boolean} needHtmlText pass true if need html text
+ * @returns {string|DocumentFragment} result
+ */
+function finalizeHtml($html, needHtmlText) {
+  var returnValue = void 0;
+
+  if (needHtmlText) {
+    returnValue = $html[0].innerHTML;
+  } else {
+    var frag = document.createDocumentFragment();
+    var childNodes = _tuiCodeSnippet2.default.toArray($html[0].childNodes);
+    var length = childNodes.length;
+
+
+    for (var i = 0; i < length; i += 1) {
+      frag.appendChild(childNodes[i]);
+    }
+    returnValue = frag;
+  }
+
+  return returnValue;
+}
+
+exports.default = htmlSanitizer;
+
+/***/ }),
+
+/***/ 12:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); /**
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * @fileoverview Implements EventManager
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * @author NHN Ent. FE Development Lab <dl_javascript@nhnent.com>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      */
+
+
+var _tuiCodeSnippet = __webpack_require__(1);
+
+var _tuiCodeSnippet2 = _interopRequireDefault(_tuiCodeSnippet);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var eventList = ['previewBeforeHook', 'previewRenderAfter', 'previewNeedsRefresh', 'addImageBlobHook', 'setMarkdownAfter', 'contentChangedFromWysiwyg', 'changeFromWysiwyg', 'contentChangedFromMarkdown', 'changeFromMarkdown', 'change', 'changeModeToWysiwyg', 'changeModeToMarkdown', 'changeModeBefore', 'changeMode', 'changePreviewStyle', 'openPopupAddLink', 'openPopupAddImage', 'openPopupAddTable', 'openPopupTableUtils', 'openHeadingSelect', 'openPopupCodeBlockLanguages', 'openPopupCodeBlockEditor', 'closePopupCodeBlockLanguages', 'closePopupCodeBlockEditor', 'closeAllPopup', 'command', 'addCommandBefore', 'htmlUpdate', 'markdownUpdate', 'renderedHtmlUpdated', 'removeEditor', 'convertorAfterMarkdownToHtmlConverted', 'convertorBeforeHtmlToMarkdownConverted', 'convertorAfterHtmlToMarkdownConverted', 'stateChange', 'wysiwygSetValueAfter', 'wysiwygSetValueBefore', 'wysiwygGetValueBefore', 'wysiwygProcessHTMLText', 'wysiwygRangeChangeAfter', 'wysiwygKeyEvent', 'scroll', 'click', 'mousedown', 'mouseover', 'mouseout', 'mouseup', 'contextmenu', 'keydown', 'keyup', 'keyMap', 'load', 'focus', 'blur', 'paste', 'pasteBefore', 'willPaste', 'copy', 'copyBefore', 'copyAfter', 'cut', 'cutAfter', 'drop', 'show', 'hide'];
+
+/**
+ * Class EventManager
+ */
+
+var EventManager = function () {
+  /**
+   * Creates an instance of EventManager.
+   * @memberof EventManager
+   */
+  function EventManager() {
+    _classCallCheck(this, EventManager);
+
+    this.events = new _tuiCodeSnippet2.default.Map();
+    this.TYPE = new _tuiCodeSnippet2.default.Enum(eventList);
+  }
+
+  /**
+   * Listen event and bind event handler
+   * @memberof EventManager
+   * @param {string} typeStr Event type string
+   * @param {function} handler Event handler
+   */
+
+
+  _createClass(EventManager, [{
+    key: 'listen',
+    value: function listen(typeStr, handler) {
+      var typeInfo = this._getTypeInfo(typeStr);
+      var eventHandlers = this.events.get(typeInfo.type) || [];
+
+      if (!this._hasEventType(typeInfo.type)) {
+        throw new Error('There is no event type ' + typeInfo.type);
+      }
+
+      if (typeInfo.namespace) {
+        handler.namespace = typeInfo.namespace;
+      }
+
+      eventHandlers.push(handler);
+
+      this.events.set(typeInfo.type, eventHandlers);
+    }
+
+    /**
+     * Emit event
+     * @memberof EventManager
+     * @param {string} eventName Event name to emit
+     * @returns {Array}
+     */
+
+  }, {
+    key: 'emit',
+    value: function emit() {
+      for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+        args[_key] = arguments[_key];
+      }
+
+      var typeStr = args.shift();
+      var typeInfo = this._getTypeInfo(typeStr);
+      var eventHandlers = this.events.get(typeInfo.type);
+      var results = void 0;
+
+      if (eventHandlers) {
+        _tuiCodeSnippet2.default.forEach(eventHandlers, function (handler) {
+          var result = handler.apply(undefined, args);
+
+          if (!_tuiCodeSnippet2.default.isUndefined(result)) {
+            results = results || [];
+            results.push(result);
+          }
+        });
+      }
+
+      return results;
+    }
+
+    /**
+     * Emit given event and return result
+     * @memberof EventManager
+     * @param {string} eventName Event name to emit
+     * @param {string} sourceText Source text to change
+     * @returns {string}
+     */
+
+  }, {
+    key: 'emitReduce',
+    value: function emitReduce() {
+      for (var _len2 = arguments.length, args = Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
+        args[_key2] = arguments[_key2];
+      }
+
+      var type = args.shift();
+      var eventHandlers = this.events.get(type);
+
+      if (eventHandlers) {
+        _tuiCodeSnippet2.default.forEach(eventHandlers, function (handler) {
+          var result = handler.apply(undefined, args);
+
+          if (!_tuiCodeSnippet2.default.isFalsy(result)) {
+            args[0] = result;
+          }
+        });
+      }
+
+      return args[0];
+    }
+
+    /**
+     * Get event type and namespace
+     * @memberof EventManager
+     * @param {string} typeStr Event type name
+     * @returns {{type: string, namespace: string}}
+     * @private
+     */
+
+  }, {
+    key: '_getTypeInfo',
+    value: function _getTypeInfo(typeStr) {
+      var splited = typeStr.split('.');
+
+      return {
+        type: splited[0],
+        namespace: splited[1]
+      };
+    }
+
+    /**
+     * Check whether event type exists or not
+     * @param {string} type Event type name
+     * @returns {boolean}
+     * @private
+     */
+
+  }, {
+    key: '_hasEventType',
+    value: function _hasEventType(type) {
+      return !_tuiCodeSnippet2.default.isUndefined(this.TYPE[this._getTypeInfo(type).type]);
+    }
+
+    /**
+     * Add event type when given event not exists
+     * @memberof EventManager
+     * @param {string} type Event type name
+     */
+
+  }, {
+    key: 'addEventType',
+    value: function addEventType(type) {
+      if (this._hasEventType(type)) {
+        throw new Error('There is already have event type ' + type);
+      }
+
+      this.TYPE.set(type);
+    }
+
+    /**
+     * Remove event handler from given event type
+     * @memberof EventManager
+     * @param {string} typeStr Event type name
+     * @param {function} [handler] - registered event handler
+     */
+
+  }, {
+    key: 'removeEventHandler',
+    value: function removeEventHandler(typeStr, handler) {
+      var _this = this;
+
+      var _getTypeInfo2 = this._getTypeInfo(typeStr),
+          type = _getTypeInfo2.type,
+          namespace = _getTypeInfo2.namespace;
+
+      if (type && handler) {
+        this._removeEventHandlerWithHandler(type, handler);
+      } else if (type && !namespace) {
+        // dont use dot notation cuz eslint
+        this.events['delete'](type);
+      } else if (!type && namespace) {
+        this.events.forEach(function (eventHandlers, eventType) {
+          _this._removeEventHandlerWithTypeInfo(eventType, namespace);
+        });
+      } else if (type && namespace) {
+        this._removeEventHandlerWithTypeInfo(type, namespace);
+      }
+    }
+
+    /**
+     * Remove event handler with event handler
+     * @param {string} type - event type name
+     * @param {function} handler - event handler
+     * @memberof EventManager
+     * @private
+     */
+
+  }, {
+    key: '_removeEventHandlerWithHandler',
+    value: function _removeEventHandlerWithHandler(type, handler) {
+      var eventHandlers = this.events.get(type) || [];
+      var handlerIndex = eventHandlers.indexOf(handler);
+      if (handlerIndex >= 0) {
+        eventHandlers.splice(handlerIndex, 1);
+      }
+    }
+
+    /**
+     * Remove event handler with event type information
+     * @memberof EventManager
+     * @param {string} type Event type name
+     * @param {string} namespace Event namespace
+     * @private
+     */
+
+  }, {
+    key: '_removeEventHandlerWithTypeInfo',
+    value: function _removeEventHandlerWithTypeInfo(type, namespace) {
+      var handlersToSurvive = [];
+      var eventHandlers = this.events.get(type);
+
+      if (!eventHandlers) {
+        return;
+      }
+
+      eventHandlers.map(function (handler) {
+        if (handler.namespace !== namespace) {
+          handlersToSurvive.push(handler);
+        }
+      });
+
+      this.events.set(type, handlersToSurvive);
+    }
+  }]);
+
+  return EventManager;
+}();
+
+exports.default = EventManager;
+
+/***/ }),
+
+/***/ 125:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _jquery = __webpack_require__(0);
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Viewer = __webpack_require__(29);
+
+// for jquery
+/**
+ * @fileoverview entry point for viewer
+ * @author NHN Ent. FE Development Lab <dl_javascript@nhnent.com>
+ */
+_jquery2.default.fn.tuiEditor = function () {
+  var options = void 0,
+      instance = void 0;
+
+  var el = this.get(0);
+
+  if (el) {
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    options = args[0] || {};
+
+    instance = _jquery2.default.data(el, 'tuiEditor');
+
+    if (instance) {
+      if (typeof options === 'string') {
+        var _instance;
+
+        return (_instance = instance)[options].apply(_instance, args.slice(1));
+      }
+    } else {
+      options.el = el;
+      instance = new Viewer(options);
+      _jquery2.default.data(el, 'tuiEditor', instance);
+    }
+  }
+
+  return this;
+};
+
+module.exports = Viewer;
+
+/***/ }),
+
+/***/ 13:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); /**
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * @fileoverview extension manager
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * @author NHN Ent. FE Development Lab <dl_javascript@nhnent.com>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      */
+
+
+var _tuiCodeSnippet = __webpack_require__(1);
+
+var _tuiCodeSnippet2 = _interopRequireDefault(_tuiCodeSnippet);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+/**
+ * Class ExtManager
+ */
+var ExtManager = function () {
+  /**
+   * Creates an instance of ExtManager.
+   * @memberof ExtManager
+   */
+  function ExtManager() {
+    _classCallCheck(this, ExtManager);
+
+    this.exts = new _tuiCodeSnippet2.default.Map();
+  }
+
+  /**
+   * defineExtension
+   * Defined Extension
+   * @memberof ExtManager
+   * @param {string} name extension name
+   * @param {ExtManager~extension} ext extension
+   */
+
+
+  _createClass(ExtManager, [{
+    key: 'defineExtension',
+    value: function defineExtension(name, ext) {
+      this.exts.set(name, ext);
+    }
+
+    /**
+     * Apply extensions
+     * @memberof ExtManager
+     * @param {object} context Context
+     * @param {Array.<string|object>} options - options or names array
+     */
+
+  }, {
+    key: 'applyExtension',
+    value: function applyExtension(context, options) {
+      var _this = this;
+
+      if (options) {
+        options.forEach(function (option) {
+          var hasOption = _tuiCodeSnippet2.default.isObject(option);
+          var name = hasOption ? option.name : option;
+
+          if (_this.exts.has(name)) {
+            var ext = _this.exts.get(name);
+            if (hasOption) {
+              ext(context, option);
+            } else {
+              ext(context);
+            }
+          }
+        });
+      }
+    }
+  }]);
+
+  return ExtManager;
+}();
+
+exports.default = new ExtManager();
+
+/***/ }),
+
+/***/ 14:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); /**
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * @fileoverview Convertor have responsible to convert markdown and html
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * @author NHN Ent. FE Development Lab <dl_javascript@nhnent.com>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      */
+
+
+var _jquery = __webpack_require__(0);
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+var _tuiCodeSnippet = __webpack_require__(1);
+
+var _tuiCodeSnippet2 = _interopRequireDefault(_tuiCodeSnippet);
+
+var _markdownIt = __webpack_require__(19);
+
+var _markdownIt2 = _interopRequireDefault(_markdownIt);
+
+var _toMark = __webpack_require__(20);
+
+var _toMark2 = _interopRequireDefault(_toMark);
+
+var _htmlSanitizer = __webpack_require__(11);
+
+var _htmlSanitizer2 = _interopRequireDefault(_htmlSanitizer);
+
+var _markdownitTaskPlugin = __webpack_require__(21);
+
+var _markdownitTaskPlugin2 = _interopRequireDefault(_markdownitTaskPlugin);
+
+var _markdownitCodeBlockPlugin = __webpack_require__(22);
+
+var _markdownitCodeBlockPlugin2 = _interopRequireDefault(_markdownitCodeBlockPlugin);
+
+var _markdownitCodeRenderer = __webpack_require__(23);
+
+var _markdownitCodeRenderer2 = _interopRequireDefault(_markdownitCodeRenderer);
+
+var _markdownitBlockQuoteRenderer = __webpack_require__(24);
+
+var _markdownitBlockQuoteRenderer2 = _interopRequireDefault(_markdownitBlockQuoteRenderer);
+
+var _markdownitTableRenderer = __webpack_require__(25);
+
+var _markdownitTableRenderer2 = _interopRequireDefault(_markdownitTableRenderer);
+
+var _markdownitHtmlBlockRenderer = __webpack_require__(26);
+
+var _markdownitHtmlBlockRenderer2 = _interopRequireDefault(_markdownitHtmlBlockRenderer);
+
+var _markdownitBackticksRenderer = __webpack_require__(27);
+
+var _markdownitBackticksRenderer2 = _interopRequireDefault(_markdownitBackticksRenderer);
+
+var _codeBlockManager = __webpack_require__(7);
+
+var _codeBlockManager2 = _interopRequireDefault(_codeBlockManager);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var markdownitHighlight = new _markdownIt2.default({
+  html: true,
+  breaks: true,
+  quotes: '“”‘’',
+  langPrefix: 'lang-',
+  highlight: function highlight(codeText, type) {
+    return _codeBlockManager2.default.createCodeBlockHtml(type, codeText);
+  }
+});
+var markdownit = new _markdownIt2.default({
+  html: true,
+  breaks: true,
+  quotes: '“”‘’',
+  langPrefix: 'lang-'
+});
+
+// markdownitHighlight
+markdownitHighlight.block.ruler.at('code', _markdownitCodeRenderer2.default);
+markdownitHighlight.block.ruler.at('table', _markdownitTableRenderer2.default, {
+  alt: ['paragraph', 'reference']
+});
+markdownitHighlight.block.ruler.at('blockquote', _markdownitBlockQuoteRenderer2.default, {
+  alt: ['paragraph', 'reference', 'blockquote', 'list']
+});
+markdownitHighlight.block.ruler.at('html_block', _markdownitHtmlBlockRenderer2.default, {
+  alt: ['paragraph', 'reference', 'blockquote']
+});
+markdownitHighlight.inline.ruler.at('backticks', _markdownitBackticksRenderer2.default);
+markdownitHighlight.use(_markdownitTaskPlugin2.default);
+markdownitHighlight.use(_markdownitCodeBlockPlugin2.default);
+
+// markdownit
+markdownit.block.ruler.at('code', _markdownitCodeRenderer2.default);
+markdownit.block.ruler.at('table', _markdownitTableRenderer2.default, {
+  alt: ['paragraph', 'reference']
+});
+markdownit.block.ruler.at('blockquote', _markdownitBlockQuoteRenderer2.default, {
+  alt: ['paragraph', 'reference', 'blockquote', 'list']
+});
+markdownit.block.ruler.at('html_block', _markdownitHtmlBlockRenderer2.default, {
+  alt: ['paragraph', 'reference', 'blockquote']
+});
+markdownit.inline.ruler.at('backticks', _markdownitBackticksRenderer2.default);
+markdownit.use(_markdownitTaskPlugin2.default);
+markdownit.use(_markdownitCodeBlockPlugin2.default);
+
+/**
+ * Class Convertor
+ */
+
+var Convertor = function () {
+  /**
+   * Convertor constructor
+   * @param {EventManager} em - EventManager instance
+   */
+  function Convertor(em) {
+    _classCallCheck(this, Convertor);
+
+    this.eventManager = em;
+  }
+
+  /**
+   * _markdownToHtmlWithCodeHighlight
+   * Convert markdown to html with Codehighlight
+   * @private
+   * @memberof Convertor
+   * @param {string} markdown markdown text
+   * @returns {string} html text
+   */
+
+
+  _createClass(Convertor, [{
+    key: '_markdownToHtmlWithCodeHighlight',
+    value: function _markdownToHtmlWithCodeHighlight(markdown) {
+      markdown = markdown.replace(/<br>/ig, '<br data-tomark-pass>');
+      // eslint-disable-next-line
+      var onerrorStripeRegex = /(<img[^>]*)(onerror\s*=\s*[\"']?[^\"']*[\"']?)(.*)/i;
+      while (onerrorStripeRegex.exec(markdown)) {
+        markdown = markdown.replace(onerrorStripeRegex, '$1$3');
+      }
+
+      var renderedHTML = markdownitHighlight.render(markdown);
+      renderedHTML = this._removeBrToMarkPassAttributeInCode(renderedHTML);
+
+      return renderedHTML;
+    }
+
+    /**
+     * _markdownToHtml
+     * Convert markdown to html
+     * @private
+     * @memberof Convertor
+     * @param {string} markdown markdown text
+     * @returns {string} html text
+     */
+
+  }, {
+    key: '_markdownToHtml',
+    value: function _markdownToHtml(markdown) {
+      markdown = markdown.replace(/<br>/ig, '<br data-tomark-pass>');
+      // eslint-disable-next-line
+      var onerrorStripeRegex = /(<img[^>]*)(onerror\s*=\s*[\"']?[^\"']*[\"']?)(.*)/i;
+      while (onerrorStripeRegex.exec(markdown)) {
+        markdown = markdown.replace(onerrorStripeRegex, '$1$3');
+      }
+
+      var renderedHTML = markdownit.render(markdown);
+      renderedHTML = this._removeBrToMarkPassAttributeInCode(renderedHTML);
+
+      return renderedHTML;
+    }
+
+    /**
+     * Remove BR's data-tomark-pass attribute text when br in code element
+     * @param {string} renderedHTML Rendered HTML string from markdown editor
+     * @returns {string}
+     * @private
+     */
+
+  }, {
+    key: '_removeBrToMarkPassAttributeInCode',
+    value: function _removeBrToMarkPassAttributeInCode(renderedHTML) {
+      var $wrapperDiv = (0, _jquery2.default)('<div />');
+
+      $wrapperDiv.html(renderedHTML);
+
+      $wrapperDiv.find('code, pre').each(function (i, codeOrPre) {
+        var $code = (0, _jquery2.default)(codeOrPre);
+        $code.html($code.html().replace(/&lt;br data-tomark-pass&gt;/, '&lt;br&gt;'));
+      });
+
+      renderedHTML = $wrapperDiv.html();
+
+      return renderedHTML;
+    }
+
+    /**
+     * toHTMLWithCodeHightlight
+     * Convert markdown to html with Codehighlight
+     * emit convertorAfterMarkdownToHtmlConverted
+     * @memberof Convertor
+     * @param {string} markdown markdown text
+     * @returns {string} html text
+     */
+
+  }, {
+    key: 'toHTMLWithCodeHightlight',
+    value: function toHTMLWithCodeHightlight(markdown) {
+      var html = this._markdownToHtmlWithCodeHighlight(markdown);
+      html = this.eventManager.emitReduce('convertorAfterMarkdownToHtmlConverted', html);
+
+      return html;
+    }
+
+    /**
+     * toHTML
+     * Convert markdown to html
+     * emit convertorAfterMarkdownToHtmlConverted
+     * @memberof Convertor
+     * @param {string} markdown markdown text
+     * @returns {string} html text
+     */
+
+  }, {
+    key: 'toHTML',
+    value: function toHTML(markdown) {
+      var html = this._markdownToHtml(markdown);
+
+      html = this.eventManager.emitReduce('convertorAfterMarkdownToHtmlConverted', html);
+
+      return html;
+    }
+  }, {
+    key: 'initHtmlSanitizer',
+    value: function initHtmlSanitizer() {
+      this.eventManager.listen('convertorAfterMarkdownToHtmlConverted', function (html) {
+        return (0, _htmlSanitizer2.default)(html, true);
+      });
+    }
+
+    /**
+     * toMarkdown
+     * Convert html to markdown
+     * emit convertorAfterHtmlToMarkdownConverted
+     * @memberof Convertor
+     * @param {string} html html text
+     * @param {object | null} toMarkOptions - toMark library options
+     * @returns {string} markdown text
+     */
+
+  }, {
+    key: 'toMarkdown',
+    value: function toMarkdown(html, toMarkOptions) {
+      var resultArray = [];
+
+      html = this.eventManager.emitReduce('convertorBeforeHtmlToMarkdownConverted', html);
+
+      var markdown = (0, _toMark2.default)(this._appendAttributeForBrIfNeed(html), toMarkOptions);
+
+      markdown = this.eventManager.emitReduce('convertorAfterHtmlToMarkdownConverted', markdown);
+
+      _tuiCodeSnippet2.default.forEach(markdown.split('\n'), function (line, index) {
+        var FIND_TABLE_RX = /^\|[^|]*\|/ig;
+        var FIND_CODE_RX = /`[^`]*<br>[^`]*`/ig;
+
+        if (!FIND_CODE_RX.test(line) && !FIND_TABLE_RX.test(line)) {
+          line = line.replace(/<br>/ig, '<br>\n');
+        }
+        resultArray[index] = line;
+      });
+
+      return resultArray.join('\n');
+    }
+  }, {
+    key: '_appendAttributeForBrIfNeed',
+    value: function _appendAttributeForBrIfNeed(html) {
+      var FIND_BR_RX = /<br>/ig;
+      var FIND_DOUBLE_BR_RX = /<br \/><br \/>/ig;
+      var FIND_PASSING_AND_NORMAL_BR_RX = /<br data-tomark-pass \/><br \/>(.)/ig;
+      var FIRST_TWO_BRS_BEFORE_RX = /([^>]|<\/b>|<\/i>|<\/s>|<img [^>]*>)/;
+      var TWO_BRS_RX = /<br data-tomark-pass \/><br data-tomark-pass \/>/;
+      var FIND_FIRST_TWO_BRS_RX = new RegExp(FIRST_TWO_BRS_BEFORE_RX.source + TWO_BRS_RX.source, 'g');
+
+      html = html.replace(FIND_BR_RX, '<br />');
+
+      html = html.replace(FIND_DOUBLE_BR_RX, '<br data-tomark-pass /><br data-tomark-pass />');
+
+      var div = document.createElement('div');
+      var $div = (0, _jquery2.default)(div);
+      $div.html(html);
+      $div.find('pre br,code br').each(function (index, node) {
+        if (node.hasAttribute('data-tomark-pass')) {
+          node.removeAttribute('data-tomark-pass');
+        }
+      });
+
+      html = $div.html().replace(/<br data-tomark-pass="">/ig, '<br data-tomark-pass />');
+      html = html.replace(FIND_BR_RX, '<br />');
+
+      html = html.replace(FIND_PASSING_AND_NORMAL_BR_RX, '<br data-tomark-pass /><br data-tomark-pass />$1');
+      html = html.replace(FIND_FIRST_TWO_BRS_RX, '$1<br /><br />');
+
+      return html;
+    }
+
+    /**
+     * get markdownit with code highlight
+     * @returns {markdownit} - markdownit instance
+     * @memberof Convertor
+     * @static
+     */
+
+  }], [{
+    key: 'getMarkdownitHighlightRenderer',
+    value: function getMarkdownitHighlightRenderer() {
+      return markdownitHighlight;
+    }
+  }]);
+
+  return Convertor;
+}();
+
+exports.default = Convertor;
+
+/***/ }),
+
+/***/ 16:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); /**
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * @fileoverview Implements LazyRunner
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * @author NHN Ent. FE Development Lab <dl_javascript@nhnent.com>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      */
+
+
+var _tuiCodeSnippet = __webpack_require__(1);
+
+var _tuiCodeSnippet2 = _interopRequireDefault(_tuiCodeSnippet);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+/**
+ * Class LazyRunner
+ */
+var LazyRunner = function () {
+  /**
+   * Creates an instance of LazyRunner.
+   * @memberof LazyRunner
+   */
+  function LazyRunner() {
+    _classCallCheck(this, LazyRunner);
+
+    this.globalTOID = null;
+    this.lazyRunFunctions = {};
+  }
+
+  _createClass(LazyRunner, [{
+    key: 'run',
+    value: function run(fn, params, context, delay) {
+      var TOID = void 0;
+
+      if (_tuiCodeSnippet2.default.isString(fn)) {
+        TOID = this._runRegisteredRun(fn, params, context, delay);
+      } else {
+        TOID = this._runSingleRun(fn, params, context, delay, this.globalTOID);
+        this.globalTOID = TOID;
+      }
+
+      return TOID;
+    }
+  }, {
+    key: 'registerLazyRunFunction',
+    value: function registerLazyRunFunction(name, fn, delay, context) {
+      context = context || this;
+
+      this.lazyRunFunctions[name] = {
+        fn: fn,
+        delay: delay,
+        context: context,
+        TOID: null
+      };
+    }
+  }, {
+    key: '_runSingleRun',
+    value: function _runSingleRun(fn, params, context, delay, TOID) {
+      this._clearTOIDIfNeed(TOID);
+
+      TOID = setTimeout(function () {
+        fn.call(context, params);
+      }, delay);
+
+      return TOID;
+    }
+  }, {
+    key: '_runRegisteredRun',
+    value: function _runRegisteredRun(lazyRunName, params, context, delay) {
+      var lazyRunFunction = this.lazyRunFunctions[lazyRunName];
+      var fn = lazyRunFunction.fn;
+      var TOID = lazyRunFunction.TOID;
+
+      delay = delay || lazyRunFunction.delay;
+      context = context || lazyRunFunction.context;
+
+      TOID = this._runSingleRun(fn, params, context, delay, TOID);
+
+      lazyRunFunction.TOID = TOID;
+
+      return TOID;
+    }
+  }, {
+    key: '_clearTOIDIfNeed',
+    value: function _clearTOIDIfNeed(TOID) {
+      if (TOID) {
+        clearTimeout(TOID);
+      }
+    }
+  }]);
+
+  return LazyRunner;
+}();
+
+exports.default = LazyRunner;
+
+/***/ }),
+
+/***/ 17:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); /**
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * @fileoverview Implements Command
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * @author NHN Ent. FE Development Lab <dl_javascript@nhnent.com>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      */
+
+
+var _tuiCodeSnippet = __webpack_require__(1);
+
+var _tuiCodeSnippet2 = _interopRequireDefault(_tuiCodeSnippet);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+/**
+ * Class Command
+ */
+var Command = function () {
+  /**
+   * @param {string} name Command name
+   * @param {number} type Command type (Command.TYPE)
+   * @param {Array.<string>} [keyMap] keyMap
+   */
+  function Command(name, type, keyMap) {
+    _classCallCheck(this, Command);
+
+    this.name = name;
+    this.type = type;
+
+    if (keyMap) {
+      this.setKeyMap(keyMap);
+    }
+  }
+  /**
+   * getName
+   * returns Name of command
+   * @memberof Command
+   * @returns {string} Command Name
+   */
+
+
+  _createClass(Command, [{
+    key: 'getName',
+    value: function getName() {
+      return this.name;
+    }
+
+    /**
+     * getType
+     * returns Type of command
+     * @memberof Command
+     * @returns {number} Command Command type number
+     */
+
+  }, {
+    key: 'getType',
+    value: function getType() {
+      return this.type;
+    }
+
+    /**
+     * isMDType
+     * returns whether Command Type is Markdown or not
+     * @memberof Command
+     * @returns {boolean} result
+     */
+
+  }, {
+    key: 'isMDType',
+    value: function isMDType() {
+      return this.type === Command.TYPE.MD;
+    }
+
+    /**
+     * isWWType
+     * returns whether Command Type is Wysiwyg or not
+     * @memberof Command
+     * @returns {boolean} result
+     */
+
+  }, {
+    key: 'isWWType',
+    value: function isWWType() {
+      return this.type === Command.TYPE.WW;
+    }
+
+    /**
+     * isGlobalType
+     * returns whether Command Type is Global or not
+     * @memberof Command
+     * @returns {boolean} result
+     */
+
+  }, {
+    key: 'isGlobalType',
+    value: function isGlobalType() {
+      return this.type === Command.TYPE.GB;
+    }
+
+    /**
+     * setKeyMap
+     * Set keymap value for each os
+     * @memberof Command
+     * @param {string} win Windows Key(and etc)
+     * @param {string} mac Mac osx key
+     */
+
+  }, {
+    key: 'setKeyMap',
+    value: function setKeyMap(win, mac) {
+      this.keyMap = [win, mac];
+    }
+  }]);
+
+  return Command;
+}();
+
+/**
+ * Command factory method
+ * @memberof Command
+ * @param {string} typeStr Editor type name
+ * @param {object} props Property
+ *     @param {string} props.name Command name
+ *     @param {number} props.type Command type number
+ * @returns {Command}
+ */
+
+
+Command.factory = function (typeStr, props) {
+  var type = void 0;
+
+  if (typeStr === 'markdown') {
+    type = Command.TYPE.MD;
+  } else if (typeStr === 'wysiwyg') {
+    type = Command.TYPE.WW;
+  } else if (typeStr === 'global') {
+    type = Command.TYPE.GB;
+  }
+
+  var command = new Command(props.name, type);
+
+  _tuiCodeSnippet2.default.extend(command, props);
+
+  return command;
+};
+
+/**
+ * Command Type Constant
+ * markdown : 0
+ * wysiwyg : 1
+ * global : 2
+ * @memberof Command
+ * @type {object}
+ */
+Command.TYPE = {
+  MD: 0,
+  WW: 1,
+  GB: 2
+};
+
+exports.default = Command;
+
+/***/ }),
+
+/***/ 19:
+/***/ (function(module, exports) {
+
+module.exports = __WEBPACK_EXTERNAL_MODULE_19__;
+
+/***/ }),
+
+/***/ 2:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); /**
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * @fileoverview Implements CommandManager
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * @author NHN Ent. FE Development Lab <dl_javascript@nhnent.com>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      */
+
+
+var _jquery = __webpack_require__(0);
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+var _tuiCodeSnippet = __webpack_require__(1);
+
+var _tuiCodeSnippet2 = _interopRequireDefault(_tuiCodeSnippet);
+
+var _command = __webpack_require__(17);
+
+var _command2 = _interopRequireDefault(_command);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var isMac = /Mac/.test(navigator.platform);
+var KEYMAP_OS_INDEX = isMac ? 1 : 0;
+
+/**
+ * Class CommandManager
+ */
+
+var CommandManager = function () {
+  /**
+   * @param {ToastUIEditor} base nedInstance
+   * @param {object} [options={}] - option object
+   *  @param {boolean} [options.useCommandShortcut=true] - execute command with keyMap
+   */
+  function CommandManager(base) {
+    var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+
+    _classCallCheck(this, CommandManager);
+
+    this._command = new _tuiCodeSnippet2.default.Map();
+    this._mdCommand = new _tuiCodeSnippet2.default.Map();
+    this._wwCommand = new _tuiCodeSnippet2.default.Map();
+    this._options = _jquery2.default.extend({
+      'useCommandShortcut': true
+    }, options);
+
+    this.base = base;
+
+    this.keyMapCommand = {};
+
+    this._initEvent();
+  }
+
+  /**
+   * You can change command before command addition by addCommandBefore event.
+   * @param {object} command - command
+   * @returns {object}
+   * @private
+   */
+
+
+  _createClass(CommandManager, [{
+    key: '_addCommandBefore',
+    value: function _addCommandBefore(command) {
+      var commandWrapper = { command: command };
+
+      this.base.eventManager.emit('addCommandBefore', commandWrapper);
+
+      return commandWrapper.command || command;
+    }
+
+    /**
+     * Add command
+     * @memberof CommandManager
+     * @param {Command} command Command instance
+     * @returns {Command} Command
+     */
+
+  }, {
+    key: 'addCommand',
+    value: function addCommand(command) {
+      for (var _len = arguments.length, args = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+        args[_key - 1] = arguments[_key];
+      }
+
+      if (args.length) {
+        command = CommandManager.command.apply(CommandManager, [command].concat(args));
+      }
+
+      command = this._addCommandBefore(command);
+
+      var name = command.getName();
+
+      var commandBase = void 0;
+
+      if (command.isMDType()) {
+        commandBase = this._mdCommand;
+      } else if (command.isWWType()) {
+        commandBase = this._wwCommand;
+      } else if (command.isGlobalType()) {
+        commandBase = this._command;
+      }
+
+      commandBase.set(name, command);
+
+      if (command.keyMap) {
+        this.keyMapCommand[command.keyMap[KEYMAP_OS_INDEX]] = name;
+      }
+
+      return command;
+    }
+
+    /**
+     * _initEvent
+     * Bind event handler to eventManager
+     * @private
+     * @memberof CommandManager
+     */
+
+  }, {
+    key: '_initEvent',
+    value: function _initEvent() {
+      var _this = this;
+
+      this.base.eventManager.listen('command', function () {
+        _this.exec.apply(_this, arguments);
+      });
+
+      this.base.eventManager.listen('keyMap', function (ev) {
+        if (!_this._options.useCommandShortcut) {
+          return;
+        }
+        var command = _this.keyMapCommand[ev.keyMap];
+
+        if (command) {
+          ev.data.preventDefault();
+          _this.exec(command);
+        }
+      });
+    }
+
+    /**
+     * Execute command
+     * @memberof CommandManager
+     * @param {String} name Command name
+     * @returns {*}
+     */
+
+  }, {
+    key: 'exec',
+    value: function exec(name) {
+      var commandToRun = void 0,
+          result = void 0;
+      var context = this.base;
+
+      commandToRun = this._command.get(name);
+
+      if (!commandToRun) {
+        if (this.base.isMarkdownMode()) {
+          commandToRun = this._mdCommand.get(name);
+          context = this.base.mdEditor;
+        } else {
+          commandToRun = this._wwCommand.get(name);
+          context = this.base.wwEditor;
+        }
+      }
+
+      if (commandToRun) {
+        var _commandToRun;
+
+        for (var _len2 = arguments.length, args = Array(_len2 > 1 ? _len2 - 1 : 0), _key2 = 1; _key2 < _len2; _key2++) {
+          args[_key2 - 1] = arguments[_key2];
+        }
+
+        args.unshift(context);
+        result = (_commandToRun = commandToRun).exec.apply(_commandToRun, args);
+      }
+
+      return result;
+    }
+  }]);
+
+  return CommandManager;
+}();
+
+/**
+ * Create command by given editor type and property object
+ * @memberof ComponentManager
+ * @param {string} type Command type
+ * @param {{name: string, keyMap: object}} props Property
+ * @returns {*}
+ */
+
+
+CommandManager.command = function (type, props) {
+  var command = _command2.default.factory(type, props.name, props.keyMap);
+
+  _tuiCodeSnippet2.default.extend(command, props);
+
+  return command;
+};
+
+exports.default = CommandManager;
+
+/***/ }),
+
+/***/ 20:
+/***/ (function(module, exports) {
+
+module.exports = __WEBPACK_EXTERNAL_MODULE_20__;
+
+/***/ }),
+
+/***/ 21:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+// Copyright (c) 2016, Revin Guillen.
+// Distributed under an MIT license: https://github.com/revin/markdown-it-task-lists/
+
+/**
+ * @fileoverview Implements markdownitTaskPlugin
+ * @modifier Sungho Kim(sungho-kim@nhnent.com) FE Development Lab/NHN Ent.
+ * @modifier Junghwan Park(junghwan.park@nhnent.com) FE Development Lab/NHN Ent.
+ */
+/* eslint-disable */
+
+/**
+ * Task list renderer for Markdown-it
+ * @param {object} markdownit Markdown-it instance
+ * @ignore
+ */
+var MarkdownitTaskRenderer = function MarkdownitTaskRenderer(markdownit) {
+    markdownit.core.ruler.after('inline', 'tui-task-list', function (state) {
+        var TASK_LIST_ITEM_CLASS_NAME = 'task-list-item';
+        var CHECKED_CLASS_NAME = 'checked';
+        var tokens = state.tokens;
+        var className;
+        var tokenIndex;
+
+        // tokenIndex=0 'ul', tokenIndex=1 'li', tokenIndex=2 'p_open'
+        for (tokenIndex = 2; tokenIndex < tokens.length; tokenIndex += 1) {
+            if (isTaskListItemToken(tokens, tokenIndex)) {
+                if (isChecked(tokens[tokenIndex])) {
+                    className = TASK_LIST_ITEM_CLASS_NAME + ' ' + CHECKED_CLASS_NAME;
+                } else {
+                    className = TASK_LIST_ITEM_CLASS_NAME;
+                }
+
+                removeMarkdownTaskFormatText(tokens[tokenIndex]);
+
+                setTokenAttribute(tokens[tokenIndex - 2], 'class', className);
+                setTokenAttribute(tokens[tokenIndex - 2], 'data-te-task', '');
+            }
+        }
+    });
+};
+
+/**
+ * Remove task format text for rendering
+ * @param {object} token Token object
+ * @ignore
+ */
+function removeMarkdownTaskFormatText(token) {
+    // '[X] ' length is 4
+    // FIXED: we don't need first space
+    token.content = token.content.slice(4);
+    token.children[0].content = token.children[0].content.slice(4);
+}
+
+/**
+ * Return boolean value whether task checked or not
+ * @param {object} token Token object
+ * @returns {boolean}
+ * @ignore
+ */
+function isChecked(token) {
+    var checked = false;
+
+    if (token.content.indexOf('[x]') === 0 || token.content.indexOf('[X]') === 0) {
+        checked = true;
+    }
+
+    return checked;
+}
+
+/**
+ * Set attribute of passed token
+ * @param {object} token Token object
+ * @param {string} attributeName Attribute name for set
+ * @param {string} attributeValue Attribute value for set
+ * @ignore
+ */
+function setTokenAttribute(token, attributeName, attributeValue) {
+    var index = token.attrIndex(attributeName);
+    var attr = [attributeName, attributeValue];
+
+    if (index < 0) {
+        token.attrPush(attr);
+    } else {
+        token.attrs[index] = attr;
+    }
+}
+
+/**
+ * Return boolean value whether task list item or not
+ * @param {array} tokens Token object
+ * @param {number} index Number of token index
+ * @returns {boolean}
+ * @ignore
+ */
+function isTaskListItemToken(tokens, index) {
+    return tokens[index].type === 'inline' && tokens[index - 1].type === 'paragraph_open' && tokens[index - 2].type === 'list_item_open' && (tokens[index].content.indexOf('[ ]') === 0 || tokens[index].content.indexOf('[x]') === 0 || tokens[index].content.indexOf('[X]') === 0);
+}
+/* eslint-enable */
+
+module.exports = MarkdownitTaskRenderer;
+
+/***/ }),
+
+/***/ 22:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+// Copyright (c) 2016, Revin Guillen.
+// Distributed under an MIT license: https://github.com/revin/markdown-it-task-lists/
+/* eslint-disable */
+/**
+ * @fileoverview Implements markdownitCodeBlockPlugin
+ * @modifier NHN Ent. FE Development Lab <dl_javascript@nhnent.com>
+ */
+
+/**
+ * Code block renderer for Markdown-it
+ * @param {object} markdownit Markdown-it instance
+ * @ignore
+ */
+var MarkdownitCodeBlockRenderer = function MarkdownitCodeBlockRenderer(markdownit) {
+    markdownit.core.ruler.after('block', 'tui-code-block', function (state) {
+        var tokens = state.tokens;
+        var currentToken, tokenIndex;
+
+        for (tokenIndex = 0; tokenIndex < tokens.length; tokenIndex += 1) {
+            currentToken = tokens[tokenIndex];
+
+            if (isCodeFenceToken(currentToken) && currentToken.info) {
+                setTokenAttribute(currentToken, 'data-language', escape(currentToken.info.replace(' ', ''), true));
+            }
+        }
+    });
+};
+
+/**
+ * Set attribute of passed token
+ * @param {object} token Token object
+ * @param {string} attributeName Attribute name for set
+ * @param {string} attributeValue Attribute value for set
+ * @ignore
+ */
+function setTokenAttribute(token, attributeName, attributeValue) {
+    var index = token.attrIndex(attributeName);
+    var attr = [attributeName, attributeValue];
+
+    if (index < 0) {
+        token.attrPush(attr);
+    } else {
+        token.attrs[index] = attr;
+    }
+}
+/**
+ * Return boolean value whether passed token is code fence or not
+ * @param {object} token Token object
+ * @returns {boolean}
+ * @ignore
+ */
+function isCodeFenceToken(token) {
+    return token.block === true && token.tag === 'code' && token.type === 'fence';
+}
+
+/**
+ * escape code from markdown-it
+ * @param {string} html HTML string
+ * @param {string} encode Boolean value of whether encode or not
+ * @returns {string}
+ * @ignore
+ */
+function escape(html, encode) {
+    return html.replace(!encode ? /&(?!#?\w+;)/g : /&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+}
+/* eslint-enable */
+
+module.exports = MarkdownitCodeBlockRenderer;
+
+/***/ }),
+
+/***/ 23:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+// Copyright (c) 2014 Vitaly Puzrin, Alex Kocharin.
+// Distributed under an ISC license: https://github.com/markdown-it/markdown-it/
+/**
+ * @fileoverview Implements MarkdownItCodeRenderer
+ * @modifier NHN Ent. FE Development Lab <dl_javascript@nhnent.com>
+ */
+
+/* eslint-disable */
+module.exports = function code(state, startLine, endLine /*, silent*/) {
+    // Added by Junghwan Park
+    var FIND_LIST_RX = / {0,3}(?:-|\*|\d\.) /;
+    var lines = state.src.split('\n');
+    var currentLine = lines[startLine];
+    // Added by Junghwan Park
+
+    var nextLine,
+        last,
+        token,
+        emptyLines = 0;
+
+    // Add condition by Junghwan Park
+    if (currentLine.match(FIND_LIST_RX) || state.sCount[startLine] - state.blkIndent < 4) {
+        // Add condition by Junghwan Park
+        return false;
+    }
+
+    last = nextLine = startLine + 1;
+
+    while (nextLine < endLine) {
+        if (state.isEmpty(nextLine)) {
+            emptyLines++;
+
+            // workaround for lists: 2 blank lines should terminate indented
+            // code block, but not fenced code block
+            if (emptyLines >= 2 && state.parentType === 'list') {
+                break;
+            }
+
+            nextLine++;
+            continue;
+        }
+
+        emptyLines = 0;
+
+        if (state.sCount[nextLine] - state.blkIndent >= 4) {
+            nextLine++;
+            last = nextLine;
+            continue;
+        }
+        break;
+    }
+
+    state.line = last;
+
+    token = state.push('code_block', 'code', 0);
+    token.content = state.getLines(startLine, last, 4 + state.blkIndent, true);
+    token.map = [startLine, state.line];
+
+    return true;
+};
+/* eslint-enable */
+
+/***/ }),
+
+/***/ 24:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+// Copyright (c) 2014 Vitaly Puzrin, Alex Kocharin.
+// Distributed under MIT license: https://github.com/markdown-it/markdown-it/
+/**
+ * @fileoverview Implements markdownitCodeBlockQuoteRenderer
+ * @modifier NHN Ent. FE Development Lab <dl_javascript@nhnent.com>
+ */
+
+/* eslint-disable */
+
+// Block quotes
+
+
+
+// prevent quote, pre in list #811
+// ref: #989
+// #811 START
+// var isSpace = require('../common/utils').isSpace;
+
+function isSpace(code) {
+  switch (code) {
+    case 0x09:
+    case 0x20:
+      return true;
+  }
+  return false;
+}
+// #811 END
+
+module.exports = function blockquote(state, startLine, endLine, silent) {
+  var adjustTab,
+      ch,
+      i,
+      initial,
+      l,
+      lastLineEmpty,
+      lines,
+      nextLine,
+      offset,
+      oldBMarks,
+      oldBSCount,
+      oldIndent,
+      oldParentType,
+      oldSCount,
+      oldTShift,
+      spaceAfterMarker,
+      terminate,
+      terminatorRules,
+      token,
+      wasOutdented,
+      oldLineMax = state.lineMax,
+      pos = state.bMarks[startLine] + state.tShift[startLine],
+      max = state.eMarks[startLine];
+
+  // #811 START
+  var FIND_LIST_RX = /(?:-|\*|\d+\.) {1,4}(?:> {0,3})[^>]*$/;
+  var sourceLines = state.src.split('\n');
+  var currentLine = sourceLines[startLine];
+  // #811 END
+
+  // if it's indented more than 3 spaces, it should be a code block
+  if (state.sCount[startLine] - state.blkIndent >= 4) {
+    return false;
+  }
+
+  // check the block quote marker
+  if (state.src.charCodeAt(pos++) !== 0x3E /* > */) {
+      return false;
+    }
+  // #811 START
+  // check block quote in list
+  if (currentLine.match(FIND_LIST_RX) /*&& !currentLine.match(/^ {0,6}>/)*/) {
+      return false;
+    }
+  // #811 END
+
+  // we know that it's going to be a valid blockquote,
+  // so no point trying to find the end of it in silent mode
+  if (silent) {
+    return true;
+  }
+
+  // skip spaces after ">" and re-calculate offset
+  initial = offset = state.sCount[startLine] + pos - (state.bMarks[startLine] + state.tShift[startLine]);
+
+  // skip one optional space after '>'
+  if (state.src.charCodeAt(pos) === 0x20 /* space */) {
+      // ' >   test '
+      //     ^ -- position start of line here:
+      pos++;
+      initial++;
+      offset++;
+      adjustTab = false;
+      spaceAfterMarker = true;
+    } else if (state.src.charCodeAt(pos) === 0x09 /* tab */) {
+      spaceAfterMarker = true;
+
+      if ((state.bsCount[startLine] + offset) % 4 === 3) {
+        // '  >\t  test '
+        //       ^ -- position start of line here (tab has width===1)
+        pos++;
+        initial++;
+        offset++;
+        adjustTab = false;
+      } else {
+        // ' >\t  test '
+        //    ^ -- position start of line here + shift bsCount slightly
+        //         to make extra space appear
+        adjustTab = true;
+      }
+    } else {
+    spaceAfterMarker = false;
+  }
+
+  oldBMarks = [state.bMarks[startLine]];
+  state.bMarks[startLine] = pos;
+
+  while (pos < max) {
+    ch = state.src.charCodeAt(pos);
+
+    if (isSpace(ch)) {
+      if (ch === 0x09) {
+        offset += 4 - (offset + state.bsCount[startLine] + (adjustTab ? 1 : 0)) % 4;
+      } else {
+        offset++;
+      }
+    } else {
+      break;
+    }
+
+    pos++;
+  }
+
+  oldBSCount = [state.bsCount[startLine]];
+  state.bsCount[startLine] = state.sCount[startLine] + 1 + (spaceAfterMarker ? 1 : 0);
+
+  lastLineEmpty = pos >= max;
+
+  oldSCount = [state.sCount[startLine]];
+  state.sCount[startLine] = offset - initial;
+
+  oldTShift = [state.tShift[startLine]];
+  state.tShift[startLine] = pos - state.bMarks[startLine];
+
+  terminatorRules = state.md.block.ruler.getRules('blockquote');
+
+  oldParentType = state.parentType;
+  state.parentType = 'blockquote';
+  wasOutdented = false;
+
+  // Search the end of the block
+  //
+  // Block ends with either:
+  //  1. an empty line outside:
+  //     ```
+  //     > test
+  //
+  //     ```
+  //  2. an empty line inside:
+  //     ```
+  //     >
+  //     test
+  //     ```
+  //  3. another tag:
+  //     ```
+  //     > test
+  //      - - -
+  //     ```
+  for (nextLine = startLine + 1; nextLine < endLine; nextLine++) {
+    // check if it's outdented, i.e. it's inside list item and indented
+    // less than said list item:
+    //
+    // ```
+    // 1. anything
+    //    > current blockquote
+    // 2. checking this line
+    // ```
+    if (state.sCount[nextLine] < state.blkIndent) wasOutdented = true;
+
+    pos = state.bMarks[nextLine] + state.tShift[nextLine];
+    max = state.eMarks[nextLine];
+
+    if (pos >= max) {
+      // Case 1: line is not inside the blockquote, and this line is empty.
+      break;
+    }
+
+    if (state.src.charCodeAt(pos++) === 0x3E /* > */ && !wasOutdented) {
+      // This line is inside the blockquote.
+
+      // skip spaces after ">" and re-calculate offset
+      initial = offset = state.sCount[nextLine] + pos - (state.bMarks[nextLine] + state.tShift[nextLine]);
+
+      // skip one optional space after '>'
+      if (state.src.charCodeAt(pos) === 0x20 /* space */) {
+          // ' >   test '
+          //     ^ -- position start of line here:
+          pos++;
+          initial++;
+          offset++;
+          adjustTab = false;
+          spaceAfterMarker = true;
+        } else if (state.src.charCodeAt(pos) === 0x09 /* tab */) {
+          spaceAfterMarker = true;
+
+          if ((state.bsCount[nextLine] + offset) % 4 === 3) {
+            // '  >\t  test '
+            //       ^ -- position start of line here (tab has width===1)
+            pos++;
+            initial++;
+            offset++;
+            adjustTab = false;
+          } else {
+            // ' >\t  test '
+            //    ^ -- position start of line here + shift bsCount slightly
+            //         to make extra space appear
+            adjustTab = true;
+          }
+        } else {
+        spaceAfterMarker = false;
+      }
+
+      oldBMarks.push(state.bMarks[nextLine]);
+      state.bMarks[nextLine] = pos;
+
+      while (pos < max) {
+        ch = state.src.charCodeAt(pos);
+
+        if (isSpace(ch)) {
+          if (ch === 0x09) {
+            offset += 4 - (offset + state.bsCount[nextLine] + (adjustTab ? 1 : 0)) % 4;
+          } else {
+            offset++;
+          }
+        } else {
+          break;
+        }
+
+        pos++;
+      }
+
+      lastLineEmpty = pos >= max;
+
+      oldBSCount.push(state.bsCount[nextLine]);
+      state.bsCount[nextLine] = state.sCount[nextLine] + 1 + (spaceAfterMarker ? 1 : 0);
+
+      oldSCount.push(state.sCount[nextLine]);
+      state.sCount[nextLine] = offset - initial;
+
+      oldTShift.push(state.tShift[nextLine]);
+      state.tShift[nextLine] = pos - state.bMarks[nextLine];
+      continue;
+    }
+
+    // Case 2: line is not inside the blockquote, and the last line was empty.
+    if (lastLineEmpty) {
+      break;
+    }
+
+    // Case 3: another tag found.
+    terminate = false;
+    for (i = 0, l = terminatorRules.length; i < l; i++) {
+      if (terminatorRules[i](state, nextLine, endLine, true)) {
+        terminate = true;
+        break;
+      }
+    }
+
+    if (terminate) {
+      // Quirk to enforce "hard termination mode" for paragraphs;
+      // normally if you call `tokenize(state, startLine, nextLine)`,
+      // paragraphs will look below nextLine for paragraph continuation,
+      // but if blockquote is terminated by another tag, they shouldn't
+      state.lineMax = nextLine;
+
+      if (state.blkIndent !== 0) {
+        // state.blkIndent was non-zero, we now set it to zero,
+        // so we need to re-calculate all offsets to appear as
+        // if indent wasn't changed
+        oldBMarks.push(state.bMarks[nextLine]);
+        oldBSCount.push(state.bsCount[nextLine]);
+        oldTShift.push(state.tShift[nextLine]);
+        oldSCount.push(state.sCount[nextLine]);
+        state.sCount[nextLine] -= state.blkIndent;
+      }
+
+      break;
+    }
+
+    oldBMarks.push(state.bMarks[nextLine]);
+    oldBSCount.push(state.bsCount[nextLine]);
+    oldTShift.push(state.tShift[nextLine]);
+    oldSCount.push(state.sCount[nextLine]);
+
+    // A negative indentation means that this is a paragraph continuation
+    //
+    state.sCount[nextLine] = -1;
+  }
+
+  oldIndent = state.blkIndent;
+  state.blkIndent = 0;
+
+  token = state.push('blockquote_open', 'blockquote', 1);
+  token.markup = '>';
+  token.map = lines = [startLine, 0];
+
+  state.md.block.tokenize(state, startLine, nextLine);
+
+  token = state.push('blockquote_close', 'blockquote', -1);
+  token.markup = '>';
+
+  state.lineMax = oldLineMax;
+  state.parentType = oldParentType;
+  lines[1] = state.line;
+
+  // Restore original tShift; this might not be necessary since the parser
+  // has already been here, but just to make sure we can do that.
+  for (i = 0; i < oldTShift.length; i++) {
+    state.bMarks[i + startLine] = oldBMarks[i];
+    state.tShift[i + startLine] = oldTShift[i];
+    state.sCount[i + startLine] = oldSCount[i];
+    state.bsCount[i + startLine] = oldBSCount[i];
+  }
+  state.blkIndent = oldIndent;
+
+  return true;
+};
+
+/***/ }),
+
+/***/ 25:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+// Copyright (c) 2014 Vitaly Puzrin, Alex Kocharin.
+// Distributed under an ISC license: https://github.com/markdown-it/markdown-it/
+
+/**
+ * @fileoverview Implements markdownitTableRenderer
+ * @modifier NHN Ent. FE Development Lab <dl_javascript@nhnent.com>
+ */
+
+/*eslint-disable */
+function getLine(state, line) {
+    var pos = state.bMarks[line] + state.blkIndent,
+        max = state.eMarks[line];
+
+    return state.src.substr(pos, max - pos);
+}
+
+function escapedSplit(str) {
+    var result = [],
+        pos = 0,
+        max = str.length,
+        ch,
+        escapes = 0,
+        lastPos = 0,
+        backTicked = false,
+        lastBackTick = 0;
+
+    ch = str.charCodeAt(pos);
+
+    while (pos < max) {
+        if (ch === 0x60 /* ` */ && escapes % 2 === 0) {
+            backTicked = !backTicked;
+            lastBackTick = pos;
+        } else if (ch === 0x7c /* | */ && escapes % 2 === 0 && !backTicked) {
+            result.push(str.substring(lastPos, pos));
+            lastPos = pos + 1;
+        } else if (ch === 0x5c /* \ */) {
+                escapes += 1;
+            } else {
+            escapes = 0;
+        }
+
+        pos += 1;
+
+        // If there was an un-closed backtick, go back to just after
+        // the last backtick, but as if it was a normal character
+        if (pos === max && backTicked) {
+            backTicked = false;
+            pos = lastBackTick + 1;
+        }
+
+        ch = str.charCodeAt(pos);
+    }
+
+    result.push(str.substring(lastPos));
+
+    return result;
+}
+
+module.exports = function table(state, startLine, endLine, silent) {
+    var ch, lineText, pos, i, nextLine, columns, columnCount, token, aligns, alignCount, t, tableLines, tbodyLines;
+
+    // should have at least three lines
+    if (startLine + 2 > endLine) {
+        return false;
+    }
+
+    nextLine = startLine + 1;
+
+    if (state.sCount[nextLine] < state.blkIndent) {
+        return false;
+    }
+
+    // first character of the second line should be '|' or '-'
+
+    pos = state.bMarks[nextLine] + state.tShift[nextLine];
+    if (pos >= state.eMarks[nextLine]) {
+        return false;
+    }
+
+    ch = state.src.charCodeAt(pos);
+    if (ch !== 0x7C /* | */ && ch !== 0x2D /* - */ && ch !== 0x3A /* : */) {
+            return false;
+        }
+
+    lineText = getLine(state, startLine + 1);
+    if (!/^[-:| ]+$/.test(lineText)) {
+        return false;
+    }
+
+    columns = lineText.split('|');
+    aligns = [];
+    for (i = 0; i < columns.length; i += 1) {
+        t = columns[i].trim();
+        if (!t) {
+            // allow empty columns before and after table, but not in between columns;
+            // e.g. allow ` |---| `, disallow ` ---||--- `
+            if (i === 0 || i === columns.length - 1) {
+                continue;
+            } else {
+                return false;
+            }
+        }
+
+        if (!/^:?-+:?$/.test(t)) {
+            return false;
+        }
+        if (t.charCodeAt(t.length - 1) === 0x3A /* : */) {
+                aligns.push(t.charCodeAt(0) === 0x3A /* : */ ? 'center' : 'right');
+            } else if (t.charCodeAt(0) === 0x3A /* : */) {
+                aligns.push('left');
+            } else {
+            aligns.push('');
+        }
+    }
+    alignCount = aligns.length;
+
+    lineText = getLine(state, startLine).trim();
+    if (lineText.indexOf('|') === -1) {
+        return false;
+    }
+    columns = escapedSplit(lineText.replace(/^\||\|$/g, ''));
+
+    // header row will define an amount of columns in the entire table,
+    // and align row shouldn't be smaller than that (the rest of the rows can)
+    columnCount = columns.length;
+    if (columnCount > alignCount) {
+        return false;
+    } else if (columnCount < alignCount) {
+        for (i = 0; i < alignCount - columnCount; i += 1) {
+            columns.push('');
+        }
+        columnCount = columns.length;
+    }
+
+    if (silent) {
+        return true;
+    }
+
+    token = state.push('table_open', 'table', 1);
+    token.map = tableLines = [startLine, 0];
+
+    token = state.push('thead_open', 'thead', 1);
+    token.map = [startLine, startLine + 1];
+
+    token = state.push('tr_open', 'tr', 1);
+    token.map = [startLine, startLine + 1];
+
+    for (i = 0; i < columnCount; i += 1) {
+        token = state.push('th_open', 'th', 1);
+        token.map = [startLine, startLine + 1];
+        if (aligns[i]) {
+            // FIXED: change property style to align
+            token.attrs = [['align', aligns[i]]];
+        }
+
+        token = state.push('inline', '', 0);
+        token.content = columns[i].trim();
+        token.map = [startLine, startLine + 1];
+        token.children = [];
+
+        token = state.push('th_close', 'th', -1);
+    }
+
+    token = state.push('tr_close', 'tr', -1);
+    token = state.push('thead_close', 'thead', -1);
+
+    token = state.push('tbody_open', 'tbody', 1);
+    token.map = tbodyLines = [startLine + 2, 0];
+
+    for (nextLine = startLine + 2; nextLine < endLine; nextLine += 1) {
+        if (state.sCount[nextLine] < state.blkIndent) {
+            break;
+        }
+
+        lineText = getLine(state, nextLine);
+        if (lineText.indexOf('|') === -1) {
+            break;
+        }
+
+        // keep spaces at beginning of line to indicate an empty first cell, but
+        // strip trailing whitespace
+        columns = escapedSplit(lineText.replace(/^\||\|\s*$/g, ''));
+
+        token = state.push('tr_open', 'tr', 1);
+        for (i = 0; i < columnCount; i += 1) {
+            token = state.push('td_open', 'td', 1);
+            if (aligns[i]) {
+                // FIXED: change property style to align
+                token.attrs = [['align', aligns[i]]];
+            }
+
+            token = state.push('inline', '', 0);
+            token.content = columns[i] ? columns[i].trim() : '';
+            token.children = [];
+
+            token = state.push('td_close', 'td', -1);
+        }
+        token = state.push('tr_close', 'tr', -1);
+    }
+    token = state.push('tbody_close', 'tbody', -1);
+    token = state.push('table_close', 'table', -1);
+
+    tableLines[1] = tbodyLines[1] = nextLine;
+    state.line = nextLine;
+    return true;
+};
+
+/***/ }),
+
+/***/ 26:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+// Copyright (c) 2014 Vitaly Puzrin, Alex Kocharin.
+// Distributed under an ISC license: https://github.com/markdown-it/markdown-it/
+
+/**
+ * @fileoverview Implements markdownitHtmlBlockRenderer
+ * @modifier NHN Ent. FE Development Lab <dl_javascript@nhnent.com>
+ */
+/* eslint-disable */
+// HTML block
+
+
+
+// An array of opening and corresponding closing sequences for html tags,
+// last argument defines whether it can terminate a paragraph or not
+//
+
+// void tag names --- Added by Junghwan Park
+
+var voidTagNames = ['area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input', 'keygen', 'link', 'meta', 'param', 'source', 'track', 'wbr'];
+var HTML_SEQUENCES = [[/^<(script|pre|style)(?=(\s|>|$))/i, /<\/(script|pre|style)>/i, true], [/^<!--/, /-->/, true], [/^<\?/, /\?>/, true], [/^<![A-Z]/, />/, true], [/^<!\[CDATA\[/, /\]\]>/, true], [new RegExp('^<(' + voidTagNames.join('|') + ')', 'i'), /^\/?>$/, true], [new RegExp('^</?(address|article|aside|base|basefont|blockquote|body|caption|center|col|colgroup|dd|details|dialog|dir|div|dl|dt|fieldset|figcaption|figure|footer|form|frame|frameset|h1|head|header|hr|html|iframe|legend|li|link|main|menu|menuitem|meta|nav|noframes|ol|optgroup|option|p|param|pre|section|source|title|summary|table|tbody|td|tfoot|th|thead|title|tr|track|ul)(?=(\\s|/?>|$))', 'i'), /^$/, true], [/^(?:<[A-Za-z][A-Za-z0-9\-]*(?:\s+[a-zA-Z_:][a-zA-Z0-9:._-]*(?:\s*=\s*(?:[^"'=<>`\x00-\x20]+|'[^']*'|"[^"]*"))?)*\s*\/?>|<\/[A-Za-z][A-Za-z0-9\-]*\s*>)\s*$/, /^$/, false]];
+
+module.exports = function html_block(state, startLine, endLine, silent) {
+    var i,
+        nextLine,
+        token,
+        lineText,
+        pos = state.bMarks[startLine] + state.tShift[startLine],
+        max = state.eMarks[startLine];
+
+    if (!state.md.options.html) {
+        return false;
+    }
+
+    if (state.src.charCodeAt(pos) !== 0x3C /* < */) {
+            return false;
+        }
+
+    lineText = state.src.slice(pos, max);
+
+    for (i = 0; i < HTML_SEQUENCES.length; i++) {
+        if (HTML_SEQUENCES[i][0].test(lineText)) {
+            // add condition for return when meet void element --- Added by Junghwan Park
+            if (i === 5) {
+                return false;
+            } else {
+                break;
+            }
+        }
+    }
+
+    if (i === HTML_SEQUENCES.length) {
+        return false;
+    }
+
+    if (silent) {
+        // true if this sequence can be a terminator, false otherwise
+        return HTML_SEQUENCES[i][2];
+    }
+
+    nextLine = startLine + 1;
+
+    // If we are here - we detected HTML block.
+    // Let's roll down till block end.
+    if (!HTML_SEQUENCES[i][1].test(lineText)) {
+        for (; nextLine < endLine; nextLine++) {
+            if (state.sCount[nextLine] < state.blkIndent) {
+                break;
+            }
+
+            pos = state.bMarks[nextLine] + state.tShift[nextLine];
+            max = state.eMarks[nextLine];
+            lineText = state.src.slice(pos, max);
+
+            if (HTML_SEQUENCES[i][1].test(lineText)) {
+                if (lineText.length !== 0) {
+                    nextLine++;
+                }
+                break;
+            }
+        }
+    }
+
+    state.line = nextLine;
+
+    token = state.push('html_block', '', 0);
+    token.map = [startLine, nextLine];
+    token.content = state.getLines(startLine, nextLine, state.blkIndent, true);
+
+    return true;
+};
+/* eslint-enable */
+
+/***/ }),
+
+/***/ 27:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+// Copyright (c) 2014 Vitaly Puzrin, Alex Kocharin.
+// Distributed under MIT license: https://github.com/markdown-it/markdown-it/
+/**
+ * @fileoverview Implements markdownitBackticksRenderer
+ * @modifier NHN Ent. FE Development Lab <dl_javascript@nhnent.com>
+ */
+/* eslint-disable */
+
+// Parse backticks
+module.exports = function backtick(state, silent) {
+  var start,
+      max,
+      marker,
+      matchStart,
+      matchEnd,
+      token,
+      pos = state.pos,
+      ch = state.src.charCodeAt(pos);
+
+  if (ch !== 0x60 /* ` */) {
+      return false;
+    }
+
+  start = pos;
+  pos++;
+  max = state.posMax;
+
+  while (pos < max && state.src.charCodeAt(pos) === 0x60 /* ` */) {
+    pos++;
+  }
+
+  marker = state.src.slice(start, pos);
+
+  matchStart = matchEnd = pos;
+
+  while ((matchStart = state.src.indexOf('`', matchEnd)) !== -1) {
+    matchEnd = matchStart + 1;
+
+    while (matchEnd < max && state.src.charCodeAt(matchEnd) === 0x60 /* ` */) {
+      matchEnd++;
+    }
+
+    if (matchEnd - matchStart === marker.length) {
+      if (!silent) {
+        token = state.push('code_inline', 'code', 0);
+        token.markup = marker;
+        token.content = state.src.slice(pos, matchStart).replace(/[ \n]+/g, ' ').trim();
+        // TUI.EDITOR MODIFICATION START
+        // store number of backtick in data-backtick
+        // https://github.nhnent.com/fe/tui.editor/pull/981
+        token.attrSet('data-backticks', token.markup.length);
+        // TUI.EDITOR MODIFICATION END
+      }
+      state.pos = matchEnd;
+      return true;
+    }
+  }
+
+  if (!silent) {
+    state.pending += marker;
+  }
+  state.pos += marker.length;
+  return true;
+};
+
+/***/ }),
+
+/***/ 28:
+/***/ (function(module, exports) {
+
+module.exports = __WEBPACK_EXTERNAL_MODULE_28__;
+
+/***/ }),
+
+/***/ 29:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); /**
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * @fileoverview Implements editor preivew
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * @author NHN Ent. FE Development Lab <dl_javascript@nhnent.com>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      */
+
+
+var _jquery = __webpack_require__(0);
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+var _tuiCodeSnippet = __webpack_require__(1);
+
+var _tuiCodeSnippet2 = _interopRequireDefault(_tuiCodeSnippet);
+
+var _mdPreview = __webpack_require__(9);
+
+var _mdPreview2 = _interopRequireDefault(_mdPreview);
+
+var _eventManager = __webpack_require__(12);
+
+var _eventManager2 = _interopRequireDefault(_eventManager);
+
+var _commandManager = __webpack_require__(2);
+
+var _commandManager2 = _interopRequireDefault(_commandManager);
+
+var _extManager = __webpack_require__(13);
+
+var _extManager2 = _interopRequireDefault(_extManager);
+
+var _convertor = __webpack_require__(14);
+
+var _convertor2 = _interopRequireDefault(_convertor);
+
+var _domUtils = __webpack_require__(3);
+
+var _domUtils2 = _interopRequireDefault(_domUtils);
+
+var _codeBlockManager = __webpack_require__(7);
+
+var _codeBlockManager2 = _interopRequireDefault(_codeBlockManager);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var TASK_ATTR_NAME = 'data-te-task';
+var TASK_CHECKED_CLASS_NAME = 'checked';
+
+/**
+ * Class ToastUIEditorViewer
+ */
+
+var ToastUIEditorViewer = function () {
+  /**
+     * Viewer
+     * @param {object} options Option object
+        * @param {string} options.initialValue Editor's initial value
+        * @param {object} options.events eventlist Event list
+            * @param {function} options.events.load It would be emitted when editor fully load
+            * @param {function} options.events.change It would be emitted when content changed
+            * @param {function} options.events.stateChange It would be emitted when format change by cursor position
+            * @param {function} options.events.focus It would be emitted when editor get focus
+            * @param {function} options.events.blur It would be emitted when editor loose focus
+        * @param {object} options.hooks Hook list
+            * @param {function} options.hooks.previewBeforeHook Submit preview to hook URL before preview be shown
+    */
+  function ToastUIEditorViewer(options) {
+    var _this = this;
+
+    _classCallCheck(this, ToastUIEditorViewer);
+
+    this.options = options;
+
+    this.eventManager = new _eventManager2.default();
+    this.commandManager = new _commandManager2.default(this);
+    this.convertor = new _convertor2.default(this.eventManager);
+    this.toMarkOptions = null;
+
+    if (this.options.hooks) {
+      _tuiCodeSnippet2.default.forEach(this.options.hooks, function (fn, key) {
+        _this.addHook(key, fn);
+      });
+    }
+
+    if (this.options.events) {
+      _tuiCodeSnippet2.default.forEach(this.options.events, function (fn, key) {
+        _this.on(key, fn);
+      });
+    }
+
+    this.preview = new _mdPreview2.default((0, _jquery2.default)(this.options.el), this.eventManager, this.convertor, true);
+
+    this.preview.$el.on('mousedown', _jquery2.default.proxy(this._toggleTask, this));
+
+    _extManager2.default.applyExtension(this, this.options.exts);
+
+    this.setValue(this.options.initialValue);
+
+    this.eventManager.emit('load', this);
+  }
+
+  /**
+   * Toggle task by detecting mousedown event.
+   * @param {MouseEvent} ev - event
+   * @private
+   */
+
+
+  _createClass(ToastUIEditorViewer, [{
+    key: '_toggleTask',
+    value: function _toggleTask(ev) {
+      var isBeneathTaskBox = ev.offsetX < 18 && ev.offsetY > 18;
+
+      if (ev.target.hasAttribute(TASK_ATTR_NAME) && !isBeneathTaskBox) {
+        (0, _jquery2.default)(ev.target).toggleClass(TASK_CHECKED_CLASS_NAME);
+        this.eventManager.emit('change', {
+          source: 'viewer',
+          data: ev
+        });
+      }
+    }
+
+    /**
+     * Set content for preview
+     * @memberof ToastUIEditorViewer
+     * @param {string} markdown Markdown text
+     */
+
+  }, {
+    key: 'setMarkdown',
+    value: function setMarkdown(markdown) {
+      this.markdownValue = markdown = markdown || '';
+
+      this.preview.refresh(this.markdownValue);
+      this.eventManager.emit('setMarkdownAfter', this.markdownValue);
+    }
+
+    /**
+     * Set content for preview
+     * @memberof ToastUIEditorViewer
+     * @param {string} markdown Markdown text
+     * @deprecated
+     */
+
+  }, {
+    key: 'setValue',
+    value: function setValue(markdown) {
+      this.setMarkdown(markdown);
+    }
+
+    /**
+     * Bind eventHandler to event type
+     * @memberof ToastUIEditorViewer
+     * @param {string} type Event type
+     * @param {function} handler Event handler
+     */
+
+  }, {
+    key: 'on',
+    value: function on(type, handler) {
+      this.eventManager.listen(type, handler);
+    }
+
+    /**
+     * Unbind eventHandler from event type
+     * @memberof ToastUIEditorViewer
+     * @param {string} type Event type
+     */
+
+  }, {
+    key: 'off',
+    value: function off(type) {
+      this.eventManager.removeEventHandler(type);
+    }
+
+    /**
+     * Remove Viewer preview from document
+     * @memberof ToastUIEditorViewer
+     */
+
+  }, {
+    key: 'remove',
+    value: function remove() {
+      this.eventManager.emit('removeEditor');
+      this.preview.$el.off('mousedown', _jquery2.default.proxy(this._toggleTask, this));
+      this.options = null;
+      this.eventManager = null;
+      this.commandManager = null;
+      this.convertor = null;
+      this.preview = null;
+    }
+
+    /**
+     * Add hook to Viewer preview's event
+     * @memberof ToastUIEditorViewer
+     * @param {string} type Event type
+     * @param {function} handler Event handler
+     */
+
+  }, {
+    key: 'addHook',
+    value: function addHook(type, handler) {
+      this.eventManager.removeEventHandler(type);
+      this.eventManager.listen(type, handler);
+    }
+
+    /**
+     * Return true
+     * @memberof ToastUIEditorViewer
+     * @returns {boolean}
+     */
+
+  }, {
+    key: 'isViewer',
+    value: function isViewer() {
+      return true;
+    }
+
+    /**
+     * Return false
+     * @memberof ToastUIEditorViewer
+     * @returns {boolean}
+     */
+
+  }, {
+    key: 'isMarkdownMode',
+    value: function isMarkdownMode() {
+      return false;
+    }
+
+    /**
+     * Return false
+     * @memberof ToastUIEditorViewer
+     * @returns {boolean}
+     */
+
+  }, {
+    key: 'isWysiwygMode',
+    value: function isWysiwygMode() {
+      return false;
+    }
+
+    /**
+     * Define extension
+     * @memberof ToastUIEditorViewer
+     * @param {string} name Extension name
+     * @param {ExtManager~extension} ext extension
+     */
+
+  }], [{
+    key: 'defineExtension',
+    value: function defineExtension(name, ext) {
+      _extManager2.default.defineExtension(name, ext);
+    }
+  }]);
+
+  return ToastUIEditorViewer;
+}();
+
+/**
+ * check whther is viewer
+ * @type {boolean}
+ */
+
+
+ToastUIEditorViewer.isViewer = true;
+
+/**
+ * domUtil instance
+ * @type {DomUtil}
+ */
+ToastUIEditorViewer.domUtils = _domUtils2.default;
+
+/**
+ * CodeBlockManager instance
+ * @type {CodeBlockManager}
+ */
+ToastUIEditorViewer.codeBlockManager = _codeBlockManager2.default;
+
+/**
+ * MarkdownIt hightlight instance
+ * @type {MarkdownIt}
+ */
+ToastUIEditorViewer.markdownitHighlight = _convertor2.default.getMarkdownitHighlightRenderer();
+
+/**
+ * @ignore
+ */
+ToastUIEditorViewer.i18n = null;
+
+/**
+ * @ignore
+ */
+ToastUIEditorViewer.Button = null;
+
+/**
+ * @ignore
+ */
+ToastUIEditorViewer.WwCodeBlockManager = null;
+
+/**
+ * @ignore
+ */
+ToastUIEditorViewer.WwTableManager = null;
+
+/**
+ * @ignore
+ */
+ToastUIEditorViewer.WwTableSelectionManager = null;
+
+module.exports = ToastUIEditorViewer;
+
+/***/ }),
+
+/***/ 3:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _jquery = __webpack_require__(0);
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+var _tuiCodeSnippet = __webpack_require__(1);
+
+var _tuiCodeSnippet2 = _interopRequireDefault(_tuiCodeSnippet);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/**
+ * @fileoverview DOM Utils
+ * @author NHN Ent. FE Development Lab <dl_javascript@nhnent.com>
+ */
+var FIND_ZWB = /\u200B/g;
+
+/**
+ * isTextNode
+ * Check if node is text node
+ * @param {Node} node node to check
+ * @returns {boolean} result
+ * @ignore
+ */
+var isTextNode = function isTextNode(node) {
+  return node && node.nodeType === Node.TEXT_NODE;
+};
+
+/**
+ * isElemNode
+ * Check if node is element node
+ * @param {Node} node node to check
+ * @returns {boolean} result
+ * @ignore
+ */
+var isElemNode = function isElemNode(node) {
+  return node && node.nodeType === Node.ELEMENT_NODE;
+};
+
+/**
+ * getNodeName
+ * Get node name of node
+ * @param {Node} node node
+ * @returns {string} node name
+ * @ignore
+ */
+var getNodeName = function getNodeName(node) {
+  if (isElemNode(node)) {
+    return node.tagName;
+  }
+
+  return 'TEXT';
+};
+
+/**
+ * getTextLength
+ * Get node offset length of node(for Range API)
+ * @param {Node} node node
+ * @returns {number} length
+ * @ignore
+ */
+var getTextLength = function getTextLength(node) {
+  var len = void 0;
+
+  if (isElemNode(node)) {
+    len = node.textContent.replace(FIND_ZWB, '').length;
+  } else if (isTextNode(node)) {
+    len = node.nodeValue.replace(FIND_ZWB, '').length;
+  }
+
+  return len;
+};
+
+/**
+ * getOffsetLength
+ * Get node offset length of node(for Range API)
+ * @param {Node} node node
+ * @returns {number} length
+ * @ignore
+ */
+var getOffsetLength = function getOffsetLength(node) {
+  var len = void 0;
+
+  if (isElemNode(node)) {
+    len = node.childNodes.length;
+  } else if (isTextNode(node)) {
+    len = node.nodeValue.replace(FIND_ZWB, '').length;
+  }
+
+  return len;
+};
+
+/**
+ * getNodeOffsetOfParent
+ * get node offset between parent's childnodes
+ * @param {Node} node node
+ * @returns {number} offset(index)
+ * @ignore
+ */
+var getNodeOffsetOfParent = function getNodeOffsetOfParent(node) {
+  var childNodesOfParent = node.parentNode.childNodes;
+  var i = void 0,
+      t = void 0,
+      found = void 0;
+
+  for (i = 0, t = childNodesOfParent.length; i < t; i += 1) {
+    if (childNodesOfParent[i] === node) {
+      found = i;
+      break;
+    }
+  }
+
+  return found;
+};
+
+/**
+ * getChildNodeByOffset
+ * get child node by offset
+ * @param {Node} node node
+ * @param {number} index offset index
+ * @returns {Node} foudned node
+ * @ignore
+ */
+var getChildNodeByOffset = function getChildNodeByOffset(node, index) {
+  var currentNode = void 0;
+
+  if (isTextNode(node)) {
+    currentNode = node;
+  } else if (node.childNodes.length && index >= 0) {
+    currentNode = node.childNodes[index];
+  }
+
+  return currentNode;
+};
+
+/**
+ * getNodeWithDirectionUntil
+ * find next node from passed node
+ * @param {strong} direction previous or next
+ * @param {Node} node node
+ * @param {string} untilNodeName parent node name to limit
+ * @returns {Node} founded node
+ * @ignore
+ */
+var getNodeWithDirectionUntil = function getNodeWithDirectionUntil(direction, node, untilNodeName) {
+  var directionKey = direction + 'Sibling';
+  var nodeName = void 0,
+      foundedNode = void 0;
+
+  while (node && !node[directionKey]) {
+    nodeName = getNodeName(node.parentNode);
+
+    if (nodeName === untilNodeName || nodeName === 'BODY') {
+      break;
+    }
+
+    node = node.parentNode;
+  }
+
+  if (node[directionKey]) {
+    foundedNode = node[directionKey];
+  }
+
+  return foundedNode;
+};
+
+/**
+ * getPrevOffsetNodeUntil
+ * get prev node of childnode pointed with index
+ * @param {Node} node node
+ * @param {number} index offset index
+ * @param {string} untilNodeName parent node name to limit
+ * @returns {Node} founded node
+ * @ignore
+ */
+var getPrevOffsetNodeUntil = function getPrevOffsetNodeUntil(node, index, untilNodeName) {
+  var prevNode = void 0;
+
+  if (index > 0) {
+    prevNode = getChildNodeByOffset(node, index - 1);
+  } else {
+    prevNode = getNodeWithDirectionUntil('previous', node, untilNodeName);
+  }
+
+  return prevNode;
+};
+
+var getParentUntilBy = function getParentUntilBy(node, condition) {
+  var foundedNode = void 0;
+
+  while (node.parentNode && !condition(node.parentNode)) {
+    node = node.parentNode;
+  }
+
+  if (condition(node.parentNode)) {
+    foundedNode = node;
+  }
+
+  return foundedNode;
+};
+
+/**
+ * getParentUntil
+ * get parent node until paseed node name
+ * @param {Node} node node
+ * @param {string|HTMLNode} untilNode node name or node to limit
+ * @returns {Node} founded node
+ * @ignore
+ */
+var getParentUntil = function getParentUntil(node, untilNode) {
+  var foundedNode = void 0;
+
+  if (_tuiCodeSnippet2.default.isString(untilNode)) {
+    foundedNode = getParentUntilBy(node, function (targetNode) {
+      return untilNode === getNodeName(targetNode);
+    });
+  } else {
+    foundedNode = getParentUntilBy(node, function (targetNode) {
+      return untilNode === targetNode;
+    });
+  }
+
+  return foundedNode;
+};
+
+/**
+ * getNodeWithDirectionUnderParent
+ * get node on the given direction under given parent
+ * @param {strong} direction previous or next
+ * @param {Node} node node
+ * @param {string|Node} underNode parent node name to limit
+ * @returns {Node} founded node
+ * @ignore
+ */
+var getNodeWithDirectionUnderParent = function getNodeWithDirectionUnderParent(direction, node, underNode) {
+  var directionKey = direction + 'Sibling';
+  var foundedNode = void 0;
+
+  node = getParentUntil(node, underNode);
+
+  if (node && node[directionKey]) {
+    foundedNode = node[directionKey];
+  }
+
+  return foundedNode;
+};
+
+/**
+ * getTopPrevNodeUnder
+ * get top previous top level node under given node
+ * @param {Node} node node
+ * @param {Node} underNode underNode
+ * @returns {Node} founded node
+ * @ignore
+ */
+var getTopPrevNodeUnder = function getTopPrevNodeUnder(node, underNode) {
+  return getNodeWithDirectionUnderParent('previous', node, underNode);
+};
+
+/**
+ * getNextTopBlockNode
+ * get next top level block node
+ * @param {Node} node node
+ * @param {Node} underNode underNode
+ * @returns {Node} founded node
+ * @ignore
+ */
+var getTopNextNodeUnder = function getTopNextNodeUnder(node, underNode) {
+  return getNodeWithDirectionUnderParent('next', node, underNode);
+};
+
+/**
+ * Get parent element the body element
+ * @param {Node} node Node for start searching
+ * @returns {Node}
+ * @ignore
+ */
+var getTopBlockNode = function getTopBlockNode(node) {
+  return getParentUntil(node, 'BODY');
+};
+
+/**
+ * Get previous text node
+ * @param {Node} node Node for start searching
+ * @returns {Node}
+ * @ignore
+ */
+var getPrevTextNode = function getPrevTextNode(node) {
+  node = node.previousSibling || node.parentNode;
+
+  while (!isTextNode(node) && getNodeName(node) !== 'BODY') {
+    if (node.previousSibling) {
+      node = node.previousSibling;
+
+      while (node.lastChild) {
+        node = node.lastChild;
+      }
+    } else {
+      node = node.parentNode;
+    }
+  }
+
+  if (getNodeName(node) === 'BODY') {
+    node = null;
+  }
+
+  return node;
+};
+
+/**
+ * find node by offset
+ * @param {HTMLElement} root Root element
+ * @param {Array.<number>} offsetList offset list
+ * @param {function} textNodeFilter Text node filter
+ * @returns {Array}
+ * @ignore
+ */
+var findOffsetNode = function findOffsetNode(root, offsetList, textNodeFilter) {
+  var result = [];
+  var text = '';
+  var walkerOffset = 0;
+  var newWalkerOffset = void 0;
+
+  if (!offsetList.length) {
+    return result;
+  }
+
+  var offset = offsetList.shift();
+  var walker = document.createTreeWalker(root, 4, null, false);
+
+  while (walker.nextNode()) {
+    text = walker.currentNode.nodeValue || '';
+
+    if (textNodeFilter) {
+      text = textNodeFilter(text);
+    }
+
+    newWalkerOffset = walkerOffset + text.length;
+
+    while (newWalkerOffset >= offset) {
+      result.push({
+        container: walker.currentNode,
+        offsetInContainer: offset - walkerOffset,
+        offset: offset
+      });
+
+      if (!offsetList.length) {
+        return result;
+      }
+      offset = offsetList.shift();
+    }
+    walkerOffset = newWalkerOffset;
+  }
+
+  // there should be offset left
+  do {
+    result.push({
+      container: walker.currentNode,
+      offsetInContainer: text.length,
+      offset: offset
+    });
+    offset = offsetList.shift();
+  } while (!_tuiCodeSnippet2.default.isUndefined(offset));
+
+  return result;
+};
+
+var getNodeInfo = function getNodeInfo(node) {
+  var path = {};
+
+  path.tagName = node.nodeName;
+
+  if (node.id) {
+    path.id = node.id;
+  }
+
+  var className = node.className.trim();
+
+  if (className) {
+    path.className = className;
+  }
+
+  return path;
+};
+
+var getPath = function getPath(node, root) {
+  var paths = [];
+
+  while (node && node !== root) {
+    if (isElemNode(node)) {
+      paths.unshift(getNodeInfo(node));
+    }
+
+    node = node.parentNode;
+  }
+
+  return paths;
+};
+
+/**
+ * Find next, previous TD or TH element by given TE element
+ * @param {HTMLElement} node TD element
+ * @param {string} direction Boolean value for direction true is find next cell
+ * @returns {HTMLElement|null}
+ * @ignore
+ */
+var getTableCellByDirection = function getTableCellByDirection(node, direction) {
+  var isForward = true;
+  var targetElement = null;
+
+  if (_tuiCodeSnippet2.default.isUndefined(direction) || direction !== 'next' && direction !== 'previous') {
+    return null;
+  } else if (direction === 'previous') {
+    isForward = false;
+  }
+
+  if (isForward) {
+    targetElement = node.nextElementSibling;
+  } else {
+    targetElement = node.previousElementSibling;
+  }
+
+  return targetElement;
+};
+
+/**
+ * Find sibling TR's TD element by given TD and direction
+ * @param {HTMLElement} node TD element
+ * @param {string} direction Boolean value for find first TD in next line
+ * @param {boolean} [needEdgeCell=false] Boolean value for find first TD in next line
+ * @returns {HTMLElement|null}
+ * @ignore
+ */
+var getSiblingRowCellByDirection = function getSiblingRowCellByDirection(node, direction, needEdgeCell) {
+  var isForward = true;
+  var tableCellElement = null;
+  var $node = void 0,
+      index = void 0,
+      $targetRowElement = void 0,
+      $currentContainer = void 0,
+      $siblingContainer = void 0,
+      isSiblingContainerExists = void 0;
+
+  if (_tuiCodeSnippet2.default.isUndefined(direction) || direction !== 'next' && direction !== 'previous') {
+    return null;
+  } else if (direction === 'previous') {
+    isForward = false;
+  }
+
+  if (node) {
+    $node = (0, _jquery2.default)(node);
+
+    if (isForward) {
+      $targetRowElement = $node.parent().next();
+      $currentContainer = $node.parents('thead');
+      $siblingContainer = $currentContainer[0] && $currentContainer.next();
+      isSiblingContainerExists = $siblingContainer && getNodeName($siblingContainer[0]) === 'TBODY';
+
+      index = 0;
+    } else {
+      $targetRowElement = $node.parent().prev();
+      $currentContainer = $node.parents('tbody');
+      $siblingContainer = $currentContainer[0] && $currentContainer.prev();
+      isSiblingContainerExists = $siblingContainer && getNodeName($siblingContainer[0]) === 'THEAD';
+
+      index = node.parentNode.childNodes.length - 1;
+    }
+
+    if (_tuiCodeSnippet2.default.isUndefined(needEdgeCell) || !needEdgeCell) {
+      index = getNodeOffsetOfParent(node);
+    }
+
+    if ($targetRowElement[0]) {
+      tableCellElement = $targetRowElement.children('td,th')[index];
+    } else if ($currentContainer[0] && isSiblingContainerExists) {
+      tableCellElement = $siblingContainer.find('td,th')[index];
+    }
+
+    return tableCellElement;
+  }
+
+  return null;
+};
+
+exports.default = {
+  getNodeName: getNodeName,
+  isTextNode: isTextNode,
+  isElemNode: isElemNode,
+  getTextLength: getTextLength,
+  getOffsetLength: getOffsetLength,
+  getPrevOffsetNodeUntil: getPrevOffsetNodeUntil,
+  getNodeOffsetOfParent: getNodeOffsetOfParent,
+  getChildNodeByOffset: getChildNodeByOffset,
+  getTopPrevNodeUnder: getTopPrevNodeUnder,
+  getTopNextNodeUnder: getTopNextNodeUnder,
+  getParentUntil: getParentUntil,
+  getTopBlockNode: getTopBlockNode,
+  getPrevTextNode: getPrevTextNode,
+  findOffsetNode: findOffsetNode,
+  getPath: getPath,
+  getNodeInfo: getNodeInfo,
+  getTableCellByDirection: getTableCellByDirection,
+  getSiblingRowCellByDirection: getSiblingRowCellByDirection
+};
+
+/***/ }),
+
+/***/ 7:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.CodeBlockManager = undefined;
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); /**
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * @fileoverview Implements CodeBlockManager
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * @author NHN Ent. FE Development Lab <dl_javascript@nhnent.com>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      */
+
+
+var _highlight = __webpack_require__(28);
+
+var _highlight2 = _interopRequireDefault(_highlight);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+/**
+ * Class Code Block Manager
+ */
+var CodeBlockManager = function () {
+  /**
+   * Creates an instance of CodeBlockManager.
+   * @memberof CodeBlockManager
+   */
+  function CodeBlockManager() {
+    _classCallCheck(this, CodeBlockManager);
+
+    this._replacers = {};
+  }
+
+  /**
+   * Set replacer for code block
+   * @param {string} language - code block language
+   * @param {function} replacer - replacer function to code block element
+   */
+
+
+  _createClass(CodeBlockManager, [{
+    key: 'setReplacer',
+    value: function setReplacer(language, replacer) {
+      this._replacers[language] = replacer;
+    }
+
+    /**
+     * get replacer for code block
+     * @param {string} language - code block type
+     * @returns {function} - replacer function
+     * @memberof CodeBlockManager
+     */
+
+  }, {
+    key: 'getReplacer',
+    value: function getReplacer(language) {
+      return this._replacers[language];
+    }
+
+    /**
+     * Create code block html.
+     * @param {string} language - code block language
+     * @param {string} codeText - code text
+     * @returns {string}
+     */
+
+  }, {
+    key: 'createCodeBlockHtml',
+    value: function createCodeBlockHtml(language, codeText) {
+      var replacer = this.getReplacer(language);
+      var html = void 0;
+
+      if (replacer) {
+        html = replacer(codeText, language);
+      } else {
+        html = _highlight2.default.getLanguage(language) ? _highlight2.default.highlight(language, codeText).value : escape(codeText, false);
+      }
+
+      return html;
+    }
+
+    /**
+     * get supported languages by highlight-js
+     * @returns {Array<string>} - supported languages by highlight-js
+     * @static
+     */
+
+  }], [{
+    key: 'getHighlightJSLanguages',
+    value: function getHighlightJSLanguages() {
+      return _highlight2.default.listLanguages();
+    }
+  }]);
+
+  return CodeBlockManager;
+}();
+
+/**
+ * escape code from markdown-it
+ * @param {string} html HTML string
+ * @param {string} encode Boolean value of whether encode or not
+ * @returns {string}
+ * @ignore
+ */
+
+
+function escape(html, encode) {
+  return html.replace(!encode ? /&(?!#?\w+;)/g : /&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+}
+
+exports.CodeBlockManager = CodeBlockManager;
+exports.default = new CodeBlockManager();
+
+/***/ }),
+
+/***/ 9:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
+
+var _preview = __webpack_require__(10);
+
+var _preview2 = _interopRequireDefault(_preview);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /**
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @fileoverview Implements markdown preview
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @author NHN Ent. FE Development Lab <dl_javascript@nhnent.com>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
+
+
+/**
+ * Class Markdown Preview
+ * @extends {Preview}
+ */
+var MarkdownPreview = function (_Preview) {
+  _inherits(MarkdownPreview, _Preview);
+
+  /**
+   * Creates an instance of MarkdownPreview.
+   * @param {jQuery} $el - base jQuery element
+   * @param {EventManager} eventManager - event manager
+   * @param {Convertor} convertor - convertor
+   * @param {boolean} isViewer - true for view only mode
+   * @memberof MarkdownPreview
+   */
+  function MarkdownPreview($el, eventManager, convertor, isViewer) {
+    _classCallCheck(this, MarkdownPreview);
+
+    var _this = _possibleConstructorReturn(this, (MarkdownPreview.__proto__ || Object.getPrototypeOf(MarkdownPreview)).call(this, $el, eventManager, convertor, isViewer));
+
+    _this._initEvent();
+    return _this;
+  }
+
+  /**
+   * Initialize event
+   * @private
+   */
+
+
+  _createClass(MarkdownPreview, [{
+    key: '_initEvent',
+    value: function _initEvent() {
+      var _this2 = this;
+
+      var latestMarkdownValue = '';
+
+      this.eventManager.listen('contentChangedFromMarkdown', function (markdownEditor) {
+        latestMarkdownValue = markdownEditor.getValue();
+
+        if (_this2.isVisible()) {
+          _this2.lazyRunner.run('refresh', latestMarkdownValue.replace(/<br>\n/g, '<br>'));
+        }
+      });
+
+      this.eventManager.listen('previewNeedsRefresh', function (value) {
+        _this2.refresh(value || latestMarkdownValue);
+      });
+
+      this.$el.on('scroll', function (event) {
+        _this2.eventManager.emit('scroll', {
+          source: 'preview',
+          data: event
+        });
+      });
+    }
+
+    /**
+     * render
+     * @param {string} html - html string to render
+     * @memberof MarkdownPreview
+     * @override
+     */
+
+  }, {
+    key: 'render',
+    value: function render(html) {
+      _get(MarkdownPreview.prototype.__proto__ || Object.getPrototypeOf(MarkdownPreview.prototype), 'render', this).call(this, html);
+
+      this.eventManager.emit('previewRenderAfter', this);
+    }
+  }]);
+
+  return MarkdownPreview;
+}(_preview2.default);
+
+exports.default = MarkdownPreview;
+
+/***/ })
+
+/******/ });
+});
+
+/***/ }),
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -45173,7 +48864,7 @@ module.exports = function bind(fn, thisArg) {
 
 
 /***/ }),
-/* 24 */
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -45184,7 +48875,7 @@ var settle = __webpack_require__(283);
 var buildURL = __webpack_require__(285);
 var parseHeaders = __webpack_require__(286);
 var isURLSameOrigin = __webpack_require__(287);
-var createError = __webpack_require__(25);
+var createError = __webpack_require__(26);
 var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(288);
 
 module.exports = function xhrAdapter(config) {
@@ -45360,7 +49051,7 @@ module.exports = function xhrAdapter(config) {
 
 
 /***/ }),
-/* 25 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -45385,7 +49076,7 @@ module.exports = function createError(message, config, code, request, response) 
 
 
 /***/ }),
-/* 26 */
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -45397,7 +49088,7 @@ module.exports = function isCancel(value) {
 
 
 /***/ }),
-/* 27 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -45423,29 +49114,29 @@ module.exports = Cancel;
 
 
 /***/ }),
-/* 28 */
+/* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(29);
+__webpack_require__(30);
 module.exports = __webpack_require__(297);
 
 
 /***/ }),
-/* 29 */
+/* 30 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_popper_js__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_sweetalert2__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_sweetalert2__ = __webpack_require__(34);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_sweetalert2___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_sweetalert2__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_jquery__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_jquery__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_parsleyjs__ = __webpack_require__(34);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_parsleyjs__ = __webpack_require__(35);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_parsleyjs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_parsleyjs__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_js__ = __webpack_require__(36);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_js__ = __webpack_require__(37);
 
 
 
@@ -45456,7 +49147,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 window.Popper = __WEBPACK_IMPORTED_MODULE_1_popper_js__["default"];
 window.$ = __WEBPACK_IMPORTED_MODULE_3_jquery___default.a;
 window.swal = __WEBPACK_IMPORTED_MODULE_2_sweetalert2___default.a;
-__webpack_require__(35);
+__webpack_require__(36);
 
 /**
  * Import components.
@@ -45511,7 +49202,7 @@ window.$app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED
 $app.csrfToken = token;
 
 /***/ }),
-/* 30 */
+/* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -56325,10 +60016,10 @@ Vue$3.compile = compileToFunctions;
 
 module.exports = Vue$3;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(31).setImmediate))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(32).setImmediate))
 
 /***/ }),
-/* 31 */
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {var apply = Function.prototype.apply;
@@ -56381,7 +60072,7 @@ exports._unrefActive = exports.active = function(item) {
 };
 
 // setimmediate attaches itself to the global object
-__webpack_require__(32);
+__webpack_require__(33);
 // On some exotic environments, it's not clear which object `setimmeidate` was
 // able to install onto.  Search each possibility in the same order as the
 // `setimmediate` library.
@@ -56395,7 +60086,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ }),
-/* 32 */
+/* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, process) {(function (global, undefined) {
@@ -56588,7 +60279,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(9)))
 
 /***/ }),
-/* 33 */
+/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*!
@@ -58273,7 +61964,7 @@ if (window.Sweetalert2) window.sweetAlert = window.swal = window.Sweetalert2;
 
 
 /***/ }),
-/* 34 */
+/* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {/*!
@@ -60774,7 +64465,7 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ }),
-/* 35 */
+/* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*!
@@ -64674,13 +68365,13 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 
 /***/ }),
-/* 36 */
+/* 37 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__courses_assignments_index__ = __webpack_require__(37);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__courses_assignments_form__ = __webpack_require__(38);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__courses_assignments_show__ = __webpack_require__(275);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__courses_assignments_index__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__courses_assignments_form__ = __webpack_require__(39);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__courses_assignments_show__ = __webpack_require__(276);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__courses_grades_dashboard__ = __webpack_require__(277);
 
 
@@ -64705,7 +68396,7 @@ Object.defineProperty(exports, '__esModule', { value: true });
 });
 
 /***/ }),
-/* 37 */
+/* 38 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -64742,11 +68433,11 @@ Object.defineProperty(exports, '__esModule', { value: true });
 });
 
 /***/ }),
-/* 38 */
+/* 39 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_flatpickr_component__ = __webpack_require__(39);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_flatpickr_component__ = __webpack_require__(40);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_flatpickr_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue_flatpickr_component__);
 
 var Editor = __webpack_require__(4);
@@ -64918,13 +68609,13 @@ var Editor = __webpack_require__(4);
 });
 
 /***/ }),
-/* 39 */
+/* 40 */
 /***/ (function(module, exports, __webpack_require__) {
 
-!function(t,e){ true?module.exports=e(__webpack_require__(40)):"function"==typeof define&&define.amd?define("VueFlatpickr",["flatpickr"],e):"object"==typeof exports?exports.VueFlatpickr=e(require("flatpickr")):t.VueFlatpickr=e(t.flatpickr)}(this,function(t){return function(t){function e(r){if(n[r])return n[r].exports;var i=n[r]={i:r,l:!1,exports:{}};return t[r].call(i.exports,i,i.exports,e),i.l=!0,i.exports}var n={};return e.m=t,e.c=n,e.d=function(t,n,r){e.o(t,n)||Object.defineProperty(t,n,{configurable:!1,enumerable:!0,get:r})},e.n=function(t){var n=t&&t.__esModule?function(){return t.default}:function(){return t};return e.d(n,"a",n),n},e.o=function(t,e){return Object.prototype.hasOwnProperty.call(t,e)},e.p="",e(e.s=0)}([function(t,e,n){"use strict";Object.defineProperty(e,"__esModule",{value:!0}),n.d(e,"flatPickrPlugin",function(){return i});var r=n(1);n.d(e,"component",function(){return r.a});var i=function(t,e){var n="flat-pickr";"string"==typeof e&&(n=e),t.component(n,r.a)};r.a.install=i,e.default=r.a},function(t,e,n){"use strict";var r=n(3),i=n(5),o=n(2),a=o(r.a,i.a,null,null,null);e.a=a.exports},function(t,e){t.exports=function(t,e,n,r,i){var o,a=t=t||{},u=typeof t.default;"object"!==u&&"function"!==u||(o=t,a=t.default);var s="function"==typeof a?a.options:a;e&&(s.render=e.render,s.staticRenderFns=e.staticRenderFns),r&&(s._scopeId=r);var l;if(i?(l=function(t){t=t||this.$vnode&&this.$vnode.ssrContext||this.parent&&this.parent.$vnode&&this.parent.$vnode.ssrContext,t||"undefined"==typeof __VUE_SSR_CONTEXT__||(t=__VUE_SSR_CONTEXT__),n&&n.call(this,t),t&&t._registeredComponents&&t._registeredComponents.add(i)},s._ssrRegister=l):n&&(l=n),l){var f=s.functional,c=f?s.render:s.beforeCreate;f?s.render=function(t,e){return l.call(e),c(t,e)}:s.beforeCreate=c?[].concat(c,l):[l]}return{esModule:o,exports:a,options:s}}},function(t,e,n){"use strict";function r(t){if(Array.isArray(t)){for(var e=0,n=Array(t.length);e<t.length;e++)n[e]=t[e];return n}return Array.from(t)}var i=n(4),o=n.n(i);e.a={name:"flat-pickr",props:{value:{default:null,required:!0,validator:function(t){return null===t||t instanceof Date||"string"==typeof t||t instanceof String||t instanceof Array}},config:{type:Object,default:function(){return{wrap:!1}}},placeholder:{type:String,default:""},inputClass:{type:[String,Object],default:"form-control input"},name:{type:String,default:"date-time"},required:{type:Boolean,default:!1},id:{type:String}},data:function(){return{mutableValue:this.value,fp:null,oldOnChange:null}},mounted:function(){if(!this.fp){this.oldOnChange=this.config.onChange,this.config.onChange=this.onChange;var t=this.config.wrap?this.$el.parentNode:this.$el;this.fp=new o.a(t,this.config)}},beforeDestroy:function(){this.fp&&(this.fp.destroy(),this.fp=null,this.oldOnChange=null,this.config.onChange=null)},methods:{onChange:function(){for(var t=arguments.length,e=Array(t),n=0;n<t;n++)e[n]=arguments[n];"function"==typeof this.oldOnChange&&this.oldOnChange.apply(this,r(e)),this.$emit.apply(this,["onChange"].concat(r(e)))}},watch:{config:function(t){this.fp.config=Object.assign(this.fp.config,t),this.fp.redraw(),this.fp.setDate(this.value,!0)},mutableValue:function(t){this.$emit("input",t)},value:function(t){t!==this.mutableValue&&this.fp&&this.fp.setDate(t,!0)}}}},function(e,n){e.exports=t},function(t,e,n){"use strict";var r=function(){var t=this,e=t.$createElement;return(t._self._c||e)("input",{directives:[{name:"model",rawName:"v-model",value:t.mutableValue,expression:"mutableValue"}],class:t.inputClass,attrs:{type:"text",id:t.id,name:t.name,placeholder:t.placeholder,required:t.required,"data-input":""},domProps:{value:t.mutableValue},on:{input:function(e){e.target.composing||(t.mutableValue=e.target.value)}}})},i=[],o={render:r,staticRenderFns:i};e.a=o}])});
+!function(t,e){ true?module.exports=e(__webpack_require__(41)):"function"==typeof define&&define.amd?define("VueFlatpickr",["flatpickr"],e):"object"==typeof exports?exports.VueFlatpickr=e(require("flatpickr")):t.VueFlatpickr=e(t.flatpickr)}(this,function(t){return function(t){function e(r){if(n[r])return n[r].exports;var i=n[r]={i:r,l:!1,exports:{}};return t[r].call(i.exports,i,i.exports,e),i.l=!0,i.exports}var n={};return e.m=t,e.c=n,e.d=function(t,n,r){e.o(t,n)||Object.defineProperty(t,n,{configurable:!1,enumerable:!0,get:r})},e.n=function(t){var n=t&&t.__esModule?function(){return t.default}:function(){return t};return e.d(n,"a",n),n},e.o=function(t,e){return Object.prototype.hasOwnProperty.call(t,e)},e.p="",e(e.s=0)}([function(t,e,n){"use strict";Object.defineProperty(e,"__esModule",{value:!0}),n.d(e,"flatPickrPlugin",function(){return i});var r=n(1);n.d(e,"component",function(){return r.a});var i=function(t,e){var n="flat-pickr";"string"==typeof e&&(n=e),t.component(n,r.a)};r.a.install=i,e.default=r.a},function(t,e,n){"use strict";var r=n(3),i=n(5),o=n(2),a=o(r.a,i.a,null,null,null);e.a=a.exports},function(t,e){t.exports=function(t,e,n,r,i){var o,a=t=t||{},u=typeof t.default;"object"!==u&&"function"!==u||(o=t,a=t.default);var s="function"==typeof a?a.options:a;e&&(s.render=e.render,s.staticRenderFns=e.staticRenderFns),r&&(s._scopeId=r);var l;if(i?(l=function(t){t=t||this.$vnode&&this.$vnode.ssrContext||this.parent&&this.parent.$vnode&&this.parent.$vnode.ssrContext,t||"undefined"==typeof __VUE_SSR_CONTEXT__||(t=__VUE_SSR_CONTEXT__),n&&n.call(this,t),t&&t._registeredComponents&&t._registeredComponents.add(i)},s._ssrRegister=l):n&&(l=n),l){var f=s.functional,c=f?s.render:s.beforeCreate;f?s.render=function(t,e){return l.call(e),c(t,e)}:s.beforeCreate=c?[].concat(c,l):[l]}return{esModule:o,exports:a,options:s}}},function(t,e,n){"use strict";function r(t){if(Array.isArray(t)){for(var e=0,n=Array(t.length);e<t.length;e++)n[e]=t[e];return n}return Array.from(t)}var i=n(4),o=n.n(i);e.a={name:"flat-pickr",props:{value:{default:null,required:!0,validator:function(t){return null===t||t instanceof Date||"string"==typeof t||t instanceof String||t instanceof Array}},config:{type:Object,default:function(){return{wrap:!1}}},placeholder:{type:String,default:""},inputClass:{type:[String,Object],default:"form-control input"},name:{type:String,default:"date-time"},required:{type:Boolean,default:!1},id:{type:String}},data:function(){return{mutableValue:this.value,fp:null,oldOnChange:null}},mounted:function(){if(!this.fp){this.oldOnChange=this.config.onChange,this.config.onChange=this.onChange;var t=this.config.wrap?this.$el.parentNode:this.$el;this.fp=new o.a(t,this.config)}},beforeDestroy:function(){this.fp&&(this.fp.destroy(),this.fp=null,this.oldOnChange=null,this.config.onChange=null)},methods:{onChange:function(){for(var t=arguments.length,e=Array(t),n=0;n<t;n++)e[n]=arguments[n];"function"==typeof this.oldOnChange&&this.oldOnChange.apply(this,r(e)),this.$emit.apply(this,["onChange"].concat(r(e)))}},watch:{config:function(t){this.fp.config=Object.assign(this.fp.config,t),this.fp.redraw(),this.fp.setDate(this.value,!0)},mutableValue:function(t){this.$emit("input",t)},value:function(t){t!==this.mutableValue&&this.fp&&this.fp.setDate(t,!0)}}}},function(e,n){e.exports=t},function(t,e,n){"use strict";var r=function(){var t=this,e=t.$createElement;return(t._self._c||e)("input",{directives:[{name:"model",rawName:"v-model",value:t.mutableValue,expression:"mutableValue"}],class:t.inputClass,attrs:{type:"text",id:t.id,name:t.name,placeholder:t.placeholder,required:t.required,"data-input":""},domProps:{value:t.mutableValue},on:{input:function(e){e.target.composing||(t.mutableValue=e.target.value)}}})},i=[],o={render:r,staticRenderFns:i};e.a=o}])});
 
 /***/ }),
-/* 40 */
+/* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* flatpickr v3.1.4, @license MIT */
@@ -67029,7 +70720,7 @@ return flatpickr$1;
 
 
 /***/ }),
-/* 41 */
+/* 42 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // CodeMirror, copyright (c) by Marijn Haverbeke and others
@@ -76704,7 +80395,7 @@ return CodeMirror$1;
 
 
 /***/ }),
-/* 42 */
+/* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -76714,20 +80405,20 @@ return CodeMirror$1;
 
 
 var utils        = __webpack_require__(0);
-var helpers      = __webpack_require__(50);
-var Renderer     = __webpack_require__(54);
-var ParserCore   = __webpack_require__(55);
-var ParserBlock  = __webpack_require__(63);
-var ParserInline = __webpack_require__(77);
-var LinkifyIt    = __webpack_require__(90);
+var helpers      = __webpack_require__(51);
+var Renderer     = __webpack_require__(55);
+var ParserCore   = __webpack_require__(56);
+var ParserBlock  = __webpack_require__(64);
+var ParserInline = __webpack_require__(78);
+var LinkifyIt    = __webpack_require__(91);
 var mdurl        = __webpack_require__(14);
-var punycode     = __webpack_require__(92);
+var punycode     = __webpack_require__(93);
 
 
 var config = {
-  'default': __webpack_require__(94),
-  zero: __webpack_require__(95),
-  commonmark: __webpack_require__(96)
+  'default': __webpack_require__(95),
+  zero: __webpack_require__(96),
+  commonmark: __webpack_require__(97)
 };
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -77292,13 +80983,13 @@ module.exports = MarkdownIt;
 
 
 /***/ }),
-/* 43 */
+/* 44 */
 /***/ (function(module, exports) {
 
 module.exports = {"Aacute":"Á","aacute":"á","Abreve":"Ă","abreve":"ă","ac":"∾","acd":"∿","acE":"∾̳","Acirc":"Â","acirc":"â","acute":"´","Acy":"А","acy":"а","AElig":"Æ","aelig":"æ","af":"⁡","Afr":"𝔄","afr":"𝔞","Agrave":"À","agrave":"à","alefsym":"ℵ","aleph":"ℵ","Alpha":"Α","alpha":"α","Amacr":"Ā","amacr":"ā","amalg":"⨿","amp":"&","AMP":"&","andand":"⩕","And":"⩓","and":"∧","andd":"⩜","andslope":"⩘","andv":"⩚","ang":"∠","ange":"⦤","angle":"∠","angmsdaa":"⦨","angmsdab":"⦩","angmsdac":"⦪","angmsdad":"⦫","angmsdae":"⦬","angmsdaf":"⦭","angmsdag":"⦮","angmsdah":"⦯","angmsd":"∡","angrt":"∟","angrtvb":"⊾","angrtvbd":"⦝","angsph":"∢","angst":"Å","angzarr":"⍼","Aogon":"Ą","aogon":"ą","Aopf":"𝔸","aopf":"𝕒","apacir":"⩯","ap":"≈","apE":"⩰","ape":"≊","apid":"≋","apos":"'","ApplyFunction":"⁡","approx":"≈","approxeq":"≊","Aring":"Å","aring":"å","Ascr":"𝒜","ascr":"𝒶","Assign":"≔","ast":"*","asymp":"≈","asympeq":"≍","Atilde":"Ã","atilde":"ã","Auml":"Ä","auml":"ä","awconint":"∳","awint":"⨑","backcong":"≌","backepsilon":"϶","backprime":"‵","backsim":"∽","backsimeq":"⋍","Backslash":"∖","Barv":"⫧","barvee":"⊽","barwed":"⌅","Barwed":"⌆","barwedge":"⌅","bbrk":"⎵","bbrktbrk":"⎶","bcong":"≌","Bcy":"Б","bcy":"б","bdquo":"„","becaus":"∵","because":"∵","Because":"∵","bemptyv":"⦰","bepsi":"϶","bernou":"ℬ","Bernoullis":"ℬ","Beta":"Β","beta":"β","beth":"ℶ","between":"≬","Bfr":"𝔅","bfr":"𝔟","bigcap":"⋂","bigcirc":"◯","bigcup":"⋃","bigodot":"⨀","bigoplus":"⨁","bigotimes":"⨂","bigsqcup":"⨆","bigstar":"★","bigtriangledown":"▽","bigtriangleup":"△","biguplus":"⨄","bigvee":"⋁","bigwedge":"⋀","bkarow":"⤍","blacklozenge":"⧫","blacksquare":"▪","blacktriangle":"▴","blacktriangledown":"▾","blacktriangleleft":"◂","blacktriangleright":"▸","blank":"␣","blk12":"▒","blk14":"░","blk34":"▓","block":"█","bne":"=⃥","bnequiv":"≡⃥","bNot":"⫭","bnot":"⌐","Bopf":"𝔹","bopf":"𝕓","bot":"⊥","bottom":"⊥","bowtie":"⋈","boxbox":"⧉","boxdl":"┐","boxdL":"╕","boxDl":"╖","boxDL":"╗","boxdr":"┌","boxdR":"╒","boxDr":"╓","boxDR":"╔","boxh":"─","boxH":"═","boxhd":"┬","boxHd":"╤","boxhD":"╥","boxHD":"╦","boxhu":"┴","boxHu":"╧","boxhU":"╨","boxHU":"╩","boxminus":"⊟","boxplus":"⊞","boxtimes":"⊠","boxul":"┘","boxuL":"╛","boxUl":"╜","boxUL":"╝","boxur":"└","boxuR":"╘","boxUr":"╙","boxUR":"╚","boxv":"│","boxV":"║","boxvh":"┼","boxvH":"╪","boxVh":"╫","boxVH":"╬","boxvl":"┤","boxvL":"╡","boxVl":"╢","boxVL":"╣","boxvr":"├","boxvR":"╞","boxVr":"╟","boxVR":"╠","bprime":"‵","breve":"˘","Breve":"˘","brvbar":"¦","bscr":"𝒷","Bscr":"ℬ","bsemi":"⁏","bsim":"∽","bsime":"⋍","bsolb":"⧅","bsol":"\\","bsolhsub":"⟈","bull":"•","bullet":"•","bump":"≎","bumpE":"⪮","bumpe":"≏","Bumpeq":"≎","bumpeq":"≏","Cacute":"Ć","cacute":"ć","capand":"⩄","capbrcup":"⩉","capcap":"⩋","cap":"∩","Cap":"⋒","capcup":"⩇","capdot":"⩀","CapitalDifferentialD":"ⅅ","caps":"∩︀","caret":"⁁","caron":"ˇ","Cayleys":"ℭ","ccaps":"⩍","Ccaron":"Č","ccaron":"č","Ccedil":"Ç","ccedil":"ç","Ccirc":"Ĉ","ccirc":"ĉ","Cconint":"∰","ccups":"⩌","ccupssm":"⩐","Cdot":"Ċ","cdot":"ċ","cedil":"¸","Cedilla":"¸","cemptyv":"⦲","cent":"¢","centerdot":"·","CenterDot":"·","cfr":"𝔠","Cfr":"ℭ","CHcy":"Ч","chcy":"ч","check":"✓","checkmark":"✓","Chi":"Χ","chi":"χ","circ":"ˆ","circeq":"≗","circlearrowleft":"↺","circlearrowright":"↻","circledast":"⊛","circledcirc":"⊚","circleddash":"⊝","CircleDot":"⊙","circledR":"®","circledS":"Ⓢ","CircleMinus":"⊖","CirclePlus":"⊕","CircleTimes":"⊗","cir":"○","cirE":"⧃","cire":"≗","cirfnint":"⨐","cirmid":"⫯","cirscir":"⧂","ClockwiseContourIntegral":"∲","CloseCurlyDoubleQuote":"”","CloseCurlyQuote":"’","clubs":"♣","clubsuit":"♣","colon":":","Colon":"∷","Colone":"⩴","colone":"≔","coloneq":"≔","comma":",","commat":"@","comp":"∁","compfn":"∘","complement":"∁","complexes":"ℂ","cong":"≅","congdot":"⩭","Congruent":"≡","conint":"∮","Conint":"∯","ContourIntegral":"∮","copf":"𝕔","Copf":"ℂ","coprod":"∐","Coproduct":"∐","copy":"©","COPY":"©","copysr":"℗","CounterClockwiseContourIntegral":"∳","crarr":"↵","cross":"✗","Cross":"⨯","Cscr":"𝒞","cscr":"𝒸","csub":"⫏","csube":"⫑","csup":"⫐","csupe":"⫒","ctdot":"⋯","cudarrl":"⤸","cudarrr":"⤵","cuepr":"⋞","cuesc":"⋟","cularr":"↶","cularrp":"⤽","cupbrcap":"⩈","cupcap":"⩆","CupCap":"≍","cup":"∪","Cup":"⋓","cupcup":"⩊","cupdot":"⊍","cupor":"⩅","cups":"∪︀","curarr":"↷","curarrm":"⤼","curlyeqprec":"⋞","curlyeqsucc":"⋟","curlyvee":"⋎","curlywedge":"⋏","curren":"¤","curvearrowleft":"↶","curvearrowright":"↷","cuvee":"⋎","cuwed":"⋏","cwconint":"∲","cwint":"∱","cylcty":"⌭","dagger":"†","Dagger":"‡","daleth":"ℸ","darr":"↓","Darr":"↡","dArr":"⇓","dash":"‐","Dashv":"⫤","dashv":"⊣","dbkarow":"⤏","dblac":"˝","Dcaron":"Ď","dcaron":"ď","Dcy":"Д","dcy":"д","ddagger":"‡","ddarr":"⇊","DD":"ⅅ","dd":"ⅆ","DDotrahd":"⤑","ddotseq":"⩷","deg":"°","Del":"∇","Delta":"Δ","delta":"δ","demptyv":"⦱","dfisht":"⥿","Dfr":"𝔇","dfr":"𝔡","dHar":"⥥","dharl":"⇃","dharr":"⇂","DiacriticalAcute":"´","DiacriticalDot":"˙","DiacriticalDoubleAcute":"˝","DiacriticalGrave":"`","DiacriticalTilde":"˜","diam":"⋄","diamond":"⋄","Diamond":"⋄","diamondsuit":"♦","diams":"♦","die":"¨","DifferentialD":"ⅆ","digamma":"ϝ","disin":"⋲","div":"÷","divide":"÷","divideontimes":"⋇","divonx":"⋇","DJcy":"Ђ","djcy":"ђ","dlcorn":"⌞","dlcrop":"⌍","dollar":"$","Dopf":"𝔻","dopf":"𝕕","Dot":"¨","dot":"˙","DotDot":"⃜","doteq":"≐","doteqdot":"≑","DotEqual":"≐","dotminus":"∸","dotplus":"∔","dotsquare":"⊡","doublebarwedge":"⌆","DoubleContourIntegral":"∯","DoubleDot":"¨","DoubleDownArrow":"⇓","DoubleLeftArrow":"⇐","DoubleLeftRightArrow":"⇔","DoubleLeftTee":"⫤","DoubleLongLeftArrow":"⟸","DoubleLongLeftRightArrow":"⟺","DoubleLongRightArrow":"⟹","DoubleRightArrow":"⇒","DoubleRightTee":"⊨","DoubleUpArrow":"⇑","DoubleUpDownArrow":"⇕","DoubleVerticalBar":"∥","DownArrowBar":"⤓","downarrow":"↓","DownArrow":"↓","Downarrow":"⇓","DownArrowUpArrow":"⇵","DownBreve":"̑","downdownarrows":"⇊","downharpoonleft":"⇃","downharpoonright":"⇂","DownLeftRightVector":"⥐","DownLeftTeeVector":"⥞","DownLeftVectorBar":"⥖","DownLeftVector":"↽","DownRightTeeVector":"⥟","DownRightVectorBar":"⥗","DownRightVector":"⇁","DownTeeArrow":"↧","DownTee":"⊤","drbkarow":"⤐","drcorn":"⌟","drcrop":"⌌","Dscr":"𝒟","dscr":"𝒹","DScy":"Ѕ","dscy":"ѕ","dsol":"⧶","Dstrok":"Đ","dstrok":"đ","dtdot":"⋱","dtri":"▿","dtrif":"▾","duarr":"⇵","duhar":"⥯","dwangle":"⦦","DZcy":"Џ","dzcy":"џ","dzigrarr":"⟿","Eacute":"É","eacute":"é","easter":"⩮","Ecaron":"Ě","ecaron":"ě","Ecirc":"Ê","ecirc":"ê","ecir":"≖","ecolon":"≕","Ecy":"Э","ecy":"э","eDDot":"⩷","Edot":"Ė","edot":"ė","eDot":"≑","ee":"ⅇ","efDot":"≒","Efr":"𝔈","efr":"𝔢","eg":"⪚","Egrave":"È","egrave":"è","egs":"⪖","egsdot":"⪘","el":"⪙","Element":"∈","elinters":"⏧","ell":"ℓ","els":"⪕","elsdot":"⪗","Emacr":"Ē","emacr":"ē","empty":"∅","emptyset":"∅","EmptySmallSquare":"◻","emptyv":"∅","EmptyVerySmallSquare":"▫","emsp13":" ","emsp14":" ","emsp":" ","ENG":"Ŋ","eng":"ŋ","ensp":" ","Eogon":"Ę","eogon":"ę","Eopf":"𝔼","eopf":"𝕖","epar":"⋕","eparsl":"⧣","eplus":"⩱","epsi":"ε","Epsilon":"Ε","epsilon":"ε","epsiv":"ϵ","eqcirc":"≖","eqcolon":"≕","eqsim":"≂","eqslantgtr":"⪖","eqslantless":"⪕","Equal":"⩵","equals":"=","EqualTilde":"≂","equest":"≟","Equilibrium":"⇌","equiv":"≡","equivDD":"⩸","eqvparsl":"⧥","erarr":"⥱","erDot":"≓","escr":"ℯ","Escr":"ℰ","esdot":"≐","Esim":"⩳","esim":"≂","Eta":"Η","eta":"η","ETH":"Ð","eth":"ð","Euml":"Ë","euml":"ë","euro":"€","excl":"!","exist":"∃","Exists":"∃","expectation":"ℰ","exponentiale":"ⅇ","ExponentialE":"ⅇ","fallingdotseq":"≒","Fcy":"Ф","fcy":"ф","female":"♀","ffilig":"ﬃ","fflig":"ﬀ","ffllig":"ﬄ","Ffr":"𝔉","ffr":"𝔣","filig":"ﬁ","FilledSmallSquare":"◼","FilledVerySmallSquare":"▪","fjlig":"fj","flat":"♭","fllig":"ﬂ","fltns":"▱","fnof":"ƒ","Fopf":"𝔽","fopf":"𝕗","forall":"∀","ForAll":"∀","fork":"⋔","forkv":"⫙","Fouriertrf":"ℱ","fpartint":"⨍","frac12":"½","frac13":"⅓","frac14":"¼","frac15":"⅕","frac16":"⅙","frac18":"⅛","frac23":"⅔","frac25":"⅖","frac34":"¾","frac35":"⅗","frac38":"⅜","frac45":"⅘","frac56":"⅚","frac58":"⅝","frac78":"⅞","frasl":"⁄","frown":"⌢","fscr":"𝒻","Fscr":"ℱ","gacute":"ǵ","Gamma":"Γ","gamma":"γ","Gammad":"Ϝ","gammad":"ϝ","gap":"⪆","Gbreve":"Ğ","gbreve":"ğ","Gcedil":"Ģ","Gcirc":"Ĝ","gcirc":"ĝ","Gcy":"Г","gcy":"г","Gdot":"Ġ","gdot":"ġ","ge":"≥","gE":"≧","gEl":"⪌","gel":"⋛","geq":"≥","geqq":"≧","geqslant":"⩾","gescc":"⪩","ges":"⩾","gesdot":"⪀","gesdoto":"⪂","gesdotol":"⪄","gesl":"⋛︀","gesles":"⪔","Gfr":"𝔊","gfr":"𝔤","gg":"≫","Gg":"⋙","ggg":"⋙","gimel":"ℷ","GJcy":"Ѓ","gjcy":"ѓ","gla":"⪥","gl":"≷","glE":"⪒","glj":"⪤","gnap":"⪊","gnapprox":"⪊","gne":"⪈","gnE":"≩","gneq":"⪈","gneqq":"≩","gnsim":"⋧","Gopf":"𝔾","gopf":"𝕘","grave":"`","GreaterEqual":"≥","GreaterEqualLess":"⋛","GreaterFullEqual":"≧","GreaterGreater":"⪢","GreaterLess":"≷","GreaterSlantEqual":"⩾","GreaterTilde":"≳","Gscr":"𝒢","gscr":"ℊ","gsim":"≳","gsime":"⪎","gsiml":"⪐","gtcc":"⪧","gtcir":"⩺","gt":">","GT":">","Gt":"≫","gtdot":"⋗","gtlPar":"⦕","gtquest":"⩼","gtrapprox":"⪆","gtrarr":"⥸","gtrdot":"⋗","gtreqless":"⋛","gtreqqless":"⪌","gtrless":"≷","gtrsim":"≳","gvertneqq":"≩︀","gvnE":"≩︀","Hacek":"ˇ","hairsp":" ","half":"½","hamilt":"ℋ","HARDcy":"Ъ","hardcy":"ъ","harrcir":"⥈","harr":"↔","hArr":"⇔","harrw":"↭","Hat":"^","hbar":"ℏ","Hcirc":"Ĥ","hcirc":"ĥ","hearts":"♥","heartsuit":"♥","hellip":"…","hercon":"⊹","hfr":"𝔥","Hfr":"ℌ","HilbertSpace":"ℋ","hksearow":"⤥","hkswarow":"⤦","hoarr":"⇿","homtht":"∻","hookleftarrow":"↩","hookrightarrow":"↪","hopf":"𝕙","Hopf":"ℍ","horbar":"―","HorizontalLine":"─","hscr":"𝒽","Hscr":"ℋ","hslash":"ℏ","Hstrok":"Ħ","hstrok":"ħ","HumpDownHump":"≎","HumpEqual":"≏","hybull":"⁃","hyphen":"‐","Iacute":"Í","iacute":"í","ic":"⁣","Icirc":"Î","icirc":"î","Icy":"И","icy":"и","Idot":"İ","IEcy":"Е","iecy":"е","iexcl":"¡","iff":"⇔","ifr":"𝔦","Ifr":"ℑ","Igrave":"Ì","igrave":"ì","ii":"ⅈ","iiiint":"⨌","iiint":"∭","iinfin":"⧜","iiota":"℩","IJlig":"Ĳ","ijlig":"ĳ","Imacr":"Ī","imacr":"ī","image":"ℑ","ImaginaryI":"ⅈ","imagline":"ℐ","imagpart":"ℑ","imath":"ı","Im":"ℑ","imof":"⊷","imped":"Ƶ","Implies":"⇒","incare":"℅","in":"∈","infin":"∞","infintie":"⧝","inodot":"ı","intcal":"⊺","int":"∫","Int":"∬","integers":"ℤ","Integral":"∫","intercal":"⊺","Intersection":"⋂","intlarhk":"⨗","intprod":"⨼","InvisibleComma":"⁣","InvisibleTimes":"⁢","IOcy":"Ё","iocy":"ё","Iogon":"Į","iogon":"į","Iopf":"𝕀","iopf":"𝕚","Iota":"Ι","iota":"ι","iprod":"⨼","iquest":"¿","iscr":"𝒾","Iscr":"ℐ","isin":"∈","isindot":"⋵","isinE":"⋹","isins":"⋴","isinsv":"⋳","isinv":"∈","it":"⁢","Itilde":"Ĩ","itilde":"ĩ","Iukcy":"І","iukcy":"і","Iuml":"Ï","iuml":"ï","Jcirc":"Ĵ","jcirc":"ĵ","Jcy":"Й","jcy":"й","Jfr":"𝔍","jfr":"𝔧","jmath":"ȷ","Jopf":"𝕁","jopf":"𝕛","Jscr":"𝒥","jscr":"𝒿","Jsercy":"Ј","jsercy":"ј","Jukcy":"Є","jukcy":"є","Kappa":"Κ","kappa":"κ","kappav":"ϰ","Kcedil":"Ķ","kcedil":"ķ","Kcy":"К","kcy":"к","Kfr":"𝔎","kfr":"𝔨","kgreen":"ĸ","KHcy":"Х","khcy":"х","KJcy":"Ќ","kjcy":"ќ","Kopf":"𝕂","kopf":"𝕜","Kscr":"𝒦","kscr":"𝓀","lAarr":"⇚","Lacute":"Ĺ","lacute":"ĺ","laemptyv":"⦴","lagran":"ℒ","Lambda":"Λ","lambda":"λ","lang":"⟨","Lang":"⟪","langd":"⦑","langle":"⟨","lap":"⪅","Laplacetrf":"ℒ","laquo":"«","larrb":"⇤","larrbfs":"⤟","larr":"←","Larr":"↞","lArr":"⇐","larrfs":"⤝","larrhk":"↩","larrlp":"↫","larrpl":"⤹","larrsim":"⥳","larrtl":"↢","latail":"⤙","lAtail":"⤛","lat":"⪫","late":"⪭","lates":"⪭︀","lbarr":"⤌","lBarr":"⤎","lbbrk":"❲","lbrace":"{","lbrack":"[","lbrke":"⦋","lbrksld":"⦏","lbrkslu":"⦍","Lcaron":"Ľ","lcaron":"ľ","Lcedil":"Ļ","lcedil":"ļ","lceil":"⌈","lcub":"{","Lcy":"Л","lcy":"л","ldca":"⤶","ldquo":"“","ldquor":"„","ldrdhar":"⥧","ldrushar":"⥋","ldsh":"↲","le":"≤","lE":"≦","LeftAngleBracket":"⟨","LeftArrowBar":"⇤","leftarrow":"←","LeftArrow":"←","Leftarrow":"⇐","LeftArrowRightArrow":"⇆","leftarrowtail":"↢","LeftCeiling":"⌈","LeftDoubleBracket":"⟦","LeftDownTeeVector":"⥡","LeftDownVectorBar":"⥙","LeftDownVector":"⇃","LeftFloor":"⌊","leftharpoondown":"↽","leftharpoonup":"↼","leftleftarrows":"⇇","leftrightarrow":"↔","LeftRightArrow":"↔","Leftrightarrow":"⇔","leftrightarrows":"⇆","leftrightharpoons":"⇋","leftrightsquigarrow":"↭","LeftRightVector":"⥎","LeftTeeArrow":"↤","LeftTee":"⊣","LeftTeeVector":"⥚","leftthreetimes":"⋋","LeftTriangleBar":"⧏","LeftTriangle":"⊲","LeftTriangleEqual":"⊴","LeftUpDownVector":"⥑","LeftUpTeeVector":"⥠","LeftUpVectorBar":"⥘","LeftUpVector":"↿","LeftVectorBar":"⥒","LeftVector":"↼","lEg":"⪋","leg":"⋚","leq":"≤","leqq":"≦","leqslant":"⩽","lescc":"⪨","les":"⩽","lesdot":"⩿","lesdoto":"⪁","lesdotor":"⪃","lesg":"⋚︀","lesges":"⪓","lessapprox":"⪅","lessdot":"⋖","lesseqgtr":"⋚","lesseqqgtr":"⪋","LessEqualGreater":"⋚","LessFullEqual":"≦","LessGreater":"≶","lessgtr":"≶","LessLess":"⪡","lesssim":"≲","LessSlantEqual":"⩽","LessTilde":"≲","lfisht":"⥼","lfloor":"⌊","Lfr":"𝔏","lfr":"𝔩","lg":"≶","lgE":"⪑","lHar":"⥢","lhard":"↽","lharu":"↼","lharul":"⥪","lhblk":"▄","LJcy":"Љ","ljcy":"љ","llarr":"⇇","ll":"≪","Ll":"⋘","llcorner":"⌞","Lleftarrow":"⇚","llhard":"⥫","lltri":"◺","Lmidot":"Ŀ","lmidot":"ŀ","lmoustache":"⎰","lmoust":"⎰","lnap":"⪉","lnapprox":"⪉","lne":"⪇","lnE":"≨","lneq":"⪇","lneqq":"≨","lnsim":"⋦","loang":"⟬","loarr":"⇽","lobrk":"⟦","longleftarrow":"⟵","LongLeftArrow":"⟵","Longleftarrow":"⟸","longleftrightarrow":"⟷","LongLeftRightArrow":"⟷","Longleftrightarrow":"⟺","longmapsto":"⟼","longrightarrow":"⟶","LongRightArrow":"⟶","Longrightarrow":"⟹","looparrowleft":"↫","looparrowright":"↬","lopar":"⦅","Lopf":"𝕃","lopf":"𝕝","loplus":"⨭","lotimes":"⨴","lowast":"∗","lowbar":"_","LowerLeftArrow":"↙","LowerRightArrow":"↘","loz":"◊","lozenge":"◊","lozf":"⧫","lpar":"(","lparlt":"⦓","lrarr":"⇆","lrcorner":"⌟","lrhar":"⇋","lrhard":"⥭","lrm":"‎","lrtri":"⊿","lsaquo":"‹","lscr":"𝓁","Lscr":"ℒ","lsh":"↰","Lsh":"↰","lsim":"≲","lsime":"⪍","lsimg":"⪏","lsqb":"[","lsquo":"‘","lsquor":"‚","Lstrok":"Ł","lstrok":"ł","ltcc":"⪦","ltcir":"⩹","lt":"<","LT":"<","Lt":"≪","ltdot":"⋖","lthree":"⋋","ltimes":"⋉","ltlarr":"⥶","ltquest":"⩻","ltri":"◃","ltrie":"⊴","ltrif":"◂","ltrPar":"⦖","lurdshar":"⥊","luruhar":"⥦","lvertneqq":"≨︀","lvnE":"≨︀","macr":"¯","male":"♂","malt":"✠","maltese":"✠","Map":"⤅","map":"↦","mapsto":"↦","mapstodown":"↧","mapstoleft":"↤","mapstoup":"↥","marker":"▮","mcomma":"⨩","Mcy":"М","mcy":"м","mdash":"—","mDDot":"∺","measuredangle":"∡","MediumSpace":" ","Mellintrf":"ℳ","Mfr":"𝔐","mfr":"𝔪","mho":"℧","micro":"µ","midast":"*","midcir":"⫰","mid":"∣","middot":"·","minusb":"⊟","minus":"−","minusd":"∸","minusdu":"⨪","MinusPlus":"∓","mlcp":"⫛","mldr":"…","mnplus":"∓","models":"⊧","Mopf":"𝕄","mopf":"𝕞","mp":"∓","mscr":"𝓂","Mscr":"ℳ","mstpos":"∾","Mu":"Μ","mu":"μ","multimap":"⊸","mumap":"⊸","nabla":"∇","Nacute":"Ń","nacute":"ń","nang":"∠⃒","nap":"≉","napE":"⩰̸","napid":"≋̸","napos":"ŉ","napprox":"≉","natural":"♮","naturals":"ℕ","natur":"♮","nbsp":" ","nbump":"≎̸","nbumpe":"≏̸","ncap":"⩃","Ncaron":"Ň","ncaron":"ň","Ncedil":"Ņ","ncedil":"ņ","ncong":"≇","ncongdot":"⩭̸","ncup":"⩂","Ncy":"Н","ncy":"н","ndash":"–","nearhk":"⤤","nearr":"↗","neArr":"⇗","nearrow":"↗","ne":"≠","nedot":"≐̸","NegativeMediumSpace":"​","NegativeThickSpace":"​","NegativeThinSpace":"​","NegativeVeryThinSpace":"​","nequiv":"≢","nesear":"⤨","nesim":"≂̸","NestedGreaterGreater":"≫","NestedLessLess":"≪","NewLine":"\n","nexist":"∄","nexists":"∄","Nfr":"𝔑","nfr":"𝔫","ngE":"≧̸","nge":"≱","ngeq":"≱","ngeqq":"≧̸","ngeqslant":"⩾̸","nges":"⩾̸","nGg":"⋙̸","ngsim":"≵","nGt":"≫⃒","ngt":"≯","ngtr":"≯","nGtv":"≫̸","nharr":"↮","nhArr":"⇎","nhpar":"⫲","ni":"∋","nis":"⋼","nisd":"⋺","niv":"∋","NJcy":"Њ","njcy":"њ","nlarr":"↚","nlArr":"⇍","nldr":"‥","nlE":"≦̸","nle":"≰","nleftarrow":"↚","nLeftarrow":"⇍","nleftrightarrow":"↮","nLeftrightarrow":"⇎","nleq":"≰","nleqq":"≦̸","nleqslant":"⩽̸","nles":"⩽̸","nless":"≮","nLl":"⋘̸","nlsim":"≴","nLt":"≪⃒","nlt":"≮","nltri":"⋪","nltrie":"⋬","nLtv":"≪̸","nmid":"∤","NoBreak":"⁠","NonBreakingSpace":" ","nopf":"𝕟","Nopf":"ℕ","Not":"⫬","not":"¬","NotCongruent":"≢","NotCupCap":"≭","NotDoubleVerticalBar":"∦","NotElement":"∉","NotEqual":"≠","NotEqualTilde":"≂̸","NotExists":"∄","NotGreater":"≯","NotGreaterEqual":"≱","NotGreaterFullEqual":"≧̸","NotGreaterGreater":"≫̸","NotGreaterLess":"≹","NotGreaterSlantEqual":"⩾̸","NotGreaterTilde":"≵","NotHumpDownHump":"≎̸","NotHumpEqual":"≏̸","notin":"∉","notindot":"⋵̸","notinE":"⋹̸","notinva":"∉","notinvb":"⋷","notinvc":"⋶","NotLeftTriangleBar":"⧏̸","NotLeftTriangle":"⋪","NotLeftTriangleEqual":"⋬","NotLess":"≮","NotLessEqual":"≰","NotLessGreater":"≸","NotLessLess":"≪̸","NotLessSlantEqual":"⩽̸","NotLessTilde":"≴","NotNestedGreaterGreater":"⪢̸","NotNestedLessLess":"⪡̸","notni":"∌","notniva":"∌","notnivb":"⋾","notnivc":"⋽","NotPrecedes":"⊀","NotPrecedesEqual":"⪯̸","NotPrecedesSlantEqual":"⋠","NotReverseElement":"∌","NotRightTriangleBar":"⧐̸","NotRightTriangle":"⋫","NotRightTriangleEqual":"⋭","NotSquareSubset":"⊏̸","NotSquareSubsetEqual":"⋢","NotSquareSuperset":"⊐̸","NotSquareSupersetEqual":"⋣","NotSubset":"⊂⃒","NotSubsetEqual":"⊈","NotSucceeds":"⊁","NotSucceedsEqual":"⪰̸","NotSucceedsSlantEqual":"⋡","NotSucceedsTilde":"≿̸","NotSuperset":"⊃⃒","NotSupersetEqual":"⊉","NotTilde":"≁","NotTildeEqual":"≄","NotTildeFullEqual":"≇","NotTildeTilde":"≉","NotVerticalBar":"∤","nparallel":"∦","npar":"∦","nparsl":"⫽⃥","npart":"∂̸","npolint":"⨔","npr":"⊀","nprcue":"⋠","nprec":"⊀","npreceq":"⪯̸","npre":"⪯̸","nrarrc":"⤳̸","nrarr":"↛","nrArr":"⇏","nrarrw":"↝̸","nrightarrow":"↛","nRightarrow":"⇏","nrtri":"⋫","nrtrie":"⋭","nsc":"⊁","nsccue":"⋡","nsce":"⪰̸","Nscr":"𝒩","nscr":"𝓃","nshortmid":"∤","nshortparallel":"∦","nsim":"≁","nsime":"≄","nsimeq":"≄","nsmid":"∤","nspar":"∦","nsqsube":"⋢","nsqsupe":"⋣","nsub":"⊄","nsubE":"⫅̸","nsube":"⊈","nsubset":"⊂⃒","nsubseteq":"⊈","nsubseteqq":"⫅̸","nsucc":"⊁","nsucceq":"⪰̸","nsup":"⊅","nsupE":"⫆̸","nsupe":"⊉","nsupset":"⊃⃒","nsupseteq":"⊉","nsupseteqq":"⫆̸","ntgl":"≹","Ntilde":"Ñ","ntilde":"ñ","ntlg":"≸","ntriangleleft":"⋪","ntrianglelefteq":"⋬","ntriangleright":"⋫","ntrianglerighteq":"⋭","Nu":"Ν","nu":"ν","num":"#","numero":"№","numsp":" ","nvap":"≍⃒","nvdash":"⊬","nvDash":"⊭","nVdash":"⊮","nVDash":"⊯","nvge":"≥⃒","nvgt":">⃒","nvHarr":"⤄","nvinfin":"⧞","nvlArr":"⤂","nvle":"≤⃒","nvlt":"<⃒","nvltrie":"⊴⃒","nvrArr":"⤃","nvrtrie":"⊵⃒","nvsim":"∼⃒","nwarhk":"⤣","nwarr":"↖","nwArr":"⇖","nwarrow":"↖","nwnear":"⤧","Oacute":"Ó","oacute":"ó","oast":"⊛","Ocirc":"Ô","ocirc":"ô","ocir":"⊚","Ocy":"О","ocy":"о","odash":"⊝","Odblac":"Ő","odblac":"ő","odiv":"⨸","odot":"⊙","odsold":"⦼","OElig":"Œ","oelig":"œ","ofcir":"⦿","Ofr":"𝔒","ofr":"𝔬","ogon":"˛","Ograve":"Ò","ograve":"ò","ogt":"⧁","ohbar":"⦵","ohm":"Ω","oint":"∮","olarr":"↺","olcir":"⦾","olcross":"⦻","oline":"‾","olt":"⧀","Omacr":"Ō","omacr":"ō","Omega":"Ω","omega":"ω","Omicron":"Ο","omicron":"ο","omid":"⦶","ominus":"⊖","Oopf":"𝕆","oopf":"𝕠","opar":"⦷","OpenCurlyDoubleQuote":"“","OpenCurlyQuote":"‘","operp":"⦹","oplus":"⊕","orarr":"↻","Or":"⩔","or":"∨","ord":"⩝","order":"ℴ","orderof":"ℴ","ordf":"ª","ordm":"º","origof":"⊶","oror":"⩖","orslope":"⩗","orv":"⩛","oS":"Ⓢ","Oscr":"𝒪","oscr":"ℴ","Oslash":"Ø","oslash":"ø","osol":"⊘","Otilde":"Õ","otilde":"õ","otimesas":"⨶","Otimes":"⨷","otimes":"⊗","Ouml":"Ö","ouml":"ö","ovbar":"⌽","OverBar":"‾","OverBrace":"⏞","OverBracket":"⎴","OverParenthesis":"⏜","para":"¶","parallel":"∥","par":"∥","parsim":"⫳","parsl":"⫽","part":"∂","PartialD":"∂","Pcy":"П","pcy":"п","percnt":"%","period":".","permil":"‰","perp":"⊥","pertenk":"‱","Pfr":"𝔓","pfr":"𝔭","Phi":"Φ","phi":"φ","phiv":"ϕ","phmmat":"ℳ","phone":"☎","Pi":"Π","pi":"π","pitchfork":"⋔","piv":"ϖ","planck":"ℏ","planckh":"ℎ","plankv":"ℏ","plusacir":"⨣","plusb":"⊞","pluscir":"⨢","plus":"+","plusdo":"∔","plusdu":"⨥","pluse":"⩲","PlusMinus":"±","plusmn":"±","plussim":"⨦","plustwo":"⨧","pm":"±","Poincareplane":"ℌ","pointint":"⨕","popf":"𝕡","Popf":"ℙ","pound":"£","prap":"⪷","Pr":"⪻","pr":"≺","prcue":"≼","precapprox":"⪷","prec":"≺","preccurlyeq":"≼","Precedes":"≺","PrecedesEqual":"⪯","PrecedesSlantEqual":"≼","PrecedesTilde":"≾","preceq":"⪯","precnapprox":"⪹","precneqq":"⪵","precnsim":"⋨","pre":"⪯","prE":"⪳","precsim":"≾","prime":"′","Prime":"″","primes":"ℙ","prnap":"⪹","prnE":"⪵","prnsim":"⋨","prod":"∏","Product":"∏","profalar":"⌮","profline":"⌒","profsurf":"⌓","prop":"∝","Proportional":"∝","Proportion":"∷","propto":"∝","prsim":"≾","prurel":"⊰","Pscr":"𝒫","pscr":"𝓅","Psi":"Ψ","psi":"ψ","puncsp":" ","Qfr":"𝔔","qfr":"𝔮","qint":"⨌","qopf":"𝕢","Qopf":"ℚ","qprime":"⁗","Qscr":"𝒬","qscr":"𝓆","quaternions":"ℍ","quatint":"⨖","quest":"?","questeq":"≟","quot":"\"","QUOT":"\"","rAarr":"⇛","race":"∽̱","Racute":"Ŕ","racute":"ŕ","radic":"√","raemptyv":"⦳","rang":"⟩","Rang":"⟫","rangd":"⦒","range":"⦥","rangle":"⟩","raquo":"»","rarrap":"⥵","rarrb":"⇥","rarrbfs":"⤠","rarrc":"⤳","rarr":"→","Rarr":"↠","rArr":"⇒","rarrfs":"⤞","rarrhk":"↪","rarrlp":"↬","rarrpl":"⥅","rarrsim":"⥴","Rarrtl":"⤖","rarrtl":"↣","rarrw":"↝","ratail":"⤚","rAtail":"⤜","ratio":"∶","rationals":"ℚ","rbarr":"⤍","rBarr":"⤏","RBarr":"⤐","rbbrk":"❳","rbrace":"}","rbrack":"]","rbrke":"⦌","rbrksld":"⦎","rbrkslu":"⦐","Rcaron":"Ř","rcaron":"ř","Rcedil":"Ŗ","rcedil":"ŗ","rceil":"⌉","rcub":"}","Rcy":"Р","rcy":"р","rdca":"⤷","rdldhar":"⥩","rdquo":"”","rdquor":"”","rdsh":"↳","real":"ℜ","realine":"ℛ","realpart":"ℜ","reals":"ℝ","Re":"ℜ","rect":"▭","reg":"®","REG":"®","ReverseElement":"∋","ReverseEquilibrium":"⇋","ReverseUpEquilibrium":"⥯","rfisht":"⥽","rfloor":"⌋","rfr":"𝔯","Rfr":"ℜ","rHar":"⥤","rhard":"⇁","rharu":"⇀","rharul":"⥬","Rho":"Ρ","rho":"ρ","rhov":"ϱ","RightAngleBracket":"⟩","RightArrowBar":"⇥","rightarrow":"→","RightArrow":"→","Rightarrow":"⇒","RightArrowLeftArrow":"⇄","rightarrowtail":"↣","RightCeiling":"⌉","RightDoubleBracket":"⟧","RightDownTeeVector":"⥝","RightDownVectorBar":"⥕","RightDownVector":"⇂","RightFloor":"⌋","rightharpoondown":"⇁","rightharpoonup":"⇀","rightleftarrows":"⇄","rightleftharpoons":"⇌","rightrightarrows":"⇉","rightsquigarrow":"↝","RightTeeArrow":"↦","RightTee":"⊢","RightTeeVector":"⥛","rightthreetimes":"⋌","RightTriangleBar":"⧐","RightTriangle":"⊳","RightTriangleEqual":"⊵","RightUpDownVector":"⥏","RightUpTeeVector":"⥜","RightUpVectorBar":"⥔","RightUpVector":"↾","RightVectorBar":"⥓","RightVector":"⇀","ring":"˚","risingdotseq":"≓","rlarr":"⇄","rlhar":"⇌","rlm":"‏","rmoustache":"⎱","rmoust":"⎱","rnmid":"⫮","roang":"⟭","roarr":"⇾","robrk":"⟧","ropar":"⦆","ropf":"𝕣","Ropf":"ℝ","roplus":"⨮","rotimes":"⨵","RoundImplies":"⥰","rpar":")","rpargt":"⦔","rppolint":"⨒","rrarr":"⇉","Rrightarrow":"⇛","rsaquo":"›","rscr":"𝓇","Rscr":"ℛ","rsh":"↱","Rsh":"↱","rsqb":"]","rsquo":"’","rsquor":"’","rthree":"⋌","rtimes":"⋊","rtri":"▹","rtrie":"⊵","rtrif":"▸","rtriltri":"⧎","RuleDelayed":"⧴","ruluhar":"⥨","rx":"℞","Sacute":"Ś","sacute":"ś","sbquo":"‚","scap":"⪸","Scaron":"Š","scaron":"š","Sc":"⪼","sc":"≻","sccue":"≽","sce":"⪰","scE":"⪴","Scedil":"Ş","scedil":"ş","Scirc":"Ŝ","scirc":"ŝ","scnap":"⪺","scnE":"⪶","scnsim":"⋩","scpolint":"⨓","scsim":"≿","Scy":"С","scy":"с","sdotb":"⊡","sdot":"⋅","sdote":"⩦","searhk":"⤥","searr":"↘","seArr":"⇘","searrow":"↘","sect":"§","semi":";","seswar":"⤩","setminus":"∖","setmn":"∖","sext":"✶","Sfr":"𝔖","sfr":"𝔰","sfrown":"⌢","sharp":"♯","SHCHcy":"Щ","shchcy":"щ","SHcy":"Ш","shcy":"ш","ShortDownArrow":"↓","ShortLeftArrow":"←","shortmid":"∣","shortparallel":"∥","ShortRightArrow":"→","ShortUpArrow":"↑","shy":"­","Sigma":"Σ","sigma":"σ","sigmaf":"ς","sigmav":"ς","sim":"∼","simdot":"⩪","sime":"≃","simeq":"≃","simg":"⪞","simgE":"⪠","siml":"⪝","simlE":"⪟","simne":"≆","simplus":"⨤","simrarr":"⥲","slarr":"←","SmallCircle":"∘","smallsetminus":"∖","smashp":"⨳","smeparsl":"⧤","smid":"∣","smile":"⌣","smt":"⪪","smte":"⪬","smtes":"⪬︀","SOFTcy":"Ь","softcy":"ь","solbar":"⌿","solb":"⧄","sol":"/","Sopf":"𝕊","sopf":"𝕤","spades":"♠","spadesuit":"♠","spar":"∥","sqcap":"⊓","sqcaps":"⊓︀","sqcup":"⊔","sqcups":"⊔︀","Sqrt":"√","sqsub":"⊏","sqsube":"⊑","sqsubset":"⊏","sqsubseteq":"⊑","sqsup":"⊐","sqsupe":"⊒","sqsupset":"⊐","sqsupseteq":"⊒","square":"□","Square":"□","SquareIntersection":"⊓","SquareSubset":"⊏","SquareSubsetEqual":"⊑","SquareSuperset":"⊐","SquareSupersetEqual":"⊒","SquareUnion":"⊔","squarf":"▪","squ":"□","squf":"▪","srarr":"→","Sscr":"𝒮","sscr":"𝓈","ssetmn":"∖","ssmile":"⌣","sstarf":"⋆","Star":"⋆","star":"☆","starf":"★","straightepsilon":"ϵ","straightphi":"ϕ","strns":"¯","sub":"⊂","Sub":"⋐","subdot":"⪽","subE":"⫅","sube":"⊆","subedot":"⫃","submult":"⫁","subnE":"⫋","subne":"⊊","subplus":"⪿","subrarr":"⥹","subset":"⊂","Subset":"⋐","subseteq":"⊆","subseteqq":"⫅","SubsetEqual":"⊆","subsetneq":"⊊","subsetneqq":"⫋","subsim":"⫇","subsub":"⫕","subsup":"⫓","succapprox":"⪸","succ":"≻","succcurlyeq":"≽","Succeeds":"≻","SucceedsEqual":"⪰","SucceedsSlantEqual":"≽","SucceedsTilde":"≿","succeq":"⪰","succnapprox":"⪺","succneqq":"⪶","succnsim":"⋩","succsim":"≿","SuchThat":"∋","sum":"∑","Sum":"∑","sung":"♪","sup1":"¹","sup2":"²","sup3":"³","sup":"⊃","Sup":"⋑","supdot":"⪾","supdsub":"⫘","supE":"⫆","supe":"⊇","supedot":"⫄","Superset":"⊃","SupersetEqual":"⊇","suphsol":"⟉","suphsub":"⫗","suplarr":"⥻","supmult":"⫂","supnE":"⫌","supne":"⊋","supplus":"⫀","supset":"⊃","Supset":"⋑","supseteq":"⊇","supseteqq":"⫆","supsetneq":"⊋","supsetneqq":"⫌","supsim":"⫈","supsub":"⫔","supsup":"⫖","swarhk":"⤦","swarr":"↙","swArr":"⇙","swarrow":"↙","swnwar":"⤪","szlig":"ß","Tab":"\t","target":"⌖","Tau":"Τ","tau":"τ","tbrk":"⎴","Tcaron":"Ť","tcaron":"ť","Tcedil":"Ţ","tcedil":"ţ","Tcy":"Т","tcy":"т","tdot":"⃛","telrec":"⌕","Tfr":"𝔗","tfr":"𝔱","there4":"∴","therefore":"∴","Therefore":"∴","Theta":"Θ","theta":"θ","thetasym":"ϑ","thetav":"ϑ","thickapprox":"≈","thicksim":"∼","ThickSpace":"  ","ThinSpace":" ","thinsp":" ","thkap":"≈","thksim":"∼","THORN":"Þ","thorn":"þ","tilde":"˜","Tilde":"∼","TildeEqual":"≃","TildeFullEqual":"≅","TildeTilde":"≈","timesbar":"⨱","timesb":"⊠","times":"×","timesd":"⨰","tint":"∭","toea":"⤨","topbot":"⌶","topcir":"⫱","top":"⊤","Topf":"𝕋","topf":"𝕥","topfork":"⫚","tosa":"⤩","tprime":"‴","trade":"™","TRADE":"™","triangle":"▵","triangledown":"▿","triangleleft":"◃","trianglelefteq":"⊴","triangleq":"≜","triangleright":"▹","trianglerighteq":"⊵","tridot":"◬","trie":"≜","triminus":"⨺","TripleDot":"⃛","triplus":"⨹","trisb":"⧍","tritime":"⨻","trpezium":"⏢","Tscr":"𝒯","tscr":"𝓉","TScy":"Ц","tscy":"ц","TSHcy":"Ћ","tshcy":"ћ","Tstrok":"Ŧ","tstrok":"ŧ","twixt":"≬","twoheadleftarrow":"↞","twoheadrightarrow":"↠","Uacute":"Ú","uacute":"ú","uarr":"↑","Uarr":"↟","uArr":"⇑","Uarrocir":"⥉","Ubrcy":"Ў","ubrcy":"ў","Ubreve":"Ŭ","ubreve":"ŭ","Ucirc":"Û","ucirc":"û","Ucy":"У","ucy":"у","udarr":"⇅","Udblac":"Ű","udblac":"ű","udhar":"⥮","ufisht":"⥾","Ufr":"𝔘","ufr":"𝔲","Ugrave":"Ù","ugrave":"ù","uHar":"⥣","uharl":"↿","uharr":"↾","uhblk":"▀","ulcorn":"⌜","ulcorner":"⌜","ulcrop":"⌏","ultri":"◸","Umacr":"Ū","umacr":"ū","uml":"¨","UnderBar":"_","UnderBrace":"⏟","UnderBracket":"⎵","UnderParenthesis":"⏝","Union":"⋃","UnionPlus":"⊎","Uogon":"Ų","uogon":"ų","Uopf":"𝕌","uopf":"𝕦","UpArrowBar":"⤒","uparrow":"↑","UpArrow":"↑","Uparrow":"⇑","UpArrowDownArrow":"⇅","updownarrow":"↕","UpDownArrow":"↕","Updownarrow":"⇕","UpEquilibrium":"⥮","upharpoonleft":"↿","upharpoonright":"↾","uplus":"⊎","UpperLeftArrow":"↖","UpperRightArrow":"↗","upsi":"υ","Upsi":"ϒ","upsih":"ϒ","Upsilon":"Υ","upsilon":"υ","UpTeeArrow":"↥","UpTee":"⊥","upuparrows":"⇈","urcorn":"⌝","urcorner":"⌝","urcrop":"⌎","Uring":"Ů","uring":"ů","urtri":"◹","Uscr":"𝒰","uscr":"𝓊","utdot":"⋰","Utilde":"Ũ","utilde":"ũ","utri":"▵","utrif":"▴","uuarr":"⇈","Uuml":"Ü","uuml":"ü","uwangle":"⦧","vangrt":"⦜","varepsilon":"ϵ","varkappa":"ϰ","varnothing":"∅","varphi":"ϕ","varpi":"ϖ","varpropto":"∝","varr":"↕","vArr":"⇕","varrho":"ϱ","varsigma":"ς","varsubsetneq":"⊊︀","varsubsetneqq":"⫋︀","varsupsetneq":"⊋︀","varsupsetneqq":"⫌︀","vartheta":"ϑ","vartriangleleft":"⊲","vartriangleright":"⊳","vBar":"⫨","Vbar":"⫫","vBarv":"⫩","Vcy":"В","vcy":"в","vdash":"⊢","vDash":"⊨","Vdash":"⊩","VDash":"⊫","Vdashl":"⫦","veebar":"⊻","vee":"∨","Vee":"⋁","veeeq":"≚","vellip":"⋮","verbar":"|","Verbar":"‖","vert":"|","Vert":"‖","VerticalBar":"∣","VerticalLine":"|","VerticalSeparator":"❘","VerticalTilde":"≀","VeryThinSpace":" ","Vfr":"𝔙","vfr":"𝔳","vltri":"⊲","vnsub":"⊂⃒","vnsup":"⊃⃒","Vopf":"𝕍","vopf":"𝕧","vprop":"∝","vrtri":"⊳","Vscr":"𝒱","vscr":"𝓋","vsubnE":"⫋︀","vsubne":"⊊︀","vsupnE":"⫌︀","vsupne":"⊋︀","Vvdash":"⊪","vzigzag":"⦚","Wcirc":"Ŵ","wcirc":"ŵ","wedbar":"⩟","wedge":"∧","Wedge":"⋀","wedgeq":"≙","weierp":"℘","Wfr":"𝔚","wfr":"𝔴","Wopf":"𝕎","wopf":"𝕨","wp":"℘","wr":"≀","wreath":"≀","Wscr":"𝒲","wscr":"𝓌","xcap":"⋂","xcirc":"◯","xcup":"⋃","xdtri":"▽","Xfr":"𝔛","xfr":"𝔵","xharr":"⟷","xhArr":"⟺","Xi":"Ξ","xi":"ξ","xlarr":"⟵","xlArr":"⟸","xmap":"⟼","xnis":"⋻","xodot":"⨀","Xopf":"𝕏","xopf":"𝕩","xoplus":"⨁","xotime":"⨂","xrarr":"⟶","xrArr":"⟹","Xscr":"𝒳","xscr":"𝓍","xsqcup":"⨆","xuplus":"⨄","xutri":"△","xvee":"⋁","xwedge":"⋀","Yacute":"Ý","yacute":"ý","YAcy":"Я","yacy":"я","Ycirc":"Ŷ","ycirc":"ŷ","Ycy":"Ы","ycy":"ы","yen":"¥","Yfr":"𝔜","yfr":"𝔶","YIcy":"Ї","yicy":"ї","Yopf":"𝕐","yopf":"𝕪","Yscr":"𝒴","yscr":"𝓎","YUcy":"Ю","yucy":"ю","yuml":"ÿ","Yuml":"Ÿ","Zacute":"Ź","zacute":"ź","Zcaron":"Ž","zcaron":"ž","Zcy":"З","zcy":"з","Zdot":"Ż","zdot":"ż","zeetrf":"ℨ","ZeroWidthSpace":"​","Zeta":"Ζ","zeta":"ζ","zfr":"𝔷","Zfr":"ℨ","ZHcy":"Ж","zhcy":"ж","zigrarr":"⇝","zopf":"𝕫","Zopf":"ℤ","Zscr":"𝒵","zscr":"𝓏","zwj":"‍","zwnj":"‌"}
 
 /***/ }),
-/* 44 */
+/* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -77403,7 +81094,7 @@ module.exports = encode;
 
 
 /***/ }),
-/* 45 */
+/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -77532,7 +81223,7 @@ module.exports = decode;
 
 
 /***/ }),
-/* 46 */
+/* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -77564,7 +81255,7 @@ module.exports = function format(url) {
 
 
 /***/ }),
-/* 47 */
+/* 48 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -77883,7 +81574,7 @@ module.exports = urlParse;
 
 
 /***/ }),
-/* 48 */
+/* 49 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -77891,19 +81582,19 @@ module.exports = urlParse;
 
 exports.Any = __webpack_require__(15);
 exports.Cc  = __webpack_require__(16);
-exports.Cf  = __webpack_require__(49);
+exports.Cf  = __webpack_require__(50);
 exports.P   = __webpack_require__(5);
 exports.Z   = __webpack_require__(17);
 
 
 /***/ }),
-/* 49 */
+/* 50 */
 /***/ (function(module, exports) {
 
 module.exports=/[\xAD\u0600-\u0605\u061C\u06DD\u070F\u08E2\u180E\u200B-\u200F\u202A-\u202E\u2060-\u2064\u2066-\u206F\uFEFF\uFFF9-\uFFFB]|\uD804\uDCBD|\uD82F[\uDCA0-\uDCA3]|\uD834[\uDD73-\uDD7A]|\uDB40[\uDC01\uDC20-\uDC7F]/
 
 /***/ }),
-/* 50 */
+/* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -77911,13 +81602,13 @@ module.exports=/[\xAD\u0600-\u0605\u061C\u06DD\u070F\u08E2\u180E\u200B-\u200F\u2
 
 
 
-exports.parseLinkLabel       = __webpack_require__(51);
-exports.parseLinkDestination = __webpack_require__(52);
-exports.parseLinkTitle       = __webpack_require__(53);
+exports.parseLinkLabel       = __webpack_require__(52);
+exports.parseLinkDestination = __webpack_require__(53);
+exports.parseLinkTitle       = __webpack_require__(54);
 
 
 /***/ }),
-/* 51 */
+/* 52 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -77972,7 +81663,7 @@ module.exports = function parseLinkLabel(state, start, disableNested) {
 
 
 /***/ }),
-/* 52 */
+/* 53 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -78059,7 +81750,7 @@ module.exports = function parseLinkDestination(str, pos, max) {
 
 
 /***/ }),
-/* 53 */
+/* 54 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -78119,7 +81810,7 @@ module.exports = function parseLinkTitle(str, pos, max) {
 
 
 /***/ }),
-/* 54 */
+/* 55 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -78461,7 +82152,7 @@ module.exports = Renderer;
 
 
 /***/ }),
-/* 55 */
+/* 56 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -78478,12 +82169,12 @@ var Ruler  = __webpack_require__(6);
 
 
 var _rules = [
-  [ 'normalize',      __webpack_require__(56)      ],
-  [ 'block',          __webpack_require__(57)          ],
-  [ 'inline',         __webpack_require__(58)         ],
-  [ 'linkify',        __webpack_require__(59)        ],
-  [ 'replacements',   __webpack_require__(60)   ],
-  [ 'smartquotes',    __webpack_require__(61)    ]
+  [ 'normalize',      __webpack_require__(57)      ],
+  [ 'block',          __webpack_require__(58)          ],
+  [ 'inline',         __webpack_require__(59)         ],
+  [ 'linkify',        __webpack_require__(60)        ],
+  [ 'replacements',   __webpack_require__(61)   ],
+  [ 'smartquotes',    __webpack_require__(62)    ]
 ];
 
 
@@ -78519,14 +82210,14 @@ Core.prototype.process = function (state) {
   }
 };
 
-Core.prototype.State = __webpack_require__(62);
+Core.prototype.State = __webpack_require__(63);
 
 
 module.exports = Core;
 
 
 /***/ }),
-/* 56 */
+/* 57 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -78553,7 +82244,7 @@ module.exports = function inline(state) {
 
 
 /***/ }),
-/* 57 */
+/* 58 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -78576,7 +82267,7 @@ module.exports = function block(state) {
 
 
 /***/ }),
-/* 58 */
+/* 59 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -78596,7 +82287,7 @@ module.exports = function inline(state) {
 
 
 /***/ }),
-/* 59 */
+/* 60 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -78736,7 +82427,7 @@ module.exports = function linkify(state) {
 
 
 /***/ }),
-/* 60 */
+/* 61 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -78850,7 +82541,7 @@ module.exports = function replace(state) {
 
 
 /***/ }),
-/* 61 */
+/* 62 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -79052,7 +82743,7 @@ module.exports = function smartquotes(state) {
 
 
 /***/ }),
-/* 62 */
+/* 63 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -79079,7 +82770,7 @@ module.exports = StateCore;
 
 
 /***/ }),
-/* 63 */
+/* 64 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -79097,17 +82788,17 @@ var Ruler           = __webpack_require__(6);
 var _rules = [
   // First 2 params - rule name & source. Secondary array - list of rules,
   // which can be terminated by this one.
-  [ 'table',      __webpack_require__(64),      [ 'paragraph', 'reference' ] ],
-  [ 'code',       __webpack_require__(65) ],
-  [ 'fence',      __webpack_require__(66),      [ 'paragraph', 'reference', 'blockquote', 'list' ] ],
-  [ 'blockquote', __webpack_require__(67), [ 'paragraph', 'reference', 'blockquote', 'list' ] ],
-  [ 'hr',         __webpack_require__(68),         [ 'paragraph', 'reference', 'blockquote', 'list' ] ],
-  [ 'list',       __webpack_require__(69),       [ 'paragraph', 'reference', 'blockquote' ] ],
-  [ 'reference',  __webpack_require__(70) ],
-  [ 'heading',    __webpack_require__(71),    [ 'paragraph', 'reference', 'blockquote' ] ],
-  [ 'lheading',   __webpack_require__(72) ],
-  [ 'html_block', __webpack_require__(73), [ 'paragraph', 'reference', 'blockquote' ] ],
-  [ 'paragraph',  __webpack_require__(75) ]
+  [ 'table',      __webpack_require__(65),      [ 'paragraph', 'reference' ] ],
+  [ 'code',       __webpack_require__(66) ],
+  [ 'fence',      __webpack_require__(67),      [ 'paragraph', 'reference', 'blockquote', 'list' ] ],
+  [ 'blockquote', __webpack_require__(68), [ 'paragraph', 'reference', 'blockquote', 'list' ] ],
+  [ 'hr',         __webpack_require__(69),         [ 'paragraph', 'reference', 'blockquote', 'list' ] ],
+  [ 'list',       __webpack_require__(70),       [ 'paragraph', 'reference', 'blockquote' ] ],
+  [ 'reference',  __webpack_require__(71) ],
+  [ 'heading',    __webpack_require__(72),    [ 'paragraph', 'reference', 'blockquote' ] ],
+  [ 'lheading',   __webpack_require__(73) ],
+  [ 'html_block', __webpack_require__(74), [ 'paragraph', 'reference', 'blockquote' ] ],
+  [ 'paragraph',  __webpack_require__(76) ]
 ];
 
 
@@ -79201,14 +82892,14 @@ ParserBlock.prototype.parse = function (src, md, env, outTokens) {
 };
 
 
-ParserBlock.prototype.State = __webpack_require__(76);
+ParserBlock.prototype.State = __webpack_require__(77);
 
 
 module.exports = ParserBlock;
 
 
 /***/ }),
-/* 64 */
+/* 65 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -79411,7 +83102,7 @@ module.exports = function table(state, startLine, endLine, silent) {
 
 
 /***/ }),
-/* 65 */
+/* 66 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -79452,7 +83143,7 @@ module.exports = function code(state, startLine, endLine/*, silent*/) {
 
 
 /***/ }),
-/* 66 */
+/* 67 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -79553,7 +83244,7 @@ module.exports = function fence(state, startLine, endLine, silent) {
 
 
 /***/ }),
-/* 67 */
+/* 68 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -79845,7 +83536,7 @@ module.exports = function blockquote(state, startLine, endLine, silent) {
 
 
 /***/ }),
-/* 68 */
+/* 69 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -79897,7 +83588,7 @@ module.exports = function hr(state, startLine, endLine, silent) {
 
 
 /***/ }),
-/* 69 */
+/* 70 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -80240,7 +83931,7 @@ module.exports = function list(state, startLine, endLine, silent) {
 
 
 /***/ }),
-/* 70 */
+/* 71 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -80445,7 +84136,7 @@ module.exports = function reference(state, startLine, _endLine, silent) {
 
 
 /***/ }),
-/* 71 */
+/* 72 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -80507,7 +84198,7 @@ module.exports = function heading(state, startLine, endLine, silent) {
 
 
 /***/ }),
-/* 72 */
+/* 73 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -80597,7 +84288,7 @@ module.exports = function lheading(state, startLine, endLine/*, silent*/) {
 
 
 /***/ }),
-/* 73 */
+/* 74 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -80606,7 +84297,7 @@ module.exports = function lheading(state, startLine, endLine/*, silent*/) {
 
 
 
-var block_names = __webpack_require__(74);
+var block_names = __webpack_require__(75);
 var HTML_OPEN_CLOSE_TAG_RE = __webpack_require__(18).HTML_OPEN_CLOSE_TAG_RE;
 
 // An array of opening and corresponding closing sequences for html tags,
@@ -80678,7 +84369,7 @@ module.exports = function html_block(state, startLine, endLine, silent) {
 
 
 /***/ }),
-/* 74 */
+/* 75 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -80756,7 +84447,7 @@ module.exports = [
 
 
 /***/ }),
-/* 75 */
+/* 76 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -80815,7 +84506,7 @@ module.exports = function paragraph(state, startLine/*, endLine*/) {
 
 
 /***/ }),
-/* 76 */
+/* 77 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -81052,7 +84743,7 @@ module.exports = StateBlock;
 
 
 /***/ }),
-/* 77 */
+/* 78 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -81071,24 +84762,24 @@ var Ruler           = __webpack_require__(6);
 // Parser rules
 
 var _rules = [
-  [ 'text',            __webpack_require__(78) ],
-  [ 'newline',         __webpack_require__(79) ],
-  [ 'escape',          __webpack_require__(80) ],
-  [ 'backticks',       __webpack_require__(81) ],
+  [ 'text',            __webpack_require__(79) ],
+  [ 'newline',         __webpack_require__(80) ],
+  [ 'escape',          __webpack_require__(81) ],
+  [ 'backticks',       __webpack_require__(82) ],
   [ 'strikethrough',   __webpack_require__(19).tokenize ],
   [ 'emphasis',        __webpack_require__(20).tokenize ],
-  [ 'link',            __webpack_require__(82) ],
-  [ 'image',           __webpack_require__(83) ],
-  [ 'autolink',        __webpack_require__(84) ],
-  [ 'html_inline',     __webpack_require__(85) ],
-  [ 'entity',          __webpack_require__(86) ]
+  [ 'link',            __webpack_require__(83) ],
+  [ 'image',           __webpack_require__(84) ],
+  [ 'autolink',        __webpack_require__(85) ],
+  [ 'html_inline',     __webpack_require__(86) ],
+  [ 'entity',          __webpack_require__(87) ]
 ];
 
 var _rules2 = [
-  [ 'balance_pairs',   __webpack_require__(87) ],
+  [ 'balance_pairs',   __webpack_require__(88) ],
   [ 'strikethrough',   __webpack_require__(19).postProcess ],
   [ 'emphasis',        __webpack_require__(20).postProcess ],
-  [ 'text_collapse',   __webpack_require__(88) ]
+  [ 'text_collapse',   __webpack_require__(89) ]
 ];
 
 
@@ -81229,14 +84920,14 @@ ParserInline.prototype.parse = function (str, md, env, outTokens) {
 };
 
 
-ParserInline.prototype.State = __webpack_require__(89);
+ParserInline.prototype.State = __webpack_require__(90);
 
 
 module.exports = ParserInline;
 
 
 /***/ }),
-/* 78 */
+/* 79 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -81332,7 +85023,7 @@ module.exports = function text(state, silent) {
 
 
 /***/ }),
-/* 79 */
+/* 80 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -81381,7 +85072,7 @@ module.exports = function newline(state, silent) {
 
 
 /***/ }),
-/* 80 */
+/* 81 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -81440,7 +85131,7 @@ module.exports = function escape(state, silent) {
 
 
 /***/ }),
-/* 81 */
+/* 82 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -81490,7 +85181,7 @@ module.exports = function backtick(state, silent) {
 
 
 /***/ }),
-/* 82 */
+/* 83 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -81647,7 +85338,7 @@ module.exports = function link(state, silent) {
 
 
 /***/ }),
-/* 83 */
+/* 84 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -81806,7 +85497,7 @@ module.exports = function image(state, silent) {
 
 
 /***/ }),
-/* 84 */
+/* 85 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -81885,7 +85576,7 @@ module.exports = function autolink(state, silent) {
 
 
 /***/ }),
-/* 85 */
+/* 86 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -81939,7 +85630,7 @@ module.exports = function html_inline(state, silent) {
 
 
 /***/ }),
-/* 86 */
+/* 87 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -81994,7 +85685,7 @@ module.exports = function entity(state, silent) {
 
 
 /***/ }),
-/* 87 */
+/* 88 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -82045,7 +85736,7 @@ module.exports = function link_pairs(state) {
 
 
 /***/ }),
-/* 88 */
+/* 89 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -82085,7 +85776,7 @@ module.exports = function text_collapse(state) {
 
 
 /***/ }),
-/* 89 */
+/* 90 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -82222,7 +85913,7 @@ module.exports = StateInline;
 
 
 /***/ }),
-/* 90 */
+/* 91 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -82378,7 +86069,7 @@ function createNormalizer() {
 function compile(self) {
 
   // Load & clone RE patterns.
-  var re = self.re = __webpack_require__(91)(self.__opts__);
+  var re = self.re = __webpack_require__(92)(self.__opts__);
 
   // Define dynamic patterns
   var tlds = self.__tlds__.slice();
@@ -82866,7 +86557,7 @@ module.exports = LinkifyIt;
 
 
 /***/ }),
-/* 91 */
+/* 92 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -83050,7 +86741,7 @@ module.exports = function (opts) {
 
 
 /***/ }),
-/* 92 */
+/* 93 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(module, global) {var __WEBPACK_AMD_DEFINE_RESULT__;/*! https://mths.be/punycode v1.4.1 by @mathias */
@@ -83586,10 +87277,10 @@ module.exports = function (opts) {
 
 }(this));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(93)(module), __webpack_require__(2)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(94)(module), __webpack_require__(2)))
 
 /***/ }),
-/* 93 */
+/* 94 */
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
@@ -83617,7 +87308,7 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 94 */
+/* 95 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -83665,7 +87356,7 @@ module.exports = {
 
 
 /***/ }),
-/* 95 */
+/* 96 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -83734,7 +87425,7 @@ module.exports = {
 
 
 /***/ }),
-/* 96 */
+/* 97 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -83821,7 +87512,7 @@ module.exports = {
 
 
 /***/ }),
-/* 97 */
+/* 98 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -84643,7 +88334,7 @@ https://highlightjs.org/
 
 
 /***/ }),
-/* 98 */
+/* 99 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs){
@@ -85157,7 +88848,7 @@ module.exports = function(hljs){
 };
 
 /***/ }),
-/* 99 */
+/* 100 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -85232,7 +88923,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 100 */
+/* 101 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -85274,7 +88965,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 101 */
+/* 102 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -85352,7 +89043,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 102 */
+/* 103 */
 /***/ (function(module, exports) {
 
 module.exports = // We try to support full Ada2012
@@ -85529,7 +89220,7 @@ function(hljs) {
 };
 
 /***/ }),
-/* 103 */
+/* 104 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -85579,7 +89270,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 104 */
+/* 105 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -85669,7 +89360,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 105 */
+/* 106 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -85848,7 +89539,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 106 */
+/* 107 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -85952,7 +89643,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 107 */
+/* 108 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -86048,7 +89739,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 108 */
+/* 109 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -86155,7 +89846,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 109 */
+/* 110 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -86347,7 +90038,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 110 */
+/* 111 */
 /***/ (function(module, exports) {
 
 module.exports = function (hljs) {
@@ -86496,7 +90187,7 @@ module.exports = function (hljs) {
 };
 
 /***/ }),
-/* 111 */
+/* 112 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -86559,7 +90250,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 112 */
+/* 113 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -86699,7 +90390,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 113 */
+/* 114 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -86765,7 +90456,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 114 */
+/* 115 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -86822,7 +90513,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 115 */
+/* 116 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -86857,7 +90548,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 116 */
+/* 117 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -86936,7 +90627,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 117 */
+/* 118 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -86991,7 +90682,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 118 */
+/* 119 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs){
@@ -87024,7 +90715,7 @@ module.exports = function(hljs){
 };
 
 /***/ }),
-/* 119 */
+/* 120 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs){
@@ -87065,7 +90756,7 @@ module.exports = function(hljs){
 };
 
 /***/ }),
-/* 120 */
+/* 121 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -87149,7 +90840,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 121 */
+/* 122 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -87202,7 +90893,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 122 */
+/* 123 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -87273,7 +90964,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 123 */
+/* 124 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -87302,7 +90993,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 124 */
+/* 125 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -87402,7 +91093,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 125 */
+/* 126 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -87421,7 +91112,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 126 */
+/* 127 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -87463,7 +91154,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 127 */
+/* 128 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -87613,7 +91304,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 128 */
+/* 129 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -87684,7 +91375,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 129 */
+/* 130 */
 /***/ (function(module, exports) {
 
 module.exports = function cos (hljs) {
@@ -87812,7 +91503,7 @@ module.exports = function cos (hljs) {
 };
 
 /***/ }),
-/* 130 */
+/* 131 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -87910,7 +91601,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 131 */
+/* 132 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -88108,7 +91799,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 132 */
+/* 133 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -88289,7 +91980,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 133 */
+/* 134 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -88315,7 +92006,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 134 */
+/* 135 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -88424,7 +92115,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 135 */
+/* 136 */
 /***/ (function(module, exports) {
 
 module.exports = /**
@@ -88686,7 +92377,7 @@ function(hljs) {
 };
 
 /***/ }),
-/* 136 */
+/* 137 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -88798,7 +92489,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 137 */
+/* 138 */
 /***/ (function(module, exports) {
 
 module.exports = function (hljs) {
@@ -88903,7 +92594,7 @@ module.exports = function (hljs) {
 };
 
 /***/ }),
-/* 138 */
+/* 139 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -88976,7 +92667,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 139 */
+/* 140 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -89020,7 +92711,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 140 */
+/* 141 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -89088,7 +92779,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 141 */
+/* 142 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -89121,7 +92812,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 142 */
+/* 143 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -89147,7 +92838,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 143 */
+/* 144 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -89203,7 +92894,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 144 */
+/* 145 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -89254,7 +92945,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 145 */
+/* 146 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -89382,7 +93073,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 146 */
+/* 147 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -89418,7 +93109,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 147 */
+/* 148 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -89455,7 +93146,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 148 */
+/* 149 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -89556,7 +93247,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 149 */
+/* 150 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -89644,7 +93335,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 150 */
+/* 151 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -89825,7 +93516,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 151 */
+/* 152 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -89844,7 +93535,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 152 */
+/* 153 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -89894,7 +93585,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 153 */
+/* 154 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -90044,7 +93735,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 154 */
+/* 155 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -90096,7 +93787,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 155 */
+/* 156 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -90129,7 +93820,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 156 */
+/* 157 */
 /***/ (function(module, exports) {
 
 module.exports = function (hljs) {
@@ -90178,7 +93869,7 @@ module.exports = function (hljs) {
 };
 
 /***/ }),
-/* 157 */
+/* 158 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -90253,7 +93944,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 158 */
+/* 159 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -90316,7 +94007,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 159 */
+/* 160 */
 /***/ (function(module, exports) {
 
 module.exports = function (hljs) {
@@ -90474,7 +94165,7 @@ module.exports = function (hljs) {
 };
 
 /***/ }),
-/* 160 */
+/* 161 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -90702,7 +94393,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 161 */
+/* 162 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -90773,7 +94464,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 162 */
+/* 163 */
 /***/ (function(module, exports) {
 
 module.exports = function (hljs) {
@@ -90814,7 +94505,7 @@ module.exports = function (hljs) {
 };
 
 /***/ }),
-/* 163 */
+/* 164 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -90935,7 +94626,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 164 */
+/* 165 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -90993,7 +94684,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 165 */
+/* 166 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -91020,7 +94711,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 166 */
+/* 167 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -91059,7 +94750,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 167 */
+/* 168 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -91157,7 +94848,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 168 */
+/* 169 */
 /***/ (function(module, exports) {
 
 module.exports = // TODO support filter tags like :javascript, support inline HTML
@@ -91268,7 +94959,7 @@ function(hljs) {
 };
 
 /***/ }),
-/* 169 */
+/* 170 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -91306,7 +94997,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 170 */
+/* 171 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -91432,7 +95123,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 171 */
+/* 172 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -91548,7 +95239,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 172 */
+/* 173 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -91598,7 +95289,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 173 */
+/* 174 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -91673,7 +95364,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 174 */
+/* 175 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -91718,7 +95409,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 175 */
+/* 176 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -91824,7 +95515,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 176 */
+/* 177 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -91885,7 +95576,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 177 */
+/* 178 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -91955,7 +95646,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 178 */
+/* 179 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -92035,7 +95726,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 179 */
+/* 180 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -92147,7 +95838,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 180 */
+/* 181 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -92322,7 +96013,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 181 */
+/* 182 */
 /***/ (function(module, exports) {
 
 module.exports = function (hljs) {
@@ -92373,7 +96064,7 @@ module.exports = function (hljs) {
 };
 
 /***/ }),
-/* 182 */
+/* 183 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -92414,7 +96105,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 183 */
+/* 184 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -92580,7 +96271,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 184 */
+/* 185 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -92608,7 +96299,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 185 */
+/* 186 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -92786,7 +96477,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 186 */
+/* 187 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -92953,7 +96644,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 187 */
+/* 188 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -92980,7 +96671,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 188 */
+/* 189 */
 /***/ (function(module, exports) {
 
 module.exports = function (hljs) {
@@ -93024,7 +96715,7 @@ module.exports = function (hljs) {
 };
 
 /***/ }),
-/* 189 */
+/* 190 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -93168,7 +96859,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 190 */
+/* 191 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -93275,7 +96966,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 191 */
+/* 192 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -93436,7 +97127,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 192 */
+/* 193 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -93589,7 +97280,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 193 */
+/* 194 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -93682,7 +97373,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 194 */
+/* 195 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -93769,7 +97460,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 195 */
+/* 196 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -93839,7 +97530,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 196 */
+/* 197 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -93924,7 +97615,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 197 */
+/* 198 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -93986,7 +97677,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 198 */
+/* 199 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -94078,7 +97769,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 199 */
+/* 200 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -94488,7 +98179,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 200 */
+/* 201 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -94717,7 +98408,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 201 */
+/* 202 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -94803,7 +98494,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 202 */
+/* 203 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -94893,7 +98584,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 203 */
+/* 204 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -94916,7 +98607,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 204 */
+/* 205 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -95077,7 +98768,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 205 */
+/* 206 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -95106,7 +98797,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 206 */
+/* 207 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -95185,7 +98876,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 207 */
+/* 208 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -95301,7 +98992,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 208 */
+/* 209 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -95374,7 +99065,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 209 */
+/* 210 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -95471,7 +99162,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 210 */
+/* 211 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -95530,7 +99221,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 211 */
+/* 212 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -95583,7 +99274,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 212 */
+/* 213 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -95693,7 +99384,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 213 */
+/* 214 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -95788,7 +99479,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 214 */
+/* 215 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -95863,7 +99554,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 215 */
+/* 216 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -95924,7 +99615,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 216 */
+/* 217 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -95998,7 +99689,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 217 */
+/* 218 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -96050,7 +99741,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 218 */
+/* 219 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -96106,7 +99797,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 219 */
+/* 220 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -96237,7 +99928,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 220 */
+/* 221 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -96332,7 +100023,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 221 */
+/* 222 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -96417,7 +100108,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 222 */
+/* 223 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -96469,7 +100160,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 223 */
+/* 224 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -96503,7 +100194,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 224 */
+/* 225 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -96595,7 +100286,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 225 */
+/* 226 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -96635,7 +100326,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 226 */
+/* 227 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -96754,7 +100445,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 227 */
+/* 228 */
 /***/ (function(module, exports) {
 
 module.exports = // Base deafult colors in PB IDE: background: #FFFFDF; foreground: #000000;
@@ -96816,7 +100507,7 @@ function(hljs) {
 };
 
 /***/ }),
-/* 228 */
+/* 229 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -96936,7 +100627,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 229 */
+/* 230 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -96963,7 +100654,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 230 */
+/* 231 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -97136,7 +100827,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 231 */
+/* 232 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -97210,7 +100901,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 232 */
+/* 233 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -97241,7 +100932,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 233 */
+/* 234 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -97312,7 +101003,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 234 */
+/* 235 */
 /***/ (function(module, exports) {
 
 module.exports = // Colors from RouterOS terminal:
@@ -97475,7 +101166,7 @@ function(hljs) {
 };
 
 /***/ }),
-/* 235 */
+/* 236 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -97515,7 +101206,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 236 */
+/* 237 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -97580,7 +101271,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 237 */
+/* 238 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -97692,7 +101383,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 238 */
+/* 239 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -97811,7 +101502,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 239 */
+/* 240 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -97959,7 +101650,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 240 */
+/* 241 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -98017,7 +101708,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 241 */
+/* 242 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -98119,7 +101810,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 242 */
+/* 243 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -98138,7 +101829,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 243 */
+/* 244 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -98198,7 +101889,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 244 */
+/* 245 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -98252,7 +101943,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 245 */
+/* 246 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -98322,7 +102013,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 246 */
+/* 247 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -98697,7 +102388,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 247 */
+/* 248 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -98861,7 +102552,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 248 */
+/* 249 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -98948,7 +102639,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 249 */
+/* 250 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -98990,7 +102681,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 250 */
+/* 251 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -99041,7 +102732,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 251 */
+/* 252 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -99499,7 +103190,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 252 */
+/* 253 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -99537,7 +103228,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 253 */
+/* 254 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -99658,7 +103349,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 254 */
+/* 255 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -99706,7 +103397,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 255 */
+/* 256 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -99798,7 +103489,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 256 */
+/* 257 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -99838,7 +103529,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 257 */
+/* 258 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -99903,7 +103594,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 258 */
+/* 259 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -99969,7 +103660,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 259 */
+/* 260 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -100008,7 +103699,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 260 */
+/* 261 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -100096,7 +103787,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 261 */
+/* 262 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -100166,7 +103857,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 262 */
+/* 263 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -100326,7 +104017,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 263 */
+/* 264 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -100380,7 +104071,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 264 */
+/* 265 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -100440,7 +104131,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 265 */
+/* 266 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -100483,7 +104174,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 266 */
+/* 267 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -100499,7 +104190,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 267 */
+/* 268 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -100602,7 +104293,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 268 */
+/* 269 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -100667,7 +104358,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 269 */
+/* 270 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -100777,7 +104468,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 270 */
+/* 271 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -100917,7 +104608,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 271 */
+/* 272 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -100994,7 +104685,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 272 */
+/* 273 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -101069,7 +104760,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 273 */
+/* 274 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -101180,18 +104871,18 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 274 */
+/* 275 */
 /***/ (function(module, exports, __webpack_require__) {
 
 !function(e,t){"use strict";function n(e,t,n){this.root=this.currentNode=e,this.nodeType=t,this.filter=n}function o(e,t){for(var n=e.length;n--;)if(!t(e[n]))return!1;return!0}function i(e){return e.nodeType===w&&!!ge[e.nodeName]}function r(e){switch(e.nodeType){case F:return ve;case w:case H:if(ce&&Ce.has(e))return Ce.get(e);break;default:return me}var t;return t=o(e.childNodes,a)?pe.test(e.nodeName)?ve:_e:Ne,ce&&Ce.set(e,t),t}function a(e){return r(e)===ve}function s(e){return r(e)===_e}function d(e){return r(e)===Ne}function l(e,t){var o=new n(t,W,s);return o.currentNode=e,o}function c(e,t){return e=l(e,t).previousNode(),e!==t?e:null}function h(e,t){return e=l(e,t).nextNode(),e!==t?e:null}function u(e){return!e.textContent&&!e.querySelector("IMG")}function f(e,t){return!i(e)&&e.nodeType===t.nodeType&&e.nodeName===t.nodeName&&"A"!==e.nodeName&&e.className===t.className&&(!e.style&&!t.style||e.style.cssText===t.style.cssText)}function p(e,t,n){if(e.nodeName!==t)return!1;for(var o in n)if(e.getAttribute(o)!==n[o])return!1;return!0}function g(e,t,n,o){for(;e&&e!==t;){if(p(e,n,o))return e;e=e.parentNode}return null}function m(e,t){for(;t;){if(t===e)return!0;t=t.parentNode}return!1}function v(e,t){var n,o,i,r,a="";return e&&e!==t&&(a=v(e.parentNode,t),e.nodeType===w&&(a+=(a?">":"")+e.nodeName,(n=e.id)&&(a+="#"+n),(o=e.className.trim())&&(i=o.split(/\s\s*/),i.sort(),a+=".",a+=i.join(".")),(r=e.dir)&&(a+="[dir="+r+"]"),i&&(ue.call(i,z)>-1&&(a+="[backgroundColor="+e.style.backgroundColor.replace(/ /g,"")+"]"),ue.call(i,q)>-1&&(a+="[color="+e.style.color.replace(/ /g,"")+"]"),ue.call(i,K)>-1&&(a+="[fontFamily="+e.style.fontFamily.replace(/ /g,"")+"]"),ue.call(i,G)>-1&&(a+="[fontSize="+e.style.fontSize+"]")))),a}function _(e){var t=e.nodeType;return t===w||t===H?e.childNodes.length:e.length||0}function N(e){var t=e.parentNode;return t&&t.removeChild(e),e}function C(e,t){var n=e.parentNode;n&&n.replaceChild(t,e)}function S(e){for(var t=e.ownerDocument.createDocumentFragment(),n=e.childNodes,o=n?n.length:0;o--;)t.appendChild(e.firstChild);return t}function T(e,n,o,i){var r,a,s,d=e.createElement(n);if(o instanceof Array&&(i=o,o=null),o)for(r in o)o[r]!==t&&d.setAttribute(r,o[r]);if(i)for(a=0,s=i.length;a<s;a+=1)d.appendChild(i[a]);return d}function y(e,t){var n,o,r=t.__squire__,s=e.ownerDocument,d=e;if(e===t&&((o=e.firstChild)&&"BR"!==o.nodeName||(n=r.createDefaultBlock(),o?e.replaceChild(n,o):e.appendChild(n),e=n,n=null)),e.nodeType===F)return d;if(a(e)){for(o=e.firstChild;se&&o&&o.nodeType===F&&!o.data;)e.removeChild(o),o=e.firstChild;o||(se?(n=s.createTextNode(Z),r._didAddZWS()):n=s.createTextNode(""))}else if(ae){for(;e.nodeType!==F&&!i(e);){if(!(o=e.firstChild)){n=s.createTextNode("");break}e=o}e.nodeType===F?/^ +$/.test(e.data)&&(e.data=""):i(e)&&e.parentNode.insertBefore(s.createTextNode(""),e)}else if(!e.querySelector("BR"))for(n=T(s,"BR");(o=e.lastElementChild)&&!a(o);)e=o;if(n)try{e.appendChild(n)}catch(t){r.didError({name:"Squire: fixCursor – "+t,message:"Parent: "+e.nodeName+"/"+e.innerHTML+" appendChild: "+n.nodeName})}return d}function E(e,t){var n,o,i,r,s=e.childNodes,l=e.ownerDocument,c=null,h=t.__squire__._config;for(n=0,o=s.length;n<o;n+=1)i=s[n],r="BR"===i.nodeName,!r&&a(i)?(c||(c=T(l,h.blockTag,h.blockAttributes)),c.appendChild(i),n-=1,o-=1):(r||c)&&(c||(c=T(l,h.blockTag,h.blockAttributes)),y(c,t),r?e.replaceChild(c,i):(e.insertBefore(c,i),n+=1,o+=1),c=null),d(i)&&E(i,t);return c&&e.appendChild(y(c,t)),e}function b(e,t,n,o){var i,r,a,s=e.nodeType;if(s===F&&e!==n)return b(e.parentNode,e.splitText(t),n,o);if(s===w){if("number"==typeof t&&(t=t<e.childNodes.length?e.childNodes[t]:null),e===n)return t;for(i=e.parentNode,r=e.cloneNode(!1);t;)a=t.nextSibling,r.appendChild(t),t=a;return"OL"===e.nodeName&&g(e,o,"BLOCKQUOTE")&&(r.start=(+e.start||1)+e.childNodes.length-1),y(e,o),y(r,o),(a=e.nextSibling)?i.insertBefore(r,a):i.appendChild(r),b(i,r,n,o)}return t}function k(e,t){for(var n,o,i,r=e.childNodes,s=r.length,d=[];s--;)if(n=r[s],o=s&&r[s-1],s&&a(n)&&f(n,o)&&!ge[n.nodeName])t.startContainer===n&&(t.startContainer=o,t.startOffset+=_(o)),t.endContainer===n&&(t.endContainer=o,t.endOffset+=_(o)),t.startContainer===e&&(t.startOffset>s?t.startOffset-=1:t.startOffset===s&&(t.startContainer=o,t.startOffset=_(o))),t.endContainer===e&&(t.endOffset>s?t.endOffset-=1:t.endOffset===s&&(t.endContainer=o,t.endOffset=_(o))),N(n),n.nodeType===F?o.appendData(n.data):d.push(S(n));else if(n.nodeType===w){for(i=d.length;i--;)n.appendChild(d.pop());k(n,t)}}function L(e,t){if(e.nodeType===F&&(e=e.parentNode),e.nodeType===w){var n={startContainer:t.startContainer,startOffset:t.startOffset,endContainer:t.endContainer,endOffset:t.endOffset};k(e,n),t.setStart(n.startContainer,n.startOffset),t.setEnd(n.endContainer,n.endOffset)}}function x(e,t,n,o){for(var i,r,a,s=t;(i=s.parentNode)&&i!==o&&i.nodeType===w&&1===i.childNodes.length;)s=i;N(s),a=e.childNodes.length,r=e.lastChild,r&&"BR"===r.nodeName&&(e.removeChild(r),a-=1),e.appendChild(S(t)),n.setStart(e,a),n.collapse(!0),L(e,n),te&&(r=e.lastChild)&&"BR"===r.nodeName&&e.removeChild(r)}function O(e,t){var n,o,i=e.previousSibling,r=e.firstChild,a=e.ownerDocument,s="LI"===e.nodeName;if(!s||r&&/^[OU]L$/.test(r.nodeName))if(i&&f(i,e)){if(!d(i)){if(!s)return;o=T(a,"DIV"),o.appendChild(S(i)),i.appendChild(o)}N(e),n=!d(e),i.appendChild(S(e)),n&&E(i,t),r&&O(r,t)}else s&&(i=T(a,"DIV"),e.insertBefore(i,r),y(i,t))}function A(e){this.isShiftDown=e.shiftKey}function B(e,t,n){var o,i;if(e||(e={}),t)for(o in t)!n&&o in e||(i=t[o],e[o]=i&&i.constructor===Object?B(e[o],i,n):i);return e}function R(e,t){e.nodeType===M&&(e=e.body);var n,o=e.ownerDocument,i=o.defaultView;this._win=i,this._doc=o,this._root=e,this._events={},this._isFocused=!1,this._lastSelection=null,de&&this.addEventListener("beforedeactivate",this.getSelection),this._hasZWS=!1,this._lastAnchorNode=null,this._lastFocusNode=null,this._path="",this._willUpdatePath=!1,"onselectionchange"in o?this.addEventListener("selectionchange",this._updatePathOnEvent):(this.addEventListener("keyup",this._updatePathOnEvent),this.addEventListener("mouseup",this._updatePathOnEvent)),this._undoIndex=-1,this._undoStack=[],this._undoStackLength=0,this._isInUndoState=!1,this._ignoreChange=!1,this._ignoreAllChanges=!1,le?(n=new MutationObserver(this._docWasChanged.bind(this)),n.observe(e,{childList:!0,attributes:!0,characterData:!0,subtree:!0}),this._mutation=n):this.addEventListener("keyup",this._keyUpDetectChange),this._restoreSelection=!1,this.addEventListener("blur",D),this.addEventListener("mousedown",U),this.addEventListener("touchstart",U),this.addEventListener("focus",P),this._awaitingPaste=!1,this.addEventListener(ee?"beforecut":"cut",nt),this.addEventListener("copy",ot),this.addEventListener("keydown",A),this.addEventListener("keyup",A),this.addEventListener(ee?"beforepaste":"paste",it),this.addEventListener("drop",rt),this.addEventListener(te?"keypress":"keydown",we),this._keyHandlers=Object.create(We),this.setConfig(t),ee&&(i.Text.prototype.splitText=function(e){var t=this.ownerDocument.createTextNode(this.data.slice(e)),n=this.nextSibling,o=this.parentNode,i=this.length-e;return n?o.insertBefore(t,n):o.appendChild(t),i&&this.deleteData(e,i),t}),e.setAttribute("contenteditable","true");try{o.execCommand("enableObjectResizing",!1,"false"),o.execCommand("enableInlineTableEditing",!1,"false")}catch(e){}e.__squire__=this,this.setHTML("")}function D(){this._restoreSelection=!0}function U(){this._restoreSelection=!1}function P(){this._restoreSelection&&this.setSelection(this._lastSelection)}function I(e,t,n){var o,i;for(o=t.firstChild;o;o=i){if(i=o.nextSibling,a(o)){if(o.nodeType===F||"BR"===o.nodeName||"IMG"===o.nodeName){n.appendChild(o);continue}}else if(s(o)){n.appendChild(e.createDefaultBlock([I(e,o,e._doc.createDocumentFragment())]));continue}I(e,o,n)}return n}var w=1,F=3,M=9,H=11,W=1,z="highlight",q="colour",K="font",G="size",Z="​",j=e.defaultView,$=navigator.userAgent,Q=/Android/.test($),V=/iP(?:ad|hone|od)/.test($),Y=/Mac OS X/.test($),X=/Windows NT/.test($),J=/Gecko\//.test($),ee=/Trident\/[456]\./.test($),te=!!j.opera,ne=/Edge\//.test($),oe=!ne&&/WebKit\//.test($),ie=/Trident\/[4567]\./.test($),re=Y?"meta-":"ctrl-",ae=ee||te,se=ee||oe,de=ee,le="undefined"!=typeof MutationObserver,ce="undefined"!=typeof WeakMap,he=/[^ \t\r\n]/,ue=Array.prototype.indexOf;Object.create||(Object.create=function(e){var t=function(){};return t.prototype=e,new t});var fe={1:1,2:2,3:4,8:128,9:256,11:1024};n.prototype.nextNode=function(){for(var e,t=this.currentNode,n=this.root,o=this.nodeType,i=this.filter;;){for(e=t.firstChild;!e&&t&&t!==n;)(e=t.nextSibling)||(t=t.parentNode);if(!e)return null;if(fe[e.nodeType]&o&&i(e))return this.currentNode=e,e;t=e}},n.prototype.previousNode=function(){for(var e,t=this.currentNode,n=this.root,o=this.nodeType,i=this.filter;;){if(t===n)return null;if(e=t.previousSibling)for(;t=e.lastChild;)e=t;else e=t.parentNode;if(!e)return null;if(fe[e.nodeType]&o&&i(e))return this.currentNode=e,e;t=e}},n.prototype.previousPONode=function(){for(var e,t=this.currentNode,n=this.root,o=this.nodeType,i=this.filter;;){for(e=t.lastChild;!e&&t&&t!==n;)(e=t.previousSibling)||(t=t.parentNode);if(!e)return null;if(fe[e.nodeType]&o&&i(e))return this.currentNode=e,e;t=e}};var pe=/^(?:#text|A(?:BBR|CRONYM)?|B(?:R|D[IO])?|C(?:ITE|ODE)|D(?:ATA|EL|FN)|EM|FONT|HR|I(?:FRAME|MG|NPUT|NS)?|KBD|Q|R(?:P|T|UBY)|S(?:AMP|MALL|PAN|TR(?:IKE|ONG)|U[BP])?|TIME|U|VAR|WBR)$/,ge={BR:1,HR:1,IFRAME:1,IMG:1,INPUT:1},me=0,ve=1,_e=2,Ne=3,Ce=ce?new WeakMap:null,Se=function(e,t){for(var n=e.childNodes;t&&e.nodeType===w;)e=n[t-1],n=e.childNodes,t=n.length;return e},Te=function(e,t){if(e.nodeType===w){var n=e.childNodes;if(t<n.length)e=n[t];else{for(;e&&!e.nextSibling;)e=e.parentNode;e&&(e=e.nextSibling)}}return e},ye=function(e,t){var n,o,i,r,a=e.startContainer,s=e.startOffset,d=e.endContainer,l=e.endOffset;a.nodeType===F?(n=a.parentNode,o=n.childNodes,s===a.length?(s=ue.call(o,a)+1,e.collapsed&&(d=n,l=s)):(s&&(r=a.splitText(s),d===a?(l-=s,d=r):d===n&&(l+=1),a=r),s=ue.call(o,a)),a=n):o=a.childNodes,i=o.length,s===i?a.appendChild(t):a.insertBefore(t,o[s]),a===d&&(l+=o.length-i),e.setStart(a,s),e.setEnd(d,l)},Ee=function(e,t,n){var o=e.startContainer,i=e.startOffset,r=e.endContainer,a=e.endOffset;t||(t=e.commonAncestorContainer),t.nodeType===F&&(t=t.parentNode);for(var s,d,l,c=b(r,a,t,n),h=b(o,i,t,n),u=t.ownerDocument.createDocumentFragment();h!==c;)s=h.nextSibling,u.appendChild(h),h=s;return o=t,i=c?ue.call(t.childNodes,c):t.childNodes.length,l=t.childNodes[i],d=l&&l.previousSibling,d&&d.nodeType===F&&l.nodeType===F&&(o=d,i=d.length,d.appendData(l.data),N(l)),e.setStart(o,i),e.collapse(!0),y(t,n),u},be=function(e,t){var n,o,i=Ae(e,t),r=Be(e,t),a=i!==r;return xe(e),Oe(e,i,r,t),n=Ee(e,null,t),xe(e),a&&(r=Be(e,t),i&&r&&i!==r&&x(i,r,e,t)),i&&y(i,t),o=t.firstChild,o&&"BR"!==o.nodeName?e.collapse(!0):(y(t,t),e.selectNodeContents(t.firstChild)),n},ke=function(e,t,n){var o,i,r,s,l,f,p,m,v,C,S;for(E(t,n),o=t;o=h(o,n);)y(o,n);if(e.collapsed||be(e,n),xe(e),e.collapse(!1),s=g(e.endContainer,n,"BLOCKQUOTE")||n,i=Ae(e,n),m=h(t,t),p=!!i&&u(i),i&&m&&!p&&!g(m,t,"PRE")&&!g(m,t,"TABLE")){if(Oe(e,i,i,n),e.collapse(!0),l=e.endContainer,f=e.endOffset,et(i,n,!1),a(l)&&(v=b(l,f,c(l,n),n),l=v.parentNode,f=ue.call(l.childNodes,v)),f!==_(l))for(r=n.ownerDocument.createDocumentFragment();o=l.childNodes[f];)r.appendChild(o);x(l,m,e,n),f=ue.call(l.parentNode.childNodes,l)+1,l=l.parentNode,e.setEnd(l,f)}_(t)&&(p&&(e.setEndBefore(i),e.collapse(!1),N(i)),Oe(e,s,s,n),v=b(e.endContainer,e.endOffset,s,n),C=v?v.previousSibling:s.lastChild,s.insertBefore(t,v),v?e.setEndBefore(v):e.setEnd(s,_(s)),i=Be(e,n),xe(e),l=e.endContainer,f=e.endOffset,v&&d(v)&&O(v,n),v=C&&C.nextSibling,v&&d(v)&&O(v,n),e.setEnd(l,f)),r&&(S=e.cloneRange(),x(i,r,S,n),e.setEnd(S.endContainer,S.endOffset)),xe(e)},Le=function(e,t,n){var o=t.ownerDocument.createRange();if(o.selectNode(t),n){var i=e.compareBoundaryPoints(3,o)>-1,r=e.compareBoundaryPoints(1,o)<1;return!i&&!r}var a=e.compareBoundaryPoints(0,o)<1,s=e.compareBoundaryPoints(2,o)>-1;return a&&s},xe=function(e){for(var t,n=e.startContainer,o=e.startOffset,r=e.endContainer,a=e.endOffset,s=!0;n.nodeType!==F&&(t=n.childNodes[o])&&!i(t);)n=t,o=0;if(a)for(;r.nodeType!==F;){if(!(t=r.childNodes[a-1])||i(t)){if(s&&t&&"BR"===t.nodeName){a-=1,s=!1;continue}break}r=t,a=_(r)}else for(;r.nodeType!==F&&(t=r.firstChild)&&!i(t);)r=t;e.collapsed?(e.setStart(r,a),e.setEnd(n,o)):(e.setStart(n,o),e.setEnd(r,a))},Oe=function(e,t,n,o){var i,r=e.startContainer,a=e.startOffset,s=e.endContainer,d=e.endOffset,l=!0;for(t||(t=e.commonAncestorContainer),n||(n=t);!a&&r!==t&&r!==o;)i=r.parentNode,a=ue.call(i.childNodes,r),r=i;for(;;){if(l&&s.nodeType!==F&&s.childNodes[d]&&"BR"===s.childNodes[d].nodeName&&(d+=1,l=!1),s===n||s===o||d!==_(s))break;i=s.parentNode,d=ue.call(i.childNodes,s)+1,s=i}e.setStart(r,a),e.setEnd(s,d)},Ae=function(e,t){var n,o=e.startContainer;return a(o)?n=c(o,t):o!==t&&s(o)?n=o:(n=Se(o,e.startOffset),n=h(n,t)),n&&Le(e,n,!0)?n:null},Be=function(e,t){var n,o,i=e.endContainer;if(a(i))n=c(i,t);else if(i!==t&&s(i))n=i;else{if(!(n=Te(i,e.endOffset))||!m(t,n))for(n=t;o=n.lastChild;)n=o;n=c(n,t)}return n&&Le(e,n,!0)?n:null},Re=new n(null,4|W,function(e){return e.nodeType===F?he.test(e.data):"IMG"===e.nodeName}),De=function(e,t){var n,o=e.startContainer,i=e.startOffset;if(Re.root=null,o.nodeType===F){if(i)return!1;n=o}else if(n=Te(o,i),n&&!m(t,n)&&(n=null),!n&&(n=Se(o,i),n.nodeType===F&&n.length))return!1;return Re.currentNode=n,Re.root=Ae(e,t),!Re.previousNode()},Ue=function(e,t){var n,o=e.endContainer,i=e.endOffset;if(Re.root=null,o.nodeType===F){if((n=o.data.length)&&i<n)return!1;Re.currentNode=o}else Re.currentNode=Se(o,i);return Re.root=Be(e,t),!Re.nextNode()},Pe=function(e,t){var n,o=Ae(e,t),i=Be(e,t);o&&i&&(n=o.parentNode,e.setStart(n,ue.call(n.childNodes,o)),n=i.parentNode,e.setEnd(n,ue.call(n.childNodes,i)+1))},Ie={8:"backspace",9:"tab",13:"enter",32:"space",33:"pageup",34:"pagedown",37:"left",39:"right",46:"delete",219:"[",221:"]"},we=function(e){var t=e.keyCode,n=Ie[t],o="",i=this.getSelection();e.defaultPrevented||(n||(n=String.fromCharCode(t).toLowerCase(),/^[A-Za-z0-9]$/.test(n)||(n="")),te&&46===e.which&&(n="."),111<t&&t<124&&(n="f"+(t-111)),"backspace"!==n&&"delete"!==n&&(e.altKey&&(o+="alt-"),e.ctrlKey&&(o+="ctrl-"),e.metaKey&&(o+="meta-")),e.shiftKey&&(o+="shift-"),n=o+n,this._keyHandlers[n]?this._keyHandlers[n](this,e,i):1!==n.length||i.collapsed||(this.saveUndoState(i),be(i,this._root),this._ensureBottomLine(),this.setSelection(i),this._updatePath(i,!0)))},Fe=function(e){return function(t,n){n.preventDefault(),t[e]()}},Me=function(e,t){return t=t||null,function(n,o){o.preventDefault();var i=n.getSelection();n.hasFormat(e,null,i)?n.changeFormat(null,{tag:e},i):n.changeFormat({tag:e},t,i)}},He=function(e,t){try{t||(t=e.getSelection());var n,o=t.startContainer;for(o.nodeType===F&&(o=o.parentNode),n=o;a(n)&&(!n.textContent||n.textContent===Z);)o=n,n=o.parentNode;o!==n&&(t.setStart(n,ue.call(n.childNodes,o)),t.collapse(!0),n.removeChild(o),s(n)||(n=c(n,e._root)),y(n,e._root),xe(t)),o===e._root&&(o=o.firstChild)&&"BR"===o.nodeName&&N(o),e._ensureBottomLine(),e.setSelection(t),e._updatePath(t,!0)}catch(t){e.didError(t)}},We={enter:function(e,t,n){var o,i,r,a=e._root;if(t.preventDefault(),e._recordUndoState(n),yt(n.startContainer,a,e),e._removeZWS(),e._getRangeAndRemoveBookmark(n),n.collapsed||be(n,a),!(o=Ae(n,a))||/^T[HD]$/.test(o.nodeName))return i=g(n.endContainer,a,"A"),i&&(i=i.parentNode,Oe(n,i,i,a),n.collapse(!1)),ye(n,e.createElement("BR")),n.collapse(!1),e.setSelection(n),void e._updatePath(n,!0);if((i=g(o,a,"LI"))&&(o=i),u(o)){if(g(o,a,"UL")||g(o,a,"OL"))return e.decreaseListLevel(n);if(g(o,a,"BLOCKQUOTE"))return e.modifyBlocks(mt,n)}for(r=ft(e,o,n.startContainer,n.startOffset),ct(o),Ye(o),y(o,a);r.nodeType===w;){var s,d=r.firstChild;if("A"===r.nodeName&&(!r.textContent||r.textContent===Z)){d=e._doc.createTextNode(""),C(r,d),r=d;break}for(;d&&d.nodeType===F&&!d.data&&(s=d.nextSibling)&&"BR"!==s.nodeName;)N(d),d=s;if(!d||"BR"===d.nodeName||d.nodeType===F&&!te)break;r=d}n=e._createRange(r,0),e.setSelection(n),e._updatePath(n,!0)},backspace:function(e,t,n){var o=e._root;if(e._removeZWS(),e.saveUndoState(n),n.collapsed)if(De(n,o)){t.preventDefault();var i,r=Ae(n,o);if(!r)return;if(E(r.parentNode,o),i=c(r,o)){if(!i.isContentEditable)return void N(i);for(x(i,r,n,o),r=i.parentNode;r!==o&&!r.nextSibling;)r=r.parentNode;r!==o&&(r=r.nextSibling)&&O(r,o),e.setSelection(n)}else if(r){if(g(r,o,"UL")||g(r,o,"OL"))return e.decreaseListLevel(n);if(g(r,o,"BLOCKQUOTE"))return e.modifyBlocks(gt,n);e.setSelection(n),e._updatePath(n,!0)}}else e.setSelection(n),setTimeout(function(){He(e)},0);else t.preventDefault(),be(n,o),He(e,n)},delete:function(e,t,n){var o,i,r,a,s,d,l=e._root;if(e._removeZWS(),e.saveUndoState(n),n.collapsed)if(Ue(n,l)){if(t.preventDefault(),!(o=Ae(n,l)))return;if(E(o.parentNode,l),i=h(o,l)){if(!i.isContentEditable)return void N(i);for(x(o,i,n,l),i=o.parentNode;i!==l&&!i.nextSibling;)i=i.parentNode;i!==l&&(i=i.nextSibling)&&O(i,l),e.setSelection(n),e._updatePath(n,!0)}}else{if(r=n.cloneRange(),Oe(n,l,l,l),a=n.endContainer,s=n.endOffset,a.nodeType===w&&(d=a.childNodes[s])&&"IMG"===d.nodeName)return t.preventDefault(),N(d),xe(n),void He(e,n);e.setSelection(r),setTimeout(function(){He(e)},0)}else t.preventDefault(),be(n,l),He(e,n)},tab:function(e,t,n){var o,i,r=e._root;if(e._removeZWS(),n.collapsed&&De(n,r))for(o=Ae(n,r);i=o.parentNode;){if("UL"===i.nodeName||"OL"===i.nodeName){t.preventDefault(),e.increaseListLevel(n);break}o=i}},"shift-tab":function(e,t,n){var o,i=e._root;e._removeZWS(),n.collapsed&&De(n,i)&&(o=n.startContainer,(g(o,i,"UL")||g(o,i,"OL"))&&(t.preventDefault(),e.decreaseListLevel(n)))},space:function(e,t,n){var o,i;e._recordUndoState(n),yt(n.startContainer,e._root,e),e._getRangeAndRemoveBookmark(n),o=n.endContainer,i=o.parentNode,n.collapsed&&"A"===i.nodeName&&!o.nextSibling&&n.endOffset===_(o)?n.setStartAfter(i):n.collapsed||(be(n,e._root),e._ensureBottomLine(),e.setSelection(n),e._updatePath(n,!0)),e.setSelection(n)},left:function(e){e._removeZWS()},right:function(e){e._removeZWS()}};Y&&J&&(We["meta-left"]=function(e,t){t.preventDefault();var n=lt(e);n&&n.modify&&n.modify("move","backward","lineboundary")},We["meta-right"]=function(e,t){t.preventDefault();var n=lt(e);n&&n.modify&&n.modify("move","forward","lineboundary")}),Y||(We.pageup=function(e){e.moveCursorToStart()},We.pagedown=function(e){e.moveCursorToEnd()}),We[re+"b"]=Me("B"),We[re+"i"]=Me("I"),We[re+"u"]=Me("U"),We[re+"shift-7"]=Me("S"),We[re+"shift-5"]=Me("SUB",{tag:"SUP"}),We[re+"shift-6"]=Me("SUP",{tag:"SUB"}),We[re+"shift-8"]=Fe("makeUnorderedList"),We[re+"shift-9"]=Fe("makeOrderedList"),We[re+"["]=Fe("decreaseQuoteLevel"),We[re+"]"]=Fe("increaseQuoteLevel"),We[re+"y"]=Fe("redo"),We[re+"z"]=Fe("undo"),We[re+"shift-z"]=Fe("redo");var ze={1:10,2:13,3:16,4:18,5:24,6:32,7:48},qe={backgroundColor:{regexp:he,replace:function(e,t){return T(e,"SPAN",{class:z,style:"background-color:"+t})}},color:{regexp:he,replace:function(e,t){return T(e,"SPAN",{class:q,style:"color:"+t})}},fontWeight:{regexp:/^bold|^700/i,replace:function(e){return T(e,"B")}},fontStyle:{regexp:/^italic/i,replace:function(e){return T(e,"I")}},fontFamily:{regexp:he,replace:function(e,t){return T(e,"SPAN",{class:K,style:"font-family:"+t})}},fontSize:{regexp:he,replace:function(e,t){return T(e,"SPAN",{class:G,style:"font-size:"+t})}},textDecoration:{regexp:/^underline/i,replace:function(e){return T(e,"U")}}},Ke=function(e){return function(t,n){var o=T(t.ownerDocument,e);return n.replaceChild(o,t),o.appendChild(S(t)),o}},Ge=function(e,t){var n,o,i,r,a,s,d=e.style,l=e.ownerDocument;for(n in qe)o=qe[n],(i=d[n])&&o.regexp.test(i)&&(s=o.replace(l,i),a||(a=s),r&&r.appendChild(s),r=s,e.style[n]="");return a&&(r.appendChild(S(e)),"SPAN"===e.nodeName?t.replaceChild(a,e):e.appendChild(a)),r||e},Ze={P:Ge,SPAN:Ge,STRONG:Ke("B"),EM:Ke("I"),INS:Ke("U"),STRIKE:Ke("S"),FONT:function(e,t){var n,o,i,r,a,s=e.face,d=e.size,l=e.color,c=e.ownerDocument;return s&&(n=T(c,"SPAN",{class:K,style:"font-family:"+s}),a=n,r=n),d&&(o=T(c,"SPAN",{class:G,style:"font-size:"+ze[d]+"px"}),a||(a=o),r&&r.appendChild(o),r=o),l&&/^#?([\dA-F]{3}){1,2}$/i.test(l)&&("#"!==l.charAt(0)&&(l="#"+l),i=T(c,"SPAN",{class:q,style:"color:"+l}),a||(a=i),r&&r.appendChild(i),r=i),a||(a=r=T(c,"SPAN")),t.replaceChild(a,e),r.appendChild(S(e)),r},TT:function(e,t){var n=T(e.ownerDocument,"SPAN",{class:K,style:'font-family:menlo,consolas,"courier new",monospace'});return t.replaceChild(n,e),n.appendChild(S(e)),n}},je=/^(?:A(?:DDRESS|RTICLE|SIDE|UDIO)|BLOCKQUOTE|CAPTION|D(?:[DLT]|IV)|F(?:IGURE|IGCAPTION|OOTER)|H[1-6]|HEADER|L(?:ABEL|EGEND|I)|O(?:L|UTPUT)|P(?:RE)?|SECTION|T(?:ABLE|BODY|D|FOOT|H|HEAD|R)|COL(?:GROUP)?|UL)$/,$e=/^(?:HEAD|META|STYLE)/,Qe=new n(null,4|W,function(){return!0}),Ve=function e(t,n){var o,i,r,s,d,l,c,h,u,f,p,g,m=t.childNodes;for(o=t;a(o);)o=o.parentNode;for(Qe.root=o,i=0,r=m.length;i<r;i+=1)if(s=m[i],d=s.nodeName,l=s.nodeType,c=Ze[d],l===w){if(h=s.childNodes.length,c)s=c(s,t);else{if($e.test(d)){t.removeChild(s),i-=1,r-=1;continue}if(!je.test(d)&&!a(s)){i-=1,r+=h-1,t.replaceChild(S(s),s);continue}}h&&e(s,n||"PRE"===d)}else{if(l===F){if(p=s.data,u=!he.test(p.charAt(0)),f=!he.test(p.charAt(p.length-1)),n||!u&&!f)continue;if(u){for(Qe.currentNode=s;(g=Qe.previousPONode())&&!("IMG"===(d=g.nodeName)||"#text"===d&&he.test(g.data));)if(!a(g)){g=null;break}p=p.replace(/^[ \t\r\n]+/g,g?" ":"")}if(f){for(Qe.currentNode=s;(g=Qe.nextNode())&&!("IMG"===d||"#text"===d&&he.test(g.data));)if(!a(g)){g=null;break}p=p.replace(/[ \t\r\n]+$/g,g?" ":"")}if(p){s.data=p;continue}}t.removeChild(s),i-=1,r-=1}return t},Ye=function e(t){for(var n,o=t.childNodes,r=o.length;r--;)n=o[r],n.nodeType!==w||i(n)?n.nodeType!==F||n.data||t.removeChild(n):(e(n),a(n)&&!n.firstChild&&t.removeChild(n))},Xe=function(e){return e.nodeType===w?"BR"===e.nodeName:he.test(e.data)},Je=function(e,t){for(var o,i=e.parentNode;a(i);)i=i.parentNode;return o=new n(i,4|W,Xe),o.currentNode=e,!!o.nextNode()||t&&!o.previousNode()},et=function(e,t,n){var o,i,r,s=e.querySelectorAll("BR"),d=[],l=s.length;for(o=0;o<l;o+=1)d[o]=Je(s[o],n);for(;l--;)i=s[l],(r=i.parentNode)&&(d[l]?a(r)||E(r,t):N(i))},tt=function(e,t,n){var o,i,r=t.ownerDocument.body;et(t,n,!0),t.setAttribute("style","position:fixed;overflow:hidden;bottom:100%;right:100%;"),r.appendChild(t),o=t.innerHTML,i=t.innerText||t.textContent,X&&(i=i.replace(/\r?\n/g,"\r\n")),e.setData("text/html",o),e.setData("text/plain",i),r.removeChild(t)},nt=function(e){var t,n,o,i,r,a,s,d=e.clipboardData,l=this.getSelection(),c=this._root,h=this;if(l.collapsed)return void e.preventDefault();if(this.saveUndoState(l),ne||V||!d)setTimeout(function(){try{h._ensureBottomLine()}catch(e){h.didError(e)}},0);else{for(t=Ae(l,c),n=Be(l,c),o=t===n&&t||c,i=be(l,c),r=l.commonAncestorContainer,r.nodeType===F&&(r=r.parentNode);r&&r!==o;)a=r.cloneNode(!1),a.appendChild(i),i=a,r=r.parentNode;s=this.createElement("div"),s.appendChild(i),tt(d,s,c),e.preventDefault()}this.setSelection(l)},ot=function(e){var t,n,o,i,r,a,s,d=e.clipboardData,l=this.getSelection(),c=this._root;if(!ne&&!V&&d){for(t=Ae(l,c),n=Be(l,c),o=t===n&&t||c,l=l.cloneRange(),xe(l),Oe(l,o,o,c),i=l.cloneContents(),r=l.commonAncestorContainer,r.nodeType===F&&(r=r.parentNode);r&&r!==o;)a=r.cloneNode(!1),a.appendChild(i),i=a,r=r.parentNode;s=this.createElement("div"),s.appendChild(i),tt(d,s,c),e.preventDefault()}},it=function(e){var t,n,o,i,r,a=e.clipboardData,s=a&&a.items,d=this.isShiftDown,l=!1,c=!1,h=null,u=this;if(ne&&s){for(t=s.length;t--;)!d&&/^image\/.*/.test(s[t].type)&&(c=!0);c||(s=null)}if(s){for(e.preventDefault(),t=s.length;t--;){if(n=s[t],o=n.type,!d&&"text/html"===o)return void n.getAsString(function(e){u.insertHTML(e,!0)});"text/plain"===o&&(h=n),!d&&/^image\/.*/.test(o)&&(c=!0)}return void(c?(this.fireEvent("dragover",{dataTransfer:a,preventDefault:function(){l=!0}}),l&&this.fireEvent("drop",{dataTransfer:a})):h&&h.getAsString(function(e){u.insertPlainText(e,!0)}))}if(i=a&&a.types,!ne&&i&&(ue.call(i,"text/html")>-1||!J&&ue.call(i,"text/plain")>-1&&ue.call(i,"text/rtf")<0))return e.preventDefault(),void(!d&&(r=a.getData("text/html"))?this.insertHTML(r,!0):((r=a.getData("text/plain"))||(r=a.getData("text/uri-list")))&&this.insertPlainText(r,!0));this._awaitingPaste=!0;var f=this._doc.body,p=this.getSelection(),g=p.startContainer,m=p.startOffset,v=p.endContainer,_=p.endOffset,C=this.createElement("DIV",{contenteditable:"true",style:"position:fixed; overflow:hidden; top:0; right:100%; width:1px; height:1px;"});f.appendChild(C),p.selectNodeContents(C),this.setSelection(p),setTimeout(function(){try{u._awaitingPaste=!1;for(var e,t,n="",o=C;C=o;)o=C.nextSibling,N(C),e=C.firstChild,e&&e===C.lastChild&&"DIV"===e.nodeName&&(C=e),n+=C.innerHTML;t=u._createRange(g,m,v,_),u.setSelection(t),n&&u.insertHTML(n,!0)}catch(e){u.didError(e)}},0)},rt=function(e){for(var t=e.dataTransfer.types,n=t.length,o=!1,i=!1;n--;)switch(t[n]){case"text/plain":o=!0;break;case"text/html":i=!0;break;default:return}(i||o)&&this.saveUndoState()},at=R.prototype,st=function(e,t,n){var o=n._doc,i=e?DOMPurify.sanitize(e,{ALLOW_UNKNOWN_PROTOCOLS:!0,WHOLE_DOCUMENT:!1,RETURN_DOM:!0,RETURN_DOM_FRAGMENT:!0}):null;return i?o.importNode(i,!0):o.createDocumentFragment()};at.setConfig=function(e){return e=B({blockTag:"DIV",blockAttributes:null,tagAttributes:{blockquote:null,ul:null,ol:null,li:null,a:null},leafNodeNames:ge,undo:{documentSizeThreshold:-1,undoLimit:-1},isInsertedHTMLSanitized:!0,isSetHTMLSanitized:!0,sanitizeToDOMFragment:"undefined"!=typeof DOMPurify&&DOMPurify.isSupported?st:null},e,!0),e.blockTag=e.blockTag.toUpperCase(),this._config=e,this},at.createElement=function(e,t,n){return T(this._doc,e,t,n)},at.createDefaultBlock=function(e){var t=this._config;return y(this.createElement(t.blockTag,t.blockAttributes,e),this._root)},at.didError=function(e){console.log(e)},at.getDocument=function(){return this._doc},at.getRoot=function(){return this._root},at.modifyDocument=function(e){var t=this._mutation;t&&(t.takeRecords().length&&this._docWasChanged(),t.disconnect()),this._ignoreAllChanges=!0,e(),this._ignoreAllChanges=!1,t&&(t.observe(this._root,{childList:!0,attributes:!0,characterData:!0,subtree:!0}),this._ignoreChange=!1)};var dt={pathChange:1,select:1,input:1,undoStateChange:1};at.fireEvent=function(e,t){var n,o,i,r=this._events[e];if(/^(?:focus|blur)/.test(e))if(n=this._root===this._doc.activeElement,"focus"===e){if(!n||this._isFocused)return this;this._isFocused=!0}else{if(n||!this._isFocused)return this;this._isFocused=!1}if(r)for(t||(t={}),t.type!==e&&(t.type=e),r=r.slice(),o=r.length;o--;){i=r[o];try{i.handleEvent?i.handleEvent(t):i.call(this,t)}catch(t){t.details="Squire: fireEvent error. Event type: "+e,this.didError(t)}}return this},at.destroy=function(){var e,t=this._events;for(e in t)this.removeEventListener(e);this._mutation&&this._mutation.disconnect(),delete this._root.__squire__,this._undoIndex=-1,this._undoStack=[],this._undoStackLength=0},at.handleEvent=function(e){this.fireEvent(e.type,e)},at.addEventListener=function(e,t){var n=this._events[e],o=this._root;return t?(n||(n=this._events[e]=[],dt[e]||("selectionchange"===e&&(o=this._doc),o.addEventListener(e,this,!0))),n.push(t),this):(this.didError({name:"Squire: addEventListener with null or undefined fn",message:"Event type: "+e}),this)},at.removeEventListener=function(e,t){var n,o=this._events[e],i=this._root;if(o){if(t)for(n=o.length;n--;)o[n]===t&&o.splice(n,1);else o.length=0;o.length||(delete this._events[e],dt[e]||("selectionchange"===e&&(i=this._doc),i.removeEventListener(e,this,!0)))}return this},at._createRange=function(e,t,n,o){if(e instanceof this._win.Range)return e.cloneRange();var i=this._doc.createRange();return i.setStart(e,t),n?i.setEnd(n,o):i.setEnd(e,t),i},at.getCursorPosition=function(e){if(!e&&!(e=this.getSelection())||!e.getBoundingClientRect)return null;var t,n,o=e.getBoundingClientRect();return o&&!o.top&&(this._ignoreChange=!0,t=this._doc.createElement("SPAN"),t.textContent=Z,ye(e,t),o=t.getBoundingClientRect(),n=t.parentNode,n.removeChild(t),L(n,e)),o},at._moveCursorTo=function(e){var t=this._root,n=this._createRange(t,e?0:t.childNodes.length);return xe(n),this.setSelection(n),this},at.moveCursorToStart=function(){return this._moveCursorTo(!0)},at.moveCursorToEnd=function(){return this._moveCursorTo(!1)};var lt=function(e){return e._win.getSelection()||null};at.setSelection=function(e){if(e)if(this._lastSelection=e,this._isFocused)if(Q&&!this._restoreSelection)D.call(this),this.blur(),this.focus();else{V&&this._win.focus();var t=lt(this);t&&(t.removeAllRanges(),t.addRange(e))}else D.call(this);return this},at.getSelection=function(){var e,t,n,o,r=lt(this),a=this._root;return this._isFocused&&r&&r.rangeCount&&(e=r.getRangeAt(0).cloneRange(),t=e.startContainer,n=e.endContainer,t&&i(t)&&e.setStartBefore(t),n&&i(n)&&e.setEndBefore(n)),e&&m(a,e.commonAncestorContainer)?this._lastSelection=e:(e=this._lastSelection,o=e.commonAncestorContainer,m(o.ownerDocument,o)||(e=null)),e||(e=this._createRange(a.firstChild,0)),e},at.getSelectedText=function(){var e=this.getSelection();if(!e||e.collapsed)return"";var t,o=new n(e.commonAncestorContainer,4|W,function(t){return Le(e,t,!0)}),i=e.startContainer,r=e.endContainer,s=o.currentNode=i,d="",l=!1;for(o.filter(s)||(s=o.nextNode());s;)s.nodeType===F?(t=s.data)&&/\S/.test(t)&&(s===r&&(t=t.slice(0,e.endOffset)),s===i&&(t=t.slice(e.startOffset)),d+=t,l=!0):("BR"===s.nodeName||l&&!a(s))&&(d+="\n",l=!1),s=o.nextNode();return d},at.getPath=function(){return this._path};var ct=function(e,t){for(var o,i,r,s=new n(e,4,function(){return!0},!1);i=s.nextNode();)for(;(r=i.data.indexOf(Z))>-1&&(!t||i.parentNode!==t);){if(1===i.length){do{o=i.parentNode,o.removeChild(i),i=o,s.currentNode=o}while(a(i)&&!_(i));break}i.deleteData(r,1)}};at._didAddZWS=function(){this._hasZWS=!0},at._removeZWS=function(){this._hasZWS&&(ct(this._root),this._hasZWS=!1)},at._updatePath=function(e,t){if(e){var n,o=e.startContainer,i=e.endContainer;(t||o!==this._lastAnchorNode||i!==this._lastFocusNode)&&(this._lastAnchorNode=o,this._lastFocusNode=i,n=o&&i?o===i?v(i,this._root):"(selection)":"",this._path!==n&&(this._path=n,this.fireEvent("pathChange",{path:n}))),this.fireEvent(e.collapsed?"cursor":"select",{range:e})}},at._updatePathOnEvent=function(e){var t=this;t._isFocused&&!t._willUpdatePath&&(t._willUpdatePath=!0,setTimeout(function(){t._willUpdatePath=!1,t._updatePath(t.getSelection())},0))},at.focus=function(){return this._root.focus(),ie&&this.fireEvent("focus"),this},at.blur=function(){return this._root.blur(),ie&&this.fireEvent("blur"),this};var ht="squire-selection-end";at._saveRangeToBookmark=function(e){var t,n=this.createElement("INPUT",{id:"squire-selection-start",type:"hidden"}),o=this.createElement("INPUT",{id:ht,type:"hidden"});ye(e,n),e.collapse(!1),ye(e,o),2&n.compareDocumentPosition(o)&&(n.id=ht,o.id="squire-selection-start",t=n,n=o,o=t),e.setStartAfter(n),e.setEndBefore(o)},at._getRangeAndRemoveBookmark=function(e){var t=this._root,n=t.querySelector("#squire-selection-start"),o=t.querySelector("#"+ht);if(n&&o){var i=n.parentNode,r=o.parentNode,a=ue.call(i.childNodes,n),s=ue.call(r.childNodes,o);i===r&&(s-=1),N(n),N(o),e||(e=this._doc.createRange()),e.setStart(i,a),e.setEnd(r,s),L(i,e),i!==r&&L(r,e),e.collapsed&&(i=e.startContainer,i.nodeType===F&&(r=i.childNodes[e.startOffset],r&&r.nodeType===F||(r=i.childNodes[e.startOffset-1]),r&&r.nodeType===F&&(e.setStart(r,0),e.collapse(!0))))}return e||null},at._keyUpDetectChange=function(e){var t=e.keyCode;e.ctrlKey||e.metaKey||e.altKey||!(t<16||t>20)||!(t<33||t>45)||this._docWasChanged()},at._docWasChanged=function(){if(ce&&(Ce=new WeakMap),!this._ignoreAllChanges){if(le&&this._ignoreChange)return void(this._ignoreChange=!1)
 ;this._isInUndoState&&(this._isInUndoState=!1,this.fireEvent("undoStateChange",{canUndo:!0,canRedo:!1})),this.fireEvent("input")}},at._recordUndoState=function(e,t){if(!this._isInUndoState||t){var n,o=this._undoIndex,i=this._undoStack,r=this._config.undo,a=r.documentSizeThreshold,s=r.undoLimit;t||(o+=1),o<this._undoStackLength&&(i.length=this._undoStackLength=o),e&&this._saveRangeToBookmark(e),n=this._getHTML(),a>-1&&2*n.length>a&&s>-1&&o>s&&(i.splice(0,o-s),o=s,this._undoStackLength=s),i[o]=n,this._undoIndex=o,this._undoStackLength+=1,this._isInUndoState=!0}},at.saveUndoState=function(e){return e===t&&(e=this.getSelection()),this._recordUndoState(e,this._isInUndoState),this._getRangeAndRemoveBookmark(e),this},at.undo=function(){if(0!==this._undoIndex||!this._isInUndoState){this._recordUndoState(this.getSelection(),!1),this._undoIndex-=1,this._setHTML(this._undoStack[this._undoIndex]);var e=this._getRangeAndRemoveBookmark();e&&this.setSelection(e),this._isInUndoState=!0,this.fireEvent("undoStateChange",{canUndo:0!==this._undoIndex,canRedo:!0}),this.fireEvent("input")}return this},at.redo=function(){var e=this._undoIndex,t=this._undoStackLength;if(e+1<t&&this._isInUndoState){this._undoIndex+=1,this._setHTML(this._undoStack[this._undoIndex]);var n=this._getRangeAndRemoveBookmark();n&&this.setSelection(n),this.fireEvent("undoStateChange",{canUndo:!0,canRedo:e+2<t}),this.fireEvent("input")}return this},at.hasFormat=function(e,t,o){if(e=e.toUpperCase(),t||(t={}),!o&&!(o=this.getSelection()))return!1;!o.collapsed&&o.startContainer.nodeType===F&&o.startOffset===o.startContainer.length&&o.startContainer.nextSibling&&o.setStartBefore(o.startContainer.nextSibling),!o.collapsed&&o.endContainer.nodeType===F&&0===o.endOffset&&o.endContainer.previousSibling&&o.setEndAfter(o.endContainer.previousSibling);var i,r,a=this._root,s=o.commonAncestorContainer;if(g(s,a,e,t))return!0;if(s.nodeType===F)return!1;i=new n(s,4,function(e){return Le(o,e,!0)},!1);for(var d=!1;r=i.nextNode();){if(!g(r,a,e,t))return!1;d=!0}return d},at.getFontInfo=function(e){var n,o,i,r={color:t,backgroundColor:t,family:t,size:t},a=0;if(!e&&!(e=this.getSelection()))return r;if(n=e.commonAncestorContainer,e.collapsed||n.nodeType===F)for(n.nodeType===F&&(n=n.parentNode);a<4&&n;)(o=n.style)&&(!r.color&&(i=o.color)&&(r.color=i,a+=1),!r.backgroundColor&&(i=o.backgroundColor)&&(r.backgroundColor=i,a+=1),!r.family&&(i=o.fontFamily)&&(r.family=i,a+=1),!r.size&&(i=o.fontSize)&&(r.size=i,a+=1)),n=n.parentNode;return r},at._addFormat=function(e,t,o){var i,r,s,d,l,c,h,u,f=this._root;if(o.collapsed){for(i=y(this.createElement(e,t),f),ye(o,i),o.setStart(i.firstChild,i.firstChild.length),o.collapse(!0),u=i;a(u);)u=u.parentNode;ct(u,i)}else{if(r=new n(o.commonAncestorContainer,4|W,function(e){return(e.nodeType===F||"BR"===e.nodeName||"IMG"===e.nodeName)&&Le(o,e,!0)},!1),s=o.startContainer,l=o.startOffset,d=o.endContainer,c=o.endOffset,r.currentNode=s,r.filter(s)||(s=r.nextNode(),l=0),!s)return o;do{h=r.currentNode,!g(h,f,e,t)&&(h===d&&h.length>c&&h.splitText(c),h===s&&l&&(h=h.splitText(l),d===s&&(d=h,c-=l),s=h,l=0),i=this.createElement(e,t),C(h,i),i.appendChild(h))}while(r.nextNode());d.nodeType!==F&&(h.nodeType===F?(d=h,c=h.length):(d=h.parentNode,c=1)),o=this._createRange(s,l,d,c)}return o},at._removeFormat=function(e,t,n,o){this._saveRangeToBookmark(n);var i,r=this._doc;n.collapsed&&(se?(i=r.createTextNode(Z),this._didAddZWS()):i=r.createTextNode(""),ye(n,i));for(var s=n.commonAncestorContainer;a(s);)s=s.parentNode;var d=n.startContainer,l=n.startOffset,c=n.endContainer,h=n.endOffset,u=[],f=function(e,t){if(!Le(n,e,!1)){var o,i,r=e.nodeType===F;if(!Le(n,e,!0))return void("INPUT"===e.nodeName||r&&!e.data||u.push([t,e]));if(r)e===c&&h!==e.length&&u.push([t,e.splitText(h)]),e===d&&l&&(e.splitText(l),u.push([t,e]));else for(o=e.firstChild;o;o=i)i=o.nextSibling,f(o,t)}},g=Array.prototype.filter.call(s.getElementsByTagName(e),function(o){return Le(n,o,!0)&&p(o,e,t)});return o||g.forEach(function(e){f(e,e)}),u.forEach(function(e){var t=e[0].cloneNode(!1),n=e[1];C(n,t),t.appendChild(n)}),g.forEach(function(e){C(e,S(e))}),this._getRangeAndRemoveBookmark(n),i&&n.collapse(!1),L(s,n),n},at.changeFormat=function(e,t,n,o){return n||(n=this.getSelection())?(this.saveUndoState(n),t&&(n=this._removeFormat(t.tag.toUpperCase(),t.attributes||{},n,o)),e&&(n=this._addFormat(e.tag.toUpperCase(),e.attributes||{},n)),this.setSelection(n),this._updatePath(n,!0),le||this._docWasChanged(),this):this};var ut={DT:"DD",DD:"DT",LI:"LI",PRE:"PRE"},ft=function(e,t,n,o){var i=ut[t.nodeName],r=null,a=b(n,o,t.parentNode,e._root),s=e._config;return i||(i=s.blockTag,r=s.blockAttributes),p(a,i,r)||(t=T(a.ownerDocument,i,r),a.dir&&(t.dir=a.dir),C(a,t),t.appendChild(S(a)),a=t),a};at.forEachBlock=function(e,t,n){if(!n&&!(n=this.getSelection()))return this;t&&this.saveUndoState(n);var o=this._root,i=Ae(n,o),r=Be(n,o);if(i&&r)do{if(e(i)||i===r)break}while(i=h(i,o));return t&&(this.setSelection(n),this._updatePath(n,!0),le||this._docWasChanged()),this},at.modifyBlocks=function(e,t){if(!t&&!(t=this.getSelection()))return this;this._recordUndoState(t,this._isInUndoState);var n,o=this._root;return Pe(t,o),Oe(t,o,o,o),n=Ee(t,o,o),ye(t,e.call(this,n)),t.endOffset<t.endContainer.childNodes.length&&O(t.endContainer.childNodes[t.endOffset],o),O(t.startContainer.childNodes[t.startOffset],o),this._getRangeAndRemoveBookmark(t),this.setSelection(t),this._updatePath(t,!0),le||this._docWasChanged(),this};var pt=function(e){return this.createElement("BLOCKQUOTE",this._config.tagAttributes.blockquote,[e])},gt=function(e){var t=this._root,n=e.querySelectorAll("blockquote");return Array.prototype.filter.call(n,function(e){return!g(e.parentNode,t,"BLOCKQUOTE")}).forEach(function(e){C(e,S(e))}),e},mt=function(){return this.createDefaultBlock([this.createElement("INPUT",{id:"squire-selection-start",type:"hidden"}),this.createElement("INPUT",{id:ht,type:"hidden"})])},vt=function(e,t,n){for(var o,i,r,a,s=l(t,e._root),d=e._config.tagAttributes,c=d[n.toLowerCase()],h=d.li;o=s.nextNode();)"LI"===o.parentNode.nodeName&&(o=o.parentNode,s.currentNode=o.lastChild),"LI"!==o.nodeName?(a=e.createElement("LI",h),o.dir&&(a.dir=o.dir),(r=o.previousSibling)&&r.nodeName===n?(r.appendChild(a),N(o)):C(o,e.createElement(n,c,[a])),a.appendChild(S(o)),s.currentNode=a):(o=o.parentNode,(i=o.nodeName)!==n&&/^[OU]L$/.test(i)&&C(o,e.createElement(n,c,[S(o)])))},_t=function(e){return vt(this,e,"UL"),e},Nt=function(e){return vt(this,e,"OL"),e},Ct=function(e){var t,n,o,i,r,a=e.querySelectorAll("UL, OL"),d=e.querySelectorAll("LI"),l=this._root;for(t=0,n=a.length;t<n;t+=1)o=a[t],i=S(o),E(i,l),C(o,i);for(t=0,n=d.length;t<n;t+=1)r=d[t],s(r)?C(r,this.createDefaultBlock([S(r)])):(E(r,l),C(r,S(r)));return e},St=function(e,t){for(var n=e.commonAncestorContainer,o=e.startContainer,i=e.endContainer;n&&n!==t&&!/^[OU]L$/.test(n.nodeName);)n=n.parentNode;if(!n||n===t)return null;for(o===n&&(o=o.childNodes[e.startOffset]),i===n&&(i=i.childNodes[e.endOffset]);o&&o.parentNode!==n;)o=o.parentNode;for(;i&&i.parentNode!==n;)i=i.parentNode;return[n,o,i]};at.increaseListLevel=function(e){if(!e&&!(e=this.getSelection()))return this.focus();var t=this._root,n=St(e,t);if(!n)return this.focus();var o=n[0],i=n[1],r=n[2];if(!i||i===o.firstChild)return this.focus();this._recordUndoState(e,this._isInUndoState);var a,s,d=o.nodeName,l=i.previousSibling;l.nodeName!==d&&(a=this._config.tagAttributes[d.toLowerCase()],l=this.createElement(d,a),o.insertBefore(l,i));do{s=i===r?null:i.nextSibling,l.appendChild(i)}while(i=s);return s=l.nextSibling,s&&O(s,t),this._getRangeAndRemoveBookmark(e),this.setSelection(e),this._updatePath(e,!0),le||this._docWasChanged(),this.focus()},at.decreaseListLevel=function(e){if(!e&&!(e=this.getSelection()))return this.focus();var t=this._root,n=St(e,t);if(!n)return this.focus();var o=n[0],i=n[1],r=n[2];i||(i=o.firstChild),r||(r=o.lastChild),this._recordUndoState(e,this._isInUndoState);var a,s=o.parentNode,d=r.nextSibling?b(o,r.nextSibling,s,t):o.nextSibling;if(s!==t&&"LI"===s.nodeName){for(s=s.parentNode;d;)a=d.nextSibling,r.appendChild(d),d=a;d=o.parentNode.nextSibling}var l=!/^[OU]L$/.test(s.nodeName);do{a=i===r?null:i.nextSibling,o.removeChild(i),l&&"LI"===i.nodeName&&(i=this.createDefaultBlock([S(i)])),s.insertBefore(i,d)}while(i=a);return o.firstChild||N(o),d&&O(d,t),this._getRangeAndRemoveBookmark(e),this.setSelection(e),this._updatePath(e,!0),le||this._docWasChanged(),this.focus()},at._ensureBottomLine=function(){var e=this._root,t=e.lastElementChild;t&&t.nodeName===this._config.blockTag&&s(t)||e.appendChild(this.createDefaultBlock())},at.setKeyHandler=function(e,t){return this._keyHandlers[e]=t,this},at._getHTML=function(){return this._root.innerHTML},at._setHTML=function(e){var t=this._root,n=t;n.innerHTML=e;do{y(n,t)}while(n=h(n,t));this._ignoreChange=!0},at.getHTML=function(e){var t,n,o,i,r,a,s=[];if(e&&(a=this.getSelection())&&this._saveRangeToBookmark(a),ae)for(t=this._root,n=t;n=h(n,t);)n.textContent||n.querySelector("BR")||(o=this.createElement("BR"),n.appendChild(o),s.push(o));if(i=this._getHTML().replace(/\u200B/g,""),ae)for(r=s.length;r--;)N(s[r]);return a&&this._getRangeAndRemoveBookmark(a),i},at.setHTML=function(e){var t,n,o,i=this._config,r=i.isSetHTMLSanitized?i.sanitizeToDOMFragment:null,a=this._root;"function"==typeof r?n=r(e,!1,this):(t=this.createElement("DIV"),t.innerHTML=e,n=this._doc.createDocumentFragment(),n.appendChild(S(t))),Ve(n),et(n,a,!1),E(n,a);for(var s=n;s=h(s,a);)y(s,a);for(this._ignoreChange=!0;o=a.lastChild;)a.removeChild(o);a.appendChild(n),y(a,a),this._undoIndex=-1,this._undoStack.length=0,this._undoStackLength=0,this._isInUndoState=!1;var d=this._getRangeAndRemoveBookmark()||this._createRange(a.firstChild,0);return this.saveUndoState(d),this._lastSelection=d,D.call(this),this._updatePath(d,!0),this},at.insertElement=function(e,t){if(t||(t=this.getSelection()),t.collapse(!0),a(e))ye(t,e),t.setStartAfter(e);else{for(var n,o,i=this._root,r=Ae(t,i)||i;r!==i&&!r.nextSibling;)r=r.parentNode;r!==i&&(n=r.parentNode,o=b(n,r.nextSibling,i,i)),o?i.insertBefore(e,o):(i.appendChild(e),o=this.createDefaultBlock(),i.appendChild(o)),t.setStart(o,0),t.setEnd(o,0),xe(t)}return this.focus(),this.setSelection(t),this._updatePath(t),le||this._docWasChanged(),this},at.insertImage=function(e,t){var n=this.createElement("IMG",B({src:e},t,!0));return this.insertElement(n),n};var Tt=/\b((?:(?:ht|f)tps?:\/\/|www\d{0,3}[.]|[a-z0-9.\-]+[.][a-z]{2,}\/)(?:[^\s()<>]+|\([^\s()<>]+\))+(?:\((?:[^\s()<>]+|(?:\([^\s()<>]+\)))*\)|[^\s`!()\[\]{};:'".,<>?«»“”‘’]))|([\w\-.%+]+@(?:[\w\-]+\.)+[A-Z]{2,}\b)/i,yt=function(e,t,o){for(var i,r,a,s,d,l,c,h=e.ownerDocument,u=new n(e,4,function(e){return!g(e,t,"A")},!1),f=o._config.tagAttributes.a;i=u.nextNode();)for(r=i.data,a=i.parentNode;s=Tt.exec(r);)d=s.index,l=d+s[0].length,d&&(c=h.createTextNode(r.slice(0,d)),a.insertBefore(c,i)),c=o.createElement("A",B({href:s[1]?/^(?:ht|f)tps?:/.test(s[1])?s[1]:"http://"+s[1]:"mailto:"+s[2]},f,!1)),c.textContent=r.slice(d,l),a.insertBefore(c,i),i.data=r=r.slice(l)};at.insertHTML=function(e,t){var n,o,i,r,a,s,d,l=this._config,c=l.isInsertedHTMLSanitized?l.sanitizeToDOMFragment:null,u=this.getSelection(),f=this._doc;"function"==typeof c?r=c(e,t,this):(t&&(n=e.indexOf("\x3c!--StartFragment--\x3e"),o=e.lastIndexOf("\x3c!--EndFragment--\x3e"),n>-1&&o>-1&&(e=e.slice(n+20,o))),/<\/td>((?!<\/tr>)[\s\S])*$/i.test(e)&&(e="<TR>"+e+"</TR>"),/<\/tr>((?!<\/table>)[\s\S])*$/i.test(e)&&(e="<TABLE>"+e+"</TABLE>"),i=this.createElement("DIV"),i.innerHTML=e,r=f.createDocumentFragment(),r.appendChild(S(i))),this.saveUndoState(u);try{for(a=this._root,s=r,d={fragment:r,preventDefault:function(){this.defaultPrevented=!0},defaultPrevented:!1},yt(r,r,this),Ve(r),et(r,a,!1),Ye(r),r.normalize();s=h(s,r);)y(s,a);t&&this.fireEvent("willPaste",d),d.defaultPrevented||(ke(u,d.fragment,a),le||this._docWasChanged(),u.collapse(!1),this._ensureBottomLine()),this.setSelection(u),this._updatePath(u,!0),t&&this.focus()}catch(e){this.didError(e)}return this};var Et=function(e){return e.split("&").join("&amp;").split("<").join("&lt;").split(">").join("&gt;").split('"').join("&quot;")};at.insertPlainText=function(e,t){var n,o,i,r,a=e.split("\n"),s=this._config,d=s.blockTag,l=s.blockAttributes,c="</"+d+">",h="<"+d;for(n in l)h+=" "+n+'="'+Et(l[n])+'"';for(h+=">",o=0,i=a.length;o<i;o+=1)r=a[o],r=Et(r).replace(/ (?= )/g,"&nbsp;"),a[o]=h+(r||"<BR>")+c;return this.insertHTML(a.join(""),t)};var bt=function(e,t,n){return function(){return this[e](t,n),this.focus()}};at.addStyles=function(e){if(e){var t=this._doc.documentElement.firstChild,n=this.createElement("STYLE",{type:"text/css"});n.appendChild(this._doc.createTextNode(e)),t.appendChild(n)}return this},at.bold=bt("changeFormat",{tag:"B"}),at.italic=bt("changeFormat",{tag:"I"}),at.underline=bt("changeFormat",{tag:"U"}),at.strikethrough=bt("changeFormat",{tag:"S"}),at.subscript=bt("changeFormat",{tag:"SUB"},{tag:"SUP"}),at.superscript=bt("changeFormat",{tag:"SUP"},{tag:"SUB"}),at.removeBold=bt("changeFormat",null,{tag:"B"}),at.removeItalic=bt("changeFormat",null,{tag:"I"}),at.removeUnderline=bt("changeFormat",null,{tag:"U"}),at.removeStrikethrough=bt("changeFormat",null,{tag:"S"}),at.removeSubscript=bt("changeFormat",null,{tag:"SUB"}),at.removeSuperscript=bt("changeFormat",null,{tag:"SUP"}),at.makeLink=function(e,t){var n=this.getSelection();if(n.collapsed){var o=e.indexOf(":")+1;if(o)for(;"/"===e[o];)o+=1;ye(n,this._doc.createTextNode(e.slice(o)))}return t=B(B({href:e},t,!0),this._config.tagAttributes.a,!1),this.changeFormat({tag:"A",attributes:t},{tag:"A"},n),this.focus()},at.removeLink=function(){return this.changeFormat(null,{tag:"A"},this.getSelection(),!0),this.focus()},at.setFontFace=function(e){return this.changeFormat(e?{tag:"SPAN",attributes:{class:K,style:"font-family: "+e+", sans-serif;"}}:null,{tag:"SPAN",attributes:{class:K}}),this.focus()},at.setFontSize=function(e){return this.changeFormat(e?{tag:"SPAN",attributes:{class:G,style:"font-size: "+("number"==typeof e?e+"px":e)}}:null,{tag:"SPAN",attributes:{class:G}}),this.focus()},at.setTextColour=function(e){return this.changeFormat(e?{tag:"SPAN",attributes:{class:q,style:"color:"+e}}:null,{tag:"SPAN",attributes:{class:q}}),this.focus()},at.setHighlightColour=function(e){return this.changeFormat(e?{tag:"SPAN",attributes:{class:z,style:"background-color:"+e}}:e,{tag:"SPAN",attributes:{class:z}}),this.focus()},at.setTextAlignment=function(e){return this.forEachBlock(function(t){var n=t.className.split(/\s+/).filter(function(e){return!!e&&!/^align/.test(e)}).join(" ");e?(t.className=n+" align-"+e,t.style.textAlign=e):(t.className=n,t.style.textAlign="")},!0),this.focus()},at.setTextDirection=function(e){return this.forEachBlock(function(t){e?t.dir=e:t.removeAttribute("dir")},!0),this.focus()},at.removeAllFormatting=function(e){if(!e&&!(e=this.getSelection())||e.collapsed)return this;for(var t=this._root,n=e.commonAncestorContainer;n&&!s(n);)n=n.parentNode;if(n||(Pe(e,t),n=t),n.nodeType===F)return this;this.saveUndoState(e),Oe(e,n,n,t);for(var o,i,r=n.ownerDocument,a=e.startContainer,d=e.startOffset,l=e.endContainer,c=e.endOffset,h=r.createDocumentFragment(),u=r.createDocumentFragment(),f=b(l,c,n,t),p=b(a,d,n,t);p!==f;)o=p.nextSibling,h.appendChild(p),p=o;return I(this,h,u),u.normalize(),p=u.firstChild,o=u.lastChild,i=n.childNodes,p?(n.insertBefore(u,f),d=ue.call(i,p),c=ue.call(i,o)+1):(d=ue.call(i,f),c=d),e.setStart(n,d),e.setEnd(n,c),L(n,e),xe(e),this.setSelection(e),this._updatePath(e,!0),this.focus()},at.increaseQuoteLevel=bt("modifyBlocks",pt),at.decreaseQuoteLevel=bt("modifyBlocks",gt),at.makeUnorderedList=bt("modifyBlocks",_t),at.makeOrderedList=bt("modifyBlocks",Nt),at.removeList=bt("modifyBlocks",Ct),R.isInline=a,R.isBlock=s,R.isContainer=d,R.getBlockWalker=l,R.getPreviousBlock=c,R.getNextBlock=h,R.areAlike=f,R.hasTagAttributes=p,R.getNearest=g,R.isOrContains=m,R.detach=N,R.replaceWith=C,R.empty=S,R.getNodeBefore=Se,R.getNodeAfter=Te,R.insertNodeInRange=ye,R.extractContentsOfRange=Ee,R.deleteContentsOfRange=be,R.insertTreeFragmentIntoRange=ke,R.isNodeContainedInRange=Le,R.moveRangeBoundariesDownTree=xe,R.moveRangeBoundariesUpTree=Oe,R.getStartBlockOfRange=Ae,R.getEndBlockOfRange=Be,R.contentWalker=Re,R.rangeDoesStartAtBlockBoundary=De,R.rangeDoesEndAtBlockBoundary=Ue,R.expandRangeToBlockBoundaries=Pe,R.onPaste=it,R.addLinks=yt,R.splitBlock=ft,R.startSelectionId="squire-selection-start",R.endSelectionId=ht, true?module.exports=R:"function"==typeof define&&define.amd?define(function(){return R}):(j.Squire=R,top!==j&&"true"===e.documentElement.getAttribute("data-squireinit")&&(j.editor=new R(e),j.onEditorLoad&&(j.onEditorLoad(j.editor),j.onEditorLoad=null)))}(document);
 
 /***/ }),
-/* 275 */
+/* 276 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-var Viewer = __webpack_require__(276);
+var Viewer = __webpack_require__(23);
 var Editor = __webpack_require__(4);
 
 /* harmony default export */ __webpack_exports__["a"] = ({
@@ -101347,3715 +105038,40 @@ var Editor = __webpack_require__(4);
 });
 
 /***/ }),
-/* 276 */
-/***/ (function(module, exports, __webpack_require__) {
-
-/*!
- * tui-editor
- * @version 1.0.3
- * @author NHN Ent. FE Development Lab <dl_javascript@nhnent.com> (https://nhnent.github.io/tui.editor/)
- * @license MIT
- */
-(function webpackUniversalModuleDefinition(root, factory) {
-	if(true)
-		module.exports = factory(__webpack_require__(3), __webpack_require__(11), __webpack_require__(12), __webpack_require__(21), __webpack_require__(22));
-	else if(typeof define === 'function' && define.amd)
-		define(["jquery", "tui-code-snippet", "markdown-it", "to-mark", "highlight.js"], factory);
-	else if(typeof exports === 'object')
-		exports["Editor"] = factory(require("jquery"), require("tui-code-snippet"), require("markdown-it"), require("to-mark"), require("highlight.js"));
-	else
-		root["tui"] = root["tui"] || {}, root["tui"]["Editor"] = factory(root["$"], (root["tui"] && root["tui"]["util"]), root["markdownit"], root["toMark"], root["hljs"]);
-})(typeof self !== 'undefined' ? self : this, function(__WEBPACK_EXTERNAL_MODULE_0__, __WEBPACK_EXTERNAL_MODULE_1__, __WEBPACK_EXTERNAL_MODULE_19__, __WEBPACK_EXTERNAL_MODULE_20__, __WEBPACK_EXTERNAL_MODULE_28__) {
-return /******/ (function(modules) { // webpackBootstrap
-/******/ 	// The module cache
-/******/ 	var installedModules = {};
-/******/
-/******/ 	// The require function
-/******/ 	function __webpack_require__(moduleId) {
-/******/
-/******/ 		// Check if module is in cache
-/******/ 		if(installedModules[moduleId]) {
-/******/ 			return installedModules[moduleId].exports;
-/******/ 		}
-/******/ 		// Create a new module (and put it into the cache)
-/******/ 		var module = installedModules[moduleId] = {
-/******/ 			i: moduleId,
-/******/ 			l: false,
-/******/ 			exports: {}
-/******/ 		};
-/******/
-/******/ 		// Execute the module function
-/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
-/******/
-/******/ 		// Flag the module as loaded
-/******/ 		module.l = true;
-/******/
-/******/ 		// Return the exports of the module
-/******/ 		return module.exports;
-/******/ 	}
-/******/
-/******/
-/******/ 	// expose the modules object (__webpack_modules__)
-/******/ 	__webpack_require__.m = modules;
-/******/
-/******/ 	// expose the module cache
-/******/ 	__webpack_require__.c = installedModules;
-/******/
-/******/ 	// define getter function for harmony exports
-/******/ 	__webpack_require__.d = function(exports, name, getter) {
-/******/ 		if(!__webpack_require__.o(exports, name)) {
-/******/ 			Object.defineProperty(exports, name, {
-/******/ 				configurable: false,
-/******/ 				enumerable: true,
-/******/ 				get: getter
-/******/ 			});
-/******/ 		}
-/******/ 	};
-/******/
-/******/ 	// getDefaultExport function for compatibility with non-harmony modules
-/******/ 	__webpack_require__.n = function(module) {
-/******/ 		var getter = module && module.__esModule ?
-/******/ 			function getDefault() { return module['default']; } :
-/******/ 			function getModuleExports() { return module; };
-/******/ 		__webpack_require__.d(getter, 'a', getter);
-/******/ 		return getter;
-/******/ 	};
-/******/
-/******/ 	// Object.prototype.hasOwnProperty.call
-/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
-/******/
-/******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "dist/";
-/******/
-/******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 125);
-/******/ })
-/************************************************************************/
-/******/ ({
-
-/***/ 0:
-/***/ (function(module, exports) {
-
-module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
-
-/***/ }),
-
-/***/ 1:
-/***/ (function(module, exports) {
-
-module.exports = __WEBPACK_EXTERNAL_MODULE_1__;
-
-/***/ }),
-
-/***/ 10:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); /**
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * @fileoverview Implements preview
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * @author NHN Ent. FE Development Lab <dl_javascript@nhnent.com>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      */
-
-
-var _jquery = __webpack_require__(0);
-
-var _jquery2 = _interopRequireDefault(_jquery);
-
-var _lazyRunner = __webpack_require__(16);
-
-var _lazyRunner2 = _interopRequireDefault(_lazyRunner);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-/**
- * Class Preview
- **/
-var Preview = function () {
-  /**
-   * Creates an instance of Preview.
-   * @param {jQuery} $el Container element for preview
-   * @param {EventManager} eventManager Event manager instance
-   * @param {Convertor} convertor Convertor instance
-   * @param {boolean} isViewer - whether viewer mode or not
-   * @memberof Preview
-   */
-  function Preview($el, eventManager, convertor, isViewer) {
-    _classCallCheck(this, Preview);
-
-    this.eventManager = eventManager;
-    this.convertor = convertor;
-    this.$el = $el;
-    this.isViewer = !!isViewer;
-
-    this._initContentSection();
-
-    this.lazyRunner = new _lazyRunner2.default();
-
-    this.lazyRunner.registerLazyRunFunction('refresh', this.refresh, 800, this);
-  }
-
-  /**
-   * Initialize content selection
-   * @private
-   */
-
-
-  _createClass(Preview, [{
-    key: '_initContentSection',
-    value: function _initContentSection() {
-      this._$previewContent = (0, _jquery2.default)('<div class="tui-editor-contents" />');
-      this.$el.append(this._$previewContent);
-    }
-
-    /**
-     * Refresh rendering
-     * @memberof Preview
-     * @param {string} markdown Markdown text
-     */
-
-  }, {
-    key: 'refresh',
-    value: function refresh(markdown) {
-      this.render(this.convertor.toHTMLWithCodeHightlight(markdown));
-    }
-
-    /**
-     * get html string
-     * @returns {string} - html preview string
-     * @memberof Preview
-     */
-
-  }, {
-    key: 'getHTML',
-    value: function getHTML() {
-      return this._$previewContent.html();
-    }
-
-    /**
-     * set html string
-     * @param {string} html - html preview string
-     * @memberof Preview
-     */
-
-  }, {
-    key: 'setHTML',
-    value: function setHTML(html) {
-      this._$previewContent.html(html);
-    }
-
-    /**
-     * Render HTML on preview
-     * @memberof Preview
-     * @param {string} html HTML string
-     * @protected
-     */
-
-  }, {
-    key: 'render',
-    value: function render(html) {
-      var _$previewContent = this._$previewContent;
-
-      html = this.eventManager.emit('previewBeforeHook', html) || html;
-
-      _$previewContent.empty();
-      _$previewContent.html(html);
-    }
-
-    /**
-     * Set preview height
-     * @memberof Preview
-     * @param {number} height - Height for preview container
-     */
-
-  }, {
-    key: 'setHeight',
-    value: function setHeight(height) {
-      this.$el.get(0).style.height = height + 'px';
-    }
-
-    /**
-     * set min height
-     * @param {number} minHeight - min height
-     * @memberof Preview
-     */
-
-  }, {
-    key: 'setMinHeight',
-    value: function setMinHeight(minHeight) {
-      this.$el.get(0).style.minHeight = minHeight + 'px';
-    }
-
-    /**
-     * Is Preview visible
-     * @returns {boolean} result
-     */
-
-  }, {
-    key: 'isVisible',
-    value: function isVisible() {
-      return this.$el.css('display') !== 'none';
-    }
-  }]);
-
-  return Preview;
-}();
-
-exports.default = Preview;
-
-/***/ }),
-
-/***/ 11:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _jquery = __webpack_require__(0);
-
-var _jquery2 = _interopRequireDefault(_jquery);
-
-var _tuiCodeSnippet = __webpack_require__(1);
-
-var _tuiCodeSnippet2 = _interopRequireDefault(_tuiCodeSnippet);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-/**
- * @fileoverview Implements htmlSanitizer
- * @author NHN Ent. FE Development Lab <dl_javascript@nhnent.com>
- */
-var HTML_ATTR_LIST_RX = new RegExp('^(abbr|align|alt|axis|bgcolor|border|cellpadding|cellspacing|class|clear|' + 'color|cols|compact|coords|dir|face|headers|height|hreflang|hspace|' + 'ismap|lang|language|nohref|nowrap|rel|rev|rows|rules|' + 'scope|scrolling|shape|size|span|start|summary|tabindex|target|title|type|' + 'valign|value|vspace|width|checked|mathvariant|encoding|id|name|' + 'background|cite|href|longdesc|src|usemap|xlink:href|data-+|checked|style)', 'g');
-
-var SVG_ATTR_LIST_RX = new RegExp('^(accent-height|accumulate|additive|alphabetic|arabic-form|ascent|' + 'baseProfile|bbox|begin|by|calcMode|cap-height|class|color|color-rendering|content|' + 'cx|cy|d|dx|dy|descent|display|dur|end|fill|fill-rule|font-family|font-size|font-stretch|' + 'font-style|font-variant|font-weight|from|fx|fy|g1|g2|glyph-name|gradientUnits|hanging|' + 'height|horiz-adv-x|horiz-origin-x|ideographic|k|keyPoints|keySplines|keyTimes|lang|' + 'marker-end|marker-mid|marker-start|markerHeight|markerUnits|markerWidth|mathematical|' + 'max|min|offset|opacity|orient|origin|overline-position|overline-thickness|panose-1|' + 'path|pathLength|points|preserveAspectRatio|r|refX|refY|repeatCount|repeatDur|' + 'requiredExtensions|requiredFeatures|restart|rotate|rx|ry|slope|stemh|stemv|stop-color|' + 'stop-opacity|strikethrough-position|strikethrough-thickness|stroke|stroke-dasharray|' + 'stroke-dashoffset|stroke-linecap|stroke-linejoin|stroke-miterlimit|stroke-opacity|' + 'stroke-width|systemLanguage|target|text-anchor|to|transform|type|u1|u2|underline-position|' + 'underline-thickness|unicode|unicode-range|units-per-em|values|version|viewBox|visibility|' + 'width|widths|x|x-height|x1|x2|xlink:actuate|xlink:arcrole|xlink:role|xlink:show|xlink:title|' + 'xlink:type|xml:base|xml:lang|xml:space|xmlns|xmlns:xlink|y|y1|y2|zoomAndPan)', 'g');
-
-/**
- * htmlSanitizer
- * @param {string|Node} html html or Node
- * @param {boolean} [needHtmlText] pass true if need html text
- * @returns {string|DocumentFragment} result
- * @ignore
- */
-function htmlSanitizer(html, needHtmlText) {
-  var $html = (0, _jquery2.default)('<div />');
-
-  html = html.replace(/<!--[\s\S]*?-->/g, '');
-
-  $html.append(html);
-
-  removeUnnecessaryTags($html);
-  leaveOnlyWhitelistAttribute($html);
-
-  return finalizeHtml($html, needHtmlText);
-}
-
-/**
- * Remove unnecessary tags
- * @private
- * @param {jQuery} $html jQuery instance
- */
-function removeUnnecessaryTags($html) {
-  $html.find('script, iframe, textarea, form, button, select, meta, style, link, title').remove();
-}
-
-/**
- * Leave only white list attributes
- * @private
- * @param {jQuery} $html jQuery instance
- */
-function leaveOnlyWhitelistAttribute($html) {
-  $html.find('*').each(function (index, node) {
-    var attrs = node.attributes;
-    var blacklist = _tuiCodeSnippet2.default.toArray(attrs).filter(function (attr) {
-      var isHTMLAttr = attr.name.match(HTML_ATTR_LIST_RX);
-      var isSVGAttr = attr.name.match(SVG_ATTR_LIST_RX);
-
-      return !isHTMLAttr && !isSVGAttr;
-    });
-
-    _tuiCodeSnippet2.default.forEachArray(blacklist, function (attr) {
-      // Edge svg attribute name returns uppercase bug. error guard.
-      // https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/5579311/
-      if (attrs.getNamedItem(attr.name)) {
-        attrs.removeNamedItem(attr.name);
-      }
-    });
-  });
-}
-
-/**
- * Finalize html result
- * @private
- * @param {jQuery} $html jQuery instance
- * @param {boolean} needHtmlText pass true if need html text
- * @returns {string|DocumentFragment} result
- */
-function finalizeHtml($html, needHtmlText) {
-  var returnValue = void 0;
-
-  if (needHtmlText) {
-    returnValue = $html[0].innerHTML;
-  } else {
-    var frag = document.createDocumentFragment();
-    var childNodes = _tuiCodeSnippet2.default.toArray($html[0].childNodes);
-    var length = childNodes.length;
-
-
-    for (var i = 0; i < length; i += 1) {
-      frag.appendChild(childNodes[i]);
-    }
-    returnValue = frag;
-  }
-
-  return returnValue;
-}
-
-exports.default = htmlSanitizer;
-
-/***/ }),
-
-/***/ 12:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); /**
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * @fileoverview Implements EventManager
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * @author NHN Ent. FE Development Lab <dl_javascript@nhnent.com>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      */
-
-
-var _tuiCodeSnippet = __webpack_require__(1);
-
-var _tuiCodeSnippet2 = _interopRequireDefault(_tuiCodeSnippet);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var eventList = ['previewBeforeHook', 'previewRenderAfter', 'previewNeedsRefresh', 'addImageBlobHook', 'setMarkdownAfter', 'contentChangedFromWysiwyg', 'changeFromWysiwyg', 'contentChangedFromMarkdown', 'changeFromMarkdown', 'change', 'changeModeToWysiwyg', 'changeModeToMarkdown', 'changeModeBefore', 'changeMode', 'changePreviewStyle', 'openPopupAddLink', 'openPopupAddImage', 'openPopupAddTable', 'openPopupTableUtils', 'openHeadingSelect', 'openPopupCodeBlockLanguages', 'openPopupCodeBlockEditor', 'closePopupCodeBlockLanguages', 'closePopupCodeBlockEditor', 'closeAllPopup', 'command', 'addCommandBefore', 'htmlUpdate', 'markdownUpdate', 'renderedHtmlUpdated', 'removeEditor', 'convertorAfterMarkdownToHtmlConverted', 'convertorBeforeHtmlToMarkdownConverted', 'convertorAfterHtmlToMarkdownConverted', 'stateChange', 'wysiwygSetValueAfter', 'wysiwygSetValueBefore', 'wysiwygGetValueBefore', 'wysiwygProcessHTMLText', 'wysiwygRangeChangeAfter', 'wysiwygKeyEvent', 'scroll', 'click', 'mousedown', 'mouseover', 'mouseout', 'mouseup', 'contextmenu', 'keydown', 'keyup', 'keyMap', 'load', 'focus', 'blur', 'paste', 'pasteBefore', 'willPaste', 'copy', 'copyBefore', 'copyAfter', 'cut', 'cutAfter', 'drop', 'show', 'hide'];
-
-/**
- * Class EventManager
- */
-
-var EventManager = function () {
-  /**
-   * Creates an instance of EventManager.
-   * @memberof EventManager
-   */
-  function EventManager() {
-    _classCallCheck(this, EventManager);
-
-    this.events = new _tuiCodeSnippet2.default.Map();
-    this.TYPE = new _tuiCodeSnippet2.default.Enum(eventList);
-  }
-
-  /**
-   * Listen event and bind event handler
-   * @memberof EventManager
-   * @param {string} typeStr Event type string
-   * @param {function} handler Event handler
-   */
-
-
-  _createClass(EventManager, [{
-    key: 'listen',
-    value: function listen(typeStr, handler) {
-      var typeInfo = this._getTypeInfo(typeStr);
-      var eventHandlers = this.events.get(typeInfo.type) || [];
-
-      if (!this._hasEventType(typeInfo.type)) {
-        throw new Error('There is no event type ' + typeInfo.type);
-      }
-
-      if (typeInfo.namespace) {
-        handler.namespace = typeInfo.namespace;
-      }
-
-      eventHandlers.push(handler);
-
-      this.events.set(typeInfo.type, eventHandlers);
-    }
-
-    /**
-     * Emit event
-     * @memberof EventManager
-     * @param {string} eventName Event name to emit
-     * @returns {Array}
-     */
-
-  }, {
-    key: 'emit',
-    value: function emit() {
-      for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-        args[_key] = arguments[_key];
-      }
-
-      var typeStr = args.shift();
-      var typeInfo = this._getTypeInfo(typeStr);
-      var eventHandlers = this.events.get(typeInfo.type);
-      var results = void 0;
-
-      if (eventHandlers) {
-        _tuiCodeSnippet2.default.forEach(eventHandlers, function (handler) {
-          var result = handler.apply(undefined, args);
-
-          if (!_tuiCodeSnippet2.default.isUndefined(result)) {
-            results = results || [];
-            results.push(result);
-          }
-        });
-      }
-
-      return results;
-    }
-
-    /**
-     * Emit given event and return result
-     * @memberof EventManager
-     * @param {string} eventName Event name to emit
-     * @param {string} sourceText Source text to change
-     * @returns {string}
-     */
-
-  }, {
-    key: 'emitReduce',
-    value: function emitReduce() {
-      for (var _len2 = arguments.length, args = Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
-        args[_key2] = arguments[_key2];
-      }
-
-      var type = args.shift();
-      var eventHandlers = this.events.get(type);
-
-      if (eventHandlers) {
-        _tuiCodeSnippet2.default.forEach(eventHandlers, function (handler) {
-          var result = handler.apply(undefined, args);
-
-          if (!_tuiCodeSnippet2.default.isFalsy(result)) {
-            args[0] = result;
-          }
-        });
-      }
-
-      return args[0];
-    }
-
-    /**
-     * Get event type and namespace
-     * @memberof EventManager
-     * @param {string} typeStr Event type name
-     * @returns {{type: string, namespace: string}}
-     * @private
-     */
-
-  }, {
-    key: '_getTypeInfo',
-    value: function _getTypeInfo(typeStr) {
-      var splited = typeStr.split('.');
-
-      return {
-        type: splited[0],
-        namespace: splited[1]
-      };
-    }
-
-    /**
-     * Check whether event type exists or not
-     * @param {string} type Event type name
-     * @returns {boolean}
-     * @private
-     */
-
-  }, {
-    key: '_hasEventType',
-    value: function _hasEventType(type) {
-      return !_tuiCodeSnippet2.default.isUndefined(this.TYPE[this._getTypeInfo(type).type]);
-    }
-
-    /**
-     * Add event type when given event not exists
-     * @memberof EventManager
-     * @param {string} type Event type name
-     */
-
-  }, {
-    key: 'addEventType',
-    value: function addEventType(type) {
-      if (this._hasEventType(type)) {
-        throw new Error('There is already have event type ' + type);
-      }
-
-      this.TYPE.set(type);
-    }
-
-    /**
-     * Remove event handler from given event type
-     * @memberof EventManager
-     * @param {string} typeStr Event type name
-     * @param {function} [handler] - registered event handler
-     */
-
-  }, {
-    key: 'removeEventHandler',
-    value: function removeEventHandler(typeStr, handler) {
-      var _this = this;
-
-      var _getTypeInfo2 = this._getTypeInfo(typeStr),
-          type = _getTypeInfo2.type,
-          namespace = _getTypeInfo2.namespace;
-
-      if (type && handler) {
-        this._removeEventHandlerWithHandler(type, handler);
-      } else if (type && !namespace) {
-        // dont use dot notation cuz eslint
-        this.events['delete'](type);
-      } else if (!type && namespace) {
-        this.events.forEach(function (eventHandlers, eventType) {
-          _this._removeEventHandlerWithTypeInfo(eventType, namespace);
-        });
-      } else if (type && namespace) {
-        this._removeEventHandlerWithTypeInfo(type, namespace);
-      }
-    }
-
-    /**
-     * Remove event handler with event handler
-     * @param {string} type - event type name
-     * @param {function} handler - event handler
-     * @memberof EventManager
-     * @private
-     */
-
-  }, {
-    key: '_removeEventHandlerWithHandler',
-    value: function _removeEventHandlerWithHandler(type, handler) {
-      var eventHandlers = this.events.get(type) || [];
-      var handlerIndex = eventHandlers.indexOf(handler);
-      if (handlerIndex >= 0) {
-        eventHandlers.splice(handlerIndex, 1);
-      }
-    }
-
-    /**
-     * Remove event handler with event type information
-     * @memberof EventManager
-     * @param {string} type Event type name
-     * @param {string} namespace Event namespace
-     * @private
-     */
-
-  }, {
-    key: '_removeEventHandlerWithTypeInfo',
-    value: function _removeEventHandlerWithTypeInfo(type, namespace) {
-      var handlersToSurvive = [];
-      var eventHandlers = this.events.get(type);
-
-      if (!eventHandlers) {
-        return;
-      }
-
-      eventHandlers.map(function (handler) {
-        if (handler.namespace !== namespace) {
-          handlersToSurvive.push(handler);
-        }
-      });
-
-      this.events.set(type, handlersToSurvive);
-    }
-  }]);
-
-  return EventManager;
-}();
-
-exports.default = EventManager;
-
-/***/ }),
-
-/***/ 125:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _jquery = __webpack_require__(0);
-
-var _jquery2 = _interopRequireDefault(_jquery);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var Viewer = __webpack_require__(29);
-
-// for jquery
-/**
- * @fileoverview entry point for viewer
- * @author NHN Ent. FE Development Lab <dl_javascript@nhnent.com>
- */
-_jquery2.default.fn.tuiEditor = function () {
-  var options = void 0,
-      instance = void 0;
-
-  var el = this.get(0);
-
-  if (el) {
-    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    options = args[0] || {};
-
-    instance = _jquery2.default.data(el, 'tuiEditor');
-
-    if (instance) {
-      if (typeof options === 'string') {
-        var _instance;
-
-        return (_instance = instance)[options].apply(_instance, args.slice(1));
-      }
-    } else {
-      options.el = el;
-      instance = new Viewer(options);
-      _jquery2.default.data(el, 'tuiEditor', instance);
-    }
-  }
-
-  return this;
-};
-
-module.exports = Viewer;
-
-/***/ }),
-
-/***/ 13:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); /**
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * @fileoverview extension manager
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * @author NHN Ent. FE Development Lab <dl_javascript@nhnent.com>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      */
-
-
-var _tuiCodeSnippet = __webpack_require__(1);
-
-var _tuiCodeSnippet2 = _interopRequireDefault(_tuiCodeSnippet);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-/**
- * Class ExtManager
- */
-var ExtManager = function () {
-  /**
-   * Creates an instance of ExtManager.
-   * @memberof ExtManager
-   */
-  function ExtManager() {
-    _classCallCheck(this, ExtManager);
-
-    this.exts = new _tuiCodeSnippet2.default.Map();
-  }
-
-  /**
-   * defineExtension
-   * Defined Extension
-   * @memberof ExtManager
-   * @param {string} name extension name
-   * @param {ExtManager~extension} ext extension
-   */
-
-
-  _createClass(ExtManager, [{
-    key: 'defineExtension',
-    value: function defineExtension(name, ext) {
-      this.exts.set(name, ext);
-    }
-
-    /**
-     * Apply extensions
-     * @memberof ExtManager
-     * @param {object} context Context
-     * @param {Array.<string|object>} options - options or names array
-     */
-
-  }, {
-    key: 'applyExtension',
-    value: function applyExtension(context, options) {
-      var _this = this;
-
-      if (options) {
-        options.forEach(function (option) {
-          var hasOption = _tuiCodeSnippet2.default.isObject(option);
-          var name = hasOption ? option.name : option;
-
-          if (_this.exts.has(name)) {
-            var ext = _this.exts.get(name);
-            if (hasOption) {
-              ext(context, option);
-            } else {
-              ext(context);
-            }
-          }
-        });
-      }
-    }
-  }]);
-
-  return ExtManager;
-}();
-
-exports.default = new ExtManager();
-
-/***/ }),
-
-/***/ 14:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); /**
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * @fileoverview Convertor have responsible to convert markdown and html
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * @author NHN Ent. FE Development Lab <dl_javascript@nhnent.com>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      */
-
-
-var _jquery = __webpack_require__(0);
-
-var _jquery2 = _interopRequireDefault(_jquery);
-
-var _tuiCodeSnippet = __webpack_require__(1);
-
-var _tuiCodeSnippet2 = _interopRequireDefault(_tuiCodeSnippet);
-
-var _markdownIt = __webpack_require__(19);
-
-var _markdownIt2 = _interopRequireDefault(_markdownIt);
-
-var _toMark = __webpack_require__(20);
-
-var _toMark2 = _interopRequireDefault(_toMark);
-
-var _htmlSanitizer = __webpack_require__(11);
-
-var _htmlSanitizer2 = _interopRequireDefault(_htmlSanitizer);
-
-var _markdownitTaskPlugin = __webpack_require__(21);
-
-var _markdownitTaskPlugin2 = _interopRequireDefault(_markdownitTaskPlugin);
-
-var _markdownitCodeBlockPlugin = __webpack_require__(22);
-
-var _markdownitCodeBlockPlugin2 = _interopRequireDefault(_markdownitCodeBlockPlugin);
-
-var _markdownitCodeRenderer = __webpack_require__(23);
-
-var _markdownitCodeRenderer2 = _interopRequireDefault(_markdownitCodeRenderer);
-
-var _markdownitBlockQuoteRenderer = __webpack_require__(24);
-
-var _markdownitBlockQuoteRenderer2 = _interopRequireDefault(_markdownitBlockQuoteRenderer);
-
-var _markdownitTableRenderer = __webpack_require__(25);
-
-var _markdownitTableRenderer2 = _interopRequireDefault(_markdownitTableRenderer);
-
-var _markdownitHtmlBlockRenderer = __webpack_require__(26);
-
-var _markdownitHtmlBlockRenderer2 = _interopRequireDefault(_markdownitHtmlBlockRenderer);
-
-var _markdownitBackticksRenderer = __webpack_require__(27);
-
-var _markdownitBackticksRenderer2 = _interopRequireDefault(_markdownitBackticksRenderer);
-
-var _codeBlockManager = __webpack_require__(7);
-
-var _codeBlockManager2 = _interopRequireDefault(_codeBlockManager);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var markdownitHighlight = new _markdownIt2.default({
-  html: true,
-  breaks: true,
-  quotes: '“”‘’',
-  langPrefix: 'lang-',
-  highlight: function highlight(codeText, type) {
-    return _codeBlockManager2.default.createCodeBlockHtml(type, codeText);
-  }
-});
-var markdownit = new _markdownIt2.default({
-  html: true,
-  breaks: true,
-  quotes: '“”‘’',
-  langPrefix: 'lang-'
-});
-
-// markdownitHighlight
-markdownitHighlight.block.ruler.at('code', _markdownitCodeRenderer2.default);
-markdownitHighlight.block.ruler.at('table', _markdownitTableRenderer2.default, {
-  alt: ['paragraph', 'reference']
-});
-markdownitHighlight.block.ruler.at('blockquote', _markdownitBlockQuoteRenderer2.default, {
-  alt: ['paragraph', 'reference', 'blockquote', 'list']
-});
-markdownitHighlight.block.ruler.at('html_block', _markdownitHtmlBlockRenderer2.default, {
-  alt: ['paragraph', 'reference', 'blockquote']
-});
-markdownitHighlight.inline.ruler.at('backticks', _markdownitBackticksRenderer2.default);
-markdownitHighlight.use(_markdownitTaskPlugin2.default);
-markdownitHighlight.use(_markdownitCodeBlockPlugin2.default);
-
-// markdownit
-markdownit.block.ruler.at('code', _markdownitCodeRenderer2.default);
-markdownit.block.ruler.at('table', _markdownitTableRenderer2.default, {
-  alt: ['paragraph', 'reference']
-});
-markdownit.block.ruler.at('blockquote', _markdownitBlockQuoteRenderer2.default, {
-  alt: ['paragraph', 'reference', 'blockquote', 'list']
-});
-markdownit.block.ruler.at('html_block', _markdownitHtmlBlockRenderer2.default, {
-  alt: ['paragraph', 'reference', 'blockquote']
-});
-markdownit.inline.ruler.at('backticks', _markdownitBackticksRenderer2.default);
-markdownit.use(_markdownitTaskPlugin2.default);
-markdownit.use(_markdownitCodeBlockPlugin2.default);
-
-/**
- * Class Convertor
- */
-
-var Convertor = function () {
-  /**
-   * Convertor constructor
-   * @param {EventManager} em - EventManager instance
-   */
-  function Convertor(em) {
-    _classCallCheck(this, Convertor);
-
-    this.eventManager = em;
-  }
-
-  /**
-   * _markdownToHtmlWithCodeHighlight
-   * Convert markdown to html with Codehighlight
-   * @private
-   * @memberof Convertor
-   * @param {string} markdown markdown text
-   * @returns {string} html text
-   */
-
-
-  _createClass(Convertor, [{
-    key: '_markdownToHtmlWithCodeHighlight',
-    value: function _markdownToHtmlWithCodeHighlight(markdown) {
-      markdown = markdown.replace(/<br>/ig, '<br data-tomark-pass>');
-      // eslint-disable-next-line
-      var onerrorStripeRegex = /(<img[^>]*)(onerror\s*=\s*[\"']?[^\"']*[\"']?)(.*)/i;
-      while (onerrorStripeRegex.exec(markdown)) {
-        markdown = markdown.replace(onerrorStripeRegex, '$1$3');
-      }
-
-      var renderedHTML = markdownitHighlight.render(markdown);
-      renderedHTML = this._removeBrToMarkPassAttributeInCode(renderedHTML);
-
-      return renderedHTML;
-    }
-
-    /**
-     * _markdownToHtml
-     * Convert markdown to html
-     * @private
-     * @memberof Convertor
-     * @param {string} markdown markdown text
-     * @returns {string} html text
-     */
-
-  }, {
-    key: '_markdownToHtml',
-    value: function _markdownToHtml(markdown) {
-      markdown = markdown.replace(/<br>/ig, '<br data-tomark-pass>');
-      // eslint-disable-next-line
-      var onerrorStripeRegex = /(<img[^>]*)(onerror\s*=\s*[\"']?[^\"']*[\"']?)(.*)/i;
-      while (onerrorStripeRegex.exec(markdown)) {
-        markdown = markdown.replace(onerrorStripeRegex, '$1$3');
-      }
-
-      var renderedHTML = markdownit.render(markdown);
-      renderedHTML = this._removeBrToMarkPassAttributeInCode(renderedHTML);
-
-      return renderedHTML;
-    }
-
-    /**
-     * Remove BR's data-tomark-pass attribute text when br in code element
-     * @param {string} renderedHTML Rendered HTML string from markdown editor
-     * @returns {string}
-     * @private
-     */
-
-  }, {
-    key: '_removeBrToMarkPassAttributeInCode',
-    value: function _removeBrToMarkPassAttributeInCode(renderedHTML) {
-      var $wrapperDiv = (0, _jquery2.default)('<div />');
-
-      $wrapperDiv.html(renderedHTML);
-
-      $wrapperDiv.find('code, pre').each(function (i, codeOrPre) {
-        var $code = (0, _jquery2.default)(codeOrPre);
-        $code.html($code.html().replace(/&lt;br data-tomark-pass&gt;/, '&lt;br&gt;'));
-      });
-
-      renderedHTML = $wrapperDiv.html();
-
-      return renderedHTML;
-    }
-
-    /**
-     * toHTMLWithCodeHightlight
-     * Convert markdown to html with Codehighlight
-     * emit convertorAfterMarkdownToHtmlConverted
-     * @memberof Convertor
-     * @param {string} markdown markdown text
-     * @returns {string} html text
-     */
-
-  }, {
-    key: 'toHTMLWithCodeHightlight',
-    value: function toHTMLWithCodeHightlight(markdown) {
-      var html = this._markdownToHtmlWithCodeHighlight(markdown);
-      html = this.eventManager.emitReduce('convertorAfterMarkdownToHtmlConverted', html);
-
-      return html;
-    }
-
-    /**
-     * toHTML
-     * Convert markdown to html
-     * emit convertorAfterMarkdownToHtmlConverted
-     * @memberof Convertor
-     * @param {string} markdown markdown text
-     * @returns {string} html text
-     */
-
-  }, {
-    key: 'toHTML',
-    value: function toHTML(markdown) {
-      var html = this._markdownToHtml(markdown);
-
-      html = this.eventManager.emitReduce('convertorAfterMarkdownToHtmlConverted', html);
-
-      return html;
-    }
-  }, {
-    key: 'initHtmlSanitizer',
-    value: function initHtmlSanitizer() {
-      this.eventManager.listen('convertorAfterMarkdownToHtmlConverted', function (html) {
-        return (0, _htmlSanitizer2.default)(html, true);
-      });
-    }
-
-    /**
-     * toMarkdown
-     * Convert html to markdown
-     * emit convertorAfterHtmlToMarkdownConverted
-     * @memberof Convertor
-     * @param {string} html html text
-     * @param {object | null} toMarkOptions - toMark library options
-     * @returns {string} markdown text
-     */
-
-  }, {
-    key: 'toMarkdown',
-    value: function toMarkdown(html, toMarkOptions) {
-      var resultArray = [];
-
-      html = this.eventManager.emitReduce('convertorBeforeHtmlToMarkdownConverted', html);
-
-      var markdown = (0, _toMark2.default)(this._appendAttributeForBrIfNeed(html), toMarkOptions);
-
-      markdown = this.eventManager.emitReduce('convertorAfterHtmlToMarkdownConverted', markdown);
-
-      _tuiCodeSnippet2.default.forEach(markdown.split('\n'), function (line, index) {
-        var FIND_TABLE_RX = /^\|[^|]*\|/ig;
-        var FIND_CODE_RX = /`[^`]*<br>[^`]*`/ig;
-
-        if (!FIND_CODE_RX.test(line) && !FIND_TABLE_RX.test(line)) {
-          line = line.replace(/<br>/ig, '<br>\n');
-        }
-        resultArray[index] = line;
-      });
-
-      return resultArray.join('\n');
-    }
-  }, {
-    key: '_appendAttributeForBrIfNeed',
-    value: function _appendAttributeForBrIfNeed(html) {
-      var FIND_BR_RX = /<br>/ig;
-      var FIND_DOUBLE_BR_RX = /<br \/><br \/>/ig;
-      var FIND_PASSING_AND_NORMAL_BR_RX = /<br data-tomark-pass \/><br \/>(.)/ig;
-      var FIRST_TWO_BRS_BEFORE_RX = /([^>]|<\/b>|<\/i>|<\/s>|<img [^>]*>)/;
-      var TWO_BRS_RX = /<br data-tomark-pass \/><br data-tomark-pass \/>/;
-      var FIND_FIRST_TWO_BRS_RX = new RegExp(FIRST_TWO_BRS_BEFORE_RX.source + TWO_BRS_RX.source, 'g');
-
-      html = html.replace(FIND_BR_RX, '<br />');
-
-      html = html.replace(FIND_DOUBLE_BR_RX, '<br data-tomark-pass /><br data-tomark-pass />');
-
-      var div = document.createElement('div');
-      var $div = (0, _jquery2.default)(div);
-      $div.html(html);
-      $div.find('pre br,code br').each(function (index, node) {
-        if (node.hasAttribute('data-tomark-pass')) {
-          node.removeAttribute('data-tomark-pass');
-        }
-      });
-
-      html = $div.html().replace(/<br data-tomark-pass="">/ig, '<br data-tomark-pass />');
-      html = html.replace(FIND_BR_RX, '<br />');
-
-      html = html.replace(FIND_PASSING_AND_NORMAL_BR_RX, '<br data-tomark-pass /><br data-tomark-pass />$1');
-      html = html.replace(FIND_FIRST_TWO_BRS_RX, '$1<br /><br />');
-
-      return html;
-    }
-
-    /**
-     * get markdownit with code highlight
-     * @returns {markdownit} - markdownit instance
-     * @memberof Convertor
-     * @static
-     */
-
-  }], [{
-    key: 'getMarkdownitHighlightRenderer',
-    value: function getMarkdownitHighlightRenderer() {
-      return markdownitHighlight;
-    }
-  }]);
-
-  return Convertor;
-}();
-
-exports.default = Convertor;
-
-/***/ }),
-
-/***/ 16:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); /**
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * @fileoverview Implements LazyRunner
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * @author NHN Ent. FE Development Lab <dl_javascript@nhnent.com>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      */
-
-
-var _tuiCodeSnippet = __webpack_require__(1);
-
-var _tuiCodeSnippet2 = _interopRequireDefault(_tuiCodeSnippet);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-/**
- * Class LazyRunner
- */
-var LazyRunner = function () {
-  /**
-   * Creates an instance of LazyRunner.
-   * @memberof LazyRunner
-   */
-  function LazyRunner() {
-    _classCallCheck(this, LazyRunner);
-
-    this.globalTOID = null;
-    this.lazyRunFunctions = {};
-  }
-
-  _createClass(LazyRunner, [{
-    key: 'run',
-    value: function run(fn, params, context, delay) {
-      var TOID = void 0;
-
-      if (_tuiCodeSnippet2.default.isString(fn)) {
-        TOID = this._runRegisteredRun(fn, params, context, delay);
-      } else {
-        TOID = this._runSingleRun(fn, params, context, delay, this.globalTOID);
-        this.globalTOID = TOID;
-      }
-
-      return TOID;
-    }
-  }, {
-    key: 'registerLazyRunFunction',
-    value: function registerLazyRunFunction(name, fn, delay, context) {
-      context = context || this;
-
-      this.lazyRunFunctions[name] = {
-        fn: fn,
-        delay: delay,
-        context: context,
-        TOID: null
-      };
-    }
-  }, {
-    key: '_runSingleRun',
-    value: function _runSingleRun(fn, params, context, delay, TOID) {
-      this._clearTOIDIfNeed(TOID);
-
-      TOID = setTimeout(function () {
-        fn.call(context, params);
-      }, delay);
-
-      return TOID;
-    }
-  }, {
-    key: '_runRegisteredRun',
-    value: function _runRegisteredRun(lazyRunName, params, context, delay) {
-      var lazyRunFunction = this.lazyRunFunctions[lazyRunName];
-      var fn = lazyRunFunction.fn;
-      var TOID = lazyRunFunction.TOID;
-
-      delay = delay || lazyRunFunction.delay;
-      context = context || lazyRunFunction.context;
-
-      TOID = this._runSingleRun(fn, params, context, delay, TOID);
-
-      lazyRunFunction.TOID = TOID;
-
-      return TOID;
-    }
-  }, {
-    key: '_clearTOIDIfNeed',
-    value: function _clearTOIDIfNeed(TOID) {
-      if (TOID) {
-        clearTimeout(TOID);
-      }
-    }
-  }]);
-
-  return LazyRunner;
-}();
-
-exports.default = LazyRunner;
-
-/***/ }),
-
-/***/ 17:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); /**
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * @fileoverview Implements Command
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * @author NHN Ent. FE Development Lab <dl_javascript@nhnent.com>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      */
-
-
-var _tuiCodeSnippet = __webpack_require__(1);
-
-var _tuiCodeSnippet2 = _interopRequireDefault(_tuiCodeSnippet);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-/**
- * Class Command
- */
-var Command = function () {
-  /**
-   * @param {string} name Command name
-   * @param {number} type Command type (Command.TYPE)
-   * @param {Array.<string>} [keyMap] keyMap
-   */
-  function Command(name, type, keyMap) {
-    _classCallCheck(this, Command);
-
-    this.name = name;
-    this.type = type;
-
-    if (keyMap) {
-      this.setKeyMap(keyMap);
-    }
-  }
-  /**
-   * getName
-   * returns Name of command
-   * @memberof Command
-   * @returns {string} Command Name
-   */
-
-
-  _createClass(Command, [{
-    key: 'getName',
-    value: function getName() {
-      return this.name;
-    }
-
-    /**
-     * getType
-     * returns Type of command
-     * @memberof Command
-     * @returns {number} Command Command type number
-     */
-
-  }, {
-    key: 'getType',
-    value: function getType() {
-      return this.type;
-    }
-
-    /**
-     * isMDType
-     * returns whether Command Type is Markdown or not
-     * @memberof Command
-     * @returns {boolean} result
-     */
-
-  }, {
-    key: 'isMDType',
-    value: function isMDType() {
-      return this.type === Command.TYPE.MD;
-    }
-
-    /**
-     * isWWType
-     * returns whether Command Type is Wysiwyg or not
-     * @memberof Command
-     * @returns {boolean} result
-     */
-
-  }, {
-    key: 'isWWType',
-    value: function isWWType() {
-      return this.type === Command.TYPE.WW;
-    }
-
-    /**
-     * isGlobalType
-     * returns whether Command Type is Global or not
-     * @memberof Command
-     * @returns {boolean} result
-     */
-
-  }, {
-    key: 'isGlobalType',
-    value: function isGlobalType() {
-      return this.type === Command.TYPE.GB;
-    }
-
-    /**
-     * setKeyMap
-     * Set keymap value for each os
-     * @memberof Command
-     * @param {string} win Windows Key(and etc)
-     * @param {string} mac Mac osx key
-     */
-
-  }, {
-    key: 'setKeyMap',
-    value: function setKeyMap(win, mac) {
-      this.keyMap = [win, mac];
-    }
-  }]);
-
-  return Command;
-}();
-
-/**
- * Command factory method
- * @memberof Command
- * @param {string} typeStr Editor type name
- * @param {object} props Property
- *     @param {string} props.name Command name
- *     @param {number} props.type Command type number
- * @returns {Command}
- */
-
-
-Command.factory = function (typeStr, props) {
-  var type = void 0;
-
-  if (typeStr === 'markdown') {
-    type = Command.TYPE.MD;
-  } else if (typeStr === 'wysiwyg') {
-    type = Command.TYPE.WW;
-  } else if (typeStr === 'global') {
-    type = Command.TYPE.GB;
-  }
-
-  var command = new Command(props.name, type);
-
-  _tuiCodeSnippet2.default.extend(command, props);
-
-  return command;
-};
-
-/**
- * Command Type Constant
- * markdown : 0
- * wysiwyg : 1
- * global : 2
- * @memberof Command
- * @type {object}
- */
-Command.TYPE = {
-  MD: 0,
-  WW: 1,
-  GB: 2
-};
-
-exports.default = Command;
-
-/***/ }),
-
-/***/ 19:
-/***/ (function(module, exports) {
-
-module.exports = __WEBPACK_EXTERNAL_MODULE_19__;
-
-/***/ }),
-
-/***/ 2:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); /**
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * @fileoverview Implements CommandManager
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * @author NHN Ent. FE Development Lab <dl_javascript@nhnent.com>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      */
-
-
-var _jquery = __webpack_require__(0);
-
-var _jquery2 = _interopRequireDefault(_jquery);
-
-var _tuiCodeSnippet = __webpack_require__(1);
-
-var _tuiCodeSnippet2 = _interopRequireDefault(_tuiCodeSnippet);
-
-var _command = __webpack_require__(17);
-
-var _command2 = _interopRequireDefault(_command);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var isMac = /Mac/.test(navigator.platform);
-var KEYMAP_OS_INDEX = isMac ? 1 : 0;
-
-/**
- * Class CommandManager
- */
-
-var CommandManager = function () {
-  /**
-   * @param {ToastUIEditor} base nedInstance
-   * @param {object} [options={}] - option object
-   *  @param {boolean} [options.useCommandShortcut=true] - execute command with keyMap
-   */
-  function CommandManager(base) {
-    var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-
-    _classCallCheck(this, CommandManager);
-
-    this._command = new _tuiCodeSnippet2.default.Map();
-    this._mdCommand = new _tuiCodeSnippet2.default.Map();
-    this._wwCommand = new _tuiCodeSnippet2.default.Map();
-    this._options = _jquery2.default.extend({
-      'useCommandShortcut': true
-    }, options);
-
-    this.base = base;
-
-    this.keyMapCommand = {};
-
-    this._initEvent();
-  }
-
-  /**
-   * You can change command before command addition by addCommandBefore event.
-   * @param {object} command - command
-   * @returns {object}
-   * @private
-   */
-
-
-  _createClass(CommandManager, [{
-    key: '_addCommandBefore',
-    value: function _addCommandBefore(command) {
-      var commandWrapper = { command: command };
-
-      this.base.eventManager.emit('addCommandBefore', commandWrapper);
-
-      return commandWrapper.command || command;
-    }
-
-    /**
-     * Add command
-     * @memberof CommandManager
-     * @param {Command} command Command instance
-     * @returns {Command} Command
-     */
-
-  }, {
-    key: 'addCommand',
-    value: function addCommand(command) {
-      for (var _len = arguments.length, args = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
-        args[_key - 1] = arguments[_key];
-      }
-
-      if (args.length) {
-        command = CommandManager.command.apply(CommandManager, [command].concat(args));
-      }
-
-      command = this._addCommandBefore(command);
-
-      var name = command.getName();
-
-      var commandBase = void 0;
-
-      if (command.isMDType()) {
-        commandBase = this._mdCommand;
-      } else if (command.isWWType()) {
-        commandBase = this._wwCommand;
-      } else if (command.isGlobalType()) {
-        commandBase = this._command;
-      }
-
-      commandBase.set(name, command);
-
-      if (command.keyMap) {
-        this.keyMapCommand[command.keyMap[KEYMAP_OS_INDEX]] = name;
-      }
-
-      return command;
-    }
-
-    /**
-     * _initEvent
-     * Bind event handler to eventManager
-     * @private
-     * @memberof CommandManager
-     */
-
-  }, {
-    key: '_initEvent',
-    value: function _initEvent() {
-      var _this = this;
-
-      this.base.eventManager.listen('command', function () {
-        _this.exec.apply(_this, arguments);
-      });
-
-      this.base.eventManager.listen('keyMap', function (ev) {
-        if (!_this._options.useCommandShortcut) {
-          return;
-        }
-        var command = _this.keyMapCommand[ev.keyMap];
-
-        if (command) {
-          ev.data.preventDefault();
-          _this.exec(command);
-        }
-      });
-    }
-
-    /**
-     * Execute command
-     * @memberof CommandManager
-     * @param {String} name Command name
-     * @returns {*}
-     */
-
-  }, {
-    key: 'exec',
-    value: function exec(name) {
-      var commandToRun = void 0,
-          result = void 0;
-      var context = this.base;
-
-      commandToRun = this._command.get(name);
-
-      if (!commandToRun) {
-        if (this.base.isMarkdownMode()) {
-          commandToRun = this._mdCommand.get(name);
-          context = this.base.mdEditor;
-        } else {
-          commandToRun = this._wwCommand.get(name);
-          context = this.base.wwEditor;
-        }
-      }
-
-      if (commandToRun) {
-        var _commandToRun;
-
-        for (var _len2 = arguments.length, args = Array(_len2 > 1 ? _len2 - 1 : 0), _key2 = 1; _key2 < _len2; _key2++) {
-          args[_key2 - 1] = arguments[_key2];
-        }
-
-        args.unshift(context);
-        result = (_commandToRun = commandToRun).exec.apply(_commandToRun, args);
-      }
-
-      return result;
-    }
-  }]);
-
-  return CommandManager;
-}();
-
-/**
- * Create command by given editor type and property object
- * @memberof ComponentManager
- * @param {string} type Command type
- * @param {{name: string, keyMap: object}} props Property
- * @returns {*}
- */
-
-
-CommandManager.command = function (type, props) {
-  var command = _command2.default.factory(type, props.name, props.keyMap);
-
-  _tuiCodeSnippet2.default.extend(command, props);
-
-  return command;
-};
-
-exports.default = CommandManager;
-
-/***/ }),
-
-/***/ 20:
-/***/ (function(module, exports) {
-
-module.exports = __WEBPACK_EXTERNAL_MODULE_20__;
-
-/***/ }),
-
-/***/ 21:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-// Copyright (c) 2016, Revin Guillen.
-// Distributed under an MIT license: https://github.com/revin/markdown-it-task-lists/
-
-/**
- * @fileoverview Implements markdownitTaskPlugin
- * @modifier Sungho Kim(sungho-kim@nhnent.com) FE Development Lab/NHN Ent.
- * @modifier Junghwan Park(junghwan.park@nhnent.com) FE Development Lab/NHN Ent.
- */
-/* eslint-disable */
-
-/**
- * Task list renderer for Markdown-it
- * @param {object} markdownit Markdown-it instance
- * @ignore
- */
-var MarkdownitTaskRenderer = function MarkdownitTaskRenderer(markdownit) {
-    markdownit.core.ruler.after('inline', 'tui-task-list', function (state) {
-        var TASK_LIST_ITEM_CLASS_NAME = 'task-list-item';
-        var CHECKED_CLASS_NAME = 'checked';
-        var tokens = state.tokens;
-        var className;
-        var tokenIndex;
-
-        // tokenIndex=0 'ul', tokenIndex=1 'li', tokenIndex=2 'p_open'
-        for (tokenIndex = 2; tokenIndex < tokens.length; tokenIndex += 1) {
-            if (isTaskListItemToken(tokens, tokenIndex)) {
-                if (isChecked(tokens[tokenIndex])) {
-                    className = TASK_LIST_ITEM_CLASS_NAME + ' ' + CHECKED_CLASS_NAME;
-                } else {
-                    className = TASK_LIST_ITEM_CLASS_NAME;
-                }
-
-                removeMarkdownTaskFormatText(tokens[tokenIndex]);
-
-                setTokenAttribute(tokens[tokenIndex - 2], 'class', className);
-                setTokenAttribute(tokens[tokenIndex - 2], 'data-te-task', '');
-            }
-        }
-    });
-};
-
-/**
- * Remove task format text for rendering
- * @param {object} token Token object
- * @ignore
- */
-function removeMarkdownTaskFormatText(token) {
-    // '[X] ' length is 4
-    // FIXED: we don't need first space
-    token.content = token.content.slice(4);
-    token.children[0].content = token.children[0].content.slice(4);
-}
-
-/**
- * Return boolean value whether task checked or not
- * @param {object} token Token object
- * @returns {boolean}
- * @ignore
- */
-function isChecked(token) {
-    var checked = false;
-
-    if (token.content.indexOf('[x]') === 0 || token.content.indexOf('[X]') === 0) {
-        checked = true;
-    }
-
-    return checked;
-}
-
-/**
- * Set attribute of passed token
- * @param {object} token Token object
- * @param {string} attributeName Attribute name for set
- * @param {string} attributeValue Attribute value for set
- * @ignore
- */
-function setTokenAttribute(token, attributeName, attributeValue) {
-    var index = token.attrIndex(attributeName);
-    var attr = [attributeName, attributeValue];
-
-    if (index < 0) {
-        token.attrPush(attr);
-    } else {
-        token.attrs[index] = attr;
-    }
-}
-
-/**
- * Return boolean value whether task list item or not
- * @param {array} tokens Token object
- * @param {number} index Number of token index
- * @returns {boolean}
- * @ignore
- */
-function isTaskListItemToken(tokens, index) {
-    return tokens[index].type === 'inline' && tokens[index - 1].type === 'paragraph_open' && tokens[index - 2].type === 'list_item_open' && (tokens[index].content.indexOf('[ ]') === 0 || tokens[index].content.indexOf('[x]') === 0 || tokens[index].content.indexOf('[X]') === 0);
-}
-/* eslint-enable */
-
-module.exports = MarkdownitTaskRenderer;
-
-/***/ }),
-
-/***/ 22:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-// Copyright (c) 2016, Revin Guillen.
-// Distributed under an MIT license: https://github.com/revin/markdown-it-task-lists/
-/* eslint-disable */
-/**
- * @fileoverview Implements markdownitCodeBlockPlugin
- * @modifier NHN Ent. FE Development Lab <dl_javascript@nhnent.com>
- */
-
-/**
- * Code block renderer for Markdown-it
- * @param {object} markdownit Markdown-it instance
- * @ignore
- */
-var MarkdownitCodeBlockRenderer = function MarkdownitCodeBlockRenderer(markdownit) {
-    markdownit.core.ruler.after('block', 'tui-code-block', function (state) {
-        var tokens = state.tokens;
-        var currentToken, tokenIndex;
-
-        for (tokenIndex = 0; tokenIndex < tokens.length; tokenIndex += 1) {
-            currentToken = tokens[tokenIndex];
-
-            if (isCodeFenceToken(currentToken) && currentToken.info) {
-                setTokenAttribute(currentToken, 'data-language', escape(currentToken.info.replace(' ', ''), true));
-            }
-        }
-    });
-};
-
-/**
- * Set attribute of passed token
- * @param {object} token Token object
- * @param {string} attributeName Attribute name for set
- * @param {string} attributeValue Attribute value for set
- * @ignore
- */
-function setTokenAttribute(token, attributeName, attributeValue) {
-    var index = token.attrIndex(attributeName);
-    var attr = [attributeName, attributeValue];
-
-    if (index < 0) {
-        token.attrPush(attr);
-    } else {
-        token.attrs[index] = attr;
-    }
-}
-/**
- * Return boolean value whether passed token is code fence or not
- * @param {object} token Token object
- * @returns {boolean}
- * @ignore
- */
-function isCodeFenceToken(token) {
-    return token.block === true && token.tag === 'code' && token.type === 'fence';
-}
-
-/**
- * escape code from markdown-it
- * @param {string} html HTML string
- * @param {string} encode Boolean value of whether encode or not
- * @returns {string}
- * @ignore
- */
-function escape(html, encode) {
-    return html.replace(!encode ? /&(?!#?\w+;)/g : /&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
-}
-/* eslint-enable */
-
-module.exports = MarkdownitCodeBlockRenderer;
-
-/***/ }),
-
-/***/ 23:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-// Copyright (c) 2014 Vitaly Puzrin, Alex Kocharin.
-// Distributed under an ISC license: https://github.com/markdown-it/markdown-it/
-/**
- * @fileoverview Implements MarkdownItCodeRenderer
- * @modifier NHN Ent. FE Development Lab <dl_javascript@nhnent.com>
- */
-
-/* eslint-disable */
-module.exports = function code(state, startLine, endLine /*, silent*/) {
-    // Added by Junghwan Park
-    var FIND_LIST_RX = / {0,3}(?:-|\*|\d\.) /;
-    var lines = state.src.split('\n');
-    var currentLine = lines[startLine];
-    // Added by Junghwan Park
-
-    var nextLine,
-        last,
-        token,
-        emptyLines = 0;
-
-    // Add condition by Junghwan Park
-    if (currentLine.match(FIND_LIST_RX) || state.sCount[startLine] - state.blkIndent < 4) {
-        // Add condition by Junghwan Park
-        return false;
-    }
-
-    last = nextLine = startLine + 1;
-
-    while (nextLine < endLine) {
-        if (state.isEmpty(nextLine)) {
-            emptyLines++;
-
-            // workaround for lists: 2 blank lines should terminate indented
-            // code block, but not fenced code block
-            if (emptyLines >= 2 && state.parentType === 'list') {
-                break;
-            }
-
-            nextLine++;
-            continue;
-        }
-
-        emptyLines = 0;
-
-        if (state.sCount[nextLine] - state.blkIndent >= 4) {
-            nextLine++;
-            last = nextLine;
-            continue;
-        }
-        break;
-    }
-
-    state.line = last;
-
-    token = state.push('code_block', 'code', 0);
-    token.content = state.getLines(startLine, last, 4 + state.blkIndent, true);
-    token.map = [startLine, state.line];
-
-    return true;
-};
-/* eslint-enable */
-
-/***/ }),
-
-/***/ 24:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-// Copyright (c) 2014 Vitaly Puzrin, Alex Kocharin.
-// Distributed under MIT license: https://github.com/markdown-it/markdown-it/
-/**
- * @fileoverview Implements markdownitCodeBlockQuoteRenderer
- * @modifier NHN Ent. FE Development Lab <dl_javascript@nhnent.com>
- */
-
-/* eslint-disable */
-
-// Block quotes
-
-
-
-// prevent quote, pre in list #811
-// ref: #989
-// #811 START
-// var isSpace = require('../common/utils').isSpace;
-
-function isSpace(code) {
-  switch (code) {
-    case 0x09:
-    case 0x20:
-      return true;
-  }
-  return false;
-}
-// #811 END
-
-module.exports = function blockquote(state, startLine, endLine, silent) {
-  var adjustTab,
-      ch,
-      i,
-      initial,
-      l,
-      lastLineEmpty,
-      lines,
-      nextLine,
-      offset,
-      oldBMarks,
-      oldBSCount,
-      oldIndent,
-      oldParentType,
-      oldSCount,
-      oldTShift,
-      spaceAfterMarker,
-      terminate,
-      terminatorRules,
-      token,
-      wasOutdented,
-      oldLineMax = state.lineMax,
-      pos = state.bMarks[startLine] + state.tShift[startLine],
-      max = state.eMarks[startLine];
-
-  // #811 START
-  var FIND_LIST_RX = /(?:-|\*|\d+\.) {1,4}(?:> {0,3})[^>]*$/;
-  var sourceLines = state.src.split('\n');
-  var currentLine = sourceLines[startLine];
-  // #811 END
-
-  // if it's indented more than 3 spaces, it should be a code block
-  if (state.sCount[startLine] - state.blkIndent >= 4) {
-    return false;
-  }
-
-  // check the block quote marker
-  if (state.src.charCodeAt(pos++) !== 0x3E /* > */) {
-      return false;
-    }
-  // #811 START
-  // check block quote in list
-  if (currentLine.match(FIND_LIST_RX) /*&& !currentLine.match(/^ {0,6}>/)*/) {
-      return false;
-    }
-  // #811 END
-
-  // we know that it's going to be a valid blockquote,
-  // so no point trying to find the end of it in silent mode
-  if (silent) {
-    return true;
-  }
-
-  // skip spaces after ">" and re-calculate offset
-  initial = offset = state.sCount[startLine] + pos - (state.bMarks[startLine] + state.tShift[startLine]);
-
-  // skip one optional space after '>'
-  if (state.src.charCodeAt(pos) === 0x20 /* space */) {
-      // ' >   test '
-      //     ^ -- position start of line here:
-      pos++;
-      initial++;
-      offset++;
-      adjustTab = false;
-      spaceAfterMarker = true;
-    } else if (state.src.charCodeAt(pos) === 0x09 /* tab */) {
-      spaceAfterMarker = true;
-
-      if ((state.bsCount[startLine] + offset) % 4 === 3) {
-        // '  >\t  test '
-        //       ^ -- position start of line here (tab has width===1)
-        pos++;
-        initial++;
-        offset++;
-        adjustTab = false;
-      } else {
-        // ' >\t  test '
-        //    ^ -- position start of line here + shift bsCount slightly
-        //         to make extra space appear
-        adjustTab = true;
-      }
-    } else {
-    spaceAfterMarker = false;
-  }
-
-  oldBMarks = [state.bMarks[startLine]];
-  state.bMarks[startLine] = pos;
-
-  while (pos < max) {
-    ch = state.src.charCodeAt(pos);
-
-    if (isSpace(ch)) {
-      if (ch === 0x09) {
-        offset += 4 - (offset + state.bsCount[startLine] + (adjustTab ? 1 : 0)) % 4;
-      } else {
-        offset++;
-      }
-    } else {
-      break;
-    }
-
-    pos++;
-  }
-
-  oldBSCount = [state.bsCount[startLine]];
-  state.bsCount[startLine] = state.sCount[startLine] + 1 + (spaceAfterMarker ? 1 : 0);
-
-  lastLineEmpty = pos >= max;
-
-  oldSCount = [state.sCount[startLine]];
-  state.sCount[startLine] = offset - initial;
-
-  oldTShift = [state.tShift[startLine]];
-  state.tShift[startLine] = pos - state.bMarks[startLine];
-
-  terminatorRules = state.md.block.ruler.getRules('blockquote');
-
-  oldParentType = state.parentType;
-  state.parentType = 'blockquote';
-  wasOutdented = false;
-
-  // Search the end of the block
-  //
-  // Block ends with either:
-  //  1. an empty line outside:
-  //     ```
-  //     > test
-  //
-  //     ```
-  //  2. an empty line inside:
-  //     ```
-  //     >
-  //     test
-  //     ```
-  //  3. another tag:
-  //     ```
-  //     > test
-  //      - - -
-  //     ```
-  for (nextLine = startLine + 1; nextLine < endLine; nextLine++) {
-    // check if it's outdented, i.e. it's inside list item and indented
-    // less than said list item:
-    //
-    // ```
-    // 1. anything
-    //    > current blockquote
-    // 2. checking this line
-    // ```
-    if (state.sCount[nextLine] < state.blkIndent) wasOutdented = true;
-
-    pos = state.bMarks[nextLine] + state.tShift[nextLine];
-    max = state.eMarks[nextLine];
-
-    if (pos >= max) {
-      // Case 1: line is not inside the blockquote, and this line is empty.
-      break;
-    }
-
-    if (state.src.charCodeAt(pos++) === 0x3E /* > */ && !wasOutdented) {
-      // This line is inside the blockquote.
-
-      // skip spaces after ">" and re-calculate offset
-      initial = offset = state.sCount[nextLine] + pos - (state.bMarks[nextLine] + state.tShift[nextLine]);
-
-      // skip one optional space after '>'
-      if (state.src.charCodeAt(pos) === 0x20 /* space */) {
-          // ' >   test '
-          //     ^ -- position start of line here:
-          pos++;
-          initial++;
-          offset++;
-          adjustTab = false;
-          spaceAfterMarker = true;
-        } else if (state.src.charCodeAt(pos) === 0x09 /* tab */) {
-          spaceAfterMarker = true;
-
-          if ((state.bsCount[nextLine] + offset) % 4 === 3) {
-            // '  >\t  test '
-            //       ^ -- position start of line here (tab has width===1)
-            pos++;
-            initial++;
-            offset++;
-            adjustTab = false;
-          } else {
-            // ' >\t  test '
-            //    ^ -- position start of line here + shift bsCount slightly
-            //         to make extra space appear
-            adjustTab = true;
-          }
-        } else {
-        spaceAfterMarker = false;
-      }
-
-      oldBMarks.push(state.bMarks[nextLine]);
-      state.bMarks[nextLine] = pos;
-
-      while (pos < max) {
-        ch = state.src.charCodeAt(pos);
-
-        if (isSpace(ch)) {
-          if (ch === 0x09) {
-            offset += 4 - (offset + state.bsCount[nextLine] + (adjustTab ? 1 : 0)) % 4;
-          } else {
-            offset++;
-          }
-        } else {
-          break;
-        }
-
-        pos++;
-      }
-
-      lastLineEmpty = pos >= max;
-
-      oldBSCount.push(state.bsCount[nextLine]);
-      state.bsCount[nextLine] = state.sCount[nextLine] + 1 + (spaceAfterMarker ? 1 : 0);
-
-      oldSCount.push(state.sCount[nextLine]);
-      state.sCount[nextLine] = offset - initial;
-
-      oldTShift.push(state.tShift[nextLine]);
-      state.tShift[nextLine] = pos - state.bMarks[nextLine];
-      continue;
-    }
-
-    // Case 2: line is not inside the blockquote, and the last line was empty.
-    if (lastLineEmpty) {
-      break;
-    }
-
-    // Case 3: another tag found.
-    terminate = false;
-    for (i = 0, l = terminatorRules.length; i < l; i++) {
-      if (terminatorRules[i](state, nextLine, endLine, true)) {
-        terminate = true;
-        break;
-      }
-    }
-
-    if (terminate) {
-      // Quirk to enforce "hard termination mode" for paragraphs;
-      // normally if you call `tokenize(state, startLine, nextLine)`,
-      // paragraphs will look below nextLine for paragraph continuation,
-      // but if blockquote is terminated by another tag, they shouldn't
-      state.lineMax = nextLine;
-
-      if (state.blkIndent !== 0) {
-        // state.blkIndent was non-zero, we now set it to zero,
-        // so we need to re-calculate all offsets to appear as
-        // if indent wasn't changed
-        oldBMarks.push(state.bMarks[nextLine]);
-        oldBSCount.push(state.bsCount[nextLine]);
-        oldTShift.push(state.tShift[nextLine]);
-        oldSCount.push(state.sCount[nextLine]);
-        state.sCount[nextLine] -= state.blkIndent;
-      }
-
-      break;
-    }
-
-    oldBMarks.push(state.bMarks[nextLine]);
-    oldBSCount.push(state.bsCount[nextLine]);
-    oldTShift.push(state.tShift[nextLine]);
-    oldSCount.push(state.sCount[nextLine]);
-
-    // A negative indentation means that this is a paragraph continuation
-    //
-    state.sCount[nextLine] = -1;
-  }
-
-  oldIndent = state.blkIndent;
-  state.blkIndent = 0;
-
-  token = state.push('blockquote_open', 'blockquote', 1);
-  token.markup = '>';
-  token.map = lines = [startLine, 0];
-
-  state.md.block.tokenize(state, startLine, nextLine);
-
-  token = state.push('blockquote_close', 'blockquote', -1);
-  token.markup = '>';
-
-  state.lineMax = oldLineMax;
-  state.parentType = oldParentType;
-  lines[1] = state.line;
-
-  // Restore original tShift; this might not be necessary since the parser
-  // has already been here, but just to make sure we can do that.
-  for (i = 0; i < oldTShift.length; i++) {
-    state.bMarks[i + startLine] = oldBMarks[i];
-    state.tShift[i + startLine] = oldTShift[i];
-    state.sCount[i + startLine] = oldSCount[i];
-    state.bsCount[i + startLine] = oldBSCount[i];
-  }
-  state.blkIndent = oldIndent;
-
-  return true;
-};
-
-/***/ }),
-
-/***/ 25:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-// Copyright (c) 2014 Vitaly Puzrin, Alex Kocharin.
-// Distributed under an ISC license: https://github.com/markdown-it/markdown-it/
-
-/**
- * @fileoverview Implements markdownitTableRenderer
- * @modifier NHN Ent. FE Development Lab <dl_javascript@nhnent.com>
- */
-
-/*eslint-disable */
-function getLine(state, line) {
-    var pos = state.bMarks[line] + state.blkIndent,
-        max = state.eMarks[line];
-
-    return state.src.substr(pos, max - pos);
-}
-
-function escapedSplit(str) {
-    var result = [],
-        pos = 0,
-        max = str.length,
-        ch,
-        escapes = 0,
-        lastPos = 0,
-        backTicked = false,
-        lastBackTick = 0;
-
-    ch = str.charCodeAt(pos);
-
-    while (pos < max) {
-        if (ch === 0x60 /* ` */ && escapes % 2 === 0) {
-            backTicked = !backTicked;
-            lastBackTick = pos;
-        } else if (ch === 0x7c /* | */ && escapes % 2 === 0 && !backTicked) {
-            result.push(str.substring(lastPos, pos));
-            lastPos = pos + 1;
-        } else if (ch === 0x5c /* \ */) {
-                escapes += 1;
-            } else {
-            escapes = 0;
-        }
-
-        pos += 1;
-
-        // If there was an un-closed backtick, go back to just after
-        // the last backtick, but as if it was a normal character
-        if (pos === max && backTicked) {
-            backTicked = false;
-            pos = lastBackTick + 1;
-        }
-
-        ch = str.charCodeAt(pos);
-    }
-
-    result.push(str.substring(lastPos));
-
-    return result;
-}
-
-module.exports = function table(state, startLine, endLine, silent) {
-    var ch, lineText, pos, i, nextLine, columns, columnCount, token, aligns, alignCount, t, tableLines, tbodyLines;
-
-    // should have at least three lines
-    if (startLine + 2 > endLine) {
-        return false;
-    }
-
-    nextLine = startLine + 1;
-
-    if (state.sCount[nextLine] < state.blkIndent) {
-        return false;
-    }
-
-    // first character of the second line should be '|' or '-'
-
-    pos = state.bMarks[nextLine] + state.tShift[nextLine];
-    if (pos >= state.eMarks[nextLine]) {
-        return false;
-    }
-
-    ch = state.src.charCodeAt(pos);
-    if (ch !== 0x7C /* | */ && ch !== 0x2D /* - */ && ch !== 0x3A /* : */) {
-            return false;
-        }
-
-    lineText = getLine(state, startLine + 1);
-    if (!/^[-:| ]+$/.test(lineText)) {
-        return false;
-    }
-
-    columns = lineText.split('|');
-    aligns = [];
-    for (i = 0; i < columns.length; i += 1) {
-        t = columns[i].trim();
-        if (!t) {
-            // allow empty columns before and after table, but not in between columns;
-            // e.g. allow ` |---| `, disallow ` ---||--- `
-            if (i === 0 || i === columns.length - 1) {
-                continue;
-            } else {
-                return false;
-            }
-        }
-
-        if (!/^:?-+:?$/.test(t)) {
-            return false;
-        }
-        if (t.charCodeAt(t.length - 1) === 0x3A /* : */) {
-                aligns.push(t.charCodeAt(0) === 0x3A /* : */ ? 'center' : 'right');
-            } else if (t.charCodeAt(0) === 0x3A /* : */) {
-                aligns.push('left');
-            } else {
-            aligns.push('');
-        }
-    }
-    alignCount = aligns.length;
-
-    lineText = getLine(state, startLine).trim();
-    if (lineText.indexOf('|') === -1) {
-        return false;
-    }
-    columns = escapedSplit(lineText.replace(/^\||\|$/g, ''));
-
-    // header row will define an amount of columns in the entire table,
-    // and align row shouldn't be smaller than that (the rest of the rows can)
-    columnCount = columns.length;
-    if (columnCount > alignCount) {
-        return false;
-    } else if (columnCount < alignCount) {
-        for (i = 0; i < alignCount - columnCount; i += 1) {
-            columns.push('');
-        }
-        columnCount = columns.length;
-    }
-
-    if (silent) {
-        return true;
-    }
-
-    token = state.push('table_open', 'table', 1);
-    token.map = tableLines = [startLine, 0];
-
-    token = state.push('thead_open', 'thead', 1);
-    token.map = [startLine, startLine + 1];
-
-    token = state.push('tr_open', 'tr', 1);
-    token.map = [startLine, startLine + 1];
-
-    for (i = 0; i < columnCount; i += 1) {
-        token = state.push('th_open', 'th', 1);
-        token.map = [startLine, startLine + 1];
-        if (aligns[i]) {
-            // FIXED: change property style to align
-            token.attrs = [['align', aligns[i]]];
-        }
-
-        token = state.push('inline', '', 0);
-        token.content = columns[i].trim();
-        token.map = [startLine, startLine + 1];
-        token.children = [];
-
-        token = state.push('th_close', 'th', -1);
-    }
-
-    token = state.push('tr_close', 'tr', -1);
-    token = state.push('thead_close', 'thead', -1);
-
-    token = state.push('tbody_open', 'tbody', 1);
-    token.map = tbodyLines = [startLine + 2, 0];
-
-    for (nextLine = startLine + 2; nextLine < endLine; nextLine += 1) {
-        if (state.sCount[nextLine] < state.blkIndent) {
-            break;
-        }
-
-        lineText = getLine(state, nextLine);
-        if (lineText.indexOf('|') === -1) {
-            break;
-        }
-
-        // keep spaces at beginning of line to indicate an empty first cell, but
-        // strip trailing whitespace
-        columns = escapedSplit(lineText.replace(/^\||\|\s*$/g, ''));
-
-        token = state.push('tr_open', 'tr', 1);
-        for (i = 0; i < columnCount; i += 1) {
-            token = state.push('td_open', 'td', 1);
-            if (aligns[i]) {
-                // FIXED: change property style to align
-                token.attrs = [['align', aligns[i]]];
-            }
-
-            token = state.push('inline', '', 0);
-            token.content = columns[i] ? columns[i].trim() : '';
-            token.children = [];
-
-            token = state.push('td_close', 'td', -1);
-        }
-        token = state.push('tr_close', 'tr', -1);
-    }
-    token = state.push('tbody_close', 'tbody', -1);
-    token = state.push('table_close', 'table', -1);
-
-    tableLines[1] = tbodyLines[1] = nextLine;
-    state.line = nextLine;
-    return true;
-};
-
-/***/ }),
-
-/***/ 26:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-// Copyright (c) 2014 Vitaly Puzrin, Alex Kocharin.
-// Distributed under an ISC license: https://github.com/markdown-it/markdown-it/
-
-/**
- * @fileoverview Implements markdownitHtmlBlockRenderer
- * @modifier NHN Ent. FE Development Lab <dl_javascript@nhnent.com>
- */
-/* eslint-disable */
-// HTML block
-
-
-
-// An array of opening and corresponding closing sequences for html tags,
-// last argument defines whether it can terminate a paragraph or not
-//
-
-// void tag names --- Added by Junghwan Park
-
-var voidTagNames = ['area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input', 'keygen', 'link', 'meta', 'param', 'source', 'track', 'wbr'];
-var HTML_SEQUENCES = [[/^<(script|pre|style)(?=(\s|>|$))/i, /<\/(script|pre|style)>/i, true], [/^<!--/, /-->/, true], [/^<\?/, /\?>/, true], [/^<![A-Z]/, />/, true], [/^<!\[CDATA\[/, /\]\]>/, true], [new RegExp('^<(' + voidTagNames.join('|') + ')', 'i'), /^\/?>$/, true], [new RegExp('^</?(address|article|aside|base|basefont|blockquote|body|caption|center|col|colgroup|dd|details|dialog|dir|div|dl|dt|fieldset|figcaption|figure|footer|form|frame|frameset|h1|head|header|hr|html|iframe|legend|li|link|main|menu|menuitem|meta|nav|noframes|ol|optgroup|option|p|param|pre|section|source|title|summary|table|tbody|td|tfoot|th|thead|title|tr|track|ul)(?=(\\s|/?>|$))', 'i'), /^$/, true], [/^(?:<[A-Za-z][A-Za-z0-9\-]*(?:\s+[a-zA-Z_:][a-zA-Z0-9:._-]*(?:\s*=\s*(?:[^"'=<>`\x00-\x20]+|'[^']*'|"[^"]*"))?)*\s*\/?>|<\/[A-Za-z][A-Za-z0-9\-]*\s*>)\s*$/, /^$/, false]];
-
-module.exports = function html_block(state, startLine, endLine, silent) {
-    var i,
-        nextLine,
-        token,
-        lineText,
-        pos = state.bMarks[startLine] + state.tShift[startLine],
-        max = state.eMarks[startLine];
-
-    if (!state.md.options.html) {
-        return false;
-    }
-
-    if (state.src.charCodeAt(pos) !== 0x3C /* < */) {
-            return false;
-        }
-
-    lineText = state.src.slice(pos, max);
-
-    for (i = 0; i < HTML_SEQUENCES.length; i++) {
-        if (HTML_SEQUENCES[i][0].test(lineText)) {
-            // add condition for return when meet void element --- Added by Junghwan Park
-            if (i === 5) {
-                return false;
-            } else {
-                break;
-            }
-        }
-    }
-
-    if (i === HTML_SEQUENCES.length) {
-        return false;
-    }
-
-    if (silent) {
-        // true if this sequence can be a terminator, false otherwise
-        return HTML_SEQUENCES[i][2];
-    }
-
-    nextLine = startLine + 1;
-
-    // If we are here - we detected HTML block.
-    // Let's roll down till block end.
-    if (!HTML_SEQUENCES[i][1].test(lineText)) {
-        for (; nextLine < endLine; nextLine++) {
-            if (state.sCount[nextLine] < state.blkIndent) {
-                break;
-            }
-
-            pos = state.bMarks[nextLine] + state.tShift[nextLine];
-            max = state.eMarks[nextLine];
-            lineText = state.src.slice(pos, max);
-
-            if (HTML_SEQUENCES[i][1].test(lineText)) {
-                if (lineText.length !== 0) {
-                    nextLine++;
-                }
-                break;
-            }
-        }
-    }
-
-    state.line = nextLine;
-
-    token = state.push('html_block', '', 0);
-    token.map = [startLine, nextLine];
-    token.content = state.getLines(startLine, nextLine, state.blkIndent, true);
-
-    return true;
-};
-/* eslint-enable */
-
-/***/ }),
-
-/***/ 27:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-// Copyright (c) 2014 Vitaly Puzrin, Alex Kocharin.
-// Distributed under MIT license: https://github.com/markdown-it/markdown-it/
-/**
- * @fileoverview Implements markdownitBackticksRenderer
- * @modifier NHN Ent. FE Development Lab <dl_javascript@nhnent.com>
- */
-/* eslint-disable */
-
-// Parse backticks
-module.exports = function backtick(state, silent) {
-  var start,
-      max,
-      marker,
-      matchStart,
-      matchEnd,
-      token,
-      pos = state.pos,
-      ch = state.src.charCodeAt(pos);
-
-  if (ch !== 0x60 /* ` */) {
-      return false;
-    }
-
-  start = pos;
-  pos++;
-  max = state.posMax;
-
-  while (pos < max && state.src.charCodeAt(pos) === 0x60 /* ` */) {
-    pos++;
-  }
-
-  marker = state.src.slice(start, pos);
-
-  matchStart = matchEnd = pos;
-
-  while ((matchStart = state.src.indexOf('`', matchEnd)) !== -1) {
-    matchEnd = matchStart + 1;
-
-    while (matchEnd < max && state.src.charCodeAt(matchEnd) === 0x60 /* ` */) {
-      matchEnd++;
-    }
-
-    if (matchEnd - matchStart === marker.length) {
-      if (!silent) {
-        token = state.push('code_inline', 'code', 0);
-        token.markup = marker;
-        token.content = state.src.slice(pos, matchStart).replace(/[ \n]+/g, ' ').trim();
-        // TUI.EDITOR MODIFICATION START
-        // store number of backtick in data-backtick
-        // https://github.nhnent.com/fe/tui.editor/pull/981
-        token.attrSet('data-backticks', token.markup.length);
-        // TUI.EDITOR MODIFICATION END
-      }
-      state.pos = matchEnd;
-      return true;
-    }
-  }
-
-  if (!silent) {
-    state.pending += marker;
-  }
-  state.pos += marker.length;
-  return true;
-};
-
-/***/ }),
-
-/***/ 28:
-/***/ (function(module, exports) {
-
-module.exports = __WEBPACK_EXTERNAL_MODULE_28__;
-
-/***/ }),
-
-/***/ 29:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); /**
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * @fileoverview Implements editor preivew
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * @author NHN Ent. FE Development Lab <dl_javascript@nhnent.com>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      */
-
-
-var _jquery = __webpack_require__(0);
-
-var _jquery2 = _interopRequireDefault(_jquery);
-
-var _tuiCodeSnippet = __webpack_require__(1);
-
-var _tuiCodeSnippet2 = _interopRequireDefault(_tuiCodeSnippet);
-
-var _mdPreview = __webpack_require__(9);
-
-var _mdPreview2 = _interopRequireDefault(_mdPreview);
-
-var _eventManager = __webpack_require__(12);
-
-var _eventManager2 = _interopRequireDefault(_eventManager);
-
-var _commandManager = __webpack_require__(2);
-
-var _commandManager2 = _interopRequireDefault(_commandManager);
-
-var _extManager = __webpack_require__(13);
-
-var _extManager2 = _interopRequireDefault(_extManager);
-
-var _convertor = __webpack_require__(14);
-
-var _convertor2 = _interopRequireDefault(_convertor);
-
-var _domUtils = __webpack_require__(3);
-
-var _domUtils2 = _interopRequireDefault(_domUtils);
-
-var _codeBlockManager = __webpack_require__(7);
-
-var _codeBlockManager2 = _interopRequireDefault(_codeBlockManager);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var TASK_ATTR_NAME = 'data-te-task';
-var TASK_CHECKED_CLASS_NAME = 'checked';
-
-/**
- * Class ToastUIEditorViewer
- */
-
-var ToastUIEditorViewer = function () {
-  /**
-     * Viewer
-     * @param {object} options Option object
-        * @param {string} options.initialValue Editor's initial value
-        * @param {object} options.events eventlist Event list
-            * @param {function} options.events.load It would be emitted when editor fully load
-            * @param {function} options.events.change It would be emitted when content changed
-            * @param {function} options.events.stateChange It would be emitted when format change by cursor position
-            * @param {function} options.events.focus It would be emitted when editor get focus
-            * @param {function} options.events.blur It would be emitted when editor loose focus
-        * @param {object} options.hooks Hook list
-            * @param {function} options.hooks.previewBeforeHook Submit preview to hook URL before preview be shown
-    */
-  function ToastUIEditorViewer(options) {
-    var _this = this;
-
-    _classCallCheck(this, ToastUIEditorViewer);
-
-    this.options = options;
-
-    this.eventManager = new _eventManager2.default();
-    this.commandManager = new _commandManager2.default(this);
-    this.convertor = new _convertor2.default(this.eventManager);
-    this.toMarkOptions = null;
-
-    if (this.options.hooks) {
-      _tuiCodeSnippet2.default.forEach(this.options.hooks, function (fn, key) {
-        _this.addHook(key, fn);
-      });
-    }
-
-    if (this.options.events) {
-      _tuiCodeSnippet2.default.forEach(this.options.events, function (fn, key) {
-        _this.on(key, fn);
-      });
-    }
-
-    this.preview = new _mdPreview2.default((0, _jquery2.default)(this.options.el), this.eventManager, this.convertor, true);
-
-    this.preview.$el.on('mousedown', _jquery2.default.proxy(this._toggleTask, this));
-
-    _extManager2.default.applyExtension(this, this.options.exts);
-
-    this.setValue(this.options.initialValue);
-
-    this.eventManager.emit('load', this);
-  }
-
-  /**
-   * Toggle task by detecting mousedown event.
-   * @param {MouseEvent} ev - event
-   * @private
-   */
-
-
-  _createClass(ToastUIEditorViewer, [{
-    key: '_toggleTask',
-    value: function _toggleTask(ev) {
-      var isBeneathTaskBox = ev.offsetX < 18 && ev.offsetY > 18;
-
-      if (ev.target.hasAttribute(TASK_ATTR_NAME) && !isBeneathTaskBox) {
-        (0, _jquery2.default)(ev.target).toggleClass(TASK_CHECKED_CLASS_NAME);
-        this.eventManager.emit('change', {
-          source: 'viewer',
-          data: ev
-        });
-      }
-    }
-
-    /**
-     * Set content for preview
-     * @memberof ToastUIEditorViewer
-     * @param {string} markdown Markdown text
-     */
-
-  }, {
-    key: 'setMarkdown',
-    value: function setMarkdown(markdown) {
-      this.markdownValue = markdown = markdown || '';
-
-      this.preview.refresh(this.markdownValue);
-      this.eventManager.emit('setMarkdownAfter', this.markdownValue);
-    }
-
-    /**
-     * Set content for preview
-     * @memberof ToastUIEditorViewer
-     * @param {string} markdown Markdown text
-     * @deprecated
-     */
-
-  }, {
-    key: 'setValue',
-    value: function setValue(markdown) {
-      this.setMarkdown(markdown);
-    }
-
-    /**
-     * Bind eventHandler to event type
-     * @memberof ToastUIEditorViewer
-     * @param {string} type Event type
-     * @param {function} handler Event handler
-     */
-
-  }, {
-    key: 'on',
-    value: function on(type, handler) {
-      this.eventManager.listen(type, handler);
-    }
-
-    /**
-     * Unbind eventHandler from event type
-     * @memberof ToastUIEditorViewer
-     * @param {string} type Event type
-     */
-
-  }, {
-    key: 'off',
-    value: function off(type) {
-      this.eventManager.removeEventHandler(type);
-    }
-
-    /**
-     * Remove Viewer preview from document
-     * @memberof ToastUIEditorViewer
-     */
-
-  }, {
-    key: 'remove',
-    value: function remove() {
-      this.eventManager.emit('removeEditor');
-      this.preview.$el.off('mousedown', _jquery2.default.proxy(this._toggleTask, this));
-      this.options = null;
-      this.eventManager = null;
-      this.commandManager = null;
-      this.convertor = null;
-      this.preview = null;
-    }
-
-    /**
-     * Add hook to Viewer preview's event
-     * @memberof ToastUIEditorViewer
-     * @param {string} type Event type
-     * @param {function} handler Event handler
-     */
-
-  }, {
-    key: 'addHook',
-    value: function addHook(type, handler) {
-      this.eventManager.removeEventHandler(type);
-      this.eventManager.listen(type, handler);
-    }
-
-    /**
-     * Return true
-     * @memberof ToastUIEditorViewer
-     * @returns {boolean}
-     */
-
-  }, {
-    key: 'isViewer',
-    value: function isViewer() {
-      return true;
-    }
-
-    /**
-     * Return false
-     * @memberof ToastUIEditorViewer
-     * @returns {boolean}
-     */
-
-  }, {
-    key: 'isMarkdownMode',
-    value: function isMarkdownMode() {
-      return false;
-    }
-
-    /**
-     * Return false
-     * @memberof ToastUIEditorViewer
-     * @returns {boolean}
-     */
-
-  }, {
-    key: 'isWysiwygMode',
-    value: function isWysiwygMode() {
-      return false;
-    }
-
-    /**
-     * Define extension
-     * @memberof ToastUIEditorViewer
-     * @param {string} name Extension name
-     * @param {ExtManager~extension} ext extension
-     */
-
-  }], [{
-    key: 'defineExtension',
-    value: function defineExtension(name, ext) {
-      _extManager2.default.defineExtension(name, ext);
-    }
-  }]);
-
-  return ToastUIEditorViewer;
-}();
-
-/**
- * check whther is viewer
- * @type {boolean}
- */
-
-
-ToastUIEditorViewer.isViewer = true;
-
-/**
- * domUtil instance
- * @type {DomUtil}
- */
-ToastUIEditorViewer.domUtils = _domUtils2.default;
-
-/**
- * CodeBlockManager instance
- * @type {CodeBlockManager}
- */
-ToastUIEditorViewer.codeBlockManager = _codeBlockManager2.default;
-
-/**
- * MarkdownIt hightlight instance
- * @type {MarkdownIt}
- */
-ToastUIEditorViewer.markdownitHighlight = _convertor2.default.getMarkdownitHighlightRenderer();
-
-/**
- * @ignore
- */
-ToastUIEditorViewer.i18n = null;
-
-/**
- * @ignore
- */
-ToastUIEditorViewer.Button = null;
-
-/**
- * @ignore
- */
-ToastUIEditorViewer.WwCodeBlockManager = null;
-
-/**
- * @ignore
- */
-ToastUIEditorViewer.WwTableManager = null;
-
-/**
- * @ignore
- */
-ToastUIEditorViewer.WwTableSelectionManager = null;
-
-module.exports = ToastUIEditorViewer;
-
-/***/ }),
-
-/***/ 3:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _jquery = __webpack_require__(0);
-
-var _jquery2 = _interopRequireDefault(_jquery);
-
-var _tuiCodeSnippet = __webpack_require__(1);
-
-var _tuiCodeSnippet2 = _interopRequireDefault(_tuiCodeSnippet);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-/**
- * @fileoverview DOM Utils
- * @author NHN Ent. FE Development Lab <dl_javascript@nhnent.com>
- */
-var FIND_ZWB = /\u200B/g;
-
-/**
- * isTextNode
- * Check if node is text node
- * @param {Node} node node to check
- * @returns {boolean} result
- * @ignore
- */
-var isTextNode = function isTextNode(node) {
-  return node && node.nodeType === Node.TEXT_NODE;
-};
-
-/**
- * isElemNode
- * Check if node is element node
- * @param {Node} node node to check
- * @returns {boolean} result
- * @ignore
- */
-var isElemNode = function isElemNode(node) {
-  return node && node.nodeType === Node.ELEMENT_NODE;
-};
-
-/**
- * getNodeName
- * Get node name of node
- * @param {Node} node node
- * @returns {string} node name
- * @ignore
- */
-var getNodeName = function getNodeName(node) {
-  if (isElemNode(node)) {
-    return node.tagName;
-  }
-
-  return 'TEXT';
-};
-
-/**
- * getTextLength
- * Get node offset length of node(for Range API)
- * @param {Node} node node
- * @returns {number} length
- * @ignore
- */
-var getTextLength = function getTextLength(node) {
-  var len = void 0;
-
-  if (isElemNode(node)) {
-    len = node.textContent.replace(FIND_ZWB, '').length;
-  } else if (isTextNode(node)) {
-    len = node.nodeValue.replace(FIND_ZWB, '').length;
-  }
-
-  return len;
-};
-
-/**
- * getOffsetLength
- * Get node offset length of node(for Range API)
- * @param {Node} node node
- * @returns {number} length
- * @ignore
- */
-var getOffsetLength = function getOffsetLength(node) {
-  var len = void 0;
-
-  if (isElemNode(node)) {
-    len = node.childNodes.length;
-  } else if (isTextNode(node)) {
-    len = node.nodeValue.replace(FIND_ZWB, '').length;
-  }
-
-  return len;
-};
-
-/**
- * getNodeOffsetOfParent
- * get node offset between parent's childnodes
- * @param {Node} node node
- * @returns {number} offset(index)
- * @ignore
- */
-var getNodeOffsetOfParent = function getNodeOffsetOfParent(node) {
-  var childNodesOfParent = node.parentNode.childNodes;
-  var i = void 0,
-      t = void 0,
-      found = void 0;
-
-  for (i = 0, t = childNodesOfParent.length; i < t; i += 1) {
-    if (childNodesOfParent[i] === node) {
-      found = i;
-      break;
-    }
-  }
-
-  return found;
-};
-
-/**
- * getChildNodeByOffset
- * get child node by offset
- * @param {Node} node node
- * @param {number} index offset index
- * @returns {Node} foudned node
- * @ignore
- */
-var getChildNodeByOffset = function getChildNodeByOffset(node, index) {
-  var currentNode = void 0;
-
-  if (isTextNode(node)) {
-    currentNode = node;
-  } else if (node.childNodes.length && index >= 0) {
-    currentNode = node.childNodes[index];
-  }
-
-  return currentNode;
-};
-
-/**
- * getNodeWithDirectionUntil
- * find next node from passed node
- * @param {strong} direction previous or next
- * @param {Node} node node
- * @param {string} untilNodeName parent node name to limit
- * @returns {Node} founded node
- * @ignore
- */
-var getNodeWithDirectionUntil = function getNodeWithDirectionUntil(direction, node, untilNodeName) {
-  var directionKey = direction + 'Sibling';
-  var nodeName = void 0,
-      foundedNode = void 0;
-
-  while (node && !node[directionKey]) {
-    nodeName = getNodeName(node.parentNode);
-
-    if (nodeName === untilNodeName || nodeName === 'BODY') {
-      break;
-    }
-
-    node = node.parentNode;
-  }
-
-  if (node[directionKey]) {
-    foundedNode = node[directionKey];
-  }
-
-  return foundedNode;
-};
-
-/**
- * getPrevOffsetNodeUntil
- * get prev node of childnode pointed with index
- * @param {Node} node node
- * @param {number} index offset index
- * @param {string} untilNodeName parent node name to limit
- * @returns {Node} founded node
- * @ignore
- */
-var getPrevOffsetNodeUntil = function getPrevOffsetNodeUntil(node, index, untilNodeName) {
-  var prevNode = void 0;
-
-  if (index > 0) {
-    prevNode = getChildNodeByOffset(node, index - 1);
-  } else {
-    prevNode = getNodeWithDirectionUntil('previous', node, untilNodeName);
-  }
-
-  return prevNode;
-};
-
-var getParentUntilBy = function getParentUntilBy(node, condition) {
-  var foundedNode = void 0;
-
-  while (node.parentNode && !condition(node.parentNode)) {
-    node = node.parentNode;
-  }
-
-  if (condition(node.parentNode)) {
-    foundedNode = node;
-  }
-
-  return foundedNode;
-};
-
-/**
- * getParentUntil
- * get parent node until paseed node name
- * @param {Node} node node
- * @param {string|HTMLNode} untilNode node name or node to limit
- * @returns {Node} founded node
- * @ignore
- */
-var getParentUntil = function getParentUntil(node, untilNode) {
-  var foundedNode = void 0;
-
-  if (_tuiCodeSnippet2.default.isString(untilNode)) {
-    foundedNode = getParentUntilBy(node, function (targetNode) {
-      return untilNode === getNodeName(targetNode);
-    });
-  } else {
-    foundedNode = getParentUntilBy(node, function (targetNode) {
-      return untilNode === targetNode;
-    });
-  }
-
-  return foundedNode;
-};
-
-/**
- * getNodeWithDirectionUnderParent
- * get node on the given direction under given parent
- * @param {strong} direction previous or next
- * @param {Node} node node
- * @param {string|Node} underNode parent node name to limit
- * @returns {Node} founded node
- * @ignore
- */
-var getNodeWithDirectionUnderParent = function getNodeWithDirectionUnderParent(direction, node, underNode) {
-  var directionKey = direction + 'Sibling';
-  var foundedNode = void 0;
-
-  node = getParentUntil(node, underNode);
-
-  if (node && node[directionKey]) {
-    foundedNode = node[directionKey];
-  }
-
-  return foundedNode;
-};
-
-/**
- * getTopPrevNodeUnder
- * get top previous top level node under given node
- * @param {Node} node node
- * @param {Node} underNode underNode
- * @returns {Node} founded node
- * @ignore
- */
-var getTopPrevNodeUnder = function getTopPrevNodeUnder(node, underNode) {
-  return getNodeWithDirectionUnderParent('previous', node, underNode);
-};
-
-/**
- * getNextTopBlockNode
- * get next top level block node
- * @param {Node} node node
- * @param {Node} underNode underNode
- * @returns {Node} founded node
- * @ignore
- */
-var getTopNextNodeUnder = function getTopNextNodeUnder(node, underNode) {
-  return getNodeWithDirectionUnderParent('next', node, underNode);
-};
-
-/**
- * Get parent element the body element
- * @param {Node} node Node for start searching
- * @returns {Node}
- * @ignore
- */
-var getTopBlockNode = function getTopBlockNode(node) {
-  return getParentUntil(node, 'BODY');
-};
-
-/**
- * Get previous text node
- * @param {Node} node Node for start searching
- * @returns {Node}
- * @ignore
- */
-var getPrevTextNode = function getPrevTextNode(node) {
-  node = node.previousSibling || node.parentNode;
-
-  while (!isTextNode(node) && getNodeName(node) !== 'BODY') {
-    if (node.previousSibling) {
-      node = node.previousSibling;
-
-      while (node.lastChild) {
-        node = node.lastChild;
-      }
-    } else {
-      node = node.parentNode;
-    }
-  }
-
-  if (getNodeName(node) === 'BODY') {
-    node = null;
-  }
-
-  return node;
-};
-
-/**
- * find node by offset
- * @param {HTMLElement} root Root element
- * @param {Array.<number>} offsetList offset list
- * @param {function} textNodeFilter Text node filter
- * @returns {Array}
- * @ignore
- */
-var findOffsetNode = function findOffsetNode(root, offsetList, textNodeFilter) {
-  var result = [];
-  var text = '';
-  var walkerOffset = 0;
-  var newWalkerOffset = void 0;
-
-  if (!offsetList.length) {
-    return result;
-  }
-
-  var offset = offsetList.shift();
-  var walker = document.createTreeWalker(root, 4, null, false);
-
-  while (walker.nextNode()) {
-    text = walker.currentNode.nodeValue || '';
-
-    if (textNodeFilter) {
-      text = textNodeFilter(text);
-    }
-
-    newWalkerOffset = walkerOffset + text.length;
-
-    while (newWalkerOffset >= offset) {
-      result.push({
-        container: walker.currentNode,
-        offsetInContainer: offset - walkerOffset,
-        offset: offset
-      });
-
-      if (!offsetList.length) {
-        return result;
-      }
-      offset = offsetList.shift();
-    }
-    walkerOffset = newWalkerOffset;
-  }
-
-  // there should be offset left
-  do {
-    result.push({
-      container: walker.currentNode,
-      offsetInContainer: text.length,
-      offset: offset
-    });
-    offset = offsetList.shift();
-  } while (!_tuiCodeSnippet2.default.isUndefined(offset));
-
-  return result;
-};
-
-var getNodeInfo = function getNodeInfo(node) {
-  var path = {};
-
-  path.tagName = node.nodeName;
-
-  if (node.id) {
-    path.id = node.id;
-  }
-
-  var className = node.className.trim();
-
-  if (className) {
-    path.className = className;
-  }
-
-  return path;
-};
-
-var getPath = function getPath(node, root) {
-  var paths = [];
-
-  while (node && node !== root) {
-    if (isElemNode(node)) {
-      paths.unshift(getNodeInfo(node));
-    }
-
-    node = node.parentNode;
-  }
-
-  return paths;
-};
-
-/**
- * Find next, previous TD or TH element by given TE element
- * @param {HTMLElement} node TD element
- * @param {string} direction Boolean value for direction true is find next cell
- * @returns {HTMLElement|null}
- * @ignore
- */
-var getTableCellByDirection = function getTableCellByDirection(node, direction) {
-  var isForward = true;
-  var targetElement = null;
-
-  if (_tuiCodeSnippet2.default.isUndefined(direction) || direction !== 'next' && direction !== 'previous') {
-    return null;
-  } else if (direction === 'previous') {
-    isForward = false;
-  }
-
-  if (isForward) {
-    targetElement = node.nextElementSibling;
-  } else {
-    targetElement = node.previousElementSibling;
-  }
-
-  return targetElement;
-};
-
-/**
- * Find sibling TR's TD element by given TD and direction
- * @param {HTMLElement} node TD element
- * @param {string} direction Boolean value for find first TD in next line
- * @param {boolean} [needEdgeCell=false] Boolean value for find first TD in next line
- * @returns {HTMLElement|null}
- * @ignore
- */
-var getSiblingRowCellByDirection = function getSiblingRowCellByDirection(node, direction, needEdgeCell) {
-  var isForward = true;
-  var tableCellElement = null;
-  var $node = void 0,
-      index = void 0,
-      $targetRowElement = void 0,
-      $currentContainer = void 0,
-      $siblingContainer = void 0,
-      isSiblingContainerExists = void 0;
-
-  if (_tuiCodeSnippet2.default.isUndefined(direction) || direction !== 'next' && direction !== 'previous') {
-    return null;
-  } else if (direction === 'previous') {
-    isForward = false;
-  }
-
-  if (node) {
-    $node = (0, _jquery2.default)(node);
-
-    if (isForward) {
-      $targetRowElement = $node.parent().next();
-      $currentContainer = $node.parents('thead');
-      $siblingContainer = $currentContainer[0] && $currentContainer.next();
-      isSiblingContainerExists = $siblingContainer && getNodeName($siblingContainer[0]) === 'TBODY';
-
-      index = 0;
-    } else {
-      $targetRowElement = $node.parent().prev();
-      $currentContainer = $node.parents('tbody');
-      $siblingContainer = $currentContainer[0] && $currentContainer.prev();
-      isSiblingContainerExists = $siblingContainer && getNodeName($siblingContainer[0]) === 'THEAD';
-
-      index = node.parentNode.childNodes.length - 1;
-    }
-
-    if (_tuiCodeSnippet2.default.isUndefined(needEdgeCell) || !needEdgeCell) {
-      index = getNodeOffsetOfParent(node);
-    }
-
-    if ($targetRowElement[0]) {
-      tableCellElement = $targetRowElement.children('td,th')[index];
-    } else if ($currentContainer[0] && isSiblingContainerExists) {
-      tableCellElement = $siblingContainer.find('td,th')[index];
-    }
-
-    return tableCellElement;
-  }
-
-  return null;
-};
-
-exports.default = {
-  getNodeName: getNodeName,
-  isTextNode: isTextNode,
-  isElemNode: isElemNode,
-  getTextLength: getTextLength,
-  getOffsetLength: getOffsetLength,
-  getPrevOffsetNodeUntil: getPrevOffsetNodeUntil,
-  getNodeOffsetOfParent: getNodeOffsetOfParent,
-  getChildNodeByOffset: getChildNodeByOffset,
-  getTopPrevNodeUnder: getTopPrevNodeUnder,
-  getTopNextNodeUnder: getTopNextNodeUnder,
-  getParentUntil: getParentUntil,
-  getTopBlockNode: getTopBlockNode,
-  getPrevTextNode: getPrevTextNode,
-  findOffsetNode: findOffsetNode,
-  getPath: getPath,
-  getNodeInfo: getNodeInfo,
-  getTableCellByDirection: getTableCellByDirection,
-  getSiblingRowCellByDirection: getSiblingRowCellByDirection
-};
-
-/***/ }),
-
-/***/ 7:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.CodeBlockManager = undefined;
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); /**
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * @fileoverview Implements CodeBlockManager
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * @author NHN Ent. FE Development Lab <dl_javascript@nhnent.com>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      */
-
-
-var _highlight = __webpack_require__(28);
-
-var _highlight2 = _interopRequireDefault(_highlight);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-/**
- * Class Code Block Manager
- */
-var CodeBlockManager = function () {
-  /**
-   * Creates an instance of CodeBlockManager.
-   * @memberof CodeBlockManager
-   */
-  function CodeBlockManager() {
-    _classCallCheck(this, CodeBlockManager);
-
-    this._replacers = {};
-  }
-
-  /**
-   * Set replacer for code block
-   * @param {string} language - code block language
-   * @param {function} replacer - replacer function to code block element
-   */
-
-
-  _createClass(CodeBlockManager, [{
-    key: 'setReplacer',
-    value: function setReplacer(language, replacer) {
-      this._replacers[language] = replacer;
-    }
-
-    /**
-     * get replacer for code block
-     * @param {string} language - code block type
-     * @returns {function} - replacer function
-     * @memberof CodeBlockManager
-     */
-
-  }, {
-    key: 'getReplacer',
-    value: function getReplacer(language) {
-      return this._replacers[language];
-    }
-
-    /**
-     * Create code block html.
-     * @param {string} language - code block language
-     * @param {string} codeText - code text
-     * @returns {string}
-     */
-
-  }, {
-    key: 'createCodeBlockHtml',
-    value: function createCodeBlockHtml(language, codeText) {
-      var replacer = this.getReplacer(language);
-      var html = void 0;
-
-      if (replacer) {
-        html = replacer(codeText, language);
-      } else {
-        html = _highlight2.default.getLanguage(language) ? _highlight2.default.highlight(language, codeText).value : escape(codeText, false);
-      }
-
-      return html;
-    }
-
-    /**
-     * get supported languages by highlight-js
-     * @returns {Array<string>} - supported languages by highlight-js
-     * @static
-     */
-
-  }], [{
-    key: 'getHighlightJSLanguages',
-    value: function getHighlightJSLanguages() {
-      return _highlight2.default.listLanguages();
-    }
-  }]);
-
-  return CodeBlockManager;
-}();
-
-/**
- * escape code from markdown-it
- * @param {string} html HTML string
- * @param {string} encode Boolean value of whether encode or not
- * @returns {string}
- * @ignore
- */
-
-
-function escape(html, encode) {
-  return html.replace(!encode ? /&(?!#?\w+;)/g : /&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
-}
-
-exports.CodeBlockManager = CodeBlockManager;
-exports.default = new CodeBlockManager();
-
-/***/ }),
-
-/***/ 9:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
-
-var _preview = __webpack_require__(10);
-
-var _preview2 = _interopRequireDefault(_preview);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /**
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @fileoverview Implements markdown preview
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @author NHN Ent. FE Development Lab <dl_javascript@nhnent.com>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
-
-
-/**
- * Class Markdown Preview
- * @extends {Preview}
- */
-var MarkdownPreview = function (_Preview) {
-  _inherits(MarkdownPreview, _Preview);
-
-  /**
-   * Creates an instance of MarkdownPreview.
-   * @param {jQuery} $el - base jQuery element
-   * @param {EventManager} eventManager - event manager
-   * @param {Convertor} convertor - convertor
-   * @param {boolean} isViewer - true for view only mode
-   * @memberof MarkdownPreview
-   */
-  function MarkdownPreview($el, eventManager, convertor, isViewer) {
-    _classCallCheck(this, MarkdownPreview);
-
-    var _this = _possibleConstructorReturn(this, (MarkdownPreview.__proto__ || Object.getPrototypeOf(MarkdownPreview)).call(this, $el, eventManager, convertor, isViewer));
-
-    _this._initEvent();
-    return _this;
-  }
-
-  /**
-   * Initialize event
-   * @private
-   */
-
-
-  _createClass(MarkdownPreview, [{
-    key: '_initEvent',
-    value: function _initEvent() {
-      var _this2 = this;
-
-      var latestMarkdownValue = '';
-
-      this.eventManager.listen('contentChangedFromMarkdown', function (markdownEditor) {
-        latestMarkdownValue = markdownEditor.getValue();
-
-        if (_this2.isVisible()) {
-          _this2.lazyRunner.run('refresh', latestMarkdownValue.replace(/<br>\n/g, '<br>'));
-        }
-      });
-
-      this.eventManager.listen('previewNeedsRefresh', function (value) {
-        _this2.refresh(value || latestMarkdownValue);
-      });
-
-      this.$el.on('scroll', function (event) {
-        _this2.eventManager.emit('scroll', {
-          source: 'preview',
-          data: event
-        });
-      });
-    }
-
-    /**
-     * render
-     * @param {string} html - html string to render
-     * @memberof MarkdownPreview
-     * @override
-     */
-
-  }, {
-    key: 'render',
-    value: function render(html) {
-      _get(MarkdownPreview.prototype.__proto__ || Object.getPrototypeOf(MarkdownPreview.prototype), 'render', this).call(this, html);
-
-      this.eventManager.emit('previewRenderAfter', this);
-    }
-  }]);
-
-  return MarkdownPreview;
-}(_preview2.default);
-
-exports.default = MarkdownPreview;
-
-/***/ })
-
-/******/ });
-});
-
-/***/ }),
 /* 277 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 var Editor = __webpack_require__(4);
-var Viewer = __webpack_require__(276);
+var Viewer = __webpack_require__(23);
 
 /* harmony default export */ __webpack_exports__["a"] = ({
     name: 'courses-grades-dashboard',
-    props: {},
     data: function data() {
         return {
             editor: {},
-            viewer: {}
+            viewer: {},
+            pointsEarned: 0,
+            totalPoints: 0,
+            grade: 0.00
         };
     },
-    mounted: function mounted() {},
 
+    computed: {
+        computedGrade: function computedGrade() {
+            var value = parseFloat(this.pointsEarned) / parseFloat(this.totalPoints);
+
+            if (isNaN(value) || !isFinite(value)) {
+                value = 0;
+            }
+
+            this.grade = parseFloat(value).toFixed(4);
+            return this.grade;
+        },
+        percentGrade: function percentGrade() {
+            return parseFloat(this.grade * 100).toFixed(2);
+        }
+    },
     methods: {
         onModalOpen: function onModalOpen(submissionId) {
             var commentsViewerValue = document.querySelector("#submissionCommentsValue-" + submissionId).value;
@@ -105100,7 +105116,7 @@ module.exports = __webpack_require__(279);
 
 
 var utils = __webpack_require__(1);
-var bind = __webpack_require__(23);
+var bind = __webpack_require__(24);
 var Axios = __webpack_require__(281);
 var defaults = __webpack_require__(8);
 
@@ -105135,9 +105151,9 @@ axios.create = function create(instanceConfig) {
 };
 
 // Expose Cancel & CancelToken
-axios.Cancel = __webpack_require__(27);
+axios.Cancel = __webpack_require__(28);
 axios.CancelToken = __webpack_require__(295);
-axios.isCancel = __webpack_require__(26);
+axios.isCancel = __webpack_require__(27);
 
 // Expose all/spread
 axios.all = function all(promises) {
@@ -105290,7 +105306,7 @@ module.exports = function normalizeHeaderName(headers, normalizedName) {
 "use strict";
 
 
-var createError = __webpack_require__(25);
+var createError = __webpack_require__(26);
 
 /**
  * Resolve or reject a Promise based on response status.
@@ -105725,7 +105741,7 @@ module.exports = InterceptorManager;
 
 var utils = __webpack_require__(1);
 var transformData = __webpack_require__(292);
-var isCancel = __webpack_require__(26);
+var isCancel = __webpack_require__(27);
 var defaults = __webpack_require__(8);
 var isAbsoluteURL = __webpack_require__(293);
 var combineURLs = __webpack_require__(294);
@@ -105885,7 +105901,7 @@ module.exports = function combineURLs(baseURL, relativeURL) {
 "use strict";
 
 
-var Cancel = __webpack_require__(27);
+var Cancel = __webpack_require__(28);
 
 /**
  * A `CancelToken` is an object that can be used to request cancellation of an operation.
