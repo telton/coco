@@ -188,7 +188,7 @@
                                             Letter Grade
                                         </th>
                                         <th>
-                                            Date Approved
+                                            Date Graded
                                         </th>
                                         <th style="width: 98px;">
                                             Actions
@@ -210,8 +210,8 @@
                                                     <td>
                                                         {{ round($submission->grade($assignment->id)->grade * 100, 2) }}%
                                                     </td>
-                                                    <td>
-                                                        Letter Grade
+                                                    <td style="text-align: center;">
+                                                        {{ strtoupper($submission->grade($assignment->id)->letter_grade) }}
                                                     </td>
                                                     <td>
                                                         {{ $submission->updated_at->format('m/d/Y') }} at {{ $submission->updated_at->format('h:i A') }}
