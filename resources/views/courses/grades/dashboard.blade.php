@@ -164,7 +164,7 @@
                             </div>
                         </div>
                     @empty
-                        <div class="alert alert-info">
+                        <div class="alert alert-info flex-center">
                             <p><strong>There are no assignment submissions that require grading.</strong></p>
                         </div>
                     @endforelse
@@ -255,7 +255,7 @@
                             </div>
                         </div>
                     @empty
-                        <div class="alert alert-info">
+                        <div class="alert alert-info flex-center">
                             <p><strong>There are no assignment submissions that have been graded yet.</strong></p>
                         </div>
                     @endforelse
