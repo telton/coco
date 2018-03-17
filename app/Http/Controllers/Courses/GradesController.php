@@ -21,10 +21,7 @@ class GradesController extends Controller
     {
         parent::__construct();
         $this->middleware('courses.grades')
-            ->only([
-                'dashboard',
-                'store',
-            ]);
+            ->only(['dashboard', 'store', 'destroy']);
     }
 
     /**
@@ -138,7 +135,7 @@ class GradesController extends Controller
             'grader_id'     => Auth::user()->id,
             'points_earned' => $request->input('pointsEarned'),
             'grade'         => $grade,
-            'letter_grade'  => $request->input('letterGrade'),
+            'letter_grade'  => strtoupper($request->input('letterGrade')),
             'comments'      => $request->input('gradeComments'),
         ]);
 
