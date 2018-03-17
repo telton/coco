@@ -180,11 +180,22 @@ class GradesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
+     * @param string                      $slug
      * @param  \App\Models\Courses\Grade  $grade
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Grade $grade)
+    public function destroy(string $slug, Grade $grade)
     {
-        //
+        $assignment = $grade->assignment;
+        $student = $grade->student;
+
+        // Attempt to delete the assignment.
+        if ($grade->delete()) {
+            $this->flash()->success("The grade for the assignment <strong>{$assignment->name}</strong> has been deleted for student <strong>{$student->name}</strong>!");
+            return $this->redirect()->route('courses.grades.dashboard', $slug);
+        } else {
+            $this->flash()->warning("The grade for the assignment <strong>{$assignment->name}</strong> was NOT deleted for student <strong>{$student->name}</strong>!");
+            return $this->redirect()->route('courses.grades.dashboard', $slug);
+        }
     }
 }

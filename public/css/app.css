@@ -17178,6 +17178,10 @@ body {
   font-weight: bold;
 }
 
+.dropdown-menu > form > button {
+  cursor: pointer;
+}
+
 .main-nav {
   width: 100%;
   position: relative;

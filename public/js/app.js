@@ -105060,6 +105060,50 @@ var Viewer = __webpack_require__(23);
         if (this.$refs.totalPoints) {
             this.totalPoints = this.$refs.totalPoints.value;
         }
+
+        $(this.$refs.deleteGrade).on('click', function (e) {
+            // Stop the form from submitting automatically.
+            e.preventDefault();
+            var form = $(this).parents('form');
+
+            // SweetAlert2 popup.
+            swal({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
+            }).then(function (result) {
+                // If confirm, submit the form.
+                if (result) {
+                    form.submit();
+                }
+            }).catch(swal.noop); // Catch the cancel option so we don't get console errors.
+        });
+
+        $(this.$refs.deleteSubmission).on('click', function (e) {
+            // Stop the form from submitting automatically.
+            e.preventDefault();
+            var form = $(this).parents('form');
+
+            // SweetAlert2 popup.
+            swal({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
+            }).then(function (result) {
+                // If confirm, submit the form.
+                if (result) {
+                    form.submit();
+                }
+            }).catch(swal.noop); // Catch the cancel option so we don't get console errors.
+        });
     },
 
     computed: {

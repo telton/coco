@@ -82,6 +82,10 @@ Route::group(['namespace' => 'Courses', 'middleware' => ['auth', 'courses.permis
         'as'   => 'courses.grades.store',
         'uses' => 'GradesController@store',
     ]);
+    Route::post('/courses/{slug}/grades/{grade}/delete', [
+        'as'   => 'courses.grades.destroy',
+        'uses' => 'GradesController@destroy',
+    ]);
 });
 
 Auth::routes();

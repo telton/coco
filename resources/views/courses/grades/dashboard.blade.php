@@ -52,9 +52,22 @@
                                                             {{ $submission->created_at->format('m/d/Y') }} at {{ $submission->created_at->format('h:i A') }}
                                                         </td>
                                                         <td>
-                                                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#gradeSubmission-{{$submission->id}}" v-on:click="onModalOpen({{ $submission->id }})">
-                                                                Enter Grade
-                                                            </button>
+                                                            <div class="btn-group" role="group">
+                                                                <button id="btnGroupDrop1" type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                    Actions
+                                                                </button>
+                                                                <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                                                                    <a class="dropdown-item" href="#gradeSubmission-{{$submission->id}}" data-toggle="modal" data-target="#gradeSubmission-{{$submission->id}}" v-on:click="onModalOpen({{ $submission->id }})">
+                                                                        <i class="fa fa-edit"></i> Enter Grade
+                                                                    </a>
+                                                                    @if (Auth::user()->hasRole(['admin', 'instructor']))
+                                                                        <form action="#" method="POST">
+                                                                            {{ csrf_field() }}
+                                                                            <button type="submit" class="dropdown-item" ref="deleteSubmission"><i class="fa fa-trash"></i> Delete Submission</button>
+                                                                        </form>
+                                                                    @endif
+                                                                </div>
+                                                            </div>
                                                         </td>
                                                     </tr>
 
@@ -217,7 +230,22 @@
                                                         {{ $submission->updated_at->format('m/d/Y') }} at {{ $submission->updated_at->format('h:i A') }}
                                                     </td>
                                                     <td>
-                                                        <button class="btn btn-primary">Edit Grade</button>
+                                                        <div class="btn-group" role="group">
+                                                            <button id="btnGroupDrop1" type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                Actions
+                                                            </button>
+                                                            <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                                                                <a class="dropdown-item" href="#">
+                                                                    <i class="fa fa-edit"></i> Edit Grade
+                                                                </a>
+                                                                @if (Auth::user()->hasRole(['admin', 'instructor']))
+                                                                    <form action="{{ route('courses.grades.destroy', [$course->slug, $submission->grade($assignment->id)]) }}" method="POST">
+                                                                        {{ csrf_field() }}
+                                                                        <button type="submit" class="dropdown-item" ref="deleteGrade"><i class="fa fa-trash"></i> Delete Grade</button>
+                                                                    </form>
+                                                                @endif
+                                                            </div>
+                                                        </div>
                                                     </td>
                                                 </tr>
                                             @endif
