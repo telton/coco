@@ -68,6 +68,10 @@ Route::group(['namespace' => 'Courses', 'middleware' => ['auth', 'courses.permis
         'as'   => 'courses.assignments.attachments.show',
         'uses' => 'FilesController@show',
     ]);
+    Route::post('/courses/{slug}/assignments/{assignment}/attachments/{attachment}/delete', [
+        'as'   => 'courses.assignments.attachments.destroy',
+        'uses' => 'FilesController@destroy',
+    ]);
 
     // Grades.
     Route::get('/courses/{slug}/grades', [

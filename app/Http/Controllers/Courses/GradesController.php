@@ -189,7 +189,7 @@ class GradesController extends Controller
         $assignment = $grade->assignment;
         $student = $grade->student;
 
-        // Attempt to delete the assignment.
+        // Attempt to delete the grade.
         if ($grade->delete()) {
             $this->flash()->success("The grade for the assignment <strong>{$assignment->name}</strong> has been deleted for student <strong>{$student->name}</strong>!");
             return $this->redirect()->route('courses.grades.dashboard', $slug);
