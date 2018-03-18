@@ -144,77 +144,81 @@
                 </form>
             </div>
 
-            <!-- Submission View Modal -->
-            <div class="modal fade" id="viewSubmission" tabindex="-1" role="dialog" aria-labelledby="viewAssignmentLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="viewAssignmentLabel">View Assignment Submission</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="card card-info">
-                                <div class="card-header with-border">
-                                    <h3 class="card-title">Attachments</h3>
-                                </div>
-                                <table class="table table-striped">
-                                    <tbody>
-                                        @forelse($assignment->submission()->attachments() as $attachment)
-                                            <tr>
-                                                <td class="attachment-icon">
-                                                    <i class="fa {{ $attachment->icon }}"></i>
-                                                </td>
-                                                <td>
-                                                    <a href="{{ route('courses.assignments.attachments.show', [$course->slug, $assignment, $attachment->id]) }}" target="_blank">{{ $attachment->name }}</a>
-                                                </td>
-                                            </tr>
-                                        @empty
-                                            <tr>
-                                                <th>No Attachments</th>
-                                            </tr>
-                                        @endforelse
-                                    </tbody>
-                                </table>
+            @if ($assignment->submission())
+                <!-- Submission View Modal -->
+                <div class="modal fade" id="viewSubmission" tabindex="-1" role="dialog" aria-labelledby="viewAssignmentLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="viewAssignmentLabel">View Assignment Submission</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
                             </div>
+                            <div class="modal-body">
+                                <div class="card card-info">
+                                    <div class="card-header with-border">
+                                        <h3 class="card-title">Attachments</h3>
+                                    </div>
+                                    <table class="table table-striped">
+                                        <tbody>
+                                            @forelse($assignment->submission()->attachments() as $attachment)
+                                                <tr>
+                                                    <td class="attachment-icon">
+                                                        <i class="fa {{ $attachment->icon }}"></i>
+                                                    </td>
+                                                    <td>
+                                                        <a href="{{ route('courses.assignments.attachments.show', [$course->slug, $assignment, $attachment->id]) }}" target="_blank">{{ $attachment->name }}</a>
+                                                    </td>
+                                                </tr>
+                                            @empty
+                                                <tr>
+                                                    <th>No Attachments</th>
+                                                </tr>
+                                            @endforelse
+                                        </tbody>
+                                    </table>
+                                </div>
 
-                            <label for="comments" class="control-label"><strong>Comments</strong></label>
-                            <div id="commentsViewer" ref="commentsViewer"></div>
-                            <input type="hidden" name="viewComments" id="viewComments" value="{{ $assignment->submission()->comments }}" ref="viewComments">
-                        </div>
-                        <div class="modal-footer">
-                            <p style="margin-bottom: 0; margin-right: 108px;"><strong>Submitted On:</strong> {{ $assignment->submission()->created_at->format('m/d/Y') }} at {{ $assignment->submission()->created_at->format('h:i A') }}</p>
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <label for="comments" class="control-label"><strong>Comments</strong></label>
+                                <div id="commentsViewer" ref="commentsViewer"></div>
+                                <input type="hidden" name="viewComments" id="viewComments" value="{{ $assignment->submission()->comments }}" ref="viewComments">
+                            </div>
+                            <div class="modal-footer">
+                                <p style="margin-bottom: 0; margin-right: 108px;"><strong>Submitted On:</strong> {{ $assignment->submission()->created_at->format('m/d/Y') }} at {{ $assignment->submission()->created_at->format('h:i A') }}</p>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <!-- Submission Grade View Modal -->
-            <div class="modal fade" id="viewGrade" tabindex="-1" role="dialog" aria-labelledby="viewGradeLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="viewGradeLabel">View Submission Grade</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <p><strong>Points Earned:</strong> {{ $assignment->submission()->grade()->points_earned }} / {{ $assignment->points }}</p>
-                            <p><strong>Grade:</strong> {{ number_format($assignment->submission()->grade()->grade * 100, 2) }}%</p>
-                            <p><strong>Letter Grade:</strong> {{ $assignment->submission()->grade()->letter_grade }}</p>
-                            <label for="gradeComments" class="control-label"><strong>Comments</strong></label>
-                            <div id="gradeCommentsViewer" ref="gradeCommentsViewer"></div>
-                            <input type="hidden" name="viewGradeComments" id="viewGradeComments" value="{{ $assignment->submission()->grade()->comments }}" ref="viewGradeComments">
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            
+                @if ($assignment->submission()->grade())
+                    <!-- Submission Grade View Modal -->
+                    <div class="modal fade" id="viewGrade" tabindex="-1" role="dialog" aria-labelledby="viewGradeLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="viewGradeLabel">View Submission Grade</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <p><strong>Points Earned:</strong> {{ $assignment->submission()->grade()->points_earned }} / {{ $assignment->points }}</p>
+                                    <p><strong>Grade:</strong> {{ number_format($assignment->submission()->grade()->grade * 100, 2) }}%</p>
+                                    <p><strong>Letter Grade:</strong> {{ $assignment->submission()->grade()->letter_grade }}</p>
+                                    <label for="gradeComments" class="control-label"><strong>Comments</strong></label>
+                                    <div id="gradeCommentsViewer" ref="gradeCommentsViewer"></div>
+                                    <input type="hidden" name="viewGradeComments" id="viewGradeComments" value="{{ $assignment->submission()->grade()->comments }}" ref="viewGradeComments">
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
+                @endif
+            @endif
         </div>
     </courses-assignments-show>
 </div>
