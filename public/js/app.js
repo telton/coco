@@ -68373,6 +68373,8 @@ Object.defineProperty(exports, '__esModule', { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__courses_assignments_form__ = __webpack_require__(39);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__courses_assignments_show__ = __webpack_require__(276);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__courses_grades_dashboard__ = __webpack_require__(277);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__courses_grades_index__ = __webpack_require__(313);
+
 
 
 
@@ -68391,7 +68393,8 @@ Object.defineProperty(exports, '__esModule', { value: true });
         CoursesAssignmentsIndex: __WEBPACK_IMPORTED_MODULE_0__courses_assignments_index__["a" /* default */],
         CoursesAssignmentsForm: __WEBPACK_IMPORTED_MODULE_1__courses_assignments_form__["a" /* default */],
         CoursesAssignmentsShow: __WEBPACK_IMPORTED_MODULE_2__courses_assignments_show__["a" /* default */],
-        CoursesGradesDashboard: __WEBPACK_IMPORTED_MODULE_3__courses_grades_dashboard__["a" /* default */]
+        CoursesGradesDashboard: __WEBPACK_IMPORTED_MODULE_3__courses_grades_dashboard__["a" /* default */],
+        CoursesGradesIndex: __WEBPACK_IMPORTED_MODULE_4__courses_grades_index__["a" /* default */]
     }
 });
 
@@ -106068,6 +106071,51 @@ module.exports = function spread(callback) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 298 */,
+/* 299 */,
+/* 300 */,
+/* 301 */,
+/* 302 */,
+/* 303 */,
+/* 304 */,
+/* 305 */,
+/* 306 */,
+/* 307 */,
+/* 308 */,
+/* 309 */,
+/* 310 */,
+/* 311 */,
+/* 312 */,
+/* 313 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var Viewer = __webpack_require__(23);
+
+/* harmony default export */ __webpack_exports__["a"] = ({
+    name: 'courses-grades-index',
+    data: function data() {
+        return {
+            commentsViewer: {}
+        };
+    },
+
+    methods: {
+        onModalOpen: function onModalOpen() {
+            var viewGradeCommentsValue = this.$refs.viewGradeComments.value;
+            // Check to make sure we've not already created the viewer instance.
+            if (!(this.commentsViewer instanceof Viewer)) {
+                this.commentsViewer = new Viewer({
+                    el: this.$refs.gradeCommentsViewer,
+                    height: '500px',
+                    initialValue: viewGradeCommentsValue
+                });
+            }
+        }
+    }
+});
 
 /***/ })
 /******/ ]);

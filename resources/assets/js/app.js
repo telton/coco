@@ -2,6 +2,7 @@ import CoursesAssignmentsIndex from './courses/assignments/index';
 import CoursesAssignmentsForm from './courses/assignments/form';
 import CoursesAssignmentsShow from './courses/assignments/show';
 import CoursesGradesDashboard from './courses/grades/dashboard';
+import CoursesGradesIndex from './courses/grades/index';
 
 export default {
     el: '#app',
@@ -16,5 +17,6 @@ export default {
         CoursesAssignmentsForm,
         CoursesAssignmentsShow,
         CoursesGradesDashboard,
+        CoursesGradesIndex,
     }
 }
