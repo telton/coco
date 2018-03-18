@@ -82,11 +82,10 @@ class Submission extends Model
      * Get the grade associated with the assignment submission.
      *
      * @author Tyler Elton <telton@umflint.edu>
-     * @param $assignmentId
      * @return mixed
      */
-    public function grade($assignmentId)
+    public function grade()
     {
-        return Grade::where('assignment_id', $assignmentId)->first();
+        return Grade::where('assignment_id', $this->attributes['assignment_id'])->first();
     }
 }
