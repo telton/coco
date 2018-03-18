@@ -55,17 +55,6 @@ class Grade extends Model
     ];
 
     /**
-     * Helper function to determine if a grade has been approved.
-     *
-     * @author Tyler Elton <telton@umflint.edu>
-     * @return bool
-     */
-    public function isApproved()
-    {
-        return $this->attributes['approved'];
-    }
-
-    /**
      * Get the assignment.
      *
      * @author Tyler Elton <telton@umflint.edu>
