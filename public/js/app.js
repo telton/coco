@@ -104891,6 +104891,7 @@ var Editor = __webpack_require__(4);
         return {
             descriptionViewer: {},
             commentsViewer: {},
+            gradeCommentsViewer: {},
             editor: {},
             attachments: [],
             uploads: [],
@@ -104962,6 +104963,16 @@ var Editor = __webpack_require__(4);
                     el: this.$refs.commentsViewer,
                     height: '500px',
                     initialValue: viewCommentsValue
+                });
+            }
+
+            var viewGradeCommentsValue = this.$refs.viewGradeComments.value;
+            // Check to make sure we've not already created the viewer instance.
+            if (!(this.gradeCommentsViewer instanceof Viewer)) {
+                this.gradeCommentsViewer = new Viewer({
+                    el: this.$refs.gradeCommentsViewer,
+                    height: '500px',
+                    initialValue: viewGradeCommentsValue
                 });
             }
         },

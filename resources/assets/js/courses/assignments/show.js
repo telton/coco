@@ -7,6 +7,7 @@ export default {
         return {
             descriptionViewer: {},
             commentsViewer: {},
+            gradeCommentsViewer: {},
             editor: {},
             attachments: [],
             uploads: [],
@@ -77,6 +78,16 @@ export default {
                     el: this.$refs.commentsViewer,
                     height: '500px',
                     initialValue: viewCommentsValue
+                });
+            }
+
+            let viewGradeCommentsValue = this.$refs.viewGradeComments.value;
+            // Check to make sure we've not already created the viewer instance.
+            if (!(this.gradeCommentsViewer instanceof Viewer)) {
+                this.gradeCommentsViewer = new Viewer({
+                    el: this.$refs.gradeCommentsViewer,
+                    height: '500px',
+                    initialValue: viewGradeCommentsValue
                 });
             }
         },

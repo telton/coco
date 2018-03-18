@@ -17190,6 +17190,10 @@ body {
       align-self: center;
 }
 
+.btn-toolbar button {
+  margin-right: 5px;
+}
+
 .main-nav {
   width: 100%;
   position: relative;

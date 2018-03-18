@@ -67,8 +67,13 @@
                             <i class="fa fa-save"></i> Submit Assignment
                         </button>
                     @else 
-                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#viewSubmission" v-on:click="onModalOpen()">
+                        <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#viewSubmission" v-on:click="onModalOpen()">
                             <i class="fa fa-search"></i> View Submission
+                        </button>
+                    @endif
+                    @if ($assignment->submission()->grade())
+                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#viewGrade" v-on:click="onModalOpen()">
+                            <i class="fa fa-search"></i> View Grade
                         </button>
                     @endif
                 </div>
@@ -139,7 +144,7 @@
                 </form>
             </div>
 
-            <!-- Submission Vuew Modal -->
+            <!-- Submission View Modal -->
             <div class="modal fade" id="viewSubmission" tabindex="-1" role="dialog" aria-labelledby="viewAssignmentLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
@@ -180,6 +185,31 @@
                         </div>
                         <div class="modal-footer">
                             <p style="margin-bottom: 0; margin-right: 108px;"><strong>Submitted On:</strong> {{ $assignment->submission()->created_at->format('m/d/Y') }} at {{ $assignment->submission()->created_at->format('h:i A') }}</p>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Submission Grade View Modal -->
+            <div class="modal fade" id="viewGrade" tabindex="-1" role="dialog" aria-labelledby="viewGradeLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="viewGradeLabel">View Submission Grade</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p><strong>Points Earned:</strong> {{ $assignment->submission()->grade()->points_earned }} / {{ $assignment->points }}</p>
+                            <p><strong>Grade:</strong> {{ number_format($assignment->submission()->grade()->grade * 100, 2) }}%</p>
+                            <p><strong>Letter Grade:</strong> {{ $assignment->submission()->grade()->letter_grade }}</p>
+                            <label for="gradeComments" class="control-label"><strong>Comments</strong></label>
+                            <div id="gradeCommentsViewer" ref="gradeCommentsViewer"></div>
+                            <input type="hidden" name="viewGradeComments" id="viewGradeComments" value="{{ $assignment->submission()->grade()->comments }}" ref="viewGradeComments">
+                        </div>
+                        <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                         </div>
                     </div>

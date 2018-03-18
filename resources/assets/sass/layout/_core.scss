@@ -68,3 +68,9 @@ body {
     display: flex;
     align-self: center;
 }
+
+.btn-toolbar {
+    button {
+        margin-right: 5px;
+    }
+}
