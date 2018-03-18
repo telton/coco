@@ -180,7 +180,7 @@
                             
                         </div>
                         <div class="modal-footer">
-                            <p style="margin-bottom: 0; margin-right: 200px;"><strong>Submitted On:</strong> {{ $assignment->submission()->created_at->format('m/d/Y') }}</p>
+                            <p style="margin-bottom: 0; margin-right: 200px;"><strong>Submitted On:</strong> {{ $assignment->submission()->created_at->format('m/d/Y') }} at {{ $assignment->submission()->created_at->format('h:i A') }}</p>
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                         </div>
                     </div>
