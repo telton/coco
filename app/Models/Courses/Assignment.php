@@ -83,7 +83,7 @@ class Assignment extends Model
      */
     public function submissions()
     {
-        return Submission::where('assignment_id', $this->attributes['id'])->where('type', 'submission')->get();
+        return Submission::where('assignment_id', $this->attributes['id'])->get();
     }
 
     /**
