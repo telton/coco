@@ -115,7 +115,7 @@
                     {{--  Date times  --}}
                     <div class="form-group d-lg-inline-block">
                         <label class="form-control-label"><strong>Due Date</strong></label>
-                        <flat-pickr v-model="inputs.due_date" :config="dueDateConfig" input-class="d-none" name="due_date" :required="true"></flat-pickr>
+                        <flat-pickr v-model="inputs.dueDate" :config="dueDateConfig" input-class="d-none" name="due_date" :required="true"></flat-pickr>
                         @if ($errors->has('due_date'))
                             <span class="help-block">
                                 <strong>{{ $errors->first('due_date') }}</strong>

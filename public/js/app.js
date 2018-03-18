@@ -68496,7 +68496,9 @@ var Editor = __webpack_require__(4);
                         enableTime: this.dueDateConfig.enableTime
                     };
                 }
-            }
+            },
+
+            deep: true
         }
     },
     mounted: function mounted() {

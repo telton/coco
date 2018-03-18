@@ -13,8 +13,8 @@
         <strong>Create New Assignment for:</strong> {{ $course->subject }}{{ $course->course_number }} - {{ sprintf('%02d', $course->section) }}: {{ $course->title }}
     </div>
     <courses-assignments-form 
-        due-date={{ old('due_date') }}
-        display-date={{ old('display_date') }}
+        due-date="{{ old('due_date') }}" 
+        display-date="{{ old('display_date') }}"
         inline-template v-cloak>
         <form class="form-horizontal" method="POST" action="{{ route('courses.assignments.store', $course->slug) }}" enctype="multipart/form-data">
             {{ csrf_field() }} 

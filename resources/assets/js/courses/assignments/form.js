@@ -12,7 +12,7 @@ export default {
             type: String,
             default: '',
         },
-        attachments: {}
+        attachments: {},
     },
     data() {
         let self = this;
@@ -52,7 +52,8 @@ export default {
                         enableTime: this.dueDateConfig.enableTime,
                     }
                 }
-            }
+            },
+            deep: true,
         }
     },
     mounted() {
