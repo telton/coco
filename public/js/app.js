@@ -68410,11 +68410,10 @@ Object.defineProperty(exports, '__esModule', { value: true });
             viewer: {}
         };
     },
-    mounted: function mounted() {
-        $(this.$refs.delete).on('click', function (e) {
-            // Stop the form from submitting automatically.
-            e.preventDefault();
-            var form = $(this).parents('form');
+
+    methods: {
+        onDelete: function onDelete(id) {
+            var form = document.querySelector("#deleteForm-" + id);
 
             // SweetAlert2 popup.
             swal({
@@ -68431,7 +68430,7 @@ Object.defineProperty(exports, '__esModule', { value: true });
                     form.submit();
                 }
             }).catch(swal.noop); // Catch the cancel option so we don't get console errors.
-        });
+        }
     }
 });
 

@@ -4,6 +4,7 @@ namespace App\Models\Courses;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Models\User;
+use Carbon\Carbon;
 
 class Course extends Model
 {
@@ -117,5 +118,17 @@ class Course extends Model
     public function assignments()
     {
         return $this->hasMany(Assignment::class, 'course_id')->orderBy('due_date', 'asc');
+    }
+
+    /**
+     * Get the courses that are past/on the display date.
+     *
+     * @author Tyler Elton <telton@umflint.edu>
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function visibleAssignments()
+    {
+        $date = Carbon::now();
+        return $this->hasMany(Assignment::class, 'course_id')->whereDate('display_date', '<=', $date)->orderBy('due_date', 'asc');
     }
 }

@@ -5,11 +5,9 @@ export default {
             viewer: {},
         }
     },
-    mounted() {
-        $(this.$refs.delete).on('click', function (e) {
-            // Stop the form from submitting automatically.
-            e.preventDefault();
-            let form = $(this).parents('form');
+    methods: {
+        onDelete(id) {
+            let form = document.querySelector("#deleteForm-" + id);
 
             // SweetAlert2 popup.
             swal({
@@ -26,6 +24,6 @@ export default {
                     form.submit();
                 }
             }).catch(swal.noop); // Catch the cancel option so we don't get console errors.
-        });
+        } 
     }
 }
