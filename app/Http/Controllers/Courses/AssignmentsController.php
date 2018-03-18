@@ -10,6 +10,7 @@ use App\Models\Courses\File;
 use Carbon\Carbon;
 use Illuminate\Contracts\Filesystem\Factory;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Courses\Submission;
 
 class AssignmentsController extends Controller
 {
@@ -279,6 +280,13 @@ class AssignmentsController extends Controller
             abort(404);
         }
 
+        // Create the assignment submission.
+        $submission = Submission::create([
+            'assignment_id' => $assignment->id,
+            'user_id'       => Auth::user()->id,
+            'comments'      => $request->input('comments'),
+        ]);
+
         // Upload each file in the submission.
         // If no file was uploaded, just create an File and don't upload anything.
         if (!empty($request->file('uploads', []))) {
@@ -302,22 +310,12 @@ class AssignmentsController extends Controller
                     'file'          => $path . $name,
                     'mime'          => $uploads->getClientMimeType(),
                     'type'          => 'submission',
-                    'comments'      => $request->input('comments'),
+                    'submission_id' => $submission->id,
                 ]);
 
                 // Save the attachment.
                 $this->storage->put($path . $name, file_get_contents($uploads));
             }
-        } else {
-            $file = File::create([
-                'assignment_id' => $assignment->id,
-                'user_id'       => Auth::user()->id,
-                'name'          => 'Submission from student ' . Auth::user()->name,
-                'file'          => null,
-                'mime'          => null,
-                'type'          => 'submission',
-                'comments'      => $request->input('comments'),
-            ]);
         }
 
         $this->flash()->success('Your submission has been successfully saved!');

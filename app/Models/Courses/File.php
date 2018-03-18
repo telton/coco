@@ -25,6 +25,7 @@ class File extends Model
         'name'          => 'required',
         'file'          => 'unique',
         'type'          => 'required|in:attachment,submission',
+        'submission_id' => 'integer',
     ];
 
     /**
@@ -39,7 +40,7 @@ class File extends Model
         'file',
         'mime',
         'type',
-        'comments',
+        'submission_id',
     ];
 
     /**
@@ -158,17 +159,5 @@ class File extends Model
     public function user()
     {
         return $this->belongsTo(User::class);
-    }
-
-    /**
-     * Get the grade associated with the assignment submission.
-     *
-     * @author Tyler Elton <telton@umflint.edu>
-     * @param $assignmentId
-     * @return mixed
-     */
-    public function grade($assignmentId)
-    {
-        return Grade::where('assignment_id', $assignmentId)->first();
     }
 }

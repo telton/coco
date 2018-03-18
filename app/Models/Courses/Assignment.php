@@ -76,14 +76,14 @@ class Assignment extends Model
     }
 
     /**
-     * File submissions.
+     * Assignment submissions.
      *
      * @author Tyler Elton <telton@umflint.edu>
      * @return mixed
      */
     public function submissions()
     {
-        return File::where('assignment_id', $this->attributes['id'])->where('type', 'submission')->get();
+        return Submission::where('assignment_id', $this->attributes['id'])->where('type', 'submission')->get();
     }
 
     /**
@@ -94,6 +94,6 @@ class Assignment extends Model
      */
     public function submission()
     {
-        return File::where('assignment_id', $this->attributes['id'])->where('type', 'submission')->where('user_id', Auth::user()->id)->first();
+        return Submission::where('assignment_id', $this->attributes['id'])->where('user_id', Auth::user()->id)->first();
     }
 }

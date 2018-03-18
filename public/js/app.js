@@ -104889,7 +104889,8 @@ var Editor = __webpack_require__(4);
     name: 'courses-assignments-show',
     data: function data() {
         return {
-            viewer: {},
+            descriptionViewer: {},
+            commentsViewer: {},
             editor: {},
             attachments: [],
             uploads: [],
@@ -104899,7 +104900,7 @@ var Editor = __webpack_require__(4);
     mounted: function mounted() {
         var self = this;
         var descriptionValue = this.$refs.description.value;
-        this.viewer = new Viewer({
+        this.descriptionViewer = new Viewer({
             el: this.$refs.descriptionViewer,
             height: '500px',
             initialValue: descriptionValue
@@ -104942,7 +104943,7 @@ var Editor = __webpack_require__(4);
 
     methods: {
         onModalOpen: function onModalOpen() {
-            var commentsValue = this.$refs.comments.value;
+            var submitCommentsValue = this.$refs.submitComments.value;
             // Check to make sure we've not already created the editor instance.
             if (!(this.editor instanceof Editor)) {
                 this.editor = new Editor({
@@ -104950,12 +104951,22 @@ var Editor = __webpack_require__(4);
                     initialEditType: 'wysiwyg',
                     previewStyle: 'tab',
                     height: '200px',
-                    initialValue: commentsValue
+                    initialValue: submitCommentsValue
+                });
+            }
+
+            var viewCommentsValue = this.$refs.viewComments.value;
+            // Check to make sure we've not already created the viewer instance.
+            if (!(this.commentsViewer instanceof Viewer)) {
+                this.commentsViewer = new Viewer({
+                    el: this.$refs.commentsViewer,
+                    height: '500px',
+                    initialValue: viewCommentsValue
                 });
             }
         },
         onSubmit: function onSubmit() {
-            this.$refs.comments.value = this.editor.getValue();
+            this.$refs.submitComments.value = this.editor.getValue();
         },
         dropUpload: function dropUpload(files) {
             var id = this.uploads.length;

@@ -62,9 +62,15 @@
 
             @if (Auth::user()->hasRole('student'))
                 <div class="btn-toolbar">
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#submitAssignment" v-on:click="onModalOpen()">
-                        <i class="fa fa-save"></i> Submit Assignment
-                    </button>
+                    @if (!$assignment->submission())
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#submitAssignment" v-on:click="onModalOpen()">
+                            <i class="fa fa-save"></i> Submit Assignment
+                        </button>
+                    @else 
+                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#viewSubmission" v-on:click="onModalOpen()">
+                            <i class="fa fa-search"></i> View Submission
+                        </button>
+                    @endif
                 </div>
             @endif
 
@@ -122,7 +128,7 @@
                                 </div>
                                 <label for="comments" class="control-label"><strong>Comments</strong></label>
                                 <div id="commentsEditor" ref="commentsEditor"></div>
-                                <input type="hidden" name="comments" id="comments" value="{{ old('description') }}" ref="comments">
+                                <input type="hidden" name="submitComments" id="submitComments" value="{{ old('description') }}" ref="submitComments">
                             </div>
                             <div class="modal-footer">
                                 <button type="submit" class="btn btn-primary" v-on:click="onSubmit()"><i class="fa fa-save"></i> Submit Assignment</button>
@@ -131,6 +137,54 @@
                         </div>
                     </div>
                 </form>
+            </div>
+
+            <!-- Submission Vuew Modal -->
+            <div class="modal fade" id="viewSubmission" tabindex="-1" role="dialog" aria-labelledby="viewAssignmentLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="viewAssignmentLabel">View Assignment Submission</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="card card-info">
+                                <div class="card-header with-border">
+                                    <h3 class="card-title">Attachments</h3>
+                                </div>
+                                <table class="table table-striped">
+                                    <tbody>
+                                        @forelse($assignment->submission()->attachments() as $attachment)
+                                            <tr>
+                                                <td class="attachment-icon">
+                                                    <i class="fa {{ $attachment->icon }}"></i>
+                                                </td>
+                                                <td>
+                                                    <a href="{{ route('courses.assignments.attachments.show', [$course->slug, $assignment, $attachment->id]) }}" target="_blank">{{ $attachment->name }}</a>
+                                                </td>
+                                            </tr>
+                                        @empty
+                                            <tr>
+                                                <th>No Attachments</th>
+                                            </tr>
+                                        @endforelse
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <label for="comments" class="control-label"><strong>Comments</strong></label>
+                            <div id="commentsViewer" ref="commentsViewer"></div>
+                            <input type="hidden" name="viewComments" id="viewComments" value="{{ $assignment->submission()->comments }}" ref="viewComments">
+                            
+                        </div>
+                        <div class="modal-footer">
+                            <p style="margin-bottom: 0; margin-right: 200px;"><strong>Submitted On:</strong> {{ $assignment->submission()->created_at->format('m/d/Y') }}</p>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </courses-assignments-show>
