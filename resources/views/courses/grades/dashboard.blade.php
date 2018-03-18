@@ -85,27 +85,33 @@
                                                                                     <p><strong>Student Name: </strong></p>
                                                                                     {{ $submission->user->name }}
                                                                                 </div>
-                                                                                @if (!is_null($submission->file) || !is_null($submission->comments))
-                                                                                    @if (!is_null($submission->file))
-                                                                                        <div class="margin-bottom-10">
-                                                                                            <p><strong>File: </strong></p>
-                                                                                            <i class="fa {{ $submission->icon }}"></i>
-                                                                                            <a href="{{ route('courses.assignments.attachments.show', [$course->slug, $assignment, $submission->id]) }}" target="_blank">{{ $submission->name }}</a>
-                                                                                        </div>
-                                                                                        
-                                                                                        <div class="margin-bottom-10">
-                                                                                            <p><strong>Submitted At: </strong></p>
-                                                                                            {{ $submission->created_at->format('m/d/Y') }} at {{ $submission->created_at->format('h:i A') }}
-                                                                                        </div>
-                                                                                    @endif
-                                                                                    @if (!is_null($submission->comments))
-                                                                                        <div class="submission-comments">
-                                                                                            <p><strong>Comments:</strong></p>
-                                                                                            <div id="submissionCommentsViewer-{{ $submission->id }}"></div>
-                                                                                            <input type="hidden" value="{{ $submission->comments }}" name="submissionCommentsValue" id="submissionCommentsValue-{{ $submission->id }}" ref="submissionCommentsValue-{{ $submission->id }}"> 
-                                                                                        </div>
-                                                                                    @endif
+                                                                                <table class="table table-striped">
+                                                                                    <tbody>
+                                                                                        @forelse($submission->attachments() as $attachment)
+                                                                                            <tr>
+                                                                                                <td class="attachment-icon">
+                                                                                                    <i class="fa {{ $attachment->icon }}"></i>
+                                                                                                </td>
+                                                                                                <td>
+                                                                                                    <a href="{{ route('courses.assignments.attachments.show', [$course->slug, $assignment, $attachment->id]) }}" target="_blank">{{ $attachment->name }}</a>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                        @empty
+                                                                                            <tr>
+                                                                                                <th>No Attachments</th>
+                                                                                            </tr>
+                                                                                        @endforelse
+                                                                                    </tbody>
+                                                                                </table>
+                                                                                @if (!is_null($submission->comments))
+                                                                                    <div class="submission-comments">
+                                                                                        <p><strong>Comments:</strong></p>
+                                                                                        <div id="submissionCommentsViewer-{{ $submission->id }}"></div>
+                                                                                        <input type="hidden" value="{{ $submission->comments }}" name="submissionCommentsValue" id="submissionCommentsValue-{{ $submission->id }}" ref="submissionCommentsValue-{{ $submission->id }}"> 
+                                                                                    </div>
                                                                                 @endif
+
+                                                                                <p><strong>Submitted On:</strong> {{ $submission->created_at->format('m/d/Y') }} at {{ $submission->created_at->format('h:i A') }}</p>
                                                                             </div>
 
                                                                             <div class="grade-input bordered-gray">
