@@ -12,6 +12,16 @@
             color: $cap-darker-charcoal;
         }
     }
+
+    &.grade-card {
+        .card-header {
+            display: flex;
+            align-items: center;
+        }
+        strong {
+            flex: 1;
+        }
+    }
 }
 
 .card-center {

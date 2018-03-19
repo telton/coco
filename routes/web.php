@@ -78,21 +78,33 @@ Route::group(['namespace' => 'Courses', 'middleware' => ['auth', 'courses.permis
         'as'   => 'courses.grades.index',
         'uses' => 'GradesController@index',
     ]);
+    Route::get('/courses/{slug}/grades/export', [
+        'as'   => 'courses.grades.export',
+        'uses' => 'GradesController@studentExport',
+    ]);
     Route::get('/courses/{slug}/grades/dashboard', [
         'as'   => 'courses.grades.dashboard',
         'uses' => 'GradesController@dashboard',
     ]);
-    Route::post('/courses/{slug}/grades/{assignment}', [
+    Route::post('/courses/{slug}/grades/assignments/{assignment}', [
         'as'   => 'courses.grades.store',
         'uses' => 'GradesController@store',
     ]);
-    Route::post('/courses/{slug}/grades/{assignment}/{grade}', [
+    Route::post('/courses/{slug}/grades/assignments/{assignment}/grades/{grade}', [
         'as'   => 'courses.grades.update',
         'uses' => 'GradesController@update',
     ]);
-    Route::post('/courses/{slug}/grades/{assignment}/{grade}/delete', [
+    Route::post('/courses/{slug}/grades/assignments/{assignment}/grades/{grade}/delete', [
         'as'   => 'courses.grades.destroy',
         'uses' => 'GradesController@destroy',
+    ]);
+    Route::get('/courses/{slug}/grades/assignment/{assignment}/grades/export', [
+        'as'   => 'coruses.assignments.grades.export',
+        'uses' => 'GradesController@assignmentExport',
+    ]);
+    Route::get('/courses/{slug}/grades/dashboard/export', [
+        'as'   => 'courses.grades.dashboard.export',
+        'uses' => 'GradesController@dashboardExport',
     ]);
 
     // Submissions.

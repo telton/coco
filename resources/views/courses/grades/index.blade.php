@@ -14,6 +14,9 @@
             <strong>Grades for:</strong> {{ $course->subject }}{{ $course->course_number }} - {{ sprintf('%02d', $course->section) }}: {{ $course->title }}
         </div>
         <div class="card-body">
+            <div class="btn-toolbar pull-right" style="margin-bottom: 15px;">
+                <a href="{{ route('courses.grades.export', $course->slug) }}" class="btn btn-primary">Export Grades to CSV</a>
+            </div>
             @if (count($course->visibleAssignments) !== 0)
                 <table class="table table-striped">
                     <thead>
@@ -53,12 +56,12 @@
                                     @endif
                                 </td>
                                 <td>
-                                    @if ($assignment->submission() && $assignment->submission()->grade($assignment->id))
+                                    @if ($assignment->submission() && $assignment->submission()->grade())
                                         {{ round($assignment->submission()->grade($assignment->id)->grade * 100, 2) }}%
                                     @endif
                                 </td>
-                                <td style="text-align: center;">
-                                    @if ($assignment->submission() && $assignment->submission()->grade($assignment->id))
+                                <td>
+                                    @if ($assignment->submission() && $assignment->submission()->grade())
                                         {{ $assignment->submission()->grade($assignment->id)->letter_grade }}
                                     @endif
                                 </td>

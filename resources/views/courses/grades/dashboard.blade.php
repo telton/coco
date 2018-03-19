@@ -181,12 +181,14 @@
             <div class="card">
                 <div class="card-header">
                     <strong>Completed submissions</strong>
+                    <a href="{{ route('courses.grades.dashboard.export', [$course->slug]) }}" class="btn btn-success pull-right">Export all to CSV</a>
                 </div>
                 <div class="card-body">
                     @forelse ($assignments['completed'] as $assignment)
-                        <div class="card">
+                        <div class="card grade-card">
                             <div class="card-header">
                                 <strong>Assignment: <a href="{{ route('courses.assignments.show', [$course->slug, $assignment]) }}">{{ $assignment->name }}</a></strong>
+                                <a href="{{ route('coruses.assignments.grades.export', [$course->slug, $assignment]) }}" class="btn btn-primary pull-right">Export to CSV</a>
                             </div>
                             <div class="card-body">
                                 <table class="table table-striped">
@@ -224,13 +226,13 @@
                                                         {{ $submission->created_at->format('m/d/Y') }} at {{ $submission->created_at->format('h:i A') }}
                                                     </td>
                                                     <td>
-                                                        {{ $submission->grade($assignment->id)->grader->name }}
+                                                        {{ $submission->grade()->grader->name }}
                                                     </td>
                                                     <td>
-                                                        {{ round($submission->grade($assignment->id)->grade * 100, 2) }}%
+                                                        {{ round($submission->grade()->grade * 100, 2) }}%
                                                     </td>
-                                                    <td style="text-align: center;">
-                                                        {{ strtoupper($submission->grade($assignment->id)->letter_grade) }}
+                                                    <td>
+                                                        {{ strtoupper($submission->grade()->letter_grade) }}
                                                     </td>
                                                     <td>
                                                         {{ $submission->updated_at->format('m/d/Y') }} at {{ $submission->updated_at->format('h:i A') }}
