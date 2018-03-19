@@ -17,7 +17,7 @@
             due-date="{{ old('due_date', $assignment->due_date->format('Y-m-d H:i')) }}" 
             display-date="{{ old('display_date', $assignment->display_date->format('Y-m-d H:i')) }}"
             inline-template v-cloak>
-            <form class="form-horizontal" method="POST" action="{{ route('courses.assignments.update', [$course->slug, $assignment]) }}">
+            <form class="form-horizontal" method="POST" action="{{ route('courses.assignments.update', [$course->slug, $assignment]) }}" enctype="multipart/form-data">
                 {{ csrf_field() }} 
                 <div class="card-body">
                     <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
