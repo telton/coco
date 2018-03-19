@@ -59,8 +59,8 @@ Route::group(['namespace' => 'Courses', 'middleware' => ['auth', 'courses.permis
         'uses' => 'AssignmentsController@destroy',
     ]);
     Route::post('/courses/{slug}/assignments/{assignment}/submit', [
-        'as'   => 'courses.assignments.submit',
-        'uses' => 'AssignmentsController@submit',
+        'as'   => 'courses.assignments.store',
+        'uses' => 'SubmissionsController@store',
     ]);
 
     // Attachments.
@@ -86,9 +86,19 @@ Route::group(['namespace' => 'Courses', 'middleware' => ['auth', 'courses.permis
         'as'   => 'courses.grades.store',
         'uses' => 'GradesController@store',
     ]);
-    Route::post('/courses/{slug}/grades/{grade}/delete', [
+    Route::post('/courses/{slug}/grades/{assignment}/{grade}', [
+        'as'   => 'courses.grades.update',
+        'uses' => 'GradesController@update',
+    ]);
+    Route::post('/courses/{slug}/grades/{assignment}/{grade}/delete', [
         'as'   => 'courses.grades.destroy',
         'uses' => 'GradesController@destroy',
+    ]);
+
+    // Submissions.
+    Route::post('/courses/{slug}/assignments/{assignment}/submissions/{submission}/delete', [
+        'as'   => 'courses.assignments.submissions.destroy',
+        'uses' => 'SubmissionsController@destroy',
     ]);
 });
 

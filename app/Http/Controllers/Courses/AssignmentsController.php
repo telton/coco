@@ -40,7 +40,7 @@ class AssignmentsController extends Controller
                 'store',
                 'edit',
                 'update',
-                'delete',
+                'destroy',
             ],
         ]);
     }
@@ -261,64 +261,5 @@ class AssignmentsController extends Controller
             $this->flash()->warning("The assignment <strong>{$assignmentName}</strong> was NOT deleted!");
             return $this->redirect()->route('courses.assignments.index', $course->slug);
         }
-    }
-
-    /**
-     * Submit an assignment.
-     *
-     * @author Tyler Elton <telton@umflint.edu>
-     * @param string                   $slug
-     * @param  \App\Models\Assignment  $assignment
-     * @return \Illuminate\Http\Response
-     */
-    public function submit(string $slug, Assignment $assignment, Request $request)
-    {
-        $course = Course::where('slug', $slug)->first();
-
-        // If the course was not found, abort with a status of 404.
-        if (!$course) {
-            abort(404);
-        }
-
-        // Create the assignment submission.
-        $submission = Submission::create([
-            'assignment_id' => $assignment->id,
-            'user_id'       => Auth::user()->id,
-            'comments'      => $request->input('comments'),
-        ]);
-
-        // Upload each file in the submission.
-        // If no file was uploaded, just create an File and don't upload anything.
-        if (!empty($request->file('uploads', []))) {
-            foreach ($request->file('uploads', []) as $uploads) {
-                // Set the path.
-                $path = "{$assignment->id}/submissions/";
-
-                // Create a safe name for storing on the server.
-                $name = md5($uploads->getClientOriginalName()) . '.' . $uploads->getClientOriginalExtension();
-
-                // Check for collisions.
-                if ($this->storage->exists("{$path}{$name}")) {
-                    $name = mt_rand(0, 1000) . '-' . $name;
-                }
-
-                // Create the file.
-                $file = File::create([
-                    'assignment_id' => $assignment->id,
-                    'user_id'       => Auth::user()->id,
-                    'name'          => $uploads->getClientOriginalName(),
-                    'file'          => $path . $name,
-                    'mime'          => $uploads->getClientMimeType(),
-                    'type'          => 'submission',
-                    'submission_id' => $submission->id,
-                ]);
-
-                // Save the attachment.
-                $this->storage->put($path . $name, file_get_contents($uploads));
-            }
-        }
-
-        $this->flash()->success('Your submission has been successfully saved!');
-        return $this->redirect()->route('courses.assignments.show', [$slug, $assignment]);
     }
 }

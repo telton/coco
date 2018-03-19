@@ -6,9 +6,9 @@ use App\Models\Courses\Grade;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Courses\Course;
+use App\Models\Courses\Submission;
 use App\Models\Courses\Assignment;
 use Illuminate\Support\Facades\Auth;
-use App\Models\Courses\File;
 
 class GradesController extends Controller
 {
@@ -119,7 +119,7 @@ class GradesController extends Controller
      */
     public function store(string $slug, Assignment $assignment, Request $request)
     {
-        $submission = File::where('id', $request->input('submissionId'))->first();
+        $submission = Submission::where('id', $request->input('submissionId'))->first();
         $grade = 0.00;
 
         try {
@@ -144,37 +144,32 @@ class GradesController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Courses\Grade  $grade
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Grade $grade)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Courses\Grade  $grade
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Grade $grade)
-    {
-        //
-    }
-
-    /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Courses\Grade  $grade
+     * @param  \Illuminate\Http\Request       $request
+     * @param                                 $slug
+     * @param  \App\Models\Courses\Assignment $assignment
+     * @param  \App\Models\Courses\Grade      $grade
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Grade $grade)
+    public function update(Request $request, $slug, Assignment $assignment, Grade $grade)
     {
-        //
+        // dd($request->input());
+
+        $submission = Submission::where('id', $request->input('submissionId'))->first();
+
+        $grade->update([
+            'assignment_id' => $assignment->id,
+            'student_id'    => $submission->user->id,
+            'grader_id'     => Auth::user()->id,
+            'points_earned' => $request->input('pointsEarned'),
+            'grade'         => $request->input('grade'),
+            'letter_grade'  => strtoupper($request->input('letterGrade')),
+            'comments'      => $request->input('gradeEditComments'),
+        ]);
+
+        $this->flash()->success("The grade for the assignment <strong>{$assignment->name}</strong> has been updated for student <strong>{$submission->user->name}</strong>!");
+        return $this->redirect()->route('courses.grades.dashboard', $slug);
     }
 
     /**
@@ -184,9 +179,8 @@ class GradesController extends Controller
      * @param  \App\Models\Courses\Grade  $grade
      * @return \Illuminate\Http\Response
      */
-    public function destroy(string $slug, Grade $grade)
+    public function destroy(string $slug, Assignment $assignment, Grade $grade)
     {
-        $assignment = $grade->assignment;
         $student = $grade->student;
 
         // Attempt to delete the grade.

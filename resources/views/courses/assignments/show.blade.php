@@ -71,7 +71,7 @@
                             <i class="fa fa-search"></i> View Submission
                         </button>
                     @endif
-                    @if ($assignment->submission()->grade())
+                    @if ($assignment->submission() && $assignment->submission()->grade())
                         <button type="button" class="btn btn-success" data-toggle="modal" data-target="#viewGrade" v-on:click="onModalOpen()">
                             <i class="fa fa-search"></i> View Grade
                         </button>
@@ -81,7 +81,7 @@
 
             <!-- Assignment Submission Modal -->
             <div class="modal fade" id="submitAssignment" tabindex="-1" role="dialog" aria-labelledby="submitAssignmentLabel" aria-hidden="true">
-                <form class="form-horizontal" method="POST" action="{{ route('courses.assignments.submit', [$course->slug, $assignment]) }}" enctype="multipart/form-data">
+                <form class="form-horizontal" method="POST" action="{{ route('courses.assignments.store', [$course->slug, $assignment]) }}" enctype="multipart/form-data">
                     {{ csrf_field() }}
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">

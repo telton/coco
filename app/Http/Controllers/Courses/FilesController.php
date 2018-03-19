@@ -65,16 +65,5 @@ class FilesController extends Controller
      */
     public function destroy(string $slug, Assignment $assignment, $id)
     {
-        $file = File::where('id', $id)->first();
-        $user = $file->user;
-
-        // Attempt to delete the file.
-        if ($file->delete()) {
-            $this->flash()->success("The submission for the assignment <strong>{$assignment->name}</strong> has been deleted for student <strong>{$user->name}</strong>!");
-            return $this->redirect()->route('courses.grades.dashboard', $slug);
-        } else {
-            $this->flash()->warning("The submission for the assignment <strong>{$assignment->name}</strong> was NOT deleted for student <strong>{$user->name}</strong>!");
-            return $this->redirect()->route('courses.grades.dashboard', $slug);
-        }
     }
 }

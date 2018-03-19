@@ -1,14 +1,19 @@
 let Editor = require('tui-editor');
 let Viewer = require('tui-editor/dist/tui-editor-Viewer');
-import CoursesGradesForm from './form';
 
 export default {
-    name: 'courses-grades-dashboard',
+    name: 'courses-grades-form',
+    props: {
+        pointsEarned: {
+            type: String,
+            default: 0,
+        }
+    },
     data() {
         return {
             editor: {},
             viewer: {},
-            pointsEarned: 0,
+            points_earned: this.pointsEarned,
             totalPoints: 0,
             grade: 0.00,
         }
@@ -18,7 +23,11 @@ export default {
             this.totalPoints = this.$refs.totalPoints.value;
         }
 
-        $(this.$refs.deleteSubmission).on('click', function (e) {
+        if (this.$refs.pointsEarned) {
+            this.points_earned = this.$refs.pointsEarned.value;
+        }
+
+        $(this.$refs.deleteGrade).on('click', function (e) {
             // Stop the form from submitting automatically.
             e.preventDefault();
             let form = $(this).parents('form');
@@ -40,9 +49,14 @@ export default {
             }).catch(swal.noop); // Catch the cancel option so we don't get console errors.
         });
     },
+    watch: {
+        pointsEarned: function (val) {
+            this.points_earned = val;
+        }
+    },
     computed: {
         computedGrade: function () {
-            let value = parseFloat(this.pointsEarned) / parseFloat(this.totalPoints);
+            let value = parseFloat(this.points_earned) / parseFloat(this.totalPoints);
 
             if (isNaN(value) || !isFinite(value)) {
                 value = 0;
@@ -67,23 +81,20 @@ export default {
                 });
             }
             
-            let commentsEditorValue = document.querySelector("#gradeComments-" + submissionId).value;
+            let commentsEditEditorValue = document.querySelector("#gradeEditComments-" + submissionId).value;
             // Check to make sure we've not already created the editor instance.
             if (!(this.editor instanceof Editor)) {
                 this.editor = new Editor({
-                    el: document.querySelector("#gradeCommentsEditor-" + submissionId),
+                    el: document.querySelector("#gradeEditCommentsEditor-" + submissionId),
                     initialEditType: 'wysiwyg',
                     previewStyle: 'tab',
                     height: '200px',
-                    initialValue: commentsEditorValue
+                    initialValue: commentsEditEditorValue
                 });
             }
         },
         onSubmit(submissionId) {
-            document.querySelector("#gradeComments-" + submissionId).value = this.editor.getValue();
+            document.querySelector("#gradeEditComments-" + submissionId).value = this.editor.getValue();
         },
-    },
-    components: {
-        CoursesGradesForm
     }
 }

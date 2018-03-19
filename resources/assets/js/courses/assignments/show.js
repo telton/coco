@@ -71,25 +71,30 @@ export default {
                 });
             }
 
-            let viewCommentsValue = this.$refs.viewComments.value;
-            // Check to make sure we've not already created the viewer instance.
-            if (!(this.commentsViewer instanceof Viewer)) {
-                this.commentsViewer = new Viewer({
-                    el: this.$refs.commentsViewer,
-                    height: '500px',
-                    initialValue: viewCommentsValue
-                });
+            if (this.$refs.viewComments) {
+                let viewCommentsValue = this.$refs.viewComments.value;
+                // Check to make sure we've not already created the viewer instance.
+                if (!(this.commentsViewer instanceof Viewer)) {
+                    this.commentsViewer = new Viewer({
+                        el: this.$refs.commentsViewer,
+                        height: '500px',
+                        initialValue: viewCommentsValue
+                    });
+                }
             }
-
-            let viewGradeCommentsValue = this.$refs.viewGradeComments.value;
-            // Check to make sure we've not already created the viewer instance.
-            if (!(this.gradeCommentsViewer instanceof Viewer)) {
-                this.gradeCommentsViewer = new Viewer({
-                    el: this.$refs.gradeCommentsViewer,
-                    height: '500px',
-                    initialValue: viewGradeCommentsValue
-                });
+            
+            if (this.$refs.gradeComments) {
+                let viewGradeCommentsValue = this.$refs.viewGradeComments.value;
+                // Check to make sure we've not already created the viewer instance.
+                if (!(this.gradeCommentsViewer instanceof Viewer)) {
+                    this.gradeCommentsViewer = new Viewer({
+                        el: this.$refs.gradeCommentsViewer,
+                        height: '500px',
+                        initialValue: viewGradeCommentsValue
+                    });
+                }
             }
+            
         },
         onSubmit() {
             this.$refs.submitComments.value = this.editor.getValue();
