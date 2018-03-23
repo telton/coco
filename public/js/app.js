@@ -68375,7 +68375,9 @@ Object.defineProperty(exports, '__esModule', { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__courses_assignments_show__ = __webpack_require__(276);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__courses_grades_dashboard__ = __webpack_require__(277);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__courses_grades_index__ = __webpack_require__(279);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__courses_notes_form__ = __webpack_require__(317);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__courses_notes_index__ = __webpack_require__(318);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__courses_notes_form__ = __webpack_require__(317);
+
 
 
 
@@ -68398,7 +68400,8 @@ Object.defineProperty(exports, '__esModule', { value: true });
         CoursesAssignmentsShow: __WEBPACK_IMPORTED_MODULE_2__courses_assignments_show__["a" /* default */],
         CoursesGradesDashboard: __WEBPACK_IMPORTED_MODULE_3__courses_grades_dashboard__["a" /* default */],
         CoursesGradesIndex: __WEBPACK_IMPORTED_MODULE_4__courses_grades_index__["a" /* default */],
-        CoursesNotesForm: __WEBPACK_IMPORTED_MODULE_5__courses_notes_form__["a" /* default */]
+        CoursesNotesIndex: __WEBPACK_IMPORTED_MODULE_5__courses_notes_index__["a" /* default */],
+        CoursesNotesForm: __WEBPACK_IMPORTED_MODULE_6__courses_notes_form__["a" /* default */]
     }
 });
 
@@ -111227,6 +111230,56 @@ var Editor = __webpack_require__(4);
                 height: '700px',
                 initialValue: bodyEditorValue
             });
+        }
+    },
+
+    methods: {
+        onSubmit: function onSubmit() {
+            this.$refs.body.value = this.editor.getValue();
+        }
+    }
+});
+
+/***/ }),
+/* 318 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = ({
+    name: 'courses-notes-index',
+    methods: {
+        onDelete: function onDelete() {
+            var form = this.$refs.deleteNoteForm;
+
+            // SweetAlert2 popup.
+            swal({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
+            }).then(function (result) {
+                // If confirm, submit the form.
+                if (result) {
+                    form.submit();
+                }
+            }).catch(swal.noop); // Catch the cancel option so we don't get console errors.
+        },
+        copyToClipboard: function copyToClipboard() {
+            /* Get the text field */
+            var copyText = this.$refs.slug;
+            console.log(copyText);
+
+            /* Select the text field */
+            copyText.select();
+
+            /* Copy the text inside the text field */
+            document.execCommand("Copy");
+
+            /* Alert the copied text */
+            document.getElementById('copyToClipboard').title = "Copied to clipboard!";
         }
     }
 });

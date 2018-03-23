@@ -14,7 +14,7 @@
     </div>
     <div class="card-body">
         <courses-notes-form inline-template v-cloak>
-            <form action="{{ url('create') }}" method="POST" class="form" role="form">
+            <form action="{{ route('courses.notes.store', $course->slug) }}" method="POST" class="form" role="form">
                 {{ csrf_field() }}
 
                 <div class="notes-title form-group{{ $errors->has('title') ? ' has-error' : '' }}">
@@ -34,7 +34,7 @@
                     <input type="hidden" name="body" id="body" value="{{ old('body') }}" ref="body">
                 </div>
 
-                <button class="btn btn-primary pull-right">Save</button>
+                <button type="submit" class="btn btn-primary pull-right" v-on:click="onSubmit()">Save</button>
             </form>
         </courses-notes-form>
     </div>

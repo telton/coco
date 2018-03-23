@@ -126,15 +126,19 @@ Route::group(['namespace' => 'Courses', 'middleware' => ['auth', 'courses.permis
         'as'   => 'courses.notes.store',
         'uses' => 'NotesController@store',
     ]);
+    Route::get('/courses/{slug}/notes/{note}', [
+        'as'   => 'courses.notes.show',
+        'uses' => 'NotesController@show',
+    ]);
     Route::get('/courses/{slug}/notes/{note}/edit', [
         'as'   => 'courses.notes.edit',
         'uses' => 'NotesController@edit',
     ]);
-    Route::patch('/courses/{slug}/notes/{note}', [
+    Route::post('/courses/{slug}/notes/{note}', [
         'as'   => 'courses.notes.update',
         'uses' => 'NotesController@update',
     ]);
-    Route::get('/courses/{slug}/notes/{note}/delete', [
+    Route::post('/courses/{slug}/notes/{note}/delete', [
         'as'   => 'courses.notes.destroy',
         'uses' => 'NotesController@destroy',
     ]);

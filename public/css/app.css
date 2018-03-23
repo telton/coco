@@ -17611,6 +17611,42 @@ div.total-points > input#points {
           flex: 1;
 }
 
+.shareable-link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.shareable-link label {
+  margin-bottom: 0;
+  margin-right: 20px;
+  -ms-flex-item-align: center;
+      align-self: center;
+}
+
+.shareable-link input {
+  border-radius: 0;
+}
+
+.shareable-link .btn.btn-default,
+.shareable-link .main-nav .btn-default.main-nav-toggle,
+.main-nav .shareable-link .btn-default.main-nav-toggle {
+  border-radius: 0;
+}
+
+.shareable-link .form-control:focus {
+  border-color: unset;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.shareable-link .btn:focus,
+.shareable-link .main-nav .main-nav-toggle:focus,
+.main-nav .shareable-link .main-nav-toggle:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
 [v-cloak] {
   display: none;
 }

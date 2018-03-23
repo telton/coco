@@ -30,13 +30,18 @@
     </div>
 
     <!-- Scripts -->
+    <script type="text/javascript" src="{{ mix('/js/app.js') }}"></script>
     <script type="text/javascript">
         window.ParsleyConfig = {
             errorClass: 'is-invalid',
             successClass: 'is-valid',
             errorsWrapper: '<ul class="parsley-errors-list invalid-feedback"></ul>'
         }
+
+        // Enable tooltops everywhere.
+        window.$(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
     </script>
-    <script type="text/javascript" src="{{ mix('/js/app.js') }}"></script>
 </body>
 </html>

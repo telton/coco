@@ -3,6 +3,7 @@ import CoursesAssignmentsForm from './courses/assignments/form';
 import CoursesAssignmentsShow from './courses/assignments/show';
 import CoursesGradesDashboard from './courses/grades/dashboard';
 import CoursesGradesIndex from './courses/grades/index';
+import CoursesNotesIndex from './courses/notes/index';
 import CoursesNotesForm from './courses/notes/form';
 
 export default {
@@ -19,6 +20,7 @@ export default {
         CoursesAssignmentsShow,
         CoursesGradesDashboard,
         CoursesGradesIndex,
+        CoursesNotesIndex,
         CoursesNotesForm,
     }
 }

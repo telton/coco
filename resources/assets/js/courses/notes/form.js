@@ -20,4 +20,9 @@ export default {
             });
         }
     },
+    methods: {
+        onSubmit() {
+            this.$refs.body.value = this.editor.getValue();
+        }
+    }
 }
