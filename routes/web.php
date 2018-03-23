@@ -112,6 +112,32 @@ Route::group(['namespace' => 'Courses', 'middleware' => ['auth', 'courses.permis
         'as'   => 'courses.assignments.submissions.destroy',
         'uses' => 'SubmissionsController@destroy',
     ]);
+
+    // Notes.
+    Route::get('/courses/{slug}/notes', [
+        'as'   => 'courses.notes.index',
+        'uses' => 'NotesController@index',
+    ]);
+    Route::get('/courses/{slug}/notes/create', [
+        'as'   => 'courses.notes.create',
+        'uses' => 'NotesController@create',
+    ]);
+    Route::post('/courses/{slug}/notes', [
+        'as'   => 'courses.notes.store',
+        'uses' => 'NotesController@store',
+    ]);
+    Route::get('/courses/{slug}/notes/{note}/edit', [
+        'as'   => 'courses.notes.edit',
+        'uses' => 'NotesController@edit',
+    ]);
+    Route::patch('/courses/{slug}/notes/{note}', [
+        'as'   => 'courses.notes.update',
+        'uses' => 'NotesController@update',
+    ]);
+    Route::get('/courses/{slug}/notes/{note}/delete', [
+        'as'   => 'courses.notes.destroy',
+        'uses' => 'NotesController@destroy',
+    ]);
 });
 
 Auth::routes();
