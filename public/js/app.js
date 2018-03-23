@@ -68375,6 +68375,8 @@ Object.defineProperty(exports, '__esModule', { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__courses_assignments_show__ = __webpack_require__(276);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__courses_grades_dashboard__ = __webpack_require__(277);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__courses_grades_index__ = __webpack_require__(279);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__courses_notes_form__ = __webpack_require__(317);
+
 
 
 
@@ -68395,7 +68397,8 @@ Object.defineProperty(exports, '__esModule', { value: true });
         CoursesAssignmentsForm: __WEBPACK_IMPORTED_MODULE_1__courses_assignments_form__["a" /* default */],
         CoursesAssignmentsShow: __WEBPACK_IMPORTED_MODULE_2__courses_assignments_show__["a" /* default */],
         CoursesGradesDashboard: __WEBPACK_IMPORTED_MODULE_3__courses_grades_dashboard__["a" /* default */],
-        CoursesGradesIndex: __WEBPACK_IMPORTED_MODULE_4__courses_grades_index__["a" /* default */]
+        CoursesGradesIndex: __WEBPACK_IMPORTED_MODULE_4__courses_grades_index__["a" /* default */],
+        CoursesNotesForm: __WEBPACK_IMPORTED_MODULE_5__courses_notes_form__["a" /* default */]
     }
 });
 
@@ -111198,6 +111201,35 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ ])
 });
 ;
+
+/***/ }),
+/* 317 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var Editor = __webpack_require__(4);
+
+/* harmony default export */ __webpack_exports__["a"] = ({
+    name: 'courses-notes-form',
+    data: function data() {
+        return {
+            editor: {}
+        };
+    },
+    mounted: function mounted() {
+        var bodyEditorValue = this.$refs.body.value;
+        // Check to make sure we've not already created the editor instance.
+        if (!(this.editor instanceof Editor)) {
+            this.editor = new Editor({
+                el: this.$refs.bodyEditor,
+                initialEditType: 'wysiwyg',
+                previewStyle: 'tab',
+                height: '700px',
+                initialValue: bodyEditorValue
+            });
+        }
+    }
+});
 
 /***/ })
 /******/ ]);

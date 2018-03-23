@@ -17592,6 +17592,25 @@ div.total-points > input#points {
       align-self: center;
 }
 
+.notes-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.notes-title label {
+  margin-bottom: 0;
+  margin-right: 20px;
+  -ms-flex-item-align: center;
+      align-self: center;
+}
+
+.notes-title input {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
 [v-cloak] {
   display: none;
 }
