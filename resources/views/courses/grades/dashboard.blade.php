@@ -55,7 +55,7 @@
                                                                 Actions
                                                             </button>
                                                             <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                                                                <a class="dropdown-item" href="#gradeSubmission-{{$submission->id}}" data-toggle="modal" data-target="#gradeSubmission-{{$submission->id}}" v-on:click="onModalOpen({{ $submission->id }})">
+                                                                <a class="dropdown-item" href="#gradeSubmission-{{ $submission->id }}" data-toggle="modal" data-target="#gradeSubmission-{{ $submission->id }}" v-on:click="onModalOpen({{ $submission->id }})">
                                                                     <i class="fa fa-edit"></i> Enter Grade
                                                                 </a>
                                                                 @if (Auth::user()->hasRole(['admin', 'instructor']))
@@ -70,11 +70,11 @@
                                                         <!-- Grade Assignment Submission Modal -->
                                                         <form class="form-horizontal" method="POST" action="{{ route('courses.grades.store', [$course->slug, $assignment]) }}">
                                                             {{ csrf_field() }}
-                                                            <div class="modal fade" id="gradeSubmission-{{$submission->id}}" tabindex="-1" role="dialog" aria-labelledby="gradeSubmissionLabel-{{$submission->id}}" aria-hidden="true">
+                                                            <div class="modal fade" id="gradeSubmission-{{ $submission->id }}" tabindex="-1" role="dialog" aria-labelledby="gradeSubmissionLabel-{{ $submission->id }}" aria-hidden="true">
                                                                 <div class="modal-dialog" role="document">
                                                                     <div class="modal-content">
                                                                         <div class="modal-header">
-                                                                            <h5 class="modal-title" id="gradeSubmissionLabel-{{$submission->id}}">Grade Assignment Submission</h5>
+                                                                            <h5 class="modal-title" id="gradeSubmissionLabel-{{ $submission->id }}">Grade Assignment Submission</h5>
                                                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                                                 <span aria-hidden="true">&times;</span>
                                                                             </button>
@@ -245,7 +245,7 @@
                                                                         Actions
                                                                     </button>
                                                                     <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                                                                        <a class="dropdown-item" href="#editGrade-{{$submission->id}}" data-toggle="modal" data-target="#editGrade-{{$submission->id}}" v-on:click="onModalOpen({{ $submission->id }})">
+                                                                        <a class="dropdown-item" href="#editGrade-{{ $submission->id }}" data-toggle="modal" data-target="#editGrade-{{ $submission->id }}" v-on:click="onModalOpen({{ $submission->id }})">
                                                                             <i class="fa fa-edit"></i> Edit Grade
                                                                         </a>
                                                                         @if (Auth::user()->hasRole(['admin', 'instructor']))
@@ -260,11 +260,11 @@
                                                                 <!-- Edit Grade Assignment Submission Modal -->
                                                                 <form class="form-horizontal" method="POST" action="{{ route('courses.grades.update', [$course->slug, $assignment, $submission->grade()]) }}">
                                                                     {{ csrf_field() }}
-                                                                    <div class="modal fade" id="editGrade-{{$submission->id}}" tabindex="-1" role="dialog" aria-labelledby="editGradeLabel-{{$submission->id}}" aria-hidden="true">
+                                                                    <div class="modal fade" id="editGrade-{{ $submission->id }}" tabindex="-1" role="dialog" aria-labelledby="editGradeLabel-{{ $submission->id }}" aria-hidden="true">
                                                                         <div class="modal-dialog" role="document">
                                                                             <div class="modal-content">
                                                                                 <div class="modal-header">
-                                                                                    <h5 class="modal-title" id="editGradeLabel-{{$submission->id}}">Edit Grade</h5>
+                                                                                    <h5 class="modal-title" id="editGradeLabel-{{ $submission->id }}">Edit Grade</h5>
                                                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                                                         <span aria-hidden="true">&times;</span>
                                                                                     </button>

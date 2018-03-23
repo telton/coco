@@ -17190,6 +17190,12 @@ body {
       align-self: center;
 }
 
+.justify-center {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 .flex-row-center {
   display: -webkit-box;
   display: -ms-flexbox;
