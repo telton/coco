@@ -22,7 +22,7 @@ class SubmissionsController extends Controller
      * SubmissionsController constructor.
      *
      * @author Tyler Elton <telton@umflint.edu>
-     * @param Factory $storage
+     * @param \Illuminate\Contracts\Filesystem\Factory $storage
      */
     public function __construct(Factory $storage)
     {

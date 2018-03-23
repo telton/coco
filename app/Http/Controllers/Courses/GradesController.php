@@ -102,9 +102,9 @@ class GradesController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param string                    $slug
-     * @param Assignment                $assignment
-     * @param  \Illuminate\Http\Request $request
+     * @param string                         $slug
+     * @param \App\Models\Courses\Assignment $assignment
+     * @param  \Illuminate\Http\Request      $request
      * @return \Illuminate\Http\Response
      */
     public function store(string $slug, Assignment $assignment, Request $request)
@@ -137,12 +137,12 @@ class GradesController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request       $request
-     * @param                                 $slug
+     * @param  string                         $slug
      * @param  \App\Models\Courses\Assignment $assignment
      * @param  \App\Models\Courses\Grade      $grade
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $slug, Assignment $assignment, Grade $grade)
+    public function update(Request $request, string $slug, Assignment $assignment, Grade $grade)
     {
         // dd($request->input());
 
@@ -165,9 +165,9 @@ class GradesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param string                     $slug
-     * @param Assignment                 $assignment
-     * @param  \App\Models\Courses\Grade $grade
+     * @param string                          $slug
+     * @param  \App\Models\Courses\Assignment $assignment
+     * @param  \App\Models\Courses\Grade      $grade
      * @return \Illuminate\Http\RedirectResponse
      * @throws \Exception
      */
@@ -223,8 +223,8 @@ class GradesController extends Controller
      * Export entire assignment's grades to CSV for instructor/grader.
      *
      * @author Tyler Elton <telton@umflint.edu>
-     * @param string                        $slug
-     * @param App\Models\Courses\Assignment $assignment
+     * @param string                         $slug
+     * @param \App\Models\Courses\Assignment $assignment
      */
     public function assignmentExport(string $slug, Assignment $assignment)
     {

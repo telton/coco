@@ -20,7 +20,7 @@ class FilesController extends Controller
      * FilesController constructor.
      *
      * @author Tyler Elton <telton@umflint.edu>
-     * @param Factory $storage
+     * @param \Illuminate\Contracts\Filesystem\Factory $storage
      */
     public function __construct(Factory $storage)
     {
@@ -32,9 +32,9 @@ class FilesController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param string                   $slug
-     * @param  \App\Models\Assignment  $assignment
-     * @param                          $id
+     * @param string                           $slug
+     * @param  \App\Models\Courses\Assignment  $assignment
+     * @param                                  $id
      * @return \Illuminate\Http\Response
      */
     public function show(string $slug, Assignment $assignment, $id)
@@ -65,5 +65,6 @@ class FilesController extends Controller
      */
     public function destroy(string $slug, Assignment $assignment, $id)
     {
+        //
     }
 }

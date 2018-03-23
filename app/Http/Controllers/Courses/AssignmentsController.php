@@ -25,7 +25,7 @@ class AssignmentsController extends Controller
      * AssignmentsController constructor.
      *
      * @author Tyler Elton <telton@umflint.edu>
-     * @param Factory $storage
+     * @param \Illuminate\Contracts\Filesystem\Factory $storage
      */
     public function __construct(Factory $storage)
     {
@@ -150,7 +150,7 @@ class AssignmentsController extends Controller
      * Display the specified resource.
      *
      * @param string                   $slug
-     * @param  \App\Models\Assignment  $assignment
+     * @param  \App\Models\Courses\Assignment  $assignment
      * @return \Illuminate\Http\Response
      */
     public function show(string $slug, Assignment $assignment)
@@ -178,7 +178,7 @@ class AssignmentsController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  string                  $slug
-     * @param  \App\Models\Assignment  $assignment
+     * @param  \App\Models\Courses\Assignment  $assignment
      * @return \Illuminate\Http\Response
      */
     public function edit($slug, Assignment $assignment)
@@ -208,7 +208,7 @@ class AssignmentsController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  string                    $slug
-     * @param  \App\Models\Assignment    $assignment
+     * @param  \App\Models\Courses\Assignment    $assignment
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, string $slug, Assignment $assignment)
@@ -266,7 +266,7 @@ class AssignmentsController extends Controller
      * Remove the specified resource from storage.
      *
      * @param string                   $slug
-     * @param  \App\Models\Assignment  $assignment
+     * @param  \App\Models\Courses\Assignment  $assignment
      * @return \Illuminate\Http\Response
      */
     public function destroy(string $slug, Assignment $assignment)
