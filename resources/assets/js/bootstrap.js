@@ -3,6 +3,7 @@ import Popper from 'popper.js';
 import swal from 'sweetalert2';
 import jQuery from 'jquery';
 import 'parsleyjs';
+import Echo from 'laravel-echo';
 
 // Setup Popper, jQuery, sweetalert2, and Bootstrap.
 window.Popper = Popper;
@@ -45,16 +46,14 @@ if (token) {
  * allows your team to easily build robust real-time web applications.
  */
 
-// import Echo from 'laravel-echo'
-
 // window.Pusher = require('pusher-js');
 
-// window.Echo = new Echo({
-//     broadcaster: 'pusher',
-//     key: 'your-pusher-key',
-//     cluster: 'mt1',
-//     encrypted: true
-// });
+window.Echo = new Echo({
+    broadcaster: 'pusher',
+    key: 'a0d777038283bd557ae8',
+    cluster: 'us2',
+    encrypted: true
+});
 
 /**
  * Kickstart the app.
