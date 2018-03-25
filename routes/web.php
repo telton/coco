@@ -142,6 +142,10 @@ Route::group(['namespace' => 'Courses', 'middleware' => ['auth', 'courses.permis
         'as'   => 'courses.notes.destroy',
         'uses' => 'NotesController@destroy',
     ]);
+    Route::get('/courses/{slug}/notes/{note}/export', [
+        'as'   => 'courses.notes.export',
+        'uses' => 'NotesController@export',
+    ]);
 });
 
 Auth::routes();

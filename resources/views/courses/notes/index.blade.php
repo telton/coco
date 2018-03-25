@@ -54,6 +54,9 @@
                                             <a class="dropdown-item" href="#getLink-{{ $note->id }}" data-toggle="modal" data-target="#getLink-{{ $note->id }}">
                                                 <i class="fa fa-clipboard"></i> Get Link
                                             </a>
+                                            <a class="dropdown-item" href="{{ route('courses.notes.export', [$course->slug, $note]) }}">
+                                                <i class="fa fa-file-pdf-o"></i> Export to PDF
+                                            </a>
                                             <a class="dropdown-item" href="{{ route('courses.notes.edit', [$course->slug, $note]) }}"><i class="fa fa-edit"></i> Edit</a>
                                             <form action="{{ route('courses.notes.destroy', [$course->slug, $note]) }}" id="deleteNoteForm-{{ $note->id }}" method="POST" ref="deleteNoteForm">
                                                 {{ csrf_field() }}

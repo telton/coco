@@ -21,6 +21,9 @@
                         <a class="btn btn-primary" href="#getLink" data-toggle="modal" data-target="#getLink">
                             <i class="fa fa-clipboard"></i> Get Link
                         </a>
+                        <a class="btn btn-info" href="{{ route('courses.notes.export', [$course->slug, $note]) }}">
+                            <i class="fa fa-file-pdf-o"></i> Export to PDF
+                        </a>
                         <form action="{{ route('courses.notes.destroy', [$course->slug, $note]) }}" method="POST" ref="deleteNoteForm">
                             {{ csrf_field() }}
                             <button type="submit" class="btn btn-danger" ref="delete" v-on:click.prevent="onDelete()"><i class="fa fa-trash"></i> Delete</button>

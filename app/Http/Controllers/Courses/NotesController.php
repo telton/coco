@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use App\Models\Courses\Note;
 use App\Models\Courses\Course;
+use Masterminds\HTML5;
+use Dompdf\Dompdf;
 
 class NotesController extends Controller
 {
@@ -29,8 +31,8 @@ class NotesController extends Controller
     public function index(string $slug)
     {
         $notes = Note::where('user_id', auth()->user()->id)
-                        ->orderBy('updated_at', 'desc')
-                        ->get();
+            ->orderBy('updated_at', 'desc')
+            ->get();
         $course = Course::where('slug', $slug)->first();
 
         // If the course was not found, abort with a status of 404.
@@ -74,9 +76,9 @@ class NotesController extends Controller
     /**
      * Store a newly created note in database.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  string                    $slug
-     * @return \Illuminate\Http\Response
+     * @param  \Illuminate\Http\Request $request
+     * @param  string                   $slug
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store(Request $request, string $slug)
     {
@@ -94,8 +96,8 @@ class NotesController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param string                     $slug
-     * @param  \App\Models\Courses\Note  $note
+     * @param string                    $slug
+     * @param  \App\Models\Courses\Note $note
      * @return \Illuminate\Http\Response
      */
     public function show(string $slug, Note $note)
@@ -111,16 +113,16 @@ class NotesController extends Controller
         $this->breadcrumb->addCrumb('My Notes', route('courses.notes.index', $course->slug));
         $this->breadcrumb->addCrumb($note->title, route('courses.notes.show', [$course->slug, $note]));
         return view('courses.notes.show', [
-            'course'      => $course,
-            'note'        => $note,
+            'course' => $course,
+            'note'   => $note,
         ]);
     }
 
     /**
      * Show the form for editing the specified note.
      *
-     * @param  string                    $slug
-     * @param  \App\Models\Courses\Note  $note
+     * @param  string                   $slug
+     * @param  \App\Models\Courses\Note $note
      * @return \Illuminate\Http\Response
      */
     public function edit(string $slug, Note $note)
@@ -146,9 +148,9 @@ class NotesController extends Controller
     /**
      * Update the specified note.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  string                    $slug
-     * @param  \App\Models\Courses\Note  $note
+     * @param  \Illuminate\Http\Request $request
+     * @param  string                   $slug
+     * @param  \App\Models\Courses\Note $note
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, string $slug, Note $note)
@@ -164,9 +166,10 @@ class NotesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param string                     $slug
-     * @param  \App\Models\Courses\Note  $note
-     * @return \Illuminate\Http\Response
+     * @param string                    $slug
+     * @param  \App\Models\Courses\Note $note
+     * @return \Illuminate\Http\RedirectResponse
+     * @throws \Exception
      */
     public function destroy(string $slug, Note $note)
     {
@@ -178,5 +181,38 @@ class NotesController extends Controller
             $this->flash()->warning("The assignment <strong>{$note->title}</strong> was NOT deleted!");
             return $this->redirect()->route('courses.notes.index', $slug);
         }
+    }
+
+    /**
+     * Export a note to PDF.
+     * @author Tyler Elton <telton@umflint.edu>
+     *
+     * @param string $slug
+     * @param Note   $note
+     */
+    public function export(string $slug, Note $note)
+    {
+        $markdownParser = new \Michelf\MarkdownExtra();
+        $html = $markdownParser->transform($note->body);
+
+        // Transform '~~' to strike tags.
+        $html = preg_replace('/~~(.+?)~~/', '<strike>$1</strike>', $html);
+
+        $dom = new HTML5();
+        $dom = $dom->loadHTML($html);
+        $links = htmlqp($dom, 'a');
+        foreach ($links as $link) {
+            $href = $link->attr('href');
+            if (substr($href, 0, 1) == '/' && substr($href, 1, 1) != '/') {
+                $link->attr('href', $domain_name . $href);
+            }
+        }
+        $html = $dom->saveHTML($dom);
+
+        $dompdf = new DomPDF();
+        $dompdf->load_html($html);
+        $dompdf->render();
+        $output = $dompdf->output();
+        $dompdf->stream($filename = date('m-d-Y') . '-' . $note->slug);
     }
 }
