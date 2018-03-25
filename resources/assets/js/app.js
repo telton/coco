@@ -5,6 +5,7 @@ import CoursesGradesDashboard from './courses/grades/dashboard';
 import CoursesGradesIndex from './courses/grades/index';
 import CoursesNotesIndex from './courses/notes/index';
 import CoursesNotesForm from './courses/notes/form';
+import CoursesNotesShow from './courses/notes/show';
 
 export default {
     el: '#app',
@@ -22,5 +23,6 @@ export default {
         CoursesGradesIndex,
         CoursesNotesIndex,
         CoursesNotesForm,
+        CoursesNotesShow,
     }
 }

@@ -55,6 +55,9 @@ window.Echo = new Echo({
     encrypted: true
 });
 
+// Register global components.
+Vue.component('edit-note', require('./components/EditNote.vue'));
+
 /**
  * Kickstart the app.
  */

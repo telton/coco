@@ -134,7 +134,7 @@ Route::group(['namespace' => 'Courses', 'middleware' => ['auth', 'courses.permis
         'as'   => 'courses.notes.edit',
         'uses' => 'NotesController@edit',
     ]);
-    Route::post('/courses/{slug}/notes/{note}', [
+    Route::patch('/courses/{slug}/notes/{note}/edit', [
         'as'   => 'courses.notes.update',
         'uses' => 'NotesController@update',
     ]);

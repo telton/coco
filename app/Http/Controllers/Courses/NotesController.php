@@ -110,7 +110,7 @@ class NotesController extends Controller
         $this->breadcrumb->addCrumb(strtoupper($course->slug), route('courses.show', $course->slug));
         $this->breadcrumb->addCrumb('My Notes', route('courses.notes.index', $course->slug));
         $this->breadcrumb->addCrumb($note->title, route('courses.notes.show', [$course->slug, $note]));
-        return view('courses.assignments.show', [
+        return view('courses.notes.show', [
             'course'      => $course,
             'note'        => $note,
         ]);
@@ -151,14 +151,14 @@ class NotesController extends Controller
      * @param  \App\Models\Courses\Note  $note
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Note $note)
+    public function update(Request $request, string $slug, Note $note)
     {
-        // $note->title = $request->title;
-        // $note->body = $request->body;
+        $note->update([
+            'title' => $request->input('title'),
+            'body'  => $request->input('body'),
+        ]);
 
-        // $note->save();
-
-        // return 'Saved!';
+        return 'Saved!';
     }
 
     /**
@@ -170,6 +170,13 @@ class NotesController extends Controller
      */
     public function destroy(string $slug, Note $note)
     {
-        dd($note);
+        // Attempt to delete the note.
+        if ($note->delete()) {
+            $this->flash()->success("The note <strong>{$note->title}</strong> was successfully deleted!");
+            return $this->redirect()->route('courses.notes.index', $slug);
+        } else {
+            $this->flash()->warning("The assignment <strong>{$note->title}</strong> was NOT deleted!");
+            return $this->redirect()->route('courses.notes.index', $slug);
+        }
     }
 }

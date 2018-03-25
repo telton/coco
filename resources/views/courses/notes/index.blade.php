@@ -55,9 +55,9 @@
                                                 <i class="fa fa-clipboard"></i> Get Link
                                             </a>
                                             <a class="dropdown-item" href="{{ route('courses.notes.edit', [$course->slug, $note]) }}"><i class="fa fa-edit"></i> Edit</a>
-                                            <form action="{{ route('courses.notes.destroy', [$course->slug, $note]) }}" method="POST" ref="deleteNoteForm">
+                                            <form action="{{ route('courses.notes.destroy', [$course->slug, $note]) }}" id="deleteNoteForm-{{ $note->id }}" method="POST" ref="deleteNoteForm">
                                                 {{ csrf_field() }}
-                                                <button type="submit" class="dropdown-item" ref="deleteNote" v-on:click.prevent="onDelete()"><i class="fa fa-trash"></i> Delete</button>
+                                                <button type="submit" class="dropdown-item" ref="deleteNote" v-on:click.prevent="onDelete({{ $note->id }})"><i class="fa fa-trash"></i> Delete</button>
                                             </form>
                                         </div>
                                     </div>

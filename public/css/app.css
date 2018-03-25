@@ -17592,6 +17592,10 @@ div.total-points > input#points {
       align-self: center;
 }
 
+.notes-toolbar {
+  padding-bottom: 15px;
+}
+
 .notes-title {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -17645,6 +17649,11 @@ div.total-points > input#points {
 .main-nav .shareable-link .main-nav-toggle:focus {
   -webkit-box-shadow: none;
           box-shadow: none;
+}
+
+.note-alert {
+  padding: 5px;
+  margin-right: 10px;
 }
 
 [v-cloak] {
