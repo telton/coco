@@ -20,19 +20,18 @@ export default {
                 }
             }).catch(swal.noop); // Catch the cancel option so we don't get console errors.
         },
-        copyToClipboard() {
-            /* Get the text field */
+        copyToClipboard(id) {
+            // Get the text field.
             var copyText = this.$refs.slug;
-            console.log(copyText);
 
-            /* Select the text field */
+            // Select the text field.
             copyText.select();
 
-            /* Copy the text inside the text field */
+            // Copy the text inside the text field.
             document.execCommand("Copy");
 
-            /* Alert the copied text */
-            document.getElementById('copyToClipboard').title = "Copied to clipboard!";
+            // Destroy the original tooltip, change the title, and reenable the tooltip.
+            $('#copyToClipboard-' + id).tooltip('dispose').attr('title', 'Copied!').tooltip('show');
         }
     }
 }

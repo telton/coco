@@ -75,7 +75,7 @@
                                                 <div class="modal-body shareable-link">
                                                     <label for="slug" class="control-label"><strong>Link:</strong></label>
                                                     <input class="form-control" id="slug" name="slug" type="text" value="{{ route('courses.notes.edit', [$course->slug, $note]) }}" ref="slug" readonly>
-                                                    <button class="btn btn-default" ref="copyToClipboard" id="copyToClipboard" v-on:click.prevent="copyToClipboard()" data-toggle="tooltip" title="Copy link to clipboard" data-placement="bottom">
+                                                    <button class="btn btn-default" ref="copyToClipboard-{{ $note->id }}" id="copyToClipboard-{{ $note->id }}" v-on:click.prevent="copyToClipboard({{ $note->id }})" data-toggle="tooltip" title="Copy to clipboard" data-placement="bottom">
                                                         <i class="fa fa-clipboard"></i>
                                                     </button>
                                                 </div>
