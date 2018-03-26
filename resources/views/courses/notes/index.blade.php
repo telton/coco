@@ -95,7 +95,7 @@
                 </table>
             </courses-notes-index>
         @else
-            <span class="alert alert-info flex-center justify-center"><strong>You do not have any notes created yet!</strong></span>
+            <span class="alert alert-info flex-center justify-center"><strong>You do not have any notes created yet! <a href="{{ route('courses.notes.create', [$course->slug]) }}">Create one now!</a></strong></span>
         @endif
     </div>
 </div>
