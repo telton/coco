@@ -17390,18 +17390,6 @@ body {
           flex: 1;
 }
 
-.card-center {
-  -ms-flex-item-align: center;
-      align-self: center;
-  max-height: 650px;
-  width: 800px;
-  margin-top: 15px;
-}
-
-.login-card {
-  max-height: 370px;
-}
-
 .card-header.with-border {
   border-bottom: 1px solid #f4f4f4;
 }
