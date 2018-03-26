@@ -59,8 +59,8 @@ Route::group(['namespace' => 'Courses', 'middleware' => ['auth', 'courses.permis
         'uses' => 'AssignmentsController@destroy',
     ]);
     Route::post('/courses/{slug}/assignments/{assignment}/submit', [
-        'as'   => 'courses.assignments.store',
-        'uses' => 'SubmissionsController@store',
+        'as'   => 'courses.assignments.submissions.submit',
+        'uses' => 'SubmissionsController@submit',
     ]);
 
     // Attachments.
