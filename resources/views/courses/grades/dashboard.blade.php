@@ -179,7 +179,7 @@
 
             {{--  Grades that are already entered and approved.  --}}
             <div class="card">
-                <div class="card-header">
+                <div class="completed-submissions-card-header card-header">
                     <strong>Completed submissions</strong>
                     @if (count($assignments['completed']) !== 0)
                         <a href="{{ route('courses.grades.dashboard.export', [$course->slug]) }}" class="btn btn-success pull-right">Export all to CSV</a>

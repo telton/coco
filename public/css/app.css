@@ -17592,6 +17592,21 @@ div.total-points > input#points {
       align-self: center;
 }
 
+.completed-submissions-card-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.completed-submissions-card-header strong {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
 .notes-toolbar {
   padding-bottom: 15px;
 }

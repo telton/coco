@@ -25,3 +25,12 @@
         }
     }
 }
+
+.completed-submissions-card-header {
+    display: flex;
+    align-items: center;
+
+    strong {
+        flex: 1;
+    }
+}
