@@ -13,11 +13,11 @@
         <strong>Assignments for:</strong> {{ $course->subject }}{{ $course->course_number }} - {{ sprintf('%02d', $course->section) }}: {{ $course->title }}
     </div>
     <div class="card-body">
-        <div class="btn-toolbar assignments-toolbar">
-            @if (Auth::user()->hasRole(['admin', 'instructor']))
+        @if (Auth::user()->hasRole(['admin', 'instructor']))
+            <div class="btn-toolbar assignments-toolbar">
                 <a href="{{ route('courses.assignments.create', $course->slug) }}" class="btn btn-primary"><i class="fa fa-plus-circle"></i> Issue Assignment</a>
-            @endif
-        </div>
+            </div>
+        @endif
         @if (count($course->visibleAssignments) !== 0)
             <courses-assignments-index inline-template v-cloak>
                 <table class="table table-striped">
