@@ -181,7 +181,9 @@
             <div class="card">
                 <div class="card-header">
                     <strong>Completed submissions</strong>
-                    <a href="{{ route('courses.grades.dashboard.export', [$course->slug]) }}" class="btn btn-success pull-right">Export all to CSV</a>
+                    @if (count($assignments['completed']) !== 0)
+                        <a href="{{ route('courses.grades.dashboard.export', [$course->slug]) }}" class="btn btn-success pull-right">Export all to CSV</a>
+                    @endif
                 </div>
                 <div class="card-body">
                     @forelse ($assignments['completed'] as $assignment)
