@@ -104,7 +104,7 @@
                     </tbody>
                 </table>
             @else
-                <span class="alert alert-info flex-row-center">There aren't any assignments visible yet!</span>
+                <span class="alert alert-info flex-row-center">There aren't any grades visible yet!</span>
             @endif
         </div>
     </div>
