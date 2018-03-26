@@ -45,12 +45,17 @@
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
-                            <div class="modal-body shareable-link">
-                                <label for="slug" class="control-label"><strong>Link:</strong></label>
-                                <input class="form-control" id="slug" name="slug" type="text" value="{{ route('courses.notes.edit', [$course->slug, $note]) }}" ref="slug" readonly>
-                                <button class="btn btn-default" ref="copyToClipboard" id="copyToClipboard" v-on:click.prevent="copyToClipboard()" data-toggle="tooltip" title="Copy to clipboard" data-placement="bottom">
-                                    <i class="fa fa-clipboard"></i>
-                                </button>
+                            <div class="modal-body">
+                                <p class="alert alert-info">
+                                    You can collaborate on this note with another user that is registered for this course by clicking on the <i class="fa fa-clipboard"></i> icon below to copy the link and sending it to them.
+                                </p>
+                                <div class="shareable-link">
+                                   <label for="slug" class="control-label"><strong>Link:</strong></label>
+                                    <input class="form-control" id="slug" name="slug" type="text" value="{{ route('courses.notes.edit', [$course->slug, $note]) }}" ref="slug" readonly>
+                                    <button class="btn btn-default" ref="copyToClipboard" id="copyToClipboard" v-on:click.prevent="copyToClipboard()" data-toggle="tooltip" title="Copy to clipboard" data-placement="bottom">
+                                        <i class="fa fa-clipboard"></i>
+                                    </button> 
+                                </div>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

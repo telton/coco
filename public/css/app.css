@@ -17619,6 +17619,7 @@ div.total-points > input#points {
 }
 
 .shareable-link {
+  margin-top: 15px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
