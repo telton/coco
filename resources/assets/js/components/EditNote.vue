@@ -1,26 +1,23 @@
 <template>
-    <div class="card">
-        <div class="panel-body">
+    <div class="notes">
             <div class="notes-title form-group">
                 <label for="title" class="control-label"><strong>Title:</strong></label>
-                <input type="text" class="form-control" v-model="title" @keydown="editingNote">
+                <input type="text" class="form-control" v-model="title" @keydown="editingNote()">
             </div>
 
             <div class="form-group">
                 <label for="body" class="control-label"><strong>Body:</strong></label>
-                <div id="bodyEditor" ref="bodyEditor"></div>
-                <input type="hidden" name="body" id="body" v-model="body" @keydown="editingNote" ref="body">
+                <div id="bodyEditor" ref="bodyEditor" @keydown="editingNote()"></div>
+                <input type="hidden" name="body" id="body" v-model="body" ref="body">
             </div>
 
-           
-            <button class="btn btn-primary pull-right" @click="updateNote"><i class="fa fa-save"></i> Save</button>
-             <span class="pull-right alert alert-success note-alert" v-text="status" v-if="status != ''"></span>
+            <button class="btn btn-primary pull-right" @click="updateNote()"><i class="fa fa-save"></i> Save</button>
+            <span class="pull-right alert alert-success note-alert" v-text="status" v-if="status != ''"></span>
 
             <p>
                 Users editing this note:  <span class="badge">{{ usersEditing.length }}</span>
                 
             </p>
-        </div>
     </div>
 </template>
 
@@ -68,6 +65,8 @@
                 .listenForWhisper('editing', (e) => {
                     this.title = e.title;
                     this.body = e.body;
+
+                    this.editor.setValue(e.body, false);
                 })
                 .listenForWhisper('saved', (e) => {
                     this.status = e.status;
@@ -75,7 +74,7 @@
                     // clear is status after 1s
                     setTimeout(() => {
                         this.status = '';
-                    }, 1000);
+                    }, 1500);
                 });
         },
 
@@ -87,11 +86,10 @@
                 setTimeout(() => {
                     channel.whisper('editing', {
                         title: this.title,
-                        body: this.body
+                        body: this.editor.getValue()
                     });
-                }, 1000);
+                }, 500);
             },
-
             updateNote() {
                 let note = {
                     title: this.title, 
@@ -107,7 +105,7 @@
                         // clear is status after 1s
                         setTimeout(() => {
                             this.status = '';
-                        }, 1000);
+                        }, 1500);
 
                         // show saved status to others
                         Echo.join(`courses.${this.course.slug}.notes.${this.note.slug}`)

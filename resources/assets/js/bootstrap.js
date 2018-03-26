@@ -50,9 +50,9 @@ window.Pusher = require('pusher-js');
 
 window.Echo = new Echo({
     broadcaster: 'pusher',
-    key: 'a0d777038283bd557ae8',
+    key: '152ebce801ec06bb205f',
     cluster: 'us2',
-    encrypted: true
+    encrypted: true,
 });
 
 // Register global components.

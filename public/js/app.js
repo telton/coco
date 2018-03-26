@@ -49191,7 +49191,7 @@ window.Pusher = __webpack_require__(302);
 
 window.Echo = new __WEBPACK_IMPORTED_MODULE_5_laravel_echo___default.a({
   broadcaster: 'pusher',
-  key: 'a0d777038283bd557ae8',
+  key: '152ebce801ec06bb205f',
   cluster: 'us2',
   encrypted: true
 });
@@ -111475,9 +111475,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
 
 var Editor = __webpack_require__(4);
 
@@ -111518,13 +111515,15 @@ var Editor = __webpack_require__(4);
         }).listenForWhisper('editing', function (e) {
             _this.title = e.title;
             _this.body = e.body;
+
+            _this.editor.setValue(e.body, false);
         }).listenForWhisper('saved', function (e) {
             _this.status = e.status;
 
             // clear is status after 1s
             setTimeout(function () {
                 _this.status = '';
-            }, 1000);
+            }, 1500);
         });
     },
 
@@ -111539,9 +111538,9 @@ var Editor = __webpack_require__(4);
             setTimeout(function () {
                 channel.whisper('editing', {
                     title: _this2.title,
-                    body: _this2.body
+                    body: _this2.editor.getValue()
                 });
-            }, 1000);
+            }, 500);
         },
         updateNote: function updateNote() {
             var _this3 = this;
@@ -111559,7 +111558,7 @@ var Editor = __webpack_require__(4);
                 // clear is status after 1s
                 setTimeout(function () {
                     _this3.status = '';
-                }, 1000);
+                }, 1500);
 
                 // show saved status to others
                 Echo.join('courses.' + _this3.course.slug + '.notes.' + _this3.note.slug).whisper('saved', {
@@ -111578,85 +111577,96 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "card" }, [
-    _c("div", { staticClass: "panel-body" }, [
-      _c("div", { staticClass: "notes-title form-group" }, [
-        _vm._m(0),
-        _vm._v(" "),
-        _c("input", {
-          directives: [
-            {
-              name: "model",
-              rawName: "v-model",
-              value: _vm.title,
-              expression: "title"
-            }
-          ],
-          staticClass: "form-control",
-          attrs: { type: "text" },
-          domProps: { value: _vm.title },
-          on: {
-            keydown: _vm.editingNote,
-            input: function($event) {
-              if ($event.target.composing) {
-                return
-              }
-              _vm.title = $event.target.value
-            }
+  return _c("div", { staticClass: "notes" }, [
+    _c("div", { staticClass: "notes-title form-group" }, [
+      _vm._m(0),
+      _vm._v(" "),
+      _c("input", {
+        directives: [
+          {
+            name: "model",
+            rawName: "v-model",
+            value: _vm.title,
+            expression: "title"
           }
-        })
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "form-group" }, [
-        _vm._m(1),
-        _vm._v(" "),
-        _c("div", { ref: "bodyEditor", attrs: { id: "bodyEditor" } }),
-        _vm._v(" "),
-        _c("input", {
-          directives: [
-            {
-              name: "model",
-              rawName: "v-model",
-              value: _vm.body,
-              expression: "body"
+        ],
+        staticClass: "form-control",
+        attrs: { type: "text" },
+        domProps: { value: _vm.title },
+        on: {
+          keydown: function($event) {
+            _vm.editingNote()
+          },
+          input: function($event) {
+            if ($event.target.composing) {
+              return
             }
-          ],
-          ref: "body",
-          attrs: { type: "hidden", name: "body", id: "body" },
-          domProps: { value: _vm.body },
-          on: {
-            keydown: _vm.editingNote,
-            input: function($event) {
-              if ($event.target.composing) {
-                return
-              }
-              _vm.body = $event.target.value
-            }
+            _vm.title = $event.target.value
           }
+        }
+      })
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "form-group" }, [
+      _vm._m(1),
+      _vm._v(" "),
+      _c("div", {
+        ref: "bodyEditor",
+        attrs: { id: "bodyEditor" },
+        on: {
+          keydown: function($event) {
+            _vm.editingNote()
+          }
+        }
+      }),
+      _vm._v(" "),
+      _c("input", {
+        directives: [
+          {
+            name: "model",
+            rawName: "v-model",
+            value: _vm.body,
+            expression: "body"
+          }
+        ],
+        ref: "body",
+        attrs: { type: "hidden", name: "body", id: "body" },
+        domProps: { value: _vm.body },
+        on: {
+          input: function($event) {
+            if ($event.target.composing) {
+              return
+            }
+            _vm.body = $event.target.value
+          }
+        }
+      })
+    ]),
+    _vm._v(" "),
+    _c(
+      "button",
+      {
+        staticClass: "btn btn-primary pull-right",
+        on: {
+          click: function($event) {
+            _vm.updateNote()
+          }
+        }
+      },
+      [_c("i", { staticClass: "fa fa-save" }), _vm._v(" Save")]
+    ),
+    _vm._v(" "),
+    _vm.status != ""
+      ? _c("span", {
+          staticClass: "pull-right alert alert-success note-alert",
+          domProps: { textContent: _vm._s(_vm.status) }
         })
-      ]),
-      _vm._v(" "),
-      _c(
-        "button",
-        {
-          staticClass: "btn btn-primary pull-right",
-          on: { click: _vm.updateNote }
-        },
-        [_c("i", { staticClass: "fa fa-save" }), _vm._v(" Save")]
-      ),
-      _vm._v(" "),
-      _vm.status != ""
-        ? _c("span", {
-            staticClass: "pull-right alert alert-success note-alert",
-            domProps: { textContent: _vm._s(_vm.status) }
-          })
-        : _vm._e(),
-      _vm._v(" "),
-      _c("p", [
-        _vm._v("\n            Users editing this note:  "),
-        _c("span", { staticClass: "badge" }, [
-          _vm._v(_vm._s(_vm.usersEditing.length))
-        ])
+      : _vm._e(),
+    _vm._v(" "),
+    _c("p", [
+      _vm._v("\n            Users editing this note:  "),
+      _c("span", { staticClass: "badge" }, [
+        _vm._v(_vm._s(_vm.usersEditing.length))
       ])
     ])
   ])
