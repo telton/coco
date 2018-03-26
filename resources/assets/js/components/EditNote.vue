@@ -2,16 +2,16 @@
     <div class="notes">
             <div class="notes-title form-group">
                 <label for="title" class="control-label"><strong>Title:</strong></label>
-                <input type="text" class="form-control" v-model="title" @keydown="editingNote()">
+                <input type="text" class="form-control" v-model="title" @keydown="editingNote">
             </div>
 
             <div class="form-group">
                 <label for="body" class="control-label"><strong>Body:</strong></label>
-                <div id="bodyEditor" ref="bodyEditor" @keydown="editingNote()"></div>
+                <div id="bodyEditor" ref="bodyEditor" @keydown="editingNote"></div>
                 <input type="hidden" name="body" id="body" v-model="body" ref="body">
             </div>
 
-            <button class="btn btn-primary pull-right" @click="updateNote()"><i class="fa fa-save"></i> Save</button>
+            <button class="btn btn-primary pull-right" @click="updateNote"><i class="fa fa-save"></i> Save</button>
             <span class="pull-right alert alert-success note-alert" v-text="status" v-if="status != ''"></span>
 
             <p>
@@ -88,7 +88,7 @@
                         title: this.title,
                         body: this.editor.getValue()
                     });
-                }, 500);
+                }, 1000);
             },
             updateNote() {
                 let note = {
