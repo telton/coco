@@ -105925,28 +105925,25 @@ var Editor = __webpack_require__(3);
             this.$refs.files.append(input);
         },
         addUpload: function addUpload() {
-            var files = this.$refs.files;
-            console.log(files);
             var self = this,
-                input = document.createElement('input');
+                fileInput = document.createElement('input');
 
-            input.setAttribute('multiple', 'multiple');
-            input.setAttribute('type', 'file');
-            input.setAttribute('name', 'uploads[]');
+            fileInput.setAttribute('multiple', 'multiple');
+            fileInput.setAttribute('type', 'file');
+            fileInput.setAttribute('name', 'uploads[]');
 
-            $(input).click();
-            $(input).change(function () {
+            $(fileInput).click();
+            $(fileInput).change(function () {
                 var id = self.uploads.length;
                 self.uploads.push({
                     id: id,
-                    files: input.files
+                    files: fileInput.files
                 });
 
-                input.setAttribute('id', 'upload-' + id);
+                fileInput.setAttribute('id', 'upload-' + id);
             });
 
-            console.log(input);
-            files.append(input);
+            this.$ref.files.append(fileInput);
         },
         removeUpload: function removeUpload(upload) {
             var self = this,
