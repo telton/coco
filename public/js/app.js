@@ -105943,7 +105943,7 @@ var Editor = __webpack_require__(3);
                 fileInput.setAttribute('id', 'upload-' + id);
             });
 
-            this.$ref.files.append(fileInput);
+            this.$refs.files.append(fileInput);
         },
         removeUpload: function removeUpload(upload) {
             var self = this,

@@ -133,7 +133,7 @@ export default {
                 fileInput.setAttribute('id', 'upload-' + id);
             });
 
-            this.$ref.files.append(fileInput);
+            this.$refs.files.append(fileInput);
         },
         removeUpload(upload) {
             let self = this,
