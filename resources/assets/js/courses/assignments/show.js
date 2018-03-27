@@ -112,32 +112,28 @@ export default {
             input.setAttribute('type', 'file');
             input.setAttribute('name', 'uploads[]');
             input.files = files;
-            console.log(input);
             this.$refs.files.append(input);
         },
         addUpload() {
-            let files = this.$refs.files;
-            console.log(files);
             let self = this,
-                input = document.createElement('input');
+                fileInput = document.createElement('input');
 
-            input.setAttribute('multiple', 'multiple');
-            input.setAttribute('type', 'file');
-            input.setAttribute('name', 'uploads[]');
+            fileInput.setAttribute('multiple', 'multiple');
+            fileInput.setAttribute('type', 'file');
+            fileInput.setAttribute('name', 'uploads[]');
 
-            $(input).click();
-            $(input).change(function () {
+            $(fileInput).click();
+            $(fileInput).change(function () {
                 let id = self.uploads.length;
                 self.uploads.push({
                     id: id,
-                    files: input.files,
+                    files: fileInput.files,
                 });
 
-                input.setAttribute('id', 'upload-' + id);
+                fileInput.setAttribute('id', 'upload-' + id);
             });
 
-            console.log(input);
-            files.append(input);
+            this.$ref.files.append(fileInput);
         },
         removeUpload(upload) {
             let self = this,
