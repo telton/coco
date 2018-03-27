@@ -116,6 +116,8 @@ export default {
             this.$refs.files.append(input);
         },
         addUpload() {
+            let files = this.$refs.files;
+            console.log(files);
             let self = this,
                 input = document.createElement('input');
 
@@ -134,7 +136,8 @@ export default {
                 input.setAttribute('id', 'upload-' + id);
             });
 
-            this.$refs.files.append(input);
+            console.log(input);
+            files.append(input);
         },
         removeUpload(upload) {
             let self = this,
