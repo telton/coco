@@ -13,7 +13,7 @@
         <div class="card-header">
             <strong>Grades for:</strong> {{ $course->subject }}{{ $course->course_number }} - {{ sprintf('%02d', $course->section) }}: {{ $course->title }}
         </div>
-        <div class="card-body">
+        <div class="card-body grades-body">
         @if (count($course->visibleAssignments) !== 0)
                 <div class="btn-toolbar pull-right" style="margin-bottom: 15px;">
                     <a href="{{ route('courses.grades.export', $course->slug) }}" class="btn btn-primary">Export Grades to CSV</a>
@@ -109,12 +109,5 @@
         </div>
     </div>
 </courses-grades-index>
-
-@endsection
-
-
-@section('aside')
-
-    @include('includes.chat')
 
 @endsection

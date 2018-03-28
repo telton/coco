@@ -18,10 +18,3 @@
 </div>
 
 @endsection
-
-
-@section('aside')
-
-    @include('includes.chat')
-
-@endsection

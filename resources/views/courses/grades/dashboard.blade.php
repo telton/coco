@@ -14,7 +14,7 @@
         <strong>Grades for:</strong> {{ $course->subject }}{{ $course->course_number }} - {{ sprintf('%02d', $course->section) }}: {{ $course->title }}
     </div>
     <courses-grades-dashboard inline-template v-cloak>
-        <div class="card-body">
+        <div class="card-body grades-body">
             {{--  Grades that need to be entered.  --}}
             <div class="card">
                 <div class="card-header">
@@ -373,12 +373,5 @@
         </div>
     </courses-grades-dashboard>   
 </div>
-
-@endsection
-
-
-@section('aside')
-
-    @include('includes.chat')
 
 @endsection
