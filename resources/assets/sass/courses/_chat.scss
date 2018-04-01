@@ -1,9 +1,9 @@
 .chat-card {
     @include media-breakpoint-up(sm) {
-        max-height: 930px;
+        height: 930px;
     }
 
-    max-height: 500px;
+    height: 500px;
 }
 
 ::-webkit-scrollbar-track {
@@ -25,6 +25,12 @@
     display: flex;
     flex: unset;
     overflow-y: scroll;
+
+    @include media-breakpoint-up(sm) {
+        height: 930px;
+    }
+
+    height: 500px;
 
     .chat {
         flex: 1;
