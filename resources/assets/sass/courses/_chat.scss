@@ -1,5 +1,9 @@
 .chat-card {
-    max-height: 930px;
+    @include media-breakpoint-up(sm) {
+        max-height: 930px;
+    }
+
+    max-height: 500px;
 }
 
 ::-webkit-scrollbar-track {
@@ -45,6 +49,10 @@
 
 .chat-content {
     display: flex;
+
+    @include media-breakpoint-down(xs) {
+        display: inline;
+    }
  
     .chat-message {
         flex: 1;
@@ -53,8 +61,14 @@
     }
 
     .chat-timestamp {
-        margin-bottom: 5px;
+        @include media-breakpoint-up(sm) {
+            font-size: 12px;
+        }
+
+        font-size: 10px;
+        margin-bottom: 0;
         color: $cap-mist;
+        align-self: flex-end;
     }
 }
 
