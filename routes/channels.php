@@ -21,3 +21,7 @@ Broadcast::channel('courses.{courseSlug}.notes.{noteSlug}', function ($user, $sl
         'name' => $user->name,
     ];
 });
+
+Broadcast::channel('courses.{slug}.chat', function ($user) {
+    return Auth::check();
+});

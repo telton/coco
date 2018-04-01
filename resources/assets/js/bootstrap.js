@@ -57,6 +57,8 @@ window.Echo = new Echo({
 
 // Register global components.
 Vue.component('edit-note', require('./components/EditNote.vue'));
+Vue.component('chat-messages', require('./components/chat/ChatMessages.vue'));
+Vue.component('chat-form', require('./components/chat/ChatForm.vue'));
 
 /**
  * Kickstart the app.

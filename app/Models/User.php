@@ -6,6 +6,7 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Models\Courses\Course;
 use TCG\Voyager\Models\Role;
+use App\Models\Courses\Message;
 
 class User extends \TCG\Voyager\Models\User
 {
@@ -118,5 +119,15 @@ class User extends \TCG\Voyager\Models\User
         }
 
         return $this->attributes['role_id'] === Role::where('name', $name)->first()->id;
+    }
+
+    /**
+     * User messages relationship.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function messages()
+    {
+        return $this->hasMany(Message::class);
     }
 }

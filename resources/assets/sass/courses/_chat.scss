@@ -1,0 +1,70 @@
+.chat-card {
+    max-height: 930px;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+    background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: #555;
+}
+
+.chat-body {
+    display: flex;
+    flex: unset;
+    overflow-y: scroll;
+
+    .chat {
+        flex: 1;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        li:not(:first-child) {
+            padding-top: 10px;
+        }
+        
+        > li {
+            border-bottom: 1px dotted $cap-morning-sky;
+        }
+    }
+}
+
+.chat-heading {
+    padding-bottom: 5px;
+    color: darken($cap-honey, 30);
+}
+
+.chat-content {
+    display: flex;
+ 
+    .chat-message {
+        flex: 1;
+        margin-bottom: 5px;
+        color: darken($cap-darker-charcoal, 10);
+    }
+
+    .chat-timestamp {
+        margin-bottom: 5px;
+        color: $cap-mist;
+    }
+}
+
+.chat-footer {
+
+    .input-group {
+        align-items: center;
+
+        input {
+            margin-right: 5px;
+        }    
+    }
+}

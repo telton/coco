@@ -146,6 +146,20 @@ Route::group(['namespace' => 'Courses', 'middleware' => ['auth', 'courses.permis
         'as'   => 'courses.notes.export',
         'uses' => 'NotesController@export',
     ]);
+
+    // Chat.
+    Route::get('/courses/{slug}/chat', [
+        'as'   => 'courses.chat.index',
+        'uses' => 'ChatController@index',
+    ]);
+    Route::get('/courses/{slug}/chat/messages', [
+        'as'   => 'courses.chat.show',
+        'uses' => 'ChatController@show',
+    ]);
+    Route::post('/courses/{slug}/chat/messages', [
+        'as'   => 'courses.chat.store',
+        'uses' => 'ChatController@store',
+    ]);
 });
 
 Auth::routes();

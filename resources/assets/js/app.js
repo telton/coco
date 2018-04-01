@@ -10,11 +10,6 @@ import CoursesNotesShow from './courses/notes/show';
 export default {
     el: '#app',
     name: 'app',
-    data() {
-        return {
-            csrfToken: null,
-        }
-    },
     components: {
         CoursesAssignmentsIndex,
         CoursesAssignmentsForm,
@@ -24,5 +19,5 @@ export default {
         CoursesNotesIndex,
         CoursesNotesForm,
         CoursesNotesShow,
-    }
+    },
 }
