@@ -16,7 +16,7 @@
         @if ($course->description)
             <p>{{ $course->description }}</p>
         @else
-            <span class="alert alert-info flex-row-center">There isn't a description for this course!</span>
+            <span class="alert alert-dark flex-row-center">There isn't a description for this course!</span>
         @endif
 
         <p style="margin-top: 2em; text-align:center;" class="alert alert-warning"><strong>Use the navigation panel to view the course assignments, your notes, grades, or access chat.</strong></p>
