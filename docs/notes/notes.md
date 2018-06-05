@@ -1,10 +1,10 @@
 # Main Components
 
-### User Authentication
+### User Authentication - __DONE__
 
 * Users will be able to sign in & register.
 
-### 5 Different Roles
+### 5 Different Roles - __DONE__
 
 * Student
 * Grader
@@ -16,7 +16,7 @@ __Privilege hierarchy (least permissions to most):__
 
 Student -> Grader -> Tutor -> Instructor -> Admin
 
-### Ability to Add Classes
+### Ability to Add Classes - __DONE__
 
 * Admins can add classes, sections, and terms. Assign instructor(s) to a class and section for a given term.
 
@@ -26,7 +26,7 @@ Student -> Grader -> Tutor -> Instructor -> Admin
 
 * Students will only be able to see the classes they are assigned (registered for).
 
-### Homework Assignments
+### Homework Assignments - __DONE__
 
 * Instructors are able to add their homework assignments, along with their due dates.
 
@@ -37,25 +37,25 @@ Student -> Grader -> Tutor -> Instructor -> Admin
 
 * Tutors can host their own chat sessions, akin to a virtual SI session.
 
-### Exporting Grades for External Use
+### Exporting Grades for External Use - __DONE__
 
 * Instructors will be able to export __all of the student's__ grades to a file format (CSV, for example) for use when making calculations (mean grade, for example).
 
 * Students will have the ability to export their __own__ grades for a course, so they can make their own calculations (figuring out a weighted grade, for example).
 
-### Turn Discussion Board into Live Chat Feed
+### Turn Discussion Board into Live Chat Feed - __DONE__
 
 * Instead of a static discussion board, the chat will be continuously refreshed without the need to refresh the page itself.
 
 * Chats are meant to be self contained (1 for each lecture, for example).
 
-* Instructors will have the ability to "shut down" a feed after they deem that it is no longer applicable to talk about a certain thing.
+* ~~Instructors will have the ability to "shut down" a feed after they deem that it is no longer applicable to talk about a certain thing.~~ - __NOT IMPLEMENTED__
 
-### Collaborative Note-taking
+### Collaborative Note-taking __DONE__
 
 Users can have the ability to collaborate on notes. Instructors may be able to comment on notes to offer clarification (on a question of a misunderstood topic, for example) on a student's notes.
 
-### Opt-out Notification System
+### ~~Opt-out Notification System~~ - __NOT IMPLEMENTED__
 
 * Students will recieve emails when homework assignments are released.
 
